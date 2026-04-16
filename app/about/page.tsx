@@ -20,7 +20,7 @@ export default async function AboutPage() {
           </h1>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="relative aspect-[4/5] bg-zinc-100 dark:bg-zinc-900 overflow-hidden border border-zinc-200 dark:border-zinc-800">
+            <div className="relative aspect-[4/5] bg-zinc-100 dark:bg-zinc-900 overflow-hidden border border-zinc-200 dark:border-zinc-800 w-full md:max-w-[533px] md:mx-auto lg:mx-0">
               {featuredImage ? (
                 <Image 
                   src={featuredImage.sourceUrl}
