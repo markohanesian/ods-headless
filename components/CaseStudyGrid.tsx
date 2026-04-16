@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getPortfolioItems } from '@/lib/wordpress';
 
-const CaseStudyGrid = async () => {
+const CaseStudyGrid = async ({ hideHeader = false }: { hideHeader?: boolean }) => {
   let projects = [];
   
   try {
@@ -16,18 +16,23 @@ const CaseStudyGrid = async () => {
   return (
     <section className="px-6 lg:px-12 py-24 bg-white dark:bg-zinc-950">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div className="max-w-2xl">
-            <h2 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4 uppercase">
-              Client_Work
-            </h2>
-            <p className="text-zinc-500 dark:text-zinc-400 font-mono text-sm uppercase tracking-widest">
-              Selected Case Studies and Digital Architectures
-            </p>
+        {!hideHeader && (
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div className="max-w-2xl">
+              <h2 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4 uppercase">
+                Our Expertise in Action.
+              </h2>
+              <p className="text-zinc-600 dark:text-zinc-400 mb-6 leading-relaxed">
+                At Ohanesian Digital Solutions, we are dedicated to crafting exceptional digital experiences. 
+                While many of our recent projects involve sensitive client information, we maintain a 
+                robust portfolio showcasing our successes in cutting-edge web development, 
+                intuitive UI/UX design, and impactful brand identity.
+              </p>
+            </div>
+            <div className="h-px flex-grow bg-zinc-200 dark:bg-zinc-800 mx-8 hidden lg:block"></div>
+            <div className="text-xs font-mono text-zinc-400">[ ARCHIVE_INDEX_03 ]</div>
           </div>
-          <div className="h-px flex-grow bg-zinc-200 dark:bg-zinc-800 mx-8 hidden lg:block"></div>
-          <div className="text-xs font-mono text-zinc-400">[ ARCHIVE_INDEX_03 ]</div>
-        </div>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 bg-zinc-200 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-800">
           {projects.map((project) => (

@@ -35,7 +35,7 @@ const Navigation = () => {
         <div className="hidden md:flex items-center gap-10">
           {[
             { name: 'Services', href: '/services' },
-            { name: 'Portfolio', href: '/' },
+            { name: 'Portfolio', href: '/portfolio' },
             { name: 'About', href: '/about' }
           ].map((item) => (
             <Link 

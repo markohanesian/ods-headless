@@ -159,3 +159,22 @@ export async function getBlogPosts(): Promise<PortfolioItem[]> {
     excerpt: node.excerpt?.replace(/<[^>]*>?/gm, '').substring(0, 160) + '...'
   }));
 }
+
+export async function getAboutPageData() {
+  const query = `
+    query GetAboutPage {
+      page(id: "about", idType: URI) {
+        title
+        featuredImage {
+          node {
+            sourceUrl
+            altText
+          }
+        }
+      }
+    }
+  `;
+
+  const data = await wpFetch<{ page: any }>(query);
+  return data?.page;
+}
