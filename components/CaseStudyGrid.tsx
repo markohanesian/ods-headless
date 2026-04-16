@@ -1,30 +1,28 @@
 import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { getPortfolioItems } from '@/lib/wordpress';
 
-interface CaseStudy {
-  id: string;
-  title: string;
-  excerpt: string;
-  serviceCategory: string;
-  projectResult: string;
-  featuredImage?: {
-    node: {
-      sourceUrl: string;
-      altText: string;
-    };
-  };
-}
+const CaseStudyGrid = async () => {
+  let projects = [];
+  
+  try {
+    projects = await getPortfolioItems();
+  } catch (error) {
+    console.error("Failed to load portfolio items:", error);
+    // Fallback to empty array or show error UI if needed
+  }
 
-const CaseStudyGrid = ({ projects }: { projects: CaseStudy[] }) => {
   return (
     <section className="px-6 lg:px-12 py-24 bg-white dark:bg-zinc-950">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
             <h2 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4 uppercase">
-              Trust_Inventory
+              Client_Work
             </h2>
             <p className="text-zinc-500 dark:text-zinc-400 font-mono text-sm uppercase tracking-widest">
-              Selected Digital Architectures and Engineering Audits
+              Selected Case Studies and Digital Architectures
             </p>
           </div>
           <div className="h-px flex-grow bg-zinc-200 dark:bg-zinc-800 mx-8 hidden lg:block"></div>
@@ -33,43 +31,62 @@ const CaseStudyGrid = ({ projects }: { projects: CaseStudy[] }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 bg-zinc-200 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-800">
           {projects.map((project) => (
-            <div 
-              key={project.id} 
-              className="group relative bg-white dark:bg-zinc-950 p-8 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300 flex flex-col justify-between min-h-[400px]"
+            <Link 
+              key={project.slug} 
+              href={`/portfolio/${project.slug}`}
+              className="group relative bg-white dark:bg-zinc-950 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300 flex flex-col overflow-hidden"
             >
-              <div>
-                <div className="text-[10px] font-mono mb-6 text-zinc-400 flex items-center gap-2">
-                  <span className="inline-block w-2 h-2 border border-current"></span>
-                  [{project.serviceCategory}]
+              {/* Image Container */}
+              <div className="aspect-[16/10] relative overflow-hidden bg-zinc-100 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
+                {project.featuredImage ? (
+                  <Image 
+                    src={project.featuredImage.node.sourceUrl}
+                    alt={project.featuredImage.node.altText || project.title}
+                    fill
+                    className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center font-mono text-[10px] text-zinc-400 uppercase tracking-widest">
+                    No_Image_Found
+                  </div>
+                )}
+                <div className="absolute top-4 left-4">
+                  <div className="text-[10px] font-mono py-1 px-2 bg-zinc-900/80 text-zinc-50 backdrop-blur-sm uppercase tracking-widest border border-zinc-700/50">
+                    [{project.categories?.nodes[0]?.name || "Uncategorized"}]
+                  </div>
                 </div>
-                
-                <h3 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4 group-hover:translate-x-1 transition-transform">
+              </div>
+
+              {/* Content */}
+              <div className="p-8 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4 group-hover:translate-x-1 transition-transform">
                   {project.title}
                 </h3>
                 
                 <div 
-                  className="text-sm text-zinc-500 dark:text-zinc-400 mb-8 leading-relaxed prose prose-sm dark:prose-invert max-w-none"
+                  className="text-sm text-zinc-500 dark:text-zinc-400 mb-8 leading-relaxed line-clamp-3 prose prose-sm dark:prose-invert max-w-none"
                   dangerouslySetInnerHTML={{ __html: project.excerpt }}
                 />
-              </div>
 
-              <div className="mt-auto">
-                <div className="pt-6 border-t border-zinc-100 dark:border-zinc-800">
-                  <div className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest mb-2">
-                    Metric // Outcome
+                <div className="mt-auto flex items-center justify-between">
+                  <div className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">
+                    View_Case_Study
                   </div>
-                  <p className="text-sm font-medium text-zinc-900 dark:text-zinc-50">
-                    {project.projectResult}
-                  </p>
-                </div>
-                
-                <div className="mt-8 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-2 text-[10px] font-mono text-zinc-400 uppercase tracking-widest">
-                  View Case Study <span className="translate-x-0 group-hover:translate-x-2 transition-transform">→</span>
+                  <span className="text-zinc-400 translate-x-0 group-hover:translate-x-2 transition-transform">→</span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
+        
+        {projects.length === 0 && (
+          <div className="py-24 text-center border border-dashed border-zinc-200 dark:border-zinc-800">
+            <p className="font-mono text-xs text-zinc-400 uppercase tracking-widest">
+              Initializing_Archive... No_Projects_Found
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );
