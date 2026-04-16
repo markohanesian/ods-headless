@@ -33,13 +33,17 @@ const Navigation = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-10">
-          {['Services', 'Portfolio', 'Tools', 'Process'].map((item) => (
+          {[
+            { name: 'Services', href: '/services' },
+            { name: 'Portfolio', href: '/' },
+            { name: 'About', href: '/about' }
+          ].map((item) => (
             <Link 
-              key={item} 
-              href={`/${item.toLowerCase()}`}
+              key={item.name} 
+              href={item.href}
               className="text-xs font-mono uppercase tracking-widest text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50 transition-colors"
             >
-              {item}
+              {item.name}
             </Link>
           ))}
         </div>
