@@ -1,6 +1,5 @@
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
-import Products from "@/components/Products";
 import CaseStudyGrid from "@/components/CaseStudyGrid";
 import CoreValues from "@/components/CoreValues";
 import BlogSection from "@/components/BlogSection";
@@ -12,7 +11,6 @@ export default function Home() {
       <Services />
       <CaseStudyGrid />
       <CoreValues />
-      <Products />
       <BlogSection />
       
       {/* Final CTA Section */}

@@ -9,9 +9,6 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
       {/* Hero Section */}
       <section className="px-6 lg:px-12 pt-32 pb-24 border-b border-zinc-200 dark:border-zinc-800">
         <div className="max-w-7xl mx-auto">
-          <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-500 mb-4">
-            Project Case Study // {slug.replace(/-/g, " ").toUpperCase()}
-          </div>
           <h1 className="text-5xl md:text-8xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-12">
             {slug.split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")}
           </h1>

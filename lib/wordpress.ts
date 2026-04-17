@@ -95,7 +95,7 @@ export async function getPortfolioItems(): Promise<PortfolioItem[]> {
       return menuItems
         .map(item => {
           const node = item.connectedNode?.node;
-          if (!node) return null;
+          if (!node || node.slug === 'baggy') return null;
           return {
             title: node.title,
             slug: node.slug,
@@ -104,7 +104,7 @@ export async function getPortfolioItems(): Promise<PortfolioItem[]> {
             categories: { nodes: [{ name: 'Case Study' }] }
           };
         })
-        .filter(Boolean) as PortfolioItem[];
+        .filter((item): item is PortfolioItem => item !== null);
     }
   } catch (e) {
     console.error("Menu fetch failed, falling back to slug fetch", e);
@@ -113,7 +113,7 @@ export async function getPortfolioItems(): Promise<PortfolioItem[]> {
   // Fallback: Fetch specific pages by slug if menu is missing or empty
   const fallbackQuery = `
     query GetSpecificPages {
-      pages(where: { nameIn: ["baggy", "the-pomegranate-boutique", "diversified-land-management"] }) {
+      pages(where: { nameIn: ["the-pomegranate-boutique", "diversified-land-management"] }) {
         nodes {
           title
           slug

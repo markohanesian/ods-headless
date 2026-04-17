@@ -5,9 +5,6 @@ export default function ContactPage() {
     <section className="px-6 lg:px-12 py-24 bg-white dark:bg-zinc-950 min-h-[70vh]">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
-          <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-500 mb-4">
-            Archive 03 // Contact
-          </div>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-8 max-w-4xl">
             Start a project.
           </h1>

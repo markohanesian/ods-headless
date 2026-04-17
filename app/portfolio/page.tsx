@@ -1,5 +1,6 @@
 import React from "react";
 import CaseStudyGrid from "@/components/CaseStudyGrid";
+import ProductLab from "@/components/ProductLab";
 
 export const metadata = {
   title: "Portfolio | Ohanesian Digital Solutions",
@@ -12,9 +13,6 @@ export default function PortfolioPage() {
       {/* Header Section */}
       <section className="px-6 lg:px-12 pt-32 pb-24 border-b border-zinc-100 dark:border-zinc-900">
         <div className="max-w-7xl mx-auto">
-          <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-500 mb-6">
-            Case Studies // Archive 02
-          </div>
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-12">
             Portfolio
           </h1>
@@ -34,6 +32,9 @@ export default function PortfolioPage() {
 
       {/* Dynamic Grid Section */}
       <CaseStudyGrid hideHeader={true} />
+
+      {/* Innovation Lab Section */}
+      <ProductLab />
 
       {/* CTA Section */}
       <section className="px-6 lg:px-12 py-32 bg-zinc-50 dark:bg-zinc-900/30 border-t border-zinc-100 dark:border-zinc-800 text-center">

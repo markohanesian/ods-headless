@@ -19,13 +19,12 @@ const BlogSection = async () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
             <h2 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4 uppercase">
-              Digital Insights
+              Insights
             </h2>
             <p className="text-zinc-500 dark:text-zinc-400 font-mono text-sm uppercase tracking-widest">
-              Articles, Case Studies, and Observations on the Modern Web
+              Articles, Blogs, and Observations on the Modern Web
             </p>
           </div>
-          <div className="text-xs font-mono text-zinc-400">[ BLOG INDEX 04 ]</div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

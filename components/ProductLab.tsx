@@ -8,6 +8,7 @@ interface Tool {
   description: string;
   tech: string[];
   link: string;
+  buttonText: string;
 }
 
 const ProductLab = () => {
@@ -19,7 +20,18 @@ const ProductLab = () => {
       repoStatus: 'Up-to-date',
       description: 'Performance-first utility for digital architects to inspect and optimize headless CMS data layers in real-time.',
       tech: ['React', 'TypeScript', 'Chrome API', 'GraphQL'],
-      link: '#'
+      link: 'https://chromewebstore.google.com/detail/baggy/fghfofgepffmbmklmfididjfnnndofig',
+      buttonText: 'View on Chrome Store'
+    },
+    {
+      name: 'ai-copy-mso',
+      version: 'v1.0.0',
+      status: 'BETA',
+      repoStatus: 'Active',
+      description: 'AI-driven content generation and copywriting tool optimized for conversion-focused digital platforms.',
+      tech: ['Next.js', 'OpenAI', 'Tailwind CSS', 'TypeScript'],
+      link: 'https://github.com/markohanesian/ai-copy-mso',
+      buttonText: 'View on GitHub'
     }
   ];
 
@@ -106,7 +118,7 @@ const ProductLab = () => {
                   href={tool.link} 
                   className="inline-flex items-center justify-center w-full md:w-auto px-10 py-4 bg-zinc-900 dark:bg-zinc-50 text-zinc-50 dark:text-zinc-900 text-[10px] font-mono uppercase tracking-[0.2em] font-bold hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors"
                 >
-                  View on Chrome Store <span className="ml-3">↗</span>
+                  {tool.buttonText} <span className="ml-3">↗</span>
                 </a>
               </div>
             </div>

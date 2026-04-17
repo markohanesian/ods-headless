@@ -30,16 +30,15 @@ const CaseStudyGrid = async ({ hideHeader = false }: { hideHeader?: boolean }) =
               </p>
             </div>
             <div className="h-px flex-grow bg-zinc-200 dark:bg-zinc-800 mx-8 hidden lg:block"></div>
-            <div className="text-xs font-mono text-zinc-400">[ ARCHIVE INDEX 03 ]</div>
           </div>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 bg-zinc-200 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <Link 
               key={project.slug} 
               href={`/portfolio/${project.slug}`}
-              className="group relative bg-white dark:bg-zinc-950 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300 flex flex-col overflow-hidden"
+              className="group relative bg-white dark:bg-zinc-950 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300 flex flex-col overflow-hidden border border-zinc-200 dark:border-zinc-800"
             >
               {/* Image Container */}
               <div className="aspect-[16/10] relative overflow-hidden bg-zinc-100 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
