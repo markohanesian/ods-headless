@@ -6,7 +6,7 @@ export default function ContactPage() {
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
           <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-500 mb-4">
-            Archive_03 // Contact
+            Archive 03 // Contact
           </div>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-8 max-w-4xl">
             Start a project.
@@ -22,13 +22,13 @@ export default function ContactPage() {
             
             <div className="space-y-8">
               <div>
-                <h3 className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-2">Email_Correspondence</h3>
+                <h3 className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-2">Email Correspondence</h3>
                 <a href="mailto:hello@ohanesiandigitalsolutions.com" className="text-xl font-bold hover:text-zinc-500 transition-colors">
                   hello@ohanesiandigitalsolutions.com
                 </a>
               </div>
               <div>
-                <h3 className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-2">Location_HQ</h3>
+                <h3 className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-2">Location HQ</h3>
                 <p className="text-xl font-bold">Remote // Global</p>
               </div>
             </div>
@@ -37,7 +37,7 @@ export default function ContactPage() {
           <div className="bg-zinc-50 dark:bg-zinc-900 p-8 border border-zinc-200 dark:border-zinc-800">
             <form className="space-y-6">
               <div>
-                <label className="block text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-2">Full_Name</label>
+                <label className="block text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-2">Full Name</label>
                 <input 
                   type="text" 
                   className="w-full bg-transparent border-b border-zinc-300 dark:border-zinc-700 py-2 focus:outline-none focus:border-zinc-900 dark:focus:border-zinc-50 transition-colors"
@@ -45,7 +45,7 @@ export default function ContactPage() {
                 />
               </div>
               <div>
-                <label className="block text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-2">Email_Address</label>
+                <label className="block text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-2">Email Address</label>
                 <input 
                   type="email" 
                   className="w-full bg-transparent border-b border-zinc-300 dark:border-zinc-700 py-2 focus:outline-none focus:border-zinc-900 dark:focus:border-zinc-50 transition-colors"
@@ -53,7 +53,7 @@ export default function ContactPage() {
                 />
               </div>
               <div>
-                <label className="block text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-2">Project_Brief</label>
+                <label className="block text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-2">Project Brief</label>
                 <textarea 
                   rows={4}
                   className="w-full bg-transparent border-b border-zinc-300 dark:border-zinc-700 py-2 focus:outline-none focus:border-zinc-900 dark:focus:border-zinc-50 transition-colors resize-none"
@@ -61,7 +61,7 @@ export default function ContactPage() {
                 />
               </div>
               <button className="w-full py-4 bg-zinc-900 dark:bg-zinc-50 text-white dark:text-zinc-950 font-bold uppercase tracking-widest text-xs hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors">
-                Initialize_Transmission
+                Get in Touch
               </button>
             </form>
           </div>

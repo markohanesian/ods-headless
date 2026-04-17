@@ -41,7 +41,7 @@ export default function ServicesPage() {
       <section className="px-6 lg:px-12 pt-32 pb-24 border-b border-zinc-100 dark:border-zinc-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-500 mb-6">
-            Capabilities_Overview // 2025
+            Capabilities Overview // 2025
           </div>
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-12">
             Services
@@ -88,7 +88,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
             <h3 className="text-xs font-mono uppercase tracking-[0.3em] text-zinc-500 mb-4">
-              Advanced_Technical_Solutions
+              Advanced Technical Solutions
             </h3>
             <div className="h-px w-full bg-zinc-200 dark:bg-zinc-800"></div>
           </div>

@@ -42,7 +42,7 @@ const Hero = () => {
       
       <div className="absolute bottom-12 right-12 hidden lg:block">
         <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-400 rotate-90 origin-right">
-          ODS // 2025_CORE_VERSION
+          ODS // 2025 CORE VERSION
         </div>
       </div>
     </section>

@@ -13,7 +13,7 @@ export default async function AboutPage() {
       <section className="px-6 lg:px-12 pt-32 pb-24 border-b border-zinc-100 dark:border-zinc-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-500 mb-6">
-            Company_Profile // Archive_01
+            Company Profile // Archive 01
           </div>
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-12">
             About Us
@@ -32,7 +32,7 @@ export default async function AboutPage() {
                 />
               ) : (
                 <div className="absolute inset-0 flex items-center justify-center text-[10px] font-mono text-zinc-400 uppercase tracking-widest text-center p-8">
-                  Proprietor_Image_Archive // [ Mark_Sarkis_Ohanesian ]
+                  Proprietor Image Archive // [ Mark Sarkis Ohanesian ]
                 </div>
               )}
               <div className="absolute bottom-6 left-6 bg-white dark:bg-zinc-950 p-4 border border-zinc-200 dark:border-zinc-800">
@@ -74,21 +74,21 @@ export default async function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
             <div className="p-12 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800">
               <div className="text-5xl font-bold text-zinc-900 dark:text-zinc-50 mb-4 tracking-tighter">20+</div>
-              <h3 className="text-sm font-mono uppercase tracking-widest text-zinc-400 mb-6">Years_Collective_Experience</h3>
+              <h3 className="text-sm font-mono uppercase tracking-widest text-zinc-400 mb-6">Years Collective Experience</h3>
               <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
                 We apply decades of insights to build resilient, conversion-focused platforms.
               </p>
             </div>
             <div className="p-12 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800">
               <div className="text-5xl font-bold text-zinc-900 dark:text-zinc-50 mb-4 tracking-tighter">100%</div>
-              <h3 className="text-sm font-mono uppercase tracking-widest text-zinc-400 mb-6">Commitment_to_Accessibility</h3>
+              <h3 className="text-sm font-mono uppercase tracking-widest text-zinc-400 mb-6">Commitment to Accessibility</h3>
               <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
                 Every project prioritizes WCAG standards for an inclusive, high-quality user experience.
               </p>
             </div>
             <div className="p-12 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800">
               <div className="text-5xl font-bold text-zinc-900 dark:text-zinc-50 mb-4 tracking-tighter">1st</div>
-              <h3 className="text-sm font-mono uppercase tracking-widest text-zinc-400 mb-6">Strategy-First_Approach</h3>
+              <h3 className="text-sm font-mono uppercase tracking-widest text-zinc-400 mb-6">Strategy-First Approach</h3>
               <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
                 We start with your business goals, not just the code, ensuring maximum ROI from day one.
               </p>

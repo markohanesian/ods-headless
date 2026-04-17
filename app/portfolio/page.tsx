@@ -13,7 +13,7 @@ export default function PortfolioPage() {
       <section className="px-6 lg:px-12 pt-32 pb-24 border-b border-zinc-100 dark:border-zinc-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-500 mb-6">
-            Case_Studies // Archive_02
+            Case Studies // Archive 02
           </div>
           <h1 className="text-6xl md:text-8xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-12">
             Portfolio

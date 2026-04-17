@@ -25,7 +25,7 @@ const BlogSection = async () => {
               Articles, Case Studies, and Observations on the Modern Web
             </p>
           </div>
-          <div className="text-xs font-mono text-zinc-400">[ BLOG_INDEX_04 ]</div>
+          <div className="text-xs font-mono text-zinc-400">[ BLOG INDEX 04 ]</div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

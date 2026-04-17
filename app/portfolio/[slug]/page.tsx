@@ -10,7 +10,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
       <section className="px-6 lg:px-12 pt-32 pb-24 border-b border-zinc-200 dark:border-zinc-800">
         <div className="max-w-7xl mx-auto">
           <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-500 mb-4">
-            Project_Case_Study // {slug.replace(/-/g, "_").toUpperCase()}
+            Project Case Study // {slug.replace(/-/g, " ").toUpperCase()}
           </div>
           <h1 className="text-5xl md:text-8xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-12">
             {slug.split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")}
@@ -43,7 +43,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-8">
               <div className="aspect-video bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 mb-16 flex items-center justify-center">
-                <span className="font-mono text-zinc-400 uppercase tracking-widest">Primary_Image_Placeholder</span>
+                <span className="font-mono text-zinc-400 uppercase tracking-widest">Primary Image Placeholder</span>
               </div>
               
               <div className="prose prose-zinc dark:prose-invert max-w-none">
@@ -74,7 +74,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                   href="/contact"
                   className="inline-block w-full text-center py-4 bg-zinc-900 dark:bg-zinc-50 text-white dark:text-zinc-950 font-bold uppercase tracking-widest text-xs hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors"
                 >
-                  Start_Similar_Project
+                  Start Similar Project
                 </Link>
               </div>
             </aside>
@@ -86,10 +86,10 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
       <section className="px-6 lg:px-12 py-12 border-t border-zinc-200 dark:border-zinc-800">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link href="/" className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">
-            ← Return_to_Archive
+            ← Return to Archive
           </Link>
           <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-400">
-            End_of_File
+            End of File
           </div>
         </div>
       </section>

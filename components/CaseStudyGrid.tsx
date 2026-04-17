@@ -30,7 +30,7 @@ const CaseStudyGrid = async ({ hideHeader = false }: { hideHeader?: boolean }) =
               </p>
             </div>
             <div className="h-px flex-grow bg-zinc-200 dark:bg-zinc-800 mx-8 hidden lg:block"></div>
-            <div className="text-xs font-mono text-zinc-400">[ ARCHIVE_INDEX_03 ]</div>
+            <div className="text-xs font-mono text-zinc-400">[ ARCHIVE INDEX 03 ]</div>
           </div>
         )}
 
@@ -53,7 +53,7 @@ const CaseStudyGrid = async ({ hideHeader = false }: { hideHeader?: boolean }) =
                   />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center font-mono text-[10px] text-zinc-400 uppercase tracking-widest">
-                    No_Image_Found
+                    No Image Found
                   </div>
                 )}
               </div>
@@ -83,7 +83,7 @@ const CaseStudyGrid = async ({ hideHeader = false }: { hideHeader?: boolean }) =
         {projects.length === 0 && (
           <div className="py-24 text-center border border-dashed border-zinc-200 dark:border-zinc-800">
             <p className="font-mono text-xs text-zinc-400 uppercase tracking-widest">
-              Initializing_Archive... No_Projects_Found
+              Initializing Archive... No Projects Found
             </p>
           </div>
         )}

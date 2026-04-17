@@ -29,7 +29,7 @@ const ProductLab = () => {
         <div className="mb-16">
           <div className="flex items-center gap-4 mb-4">
             <h2 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 uppercase">
-              Innovation_Lab
+              Innovation Lab
             </h2>
             <div className="flex-grow h-px bg-zinc-200 dark:bg-zinc-800"></div>
           </div>
@@ -50,7 +50,7 @@ const ProductLab = () => {
                     <div className="w-2.5 h-2.5 rounded-full bg-zinc-300 dark:bg-zinc-700"></div>
                   </div>
                   <span className="text-[10px] font-mono font-bold text-zinc-400 uppercase tracking-widest">
-                    SYSTEM_PROCESS // {tool.name}.exe
+                    SYSTEM PROCESS // {tool.name}.exe
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -73,7 +73,7 @@ const ProductLab = () => {
                         <span className="text-zinc-900 dark:text-zinc-50 font-bold">{tool.version}</span>
                       </div>
                       <div className="flex justify-between items-center text-[10px] font-mono border-b border-zinc-100 dark:border-zinc-800 pb-2">
-                        <span className="text-zinc-400 uppercase">Repo_Status</span>
+                        <span className="text-zinc-400 uppercase">Repo Status</span>
                         <span className="text-zinc-900 dark:text-zinc-50 font-bold">{tool.repoStatus}</span>
                       </div>
                     </div>
@@ -84,7 +84,7 @@ const ProductLab = () => {
 
                   <div className="bg-zinc-50 dark:bg-zinc-900/50 p-6 border border-zinc-100 dark:border-zinc-800">
                     <div className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest mb-6 border-b border-zinc-200 dark:border-zinc-700 pb-2">
-                      Stack_Overview
+                      Stack Overview
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {tool.tech.map((t) => (
