@@ -42,7 +42,7 @@ export default function RootLayout({
               </p>
             </div>
             <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-400">
-              © 2026 OHANESIAN_DIGITAL_SOLUTIONS // ALL_RIGHTS_RESERVED
+              © 2026 OHANESIAN DIGITAL SOLUTIONS // ALL_RIGHTS_RESERVED
             </div>
           </div>
         </footer>
