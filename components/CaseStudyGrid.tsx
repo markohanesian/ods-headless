@@ -56,11 +56,6 @@ const CaseStudyGrid = async ({ hideHeader = false }: { hideHeader?: boolean }) =
                     No_Image_Found
                   </div>
                 )}
-                <div className="absolute top-4 left-4">
-                  <div className="text-[10px] font-mono py-1 px-2 bg-zinc-900/80 text-zinc-50 backdrop-blur-sm uppercase tracking-widest border border-zinc-700/50">
-                    [{project.categories?.nodes[0]?.name || "Uncategorized"}]
-                  </div>
-                </div>
               </div>
 
               {/* Content */}
@@ -76,7 +71,7 @@ const CaseStudyGrid = async ({ hideHeader = false }: { hideHeader?: boolean }) =
 
                 <div className="mt-auto flex items-center justify-between">
                   <div className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">
-                    View_Case_Study
+                    View
                   </div>
                   <span className="text-zinc-400 translate-x-0 group-hover:translate-x-2 transition-transform">→</span>
                 </div>

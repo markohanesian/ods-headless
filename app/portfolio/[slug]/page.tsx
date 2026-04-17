@@ -31,7 +31,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             </div>
             <div>
               <h3 className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-2">Year</h3>
-              <p className="font-bold">2024</p>
+              <p className="font-bold">2026</p>
             </div>
           </div>
         </div>
@@ -65,8 +65,8 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
               <div className="sticky top-32 space-y-12">
                 <div className="border-l-2 border-zinc-900 dark:border-zinc-50 pl-6 py-2">
                   <p className="text-sm font-mono text-zinc-500 dark:text-zinc-400 italic">
-                    "The engineering rigor applied to this project resulted in a 40% increase in 
-                    conversion rates and a perfect 100/100 Lighthouse score."
+                    &ldquo;The engineering rigor applied to this project resulted in a 40% increase in 
+                    conversion rates and a perfect 100/100 Lighthouse score.&rdquo;
                   </p>
                 </div>
                 

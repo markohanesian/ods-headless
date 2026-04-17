@@ -35,14 +35,29 @@ export async function wpFetch<T>(query: string, variables = {}): Promise<T> {
 
     if (json.errors) {
       console.error("GraphQL Errors:", json.errors);
-      return { posts: { nodes: [] } } as any; // Return empty nodes instead of throwing
+      return { posts: { nodes: [] } } as unknown as T; // Return empty nodes instead of throwing
     }
 
     return json.data;
   } catch (error) {
     console.error("WP Fetch Error:", error);
-    return { posts: { nodes: [] } } as any;
+    return { posts: { nodes: [] } } as unknown as T;
   }
+}
+
+interface MenuItemNode {
+  connectedNode: {
+    node: {
+      title: string;
+      slug: string;
+      featuredImage: {
+        node: {
+          sourceUrl: string;
+          altText: string;
+        };
+      };
+    };
+  };
 }
 
 export async function getPortfolioItems(): Promise<PortfolioItem[]> {
@@ -73,7 +88,7 @@ export async function getPortfolioItems(): Promise<PortfolioItem[]> {
   `;
 
   try {
-    const menuData = await wpFetch<{ menu: { menuItems: { nodes: any[] } } }>(menuQuery);
+    const menuData = await wpFetch<{ menu: { menuItems: { nodes: MenuItemNode[] } } }>(menuQuery);
     const menuItems = menuData?.menu?.menuItems?.nodes || [];
     
     if (menuItems.length > 0) {
@@ -98,7 +113,7 @@ export async function getPortfolioItems(): Promise<PortfolioItem[]> {
   // Fallback: Fetch specific pages by slug if menu is missing or empty
   const fallbackQuery = `
     query GetSpecificPages {
-      pages(where: { nameIn: ["the-pomegranate-boutique", "diversified-land-management"] }) {
+      pages(where: { nameIn: ["baggy", "the-pomegranate-boutique", "diversified-land-management"] }) {
         nodes {
           title
           slug
@@ -113,7 +128,7 @@ export async function getPortfolioItems(): Promise<PortfolioItem[]> {
     }
   `;
 
-  const fallbackData = await wpFetch<{ pages: { nodes: any[] } }>(fallbackQuery);
+  const fallbackData = await wpFetch<{ pages: { nodes: PortfolioItem[] } }>(fallbackQuery);
   const nodes = fallbackData?.pages?.nodes || [];
 
   return nodes.map(node => ({
@@ -150,7 +165,7 @@ export async function getBlogPosts(): Promise<PortfolioItem[]> {
     }
   `;
 
-  const data = await wpFetch<{ posts: { nodes: any[] } }>(query);
+  const data = await wpFetch<{ posts: { nodes: PortfolioItem[] } }>(query);
   const nodes = data?.posts?.nodes || [];
   
   return nodes.filter(node => node.slug !== 'hello-world').map(node => ({
@@ -175,6 +190,6 @@ export async function getAboutPageData() {
     }
   `;
 
-  const data = await wpFetch<{ page: any }>(query);
+  const data = await wpFetch<{ page: { title: string; featuredImage: { node: { sourceUrl: string; altText: string } } } }>(query);
   return data?.page;
 }

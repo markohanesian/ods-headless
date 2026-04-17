@@ -10,7 +10,7 @@ const Hero = () => {
       
       <div className="max-w-5xl z-10">
         <div className="inline-block px-3 py-1 mb-6 text-xs font-mono tracking-[0.3em] uppercase border border-zinc-200 dark:border-zinc-800 text-zinc-500">
-          Digital_Architecture & Design
+          Digital Solutions Agency
         </div>
         
         <h1 className="text-6xl md:text-9xl font-bold tracking-tighter leading-[0.9] mb-8 text-zinc-900 dark:text-zinc-50">

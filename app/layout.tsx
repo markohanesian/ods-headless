@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ohanesian Digital Solutions | Digital Architect",
-  description: "Minimalist, high-performance, and engineering-focused headless WordPress solutions.",
+  title: "Ohanesian Digital Solutions | Digital Solutions Agency",
+  description: "Minimalist, high-performance, and business-driven digital solutions with engineering expertise.",
 };
 
 export default function RootLayout({
@@ -38,11 +38,11 @@ export default function RootLayout({
             <div>
               <div className="text-xl font-bold tracking-tighter mb-2">ODS</div>
               <p className="text-sm text-zinc-500 max-w-xs">
-                Engineering-focused digital solutions for the modern web.
+                Business-driven digital solutions powered by engineering expertise.
               </p>
             </div>
             <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-400">
-              © 2024 OHANESIAN_DIGITAL_SOLUTIONS // ALL_RIGHTS_RESERVED
+              © 2026 OHANESIAN_DIGITAL_SOLUTIONS // ALL_RIGHTS_RESERVED
             </div>
           </div>
         </footer>
