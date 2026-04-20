@@ -4,6 +4,8 @@ export interface PortfolioItem {
   title: string;
   slug: string;
   excerpt: string;
+  date?: string;
+  content?: string;
   featuredImage?: {
     node: {
       sourceUrl: string;
@@ -13,6 +15,7 @@ export interface PortfolioItem {
   categories: {
     nodes: Array<{
       name: string;
+      slug: string;
     }>;
   };
 }
@@ -24,7 +27,7 @@ export async function wpFetch<T>(query: string, variables = {}): Promise<T> {
       headers: {
         "Content-Type": "application/json",
       },
-      next: { revalidate: 0 }, // Disable cache temporarily for debugging
+      next: { revalidate: 3600 }, // Cache for 1 hour
       body: JSON.stringify({
         query,
         variables,
@@ -35,115 +38,49 @@ export async function wpFetch<T>(query: string, variables = {}): Promise<T> {
 
     if (json.errors) {
       console.error("GraphQL Errors:", json.errors);
-      return { posts: { nodes: [] } } as unknown as T; // Return empty nodes instead of throwing
+      return {} as T;
     }
 
     return json.data;
   } catch (error) {
     console.error("WP Fetch Error:", error);
-    return { posts: { nodes: [] } } as unknown as T;
+    return {} as T;
   }
-}
-
-interface MenuItemNode {
-  connectedNode: {
-    node: {
-      title: string;
-      slug: string;
-      featuredImage: {
-        node: {
-          sourceUrl: string;
-          altText: string;
-        };
-      };
-    };
-  };
 }
 
 export async function getPortfolioItems(): Promise<PortfolioItem[]> {
-  // First, try fetching from the Menu
-  const menuQuery = `
-    query GetClientWorkMenu {
-      menu(id: "Client Work", idType: NAME) {
-        menuItems(first: 20) {
-          nodes {
-            connectedNode {
-              node {
-                ... on Page {
-                  title
-                  slug
-                  featuredImage {
-                    node {
-                      sourceUrl
-                      altText
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `;
-
-  try {
-    const menuData = await wpFetch<{ menu: { menuItems: { nodes: MenuItemNode[] } } }>(menuQuery);
-    const menuItems = menuData?.menu?.menuItems?.nodes || [];
-    
-    if (menuItems.length > 0) {
-      return menuItems
-        .map(item => {
-          const node = item.connectedNode?.node;
-          if (!node || node.slug === 'baggy') return null;
-          return {
-            title: node.title,
-            slug: node.slug,
-            excerpt: `Technical breakdown and architecture audit for ${node.title}.`,
-            featuredImage: node.featuredImage,
-            categories: { nodes: [{ name: 'Case Study' }] }
-          };
-        })
-        .filter((item): item is PortfolioItem => item !== null);
-    }
-  } catch (e) {
-    console.error("Menu fetch failed, falling back to slug fetch", e);
-  }
-
-  // Fallback: Fetch specific pages by slug if menu is missing or empty
-  const fallbackQuery = `
-    query GetSpecificPages {
-      pages(where: { nameIn: ["the-pomegranate-boutique", "diversified-land-management"] }) {
+  const query = `
+    query GetPortfolioPosts {
+      posts(where: { categoryName: "work" }, first: 20) {
         nodes {
           title
           slug
+          excerpt
           featuredImage {
             node {
               sourceUrl
               altText
             }
           }
+          categories {
+            nodes {
+              name
+              slug
+            }
+          }
         }
       }
     }
   `;
 
-  const fallbackData = await wpFetch<{ pages: { nodes: PortfolioItem[] } }>(fallbackQuery);
-  const nodes = fallbackData?.pages?.nodes || [];
-
-  return nodes.map(node => ({
-    title: node.title,
-    slug: node.slug,
-    excerpt: `Technical breakdown and architecture audit for ${node.title}.`,
-    featuredImage: node.featuredImage,
-    categories: { nodes: [{ name: 'Case Study' }] }
-  }));
+  const data = await wpFetch<{ posts: { nodes: PortfolioItem[] } }>(query);
+  return data?.posts?.nodes || [];
 }
 
 export async function getBlogPosts(): Promise<PortfolioItem[]> {
   const query = `
     query GetBlogPosts {
-      posts(first: 10, where: { orderby: { field: DATE, order: DESC } }) {
+      posts(where: { categoryName: "blog" }, first: 10) {
         nodes {
           title
           slug
@@ -158,6 +95,7 @@ export async function getBlogPosts(): Promise<PortfolioItem[]> {
           categories {
             nodes {
               name
+              slug
             }
           }
         }
@@ -168,11 +106,38 @@ export async function getBlogPosts(): Promise<PortfolioItem[]> {
   const data = await wpFetch<{ posts: { nodes: PortfolioItem[] } }>(query);
   const nodes = data?.posts?.nodes || [];
   
-  return nodes.filter(node => node.slug !== 'hello-world').map(node => ({
+  return nodes.map(node => ({
     ...node,
-    // Ensure excerpt is clean
     excerpt: node.excerpt?.replace(/<[^>]*>?/gm, '').substring(0, 160) + '...'
   }));
+}
+
+export async function getPostBySlug(slug: string): Promise<PortfolioItem | null> {
+  const query = `
+    query GetPostBySlug($id: ID!) {
+      post(id: $id, idType: SLUG) {
+        title
+        slug
+        content
+        date
+        featuredImage {
+          node {
+            sourceUrl
+            altText
+          }
+        }
+        categories {
+          nodes {
+            name
+            slug
+          }
+        }
+      }
+    }
+  `;
+
+  const data = await wpFetch<{ post: PortfolioItem }>(query, { id: slug });
+  return data?.post || null;
 }
 
 export async function getAboutPageData() {
@@ -180,6 +145,7 @@ export async function getAboutPageData() {
     query GetAboutPage {
       page(id: "about", idType: URI) {
         title
+        content
         featuredImage {
           node {
             sourceUrl
@@ -190,6 +156,6 @@ export async function getAboutPageData() {
     }
   `;
 
-  const data = await wpFetch<{ page: { title: string; featuredImage: { node: { sourceUrl: string; altText: string } } } }>(query);
+  const data = await wpFetch<{ page: any }>(query);
   return data?.page;
 }
