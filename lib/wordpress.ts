@@ -74,7 +74,12 @@ export async function getPortfolioItems(): Promise<PortfolioItem[]> {
   `;
 
   const data = await wpFetch<{ posts: { nodes: PortfolioItem[] } }>(query);
-  return data?.posts?.nodes || [];
+  const nodes = data?.posts?.nodes || [];
+
+  return nodes.map(node => ({
+    ...node,
+    excerpt: node.excerpt?.replace(/<[^>]*>?/gm, '').substring(0, 160) + '...'
+  }));
 }
 
 export async function getBlogPosts(): Promise<PortfolioItem[]> {

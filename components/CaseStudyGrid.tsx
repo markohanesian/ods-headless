@@ -63,10 +63,9 @@ const CaseStudyGrid = async ({ hideHeader = false }: { hideHeader?: boolean }) =
                   {project.title}
                 </h3>
                 
-                <div 
-                  className="text-sm text-zinc-500 dark:text-zinc-400 mb-8 leading-relaxed line-clamp-3 prose prose-sm dark:prose-invert max-w-none"
-                  dangerouslySetInnerHTML={{ __html: project.excerpt }}
-                />
+                <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-8 leading-relaxed line-clamp-3 prose prose-sm dark:prose-invert max-w-none">
+                  {project.excerpt}
+                </p>
 
                 <div className="flex items-center justify-between">
                   <div className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">
