@@ -9,7 +9,28 @@ export default function Home() {
     <>
       <Hero />
       <Services />
-      <CaseStudyGrid />
+      
+      {/* Section 1: Web Development & Design */}
+      <CaseStudyGrid 
+        title="Web Development & Design" 
+        subtitle="A curated selection of high-performance digital platforms and engineering-led web solutions designed for measurable business growth."
+        category="web-development"
+        limit={3}
+        showViewAll={true}
+        viewAllLabel="See All"
+      />
+
+      {/* Section 2: Custom Apps & Development */}
+      <CaseStudyGrid 
+        title="Custom Apps & Development" 
+        subtitle="Custom digital instruments designed to bridge the gap between complex backend systems and performant frontend experiences."
+        category="custom-apps"
+        limit={3}
+        variant="lab"
+        showViewAll={true}
+        viewAllLabel="See All"
+      />
+
       <CoreValues />
       <BlogSection />
       

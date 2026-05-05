@@ -1,6 +1,5 @@
 import React from "react";
 import CaseStudyGrid from "@/components/CaseStudyGrid";
-import ProductLab from "@/components/ProductLab";
 
 export const metadata = {
   title: "Portfolio | Ohanesian Digital Solutions",
@@ -30,26 +29,37 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* Dynamic Grid Section */}
-      <CaseStudyGrid hideHeader={true} />
+      {/* Dynamic Grid Section - Client Inventory */} 
+      <CaseStudyGrid 
+        title="CLIENT WORK" 
+        subtitle="Full technical breakdowns of architectural implementations for our global client base."            category="work"
+        excludeCategory="custom-apps"
+        limit={50}
+      />
 
       {/* Innovation Lab Section */}
-      <ProductLab />
+      <CaseStudyGrid 
+        title="Custom Apps & Development" 
+        subtitle="A collection of specialized apps, plugins, and other custom tools"
+        category="custom-apps"
+        variant="lab"
+        limit={20}
+      />
 
       {/* CTA Section */}
       <section className="px-6 lg:px-12 py-32 bg-zinc-50 dark:bg-zinc-900/30 border-t border-zinc-100 dark:border-zinc-800 text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-8 leading-tight text-zinc-900 dark:text-zinc-50">
-            Have a Complex Project?
+            Have a project in mind?
           </h2>
           <p className="text-xl text-zinc-500 dark:text-zinc-400 mb-12 font-light">
             We specialize in architecting custom digital solutions for businesses with unique requirements.
           </p>
           <a 
             href="/contact"
-            className="inline-block px-12 py-5 bg-zinc-900 dark:bg-zinc-50 text-zinc-50 dark:text-zinc-900 font-bold uppercase tracking-widest text-[10px] hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-all"
+            className="inline-block px-12 py-5 bg-brand text-zinc-900 font-bold uppercase tracking-widest text-[10px] hover:bg-[#e69b2d] transition-all"
           >
-            Start a Consultation
+            Schedule a Consultation
           </a>
         </div>
       </section>

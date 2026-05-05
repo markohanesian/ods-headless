@@ -4,8 +4,8 @@ import Image from "next/image";
 import { getPostBySlug } from "@/lib/wordpress";
 import { notFound } from "next/navigation";
 
-export default async function BlogSinglePage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function BlogSinglePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const post = await getPostBySlug(slug);
 
   if (!post) {

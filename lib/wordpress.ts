@@ -1,4 +1,4 @@
-export const WP_URL = "https://ohanesiandigitalsolutions.com/graphql";
+export const WP_URL = process.env.WP_URL || "https://ohanesiandigitalsolutions.com/graphql";
 
 export interface PortfolioItem {
   title: string;
@@ -37,7 +37,7 @@ export async function wpFetch<T>(query: string, variables = {}): Promise<T> {
     const json = await res.json();
 
     if (json.errors) {
-      console.error("GraphQL Errors:", json.errors);
+      console.error("GraphQL Errors:", JSON.stringify(json.errors, null, 2));
       return {} as T;
     }
 
@@ -48,10 +48,10 @@ export async function wpFetch<T>(query: string, variables = {}): Promise<T> {
   }
 }
 
-export async function getPortfolioItems(): Promise<PortfolioItem[]> {
+export async function getPortfolioItems(category?: string, first: number = 20, exclude?: string): Promise<PortfolioItem[]> {
   const query = `
-    query GetPortfolioPosts {
-      posts(where: { categoryName: "work" }, first: 20) {
+    query GetPortfolioPosts($category: String, $first: Int) {
+      posts(where: { categoryName: $category }, first: $first) {
         nodes {
           title
           slug
@@ -73,13 +73,38 @@ export async function getPortfolioItems(): Promise<PortfolioItem[]> {
     }
   `;
 
-  const data = await wpFetch<{ posts: { nodes: PortfolioItem[] } }>(query);
-  const nodes = data?.posts?.nodes || [];
+  const data = await wpFetch<{ posts: { nodes: PortfolioItem[] } }>(query, { 
+    category: category || "work", 
+    first 
+  });
+  let nodes = data?.posts?.nodes || [];
 
-  return nodes.map(node => ({
-    ...node,
-    excerpt: node.excerpt?.replace(/<[^>]*>?/gm, '').substring(0, 160) + '...'
-  }));
+  if (exclude) {
+    nodes = nodes.filter(node => !node.categories.nodes.some(c => c.slug === exclude));
+  }
+
+  return nodes.map(node => {
+    // Basic HTML tag removal and entity decoding
+    const cleanExcerpt = node.excerpt
+      ?.replace(/<[^>]*>?/gm, '')
+      .replace(/&amp;/g, '&')
+      .replace(/&nbsp;/g, ' ')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/&rsquo;/g, "'")
+      .replace(/&lsquo;/g, "'")
+      .replace(/&ldquo;/g, '"')
+      .replace(/&rdquo;/g, '"')
+      .replace(/&hellip;/g, '...')
+      .trim();
+
+    return {
+      ...node,
+      excerpt: cleanExcerpt ? cleanExcerpt.substring(0, 160) + (cleanExcerpt.length > 160 ? '...' : '') : ''
+    };
+  });
 }
 
 export async function getBlogPosts(): Promise<PortfolioItem[]> {
@@ -161,6 +186,48 @@ export async function getAboutPageData() {
     }
   `;
 
-  const data = await wpFetch<{ page: any }>(query);
+  interface AboutPageData {
+    title: string;
+    content: string;
+    featuredImage?: {
+      node: {
+        sourceUrl: string;
+        altText: string;
+      };
+    };
+  }
+
+  const data = await wpFetch<{ page: AboutPageData }>(query);
+  return data?.page;
+}
+
+export async function getPageByUri(uri: string) {
+  const query = `
+    query GetPageByUri($id: ID!) {
+      page(id: $id, idType: URI) {
+        title
+        content
+        featuredImage {
+          node {
+            sourceUrl
+            altText
+          }
+        }
+      }
+    }
+  `;
+
+  interface PageData {
+    title: string;
+    content: string;
+    featuredImage?: {
+      node: {
+        sourceUrl: string;
+        altText: string;
+      };
+    };
+  }
+
+  const data = await wpFetch<{ page: PageData }>(query, { id: uri });
   return data?.page;
 }

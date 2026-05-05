@@ -44,7 +44,7 @@ const Navigation = () => {
           <span className="text-xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 leading-none">
             ODS
           </span>
-          <span className="text-[8px] font-mono tracking-[0.2em] text-zinc-500 uppercase leading-none mt-1">
+          <span className="text-[9px] font-mono tracking-[0.3em] text-zinc-300 dark:text-zinc-100 font-bold uppercase leading-none mt-2">
             OHANESIAN DIGITAL SOLUTIONS
           </span>
         </Link>
@@ -96,7 +96,7 @@ const Navigation = () => {
           
           <Link 
             href="/contact"
-            className="hidden sm:block px-5 py-2 text-[10px] font-mono uppercase tracking-widest bg-zinc-900 dark:bg-zinc-50 text-zinc-50 dark:text-zinc-900 hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors"
+            className="hidden sm:block px-5 py-2 text-[10px] font-mono uppercase tracking-widest bg-[#fcaf3b] text-zinc-900 hover:bg-zinc-50 hover:text-zinc-900 transition-colors font-bold"
           >
             Connect
           </Link>
