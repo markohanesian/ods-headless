@@ -18,6 +18,12 @@ export interface PortfolioItem {
       slug: string;
     }>;
   };
+  tags?: {
+    nodes: Array<{
+      name: string;
+      slug: string;
+    }>;
+  };
 }
 
 export async function wpFetch<T>(query: string, variables = {}): Promise<T> {
@@ -157,6 +163,12 @@ export async function getPostBySlug(slug: string): Promise<PortfolioItem | null>
           }
         }
         categories {
+          nodes {
+            name
+            slug
+          }
+        }
+        tags {
           nodes {
             name
             slug

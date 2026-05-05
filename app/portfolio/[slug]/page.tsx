@@ -33,22 +33,18 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             {post.title}
           </h1>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 border-t border-zinc-100 dark:border-zinc-900 pt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-zinc-100 dark:border-zinc-900 pt-12">
             <div>
-              <h3 className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-4">Role</h3>
-              <p className="font-bold text-lg">Digital Architect</p>
+              <h3 className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-4">Platform & Ecosystem</h3>
+              <p className="font-bold text-lg">
+                {specificCategories.map(c => c.name).join(" / ") || "Digital Architecture"}
+              </p>
             </div>
             <div>
-              <h3 className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-4">Deliverable</h3>
-              <p className="font-bold text-lg">{mainCategory}</p>
-            </div>
-            <div>
-              <h3 className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-4">Stack</h3>
-              <p className="font-bold text-lg">Next.js / WordPress</p>
-            </div>
-            <div>
-              <h3 className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-4">Date</h3>
-              <p className="font-bold text-lg">{post.date ? new Date(post.date).getFullYear() : '2026'}</p>
+              <h3 className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-4">Deliverables</h3>
+              <p className="font-bold text-lg text-zinc-600 dark:text-zinc-400">
+                {post.tags?.nodes?.length ? post.tags.nodes.map(t => t.name).join(" / ") : "Strategy / Engineering"}
+              </p>
             </div>
           </div>
         </div>
@@ -77,23 +73,42 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
             <div className="lg:col-span-8">
               <div 
-                className="prose prose-zinc dark:prose-invert max-w-none 
+                className={`prose prose-zinc dark:prose-invert max-w-none 
                   prose-h2:text-3xl md:prose-h2:text-5xl prose-h2:font-bold prose-h2:tracking-tighter prose-h2:mb-12 prose-h2:mt-32 first:prose-h2:mt-0 prose-h2:uppercase prose-h2:leading-[1.1]
                   prose-h3:text-xl md:prose-h3:text-2xl prose-h3:font-bold prose-h3:tracking-tight prose-h3:mb-8 prose-h3:mt-24
-                  prose-p:text-lg md:prose-p:text-xl prose-p:text-zinc-600 dark:prose-p:text-zinc-400 prose-p:leading-relaxed prose-p:mb-12
-                  prose-li:text-lg prose-li:text-zinc-600 dark:prose-li:text-zinc-400 prose-li:mb-4
                   prose-img:border prose-img:border-zinc-200 dark:prose-img:border-zinc-800 prose-img:my-20
-                  [&_div]:bg-transparent [&_div]:p-0 [&_div]:m-0
+                  
+                  /* AGGRESSIVE BACKGROUND & PADDING RESET FOR WP/KADENCE BLOCKS */
+                  [&_div]:!bg-transparent [&_section]:!bg-transparent [&_.has-background]:!bg-transparent [&_.kb-row-layout-wrap]:!bg-transparent [&_.wp-block-kadence-rowlayout]:!bg-transparent
+                  [&_div]:!bg-none [&_section]:!bg-none
+                  [&_.kb-row-layout-wrap]:!p-0 [&_.kb-row-layout-wrap]:!m-0 [&_.wp-block-kadence-rowlayout]:!p-0 [&_.wp-block-kadence-rowlayout]:!m-0
+                  [&_.kt-inside-inner-col]:!p-0 [&_.kt-inside-inner-col]:!m-0
                   
                   /* Force H2 override for WP classes */
                   [&_h2]:text-3xl md:[&_h2]:text-5xl [&_h2]:font-bold [&_h2]:tracking-tighter [&_h2]:uppercase [&_h2]:leading-[1.1] [&_h2]:mt-32 first:[&_h2]:mt-0
                   [&_h3]:mt-24
                   
-                  /* WP Column Support for Metrics */
-                  [&_.wp-block-columns]:flex [&_.wp-block-columns]:flex-col md:[&_.wp-block-columns]:flex-row [&_.wp-block-columns]:gap-8 [&_.wp-block-columns]:my-20
+                  /* Native WP Column Design (Minimal) */
+                  [&_.wp-block-columns]:flex [&_.wp-block-columns]:flex-col md:[&_.wp-block-columns]:flex-row [&_.wp-block-columns]:gap-12 md:[&_.wp-block-columns]:gap-16 [&_.wp-block-columns]:my-24
                   [&_.wp-block-column]:flex-1 [&_.wp-block-column]:min-w-0
-                  [&_.wp-block-column_p]:text-center [&_.wp-block-column_h2]:text-center [&_.wp-block-column_h2]:text-5xl [&_.wp-block-column_h2]:mb-2
-                  [&_.wp-block-column_h3]:text-center [&_.wp-block-column_h3]:text-sm [&_.wp-block-column_h3]:font-mono [&_.wp-block-column_h3]:text-zinc-400 [&_.wp-block-column_h3]:uppercase [&_.wp-block-column_h3]:tracking-widest" 
+                  
+                  /* Paragraph Typography */
+                  [&_p]:text-lg md:[&_p]:text-xl [&_p]:leading-relaxed [&_p]:text-zinc-600 dark:[&_p]:text-zinc-400 [&_p]:font-light [&_p]:mb-12
+                  
+                  /* List Normalization (Key Features, etc.) */
+                  [&_ul]:list-disc [&_ul]:pl-6 md:[&_ul]:pl-8 [&_ul]:mb-16 [&_ul]:mt-8 [&_ul]:space-y-4
+                  [&_ol]:list-decimal [&_ol]:pl-6 md:[&_ol]:pl-8 [&_ol]:mb-16 [&_ol]:mt-8 [&_ol]:space-y-4
+                  [&_li]:text-lg md:[&_li]:text-xl [&_li]:leading-relaxed [&_li]:text-zinc-600 dark:[&_li]:text-zinc-400 [&_li]:font-light [&_li]:m-0
+                  [&_li_p]:m-0 [&_li_p]:inline
+                  
+                  /* Section Spacing & Transitions */
+                  [&_h2+p]:mt-8
+                  [&_h3+p]:mt-6
+                  [&_p+h2]:mt-32
+                  
+                  /* Image handling within content */
+                  [&_figure]:my-24
+                  [&_figure_img]:border [&_figure_img]:border-zinc-100 dark:[&_figure_img]:border-zinc-900`} 
                 dangerouslySetInnerHTML={{ __html: post.content || '' }}
               />
             </div>
@@ -109,7 +124,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                 
                 <div>
                   <h4 className="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400 mb-8 flex items-center gap-4">
-                    Core Technicality <div className="h-px w-full bg-zinc-100 dark:bg-zinc-900"></div>
+                    Core Project Areas <div className="h-px w-full bg-zinc-100 dark:bg-zinc-900"></div>
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {post.categories.nodes.map(cat => (
@@ -138,9 +153,6 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
           <Link href="/portfolio" className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">
             ← Return to Portfolio
           </Link>
-          <div className="text-[10px] font-mono uppercase tracking-widest text-zinc-400">
-            End of File
-          </div>
         </div>
       </section>
     </article>
