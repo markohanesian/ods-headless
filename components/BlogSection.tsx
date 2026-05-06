@@ -21,7 +21,7 @@ const BlogSection = async () => {
             <h2 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4 uppercase">
               Insights
             </h2>
-            <p className="text-zinc-500 dark:text-zinc-400 font-mono text-sm uppercase tracking-widest">
+            <p className="text-zinc-500 dark:text-zinc-300 font-mono text-sm uppercase tracking-widest">
               Articles, Blogs, and Observations on the Modern Web
             </p>
           </div>
@@ -44,7 +44,7 @@ const BlogSection = async () => {
                   {post.title}
                 </h3>
                 
-                <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed line-clamp-2 max-w-xl">
+                <p className="text-zinc-500 dark:text-zinc-300 leading-relaxed line-clamp-2 max-w-xl">
                   {post.excerpt}
                 </p>
 

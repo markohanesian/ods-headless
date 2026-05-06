@@ -18,7 +18,7 @@ const Hero = () => {
           <span className="text-accent-blue">Digital Presence.</span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 max-w-3xl mb-12 leading-relaxed font-light">
+        <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-300 max-w-3xl mb-12 leading-relaxed font-light">
           At Ohanesian Digital Solutions, we don’t just build. We strategize, design, and develop 
           professional websites and compelling brand identities, empowering businesses to lead 
           in a competitive landscape.

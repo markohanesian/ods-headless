@@ -40,7 +40,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-8 leading-[1.1]">
             Let’s Build Your Next Digital Success.
           </h2>
-          <p className="text-xl text-zinc-400 dark:text-zinc-500 mb-12">
+          <p className="text-xl text-zinc-300 dark:text-zinc-600 mb-12">
             Have a vision for your business? We’re ready to listen and build a digital solution that brings your ideas to life.
           </p>
           <a 

@@ -59,8 +59,8 @@ export default async function BlogSinglePage({ params }: { params: Promise<{ slu
           <div 
             className="prose prose-zinc dark:prose-invert max-w-none 
               prose-h2:text-3xl prose-h2:font-bold prose-h2:tracking-tight prose-h2:mb-6 prose-h2:mt-16
-              prose-p:text-xl prose-p:text-zinc-600 dark:prose-p:text-zinc-400 prose-p:leading-relaxed prose-p:mb-10
-              prose-li:text-lg prose-li:text-zinc-600 dark:prose-li:text-zinc-400 prose-blockquote:border-l-zinc-900 dark:prose-blockquote:border-l-zinc-50
+              prose-p:text-xl prose-p:text-zinc-600 dark:prose-p:text-zinc-300 prose-p:leading-relaxed prose-p:mb-10
+              prose-li:text-lg prose-li:text-zinc-600 dark:prose-li:text-zinc-300 prose-blockquote:border-l-zinc-900 dark:prose-blockquote:border-l-zinc-50
               prose-blockquote:italic prose-blockquote:text-2xl prose-blockquote:font-light"
             dangerouslySetInnerHTML={{ __html: post.content || '' }}
           />

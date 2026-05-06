@@ -50,7 +50,7 @@ export default function ServicesPage() {
               Whether you’re starting a new business, expanding your brand, or looking to 
               establish a digital presence, Ohanesian Digital Solutions can get you there.
             </p>
-            <p className="text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed">
+            <p className="text-lg text-zinc-500 dark:text-zinc-300 leading-relaxed">
               Think of us as an extension of your team, a group of specialists that give you 
               the results you need to increase your business’s success while you can focus 
               on your day-to-day.
@@ -72,7 +72,7 @@ export default function ServicesPage() {
                 <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 mb-6 tracking-tight">
                   {service.title}
                 </h2>
-                <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed font-light">
+                <p className="text-zinc-500 dark:text-zinc-300 leading-relaxed font-light">
                   {service.description}
                 </p>
               </div>
@@ -97,7 +97,7 @@ export default function ServicesPage() {
                 <h4 className="text-lg font-bold text-zinc-900 dark:text-zinc-50 mb-4">
                   {spec.title}
                 </h4>
-                <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed font-light">
+                <p className="text-sm text-zinc-500 dark:text-zinc-300 leading-relaxed font-light">
                   {spec.description}
                 </p>
               </div>
@@ -112,7 +112,7 @@ export default function ServicesPage() {
           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-8 leading-tight">
             Ready to Build Your <br />Digital Advantage?
           </h2>
-          <p className="text-lg text-zinc-500 dark:text-zinc-400 mb-12">
+          <p className="text-lg text-zinc-500 dark:text-zinc-300 mb-12">
             You’ve reviewed our services. The next step is a strategic, no-obligation 
             consultation where we focus on your specific business goals and define 
             a clear roadmap for success.

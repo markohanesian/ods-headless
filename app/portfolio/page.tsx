@@ -22,7 +22,7 @@ export default function PortfolioPage() {
               A curated inventory of high-performance digital platforms and engineering-led 
               web solutions designed for measurable business growth.
             </p>
-            <p className="text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed">
+            <p className="text-lg text-zinc-500 dark:text-zinc-300 leading-relaxed">
               Every project represents a strategic partnership focused on solving complex 
               technical challenges while delivering an exceptional user experience.
             </p>
@@ -53,7 +53,7 @@ export default function PortfolioPage() {
           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-8 leading-tight text-zinc-900 dark:text-zinc-50">
             Have a project in mind?
           </h2>
-          <p className="text-xl text-zinc-500 dark:text-zinc-400 mb-12 font-light">
+          <p className="text-xl text-zinc-500 dark:text-zinc-300 mb-12 font-light">
             We specialize in architecting custom digital solutions for businesses with unique requirements.
           </p>
           <a 

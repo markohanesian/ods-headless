@@ -59,7 +59,7 @@ const Navigation = () => {
             <Link 
               key={item.name} 
               href={item.href}
-              className="text-xs font-mono uppercase tracking-widest text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50 transition-colors"
+              className="text-xs font-mono uppercase tracking-widest text-zinc-500 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-50 transition-colors"
             >
               {item.name}
             </Link>
@@ -71,7 +71,7 @@ const Navigation = () => {
           <button 
             onClick={toggleTheme}
             aria-label="Toggle Dark Mode"
-            className="p-2 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50 transition-colors focus:outline-none min-w-[32px] min-h-[32px] flex items-center justify-center"
+            className="p-2 text-zinc-500 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-50 transition-colors focus:outline-none min-w-[32px] min-h-[32px] flex items-center justify-center"
           >
             {!mounted ? (
               <div className="w-4 h-4" /> // Empty placeholder during hydration

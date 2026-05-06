@@ -19,11 +19,11 @@ export default async function ContactPage() {
           <div>
             {pageData?.content ? (
               <div 
-                className="text-xl text-zinc-500 dark:text-zinc-400 mb-12 max-w-md prose prose-zinc dark:prose-invert font-light leading-relaxed"
+                className="text-xl text-zinc-500 dark:text-zinc-300 mb-12 max-w-md prose prose-zinc dark:prose-invert font-light leading-relaxed"
                 dangerouslySetInnerHTML={{ __html: pageData.content }}
               />
             ) : (
-              <p className="text-xl text-zinc-500 dark:text-zinc-400 mb-12 max-w-md">
+              <p className="text-xl text-zinc-500 dark:text-zinc-300 mb-12 max-w-md">
                 Ready to architect your next digital solution? Get in touch to discuss your technical requirements.
               </p>
             )}

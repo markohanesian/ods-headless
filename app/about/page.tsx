@@ -47,7 +47,7 @@ export default async function AboutPage() {
               <h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-8">
                 Our Story: Built for Business Growth
               </h2>
-              <div className="space-y-6 text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed font-light">
+              <div className="space-y-6 text-lg text-zinc-500 dark:text-zinc-300 leading-relaxed font-light">
                 <p>
                   We don’t just build websites; we design and engineer digital platforms designed 
                   for measurable results. At Ohanesian Digital Solutions, our entire process is 
@@ -73,21 +73,21 @@ export default async function AboutPage() {
             <div className="p-12 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800">
               <div className="text-5xl font-bold text-zinc-900 dark:text-zinc-50 mb-4 tracking-tighter">20+</div>
               <h3 className="text-sm font-mono uppercase tracking-widest text-zinc-400 mb-6">Years Collective Experience</h3>
-              <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              <p className="text-sm text-zinc-500 dark:text-zinc-300 leading-relaxed">
                 We apply decades of insights to build resilient, conversion-focused platforms.
               </p>
             </div>
             <div className="p-12 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800">
               <div className="text-5xl font-bold text-zinc-900 dark:text-zinc-50 mb-4 tracking-tighter">100%</div>
               <h3 className="text-sm font-mono uppercase tracking-widest text-zinc-400 mb-6">Commitment to Accessibility</h3>
-              <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              <p className="text-sm text-zinc-500 dark:text-zinc-300 leading-relaxed">
                 Every project prioritizes WCAG standards for an inclusive, high-quality user experience.
               </p>
             </div>
             <div className="p-12 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800">
               <div className="text-5xl font-bold text-zinc-900 dark:text-zinc-50 mb-4 tracking-tighter">1st</div>
               <h3 className="text-sm font-mono uppercase tracking-widest text-zinc-400 mb-6">Strategy-First Approach</h3>
-              <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              <p className="text-sm text-zinc-500 dark:text-zinc-300 leading-relaxed">
                 We start with your business goals, not just the code, ensuring maximum ROI from day one.
               </p>
             </div>
@@ -101,7 +101,7 @@ export default async function AboutPage() {
           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-8 leading-tight text-zinc-900 dark:text-zinc-50">
             Ready for Success?
           </h2>
-          <p className="text-xl text-zinc-500 dark:text-zinc-400 mb-12 font-light">
+          <p className="text-xl text-zinc-500 dark:text-zinc-300 mb-12 font-light">
             We’re committed to your business’s success – send us a message to set up a quick strategic consultation.
           </p>
           <Link 

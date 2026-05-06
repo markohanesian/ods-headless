@@ -38,7 +38,7 @@ const CoreValues = () => {
               <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 mb-4 tracking-tight relative z-10">
                 {value.title}
               </h3>
-              <p className="text-zinc-500 dark:text-zinc-400 leading-relaxed text-sm font-light">
+              <p className="text-zinc-500 dark:text-zinc-300 leading-relaxed text-sm font-light">
                 {value.description}
               </p>
             </div>

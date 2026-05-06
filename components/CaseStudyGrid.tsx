@@ -46,7 +46,7 @@ const CaseStudyGrid = async ({
                 </h2>
               )}
               {subtitle && (
-                <p className="text-zinc-600 dark:text-zinc-400 mb-6 leading-relaxed">
+                <p className="text-zinc-600 dark:text-zinc-300 mb-6 leading-relaxed">
                   {subtitle}
                 </p>
               )}
@@ -111,7 +111,7 @@ const CaseStudyGrid = async ({
                     {project.title}
                   </h3>
                   
-                  <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-8 leading-relaxed line-clamp-3 prose prose-sm dark:prose-invert max-w-none font-light">
+                  <p className="text-sm text-zinc-500 dark:text-zinc-300 mb-8 leading-relaxed line-clamp-3 prose prose-sm dark:prose-invert max-w-none font-light">
                     {project.excerpt}
                   </p>
 

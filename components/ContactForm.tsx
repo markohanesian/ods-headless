@@ -49,7 +49,7 @@ export default function ContactForm() {
           </svg>
         </div>
         <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">Transmission Received</h3>
-        <p className="text-zinc-500 dark:text-zinc-400">Our team will review your project brief and respond shortly.</p>
+        <p className="text-zinc-500 dark:text-zinc-300">Our team will review your project brief and respond shortly.</p>
         <button 
           onClick={() => setStatus("idle")}
           className="mt-8 text-[10px] font-mono uppercase tracking-widest text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors"

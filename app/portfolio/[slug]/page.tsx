@@ -29,7 +29,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
              </span>
              <div className={`h-px w-12 ${accentColor} opacity-50`}></div>
           </div>
-          <h1 className="text-5xl md:text-8xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-16 leading-[0.9]">
+          <h1 className="text-5xl md:text-8xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-16 leading-[0.95] md:leading-[0.9]">
             {post.title}
           </h1>
           
@@ -42,7 +42,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             </div>
             <div>
               <h3 className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-4">Deliverables</h3>
-              <p className="font-bold text-lg text-zinc-600 dark:text-zinc-400">
+              <p className="font-bold text-lg text-zinc-600 dark:text-zinc-300">
                 {post.tags?.nodes?.length ? post.tags.nodes.map(t => t.name).join(" / ") : "Strategy / Engineering"}
               </p>
             </div>
@@ -73,49 +73,47 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
             <div className="lg:col-span-8">
               <div 
-                className={`prose prose-zinc dark:prose-invert max-w-none 
-                  /* Typography Overrides */
-                  [&_h2]:!text-4xl md:[&_h2]:!text-7xl [&_h2]:!font-bold [&_h2]:!tracking-tighter [&_h2]:!mb-12 [&_h2]:!mt-32 first:[&_h2]:!mt-0 [&_h2]:!uppercase [&_h2]:!leading-[0.9]
-                  [&_h2_*]:!text-inherit /* Override font-size: inherit on children */
+                className={`max-w-none text-zinc-900 dark:text-zinc-50
+                  /* Global Reset for internal consistency */
+                  [&_*]:!m-0 [&_*]:!p-0
                   
-                  [&_h3]:!text-2xl md:[&_h3]:!text-3xl [&_h3]:!font-bold [&_h3]:!tracking-tight [&_h3]:!mb-8 [&_h3]:!mt-24
-                  [&_h3_*]:!text-inherit
+                  /* Typography Overrides - Headings */
+                  [&_h2]:!text-3xl md:[&_h2]:!text-6xl [&_h2]:!font-bold [&_h2]:!tracking-tighter [&_h2]:!mt-24 [&_h2]:!mb-10 [&_h2]:!leading-[1.1] [&_h2]:!text-zinc-900 dark:[&_h2]:!text-zinc-50 [&_h2]:!block
+                  [&_h3]:!text-2xl md:[&_h3]:!text-3xl [&_h3]:!font-bold [&_h3]:!tracking-tight [&_h3]:!mt-16 [&_h3]:!mb-6 [&_h3]:!text-zinc-900 dark:[&_h3]:!text-zinc-50 [&_h3]:!block
                   
-                  prose-p:text-lg md:prose-p:text-xl prose-p:leading-relaxed prose-p:text-zinc-600 dark:prose-p:text-zinc-400 prose-p:font-light prose-p:mb-12
+                  /* Typography Overrides - Body Text (Match the "good" bullets) */
+                  [&_p]:!text-lg md:[&_p]:!text-xl [&_p]:!leading-relaxed [&_p]:!text-zinc-600 dark:[&_p]:!text-zinc-300 [&_p]:!font-light [&_p]:!mb-10 [&_p]:!block
+                  [&_li]:!text-lg md:[&_li]:!text-xl [&_li]:!leading-relaxed [&_li]:!text-zinc-600 dark:[&_li]:!text-zinc-300 [&_li]:!font-light
                   
-                  /* Native WP Column Design (Minimal) */
-                  [&_.wp-block-columns]:flex [&_.wp-block-columns]:flex-col md:[&_.wp-block-columns]:flex-row [&_.wp-block-columns]:gap-6 md:[&_.wp-block-columns]:gap-8 [&_.wp-block-columns]:my-24
-                  [&_.wp-block-column]:flex-1 [&_.wp-block-column]:min-w-0
+                  /* Force inherit colors/fonts on all nested spans/elements within paragraphs */
+                  [&_p_*]:!text-inherit [&_p_*]:!font-inherit [&_p_*]:!font-size-inherit
                   
-                  /* List Normalization */
-                  [&_ul]:list-disc [&_ul]:pl-6 md:[&_ul]:pl-8 [&_ul]:mb-16 [&_ul]:mt-8 [&_ul]:space-y-4
-                  [&_ol]:list-decimal [&_ol]:pl-6 md:[&_ol]:pl-8 [&_ol]:mb-16 [&_ol]:mt-8 [&_ol]:space-y-4
-                  [&_li]:text-lg md:[&_li]:text-xl [&_li]:leading-relaxed [&_li]:text-zinc-600 dark:[&_li]:text-zinc-400 [&_li]:font-light
+                  /* List Specifics */
+                  [&_ul]:!list-disc [&_ul]:!pl-6 [&_ul]:!mb-12 [&_ul]:!mt-4 [&_ul]:!space-y-4 [&_ul]:!block
+                  [&_ol]:!list-decimal [&_ol]:!pl-6 [&_ol]:!mb-12 [&_ol]:!mt-4 [&_ol]:!space-y-4 [&_ol]:!block
+                  
+                  /* Column & Layout handling */
+                  [&_.wp-block-columns]:!flex [&_.wp-block-columns]:!flex-col md:[&_.wp-block-columns]:!flex-row [&_.wp-block-columns]:!gap-8 md:[&_.wp-block-columns]:!gap-16 [&_.wp-block-columns]:!my-20 [&_.wp-block-columns]:!block
+                  [&_.wp-block-column]:!flex-1 [&_.wp-block-column]:!min-w-0
                   
                   /* Image handling */
-                  [&_figure]:my-24
-                  [&_img]:border [&_img]:border-zinc-100 dark:[&_img]:border-zinc-900
+                  [&_figure]:!my-20 [&_figure]:!block
+                  [&_img]:!border [&_img]:!border-zinc-100 dark:[&_img]:!border-zinc-900 [&_img]:!w-full [&_img]:!h-auto
                   
                   /* SVG & Icon Sizing Fix */
-                  [&_svg]:w-[50px] [&_svg]:h-auto
-                  [&_img[src*=".svg"]]:w-[50px] [&_img[src*=".svg"]]:h-auto
+                  [&_svg]:!w-[40px] [&_svg]:!h-auto [&_svg]:!inline-block
                   
                   /* KPI / Stat Column Styling - Enhanced for Large Percentages */
-                  [&_.wp-block-column:has(svg)]:!flex [&_.wp-block-column:has(svg)]:!flex-row [&_.wp-block-column:has(svg)]:!items-center [&_.wp-block-column:has(svg)]:!justify-center [&_.wp-block-column:has(svg)]:!gap-4
+                  [&_.wp-block-column:has(svg)]:!flex [&_.wp-block-column:has(svg)]:!flex-col [&_.wp-block-column:has(svg)]:!items-center [&_.wp-block-column:has(svg)]:!justify-center [&_.wp-block-column:has(svg)]:!gap-2
                   [&_.wp-block-column:has(svg)]:!p-8 [&_.wp-block-column:has(svg)]:!bg-zinc-50 dark:[&_.wp-block-column:has(svg)]:!bg-zinc-900/50
                   [&_.wp-block-column:has(svg)]:!border [&_.wp-block-column:has(svg)]:!border-zinc-100 dark:[&_.wp-block-column:has(svg)]:!border-zinc-800
                   [&_.wp-block-column:has(svg)]:!rounded-sm
-                  [&_.wp-block-column:has(svg)_*]:!m-0
                   
                   /* Style both H2 and H3 as the large percentage within a card */
-                  [&_.wp-block-column:has(svg)_h2]:!text-4xl md:[&_.wp-block-column:has(svg)_h2]:!text-6xl [&_.wp-block-column:has(svg)_h2]:!font-bold [&_.wp-block-column:has(svg)_h2]:!tracking-tighter [&_.wp-block-column:has(svg)_h2]:!text-accent-blue
-                  [&_.wp-block-column:has(svg)_h2_*]:!text-inherit [&_.wp-block-column:has(svg)_h2_*]:!font-size-inherit
+                  [&_.wp-block-column:has(svg)_h2]:!text-5xl md:[&_.wp-block-column:has(svg)_h2]:!text-6xl [&_.wp-block-column:has(svg)_h2]:!font-bold [&_.wp-block-column:has(svg)_h2]:!tracking-tighter [&_.wp-block-column:has(svg)_h2]:!text-accent-blue [&_.wp-block-column:has(svg)_h2]:!m-0
+                  [&_.wp-block-column:has(svg)_h3]:!text-5xl md:[&_.wp-block-column:has(svg)_h3]:!text-6xl [&_.wp-block-column:has(svg)_h3]:!font-bold [&_.wp-block-column:has(svg)_h3]:!tracking-tighter [&_.wp-block-column:has(svg)_h3]:!text-accent-blue [&_.wp-block-column:has(svg)_h3]:!m-0
                   
-                  [&_.wp-block-column:has(svg)_h3]:!text-4xl md:[&_.wp-block-column:has(svg)_h3]:!text-6xl [&_.wp-block-column:has(svg)_h3]:!font-bold [&_.wp-block-column:has(svg)_h3]:!tracking-tighter [&_.wp-block-column:has(svg)_h3]:!text-accent-blue
-                  [&_.wp-block-column:has(svg)_h3_*]:!text-inherit [&_.wp-block-column:has(svg)_h3_*]:!font-size-inherit
-                  
-                  [&_.wp-block-column:has(svg)_p]:!text-[10px] md:[&_.wp-block-column:has(svg)_p]:!text-xs [&_.wp-block-column:has(svg)_p]:!uppercase [&_.wp-block-column:has(svg)_p]:!tracking-[0.2em] [&_.wp-block-column:has(svg)_p]:!text-zinc-500 dark:[&_.wp-block-column:has(svg)_p]:!text-zinc-400 [&_.wp-block-column:has(svg)_p]:!font-mono
-                  [&_.wp-block-column:has(svg)_p_*]:!text-inherit [&_.wp-block-column:has(svg)_p_*]:!font-size-inherit`} 
+                  [&_.wp-block-column:has(svg)_p]:!text-[10px] md:[&_.wp-block-column:has(svg)_p]:!text-xs [&_.wp-block-column:has(svg)_p]:!uppercase [&_.wp-block-column:has(svg)_p]:!tracking-[0.2em] [&_.wp-block-column:has(svg)_p]:!text-zinc-500 dark:[&_.wp-block-column:has(svg)_p]:!text-zinc-300 [&_.wp-block-column:has(svg)_p]:!font-mono [&_.wp-block-column:has(svg)_p]:!m-0`} 
                 dangerouslySetInnerHTML={{ __html: post.content || '' }}
               />
             </div>
@@ -123,7 +121,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             <aside className="lg:col-span-4">
               <div className="sticky top-32 space-y-16">
                 <div className={`border-l-2 border-zinc-900 dark:border-zinc-50 pl-8 py-4`}>
-                  <p className="text-lg font-light text-zinc-500 dark:text-zinc-400 italic leading-relaxed">
+                  <p className="text-lg font-light text-zinc-500 dark:text-zinc-300 italic leading-relaxed">
                     &quot;This project represents a strategic integration of performance engineering and user-centric design principles, 
                     prioritizing business ROI over aesthetic trends.&quot;
                   </p>
