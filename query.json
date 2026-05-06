@@ -1,3 +1,0 @@
-{
-  "query": "{ posts(first: 1) { nodes { title slug } } }"
-}
