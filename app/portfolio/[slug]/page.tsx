@@ -49,8 +49,8 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             <div>
               <h3 className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-4">Deploy</h3>
               <p className="font-bold text-lg text-zinc-600 dark:text-zinc-300">
-                {post.portfolioDetails?.projectUrl ? (
-                  <a href={post.portfolioDetails.projectUrl} target="_blank" rel="noopener noreferrer" className="hover:text-brand transition-colors">
+                {post.projectUrl ? (
+                  <a href={post.projectUrl} target="_blank" rel="noopener noreferrer" className="hover:text-brand transition-colors">
                     Live Site →
                   </a>
                 ) : "Internal Only"}
@@ -59,8 +59,8 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             <div>
               <h3 className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-4">Github</h3>
               <p className="font-bold text-lg text-zinc-600 dark:text-zinc-300">
-                {post.portfolioDetails?.githubUrl ? (
-                  <a href={post.portfolioDetails.githubUrl} target="_blank" rel="noopener noreferrer" className="hover:text-brand transition-colors">
+                {post.githubUrl ? (
+                  <a href={post.githubUrl} target="_blank" rel="noopener noreferrer" className="hover:text-brand transition-colors">
                     Repository →
                   </a>
                 ) : "Private"}

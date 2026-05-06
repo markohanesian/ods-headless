@@ -24,10 +24,50 @@ export interface PortfolioItem {
       slug: string;
     }>;
   };
-  portfolioDetails?: {
-    projectUrl?: string;
-    githubUrl?: string;
-  };
+  projectUrl?: string;
+  githubUrl?: string;
+}
+
+/**
+ * Extracts specific links from WordPress content HTML based on descriptive titles or text.
+ */
+function extractLinksFromContent(content: string = ''): { projectUrl?: string; githubUrl?: string } {
+  if (!content) return {};
+  
+  const result: { projectUrl?: string; githubUrl?: string } = {};
+  
+  // Use regex to find all <a> tags and their inner text
+  // This version specifically targets the user's requested text format
+  const linkRegex = /<a\s+(?:[^>]*?\s+)?href=(["'])(.*?)\1[^>]*?>(.*?)<\/a>/gi;
+  let match;
+  
+  while ((match = linkRegex.exec(content)) !== null) {
+    const href = match[2];
+    const text = match[3].toLowerCase().trim();
+    
+    if (text === 'link to github') {
+      result.githubUrl = href;
+    } else if (text === 'link to deployment') {
+      result.projectUrl = href;
+    }
+  }
+  
+  // Broad fallback for existing/legacy posts if specific text isn't found
+  if (!result.projectUrl || !result.githubUrl) {
+    linkRegex.lastIndex = 0; // reset regex
+    while ((match = linkRegex.exec(content)) !== null) {
+      const href = match[2];
+      const text = match[3].toLowerCase();
+      
+      if (!result.githubUrl && (text.includes('github') || text.includes('repository'))) {
+        result.githubUrl = href;
+      } else if (!result.projectUrl && (text.includes('deployment') || text.includes('live site') || text.includes('visit site'))) {
+        result.projectUrl = href;
+      }
+    }
+  }
+  
+  return result;
 }
 
 export async function wpFetch<T>(query: string, variables = {}): Promise<T> {
@@ -178,16 +218,20 @@ export async function getPostBySlug(slug: string): Promise<PortfolioItem | null>
             slug
           }
         }
-        portfolioDetails {
-          projectUrl
-          githubUrl
-        }
       }
     }
   `;
 
   const data = await wpFetch<{ post: PortfolioItem }>(query, { id: slug });
-  return data?.post || null;
+  const post = data?.post || null;
+  
+  if (post && post.content) {
+    const extracted = extractLinksFromContent(post.content);
+    post.projectUrl = extracted.projectUrl;
+    post.githubUrl = extracted.githubUrl;
+  }
+  
+  return post;
 }
 
 export async function getAboutPageData() {
