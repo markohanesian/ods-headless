@@ -24,6 +24,10 @@ export interface PortfolioItem {
       slug: string;
     }>;
   };
+  portfolioDetails?: {
+    projectUrl?: string;
+    githubUrl?: string;
+  };
 }
 
 export async function wpFetch<T>(query: string, variables = {}): Promise<T> {
@@ -173,6 +177,10 @@ export async function getPostBySlug(slug: string): Promise<PortfolioItem | null>
             name
             slug
           }
+        }
+        portfolioDetails {
+          projectUrl
+          githubUrl
         }
       }
     }
