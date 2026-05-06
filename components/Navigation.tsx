@@ -96,7 +96,7 @@ const Navigation = () => {
           
           <Link 
             href="/contact"
-            className="hidden sm:block px-5 py-2 text-[10px] font-mono uppercase tracking-widest bg-[#fcaf3b] text-zinc-900 hover:bg-zinc-50 hover:text-zinc-900 transition-colors font-bold"
+            className="hidden sm:block px-5 py-2 text-[10px] font-mono uppercase tracking-widest bg-brand text-zinc-900 hover:bg-zinc-50 hover:text-zinc-900 transition-colors font-bold"
           >
             Connect
           </Link>

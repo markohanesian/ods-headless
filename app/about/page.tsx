@@ -12,9 +12,10 @@ export default async function AboutPage() {
       {/* Header Section */}
       <section className="px-6 lg:px-12 pt-32 pb-24 border-b border-zinc-100 dark:border-zinc-900">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-12">
-            About Us
+          <h1 className="text-6xl md:text-8xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-8 uppercase">
+            About
           </h1>
+          <div className="h-px w-24 bg-accent-blue mb-12"></div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative aspect-[4/5] bg-zinc-100 dark:bg-zinc-900 overflow-hidden border border-zinc-200 dark:border-zinc-800 w-full md:max-w-[533px] md:mx-auto lg:mx-0">

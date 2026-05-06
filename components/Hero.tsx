@@ -15,7 +15,7 @@ const Hero = () => {
         
         <h1 className="text-6xl md:text-9xl font-bold tracking-tighter leading-[0.9] mb-8 text-zinc-900 dark:text-zinc-50">
           Elevate Your <br />
-          <span className="text-zinc-400 dark:text-zinc-600">Digital Presence.</span>
+          <span className="text-accent-blue">Digital Presence.</span>
         </h1>
         
         <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 max-w-3xl mb-12 leading-relaxed font-light">

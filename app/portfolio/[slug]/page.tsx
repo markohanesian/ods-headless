@@ -27,7 +27,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
              <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-400">
                Archive // {mainCategory}
              </span>
-             <div className={`h-px w-12 ${accentColor} opacity-20`}></div>
+             <div className={`h-px w-12 ${accentColor} opacity-50`}></div>
           </div>
           <h1 className="text-5xl md:text-8xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-16 leading-[0.9]">
             {post.title}
@@ -74,41 +74,48 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             <div className="lg:col-span-8">
               <div 
                 className={`prose prose-zinc dark:prose-invert max-w-none 
-                  prose-h2:text-3xl md:prose-h2:text-5xl prose-h2:font-bold prose-h2:tracking-tighter prose-h2:mb-12 prose-h2:mt-32 first:prose-h2:mt-0 prose-h2:uppercase prose-h2:leading-[1.1]
-                  prose-h3:text-xl md:prose-h3:text-2xl prose-h3:font-bold prose-h3:tracking-tight prose-h3:mb-8 prose-h3:mt-24
-                  prose-img:border prose-img:border-zinc-200 dark:prose-img:border-zinc-800 prose-img:my-20
+                  /* Typography Overrides */
+                  [&_h2]:!text-4xl md:[&_h2]:!text-7xl [&_h2]:!font-bold [&_h2]:!tracking-tighter [&_h2]:!mb-12 [&_h2]:!mt-32 first:[&_h2]:!mt-0 [&_h2]:!uppercase [&_h2]:!leading-[0.9]
+                  [&_h2_*]:!text-inherit /* Override font-size: inherit on children */
                   
-                  /* AGGRESSIVE BACKGROUND & PADDING RESET FOR WP/KADENCE BLOCKS */
-                  [&_div]:!bg-transparent [&_section]:!bg-transparent [&_.has-background]:!bg-transparent [&_.kb-row-layout-wrap]:!bg-transparent [&_.wp-block-kadence-rowlayout]:!bg-transparent
-                  [&_div]:!bg-none [&_section]:!bg-none
-                  [&_.kb-row-layout-wrap]:!p-0 [&_.kb-row-layout-wrap]:!m-0 [&_.wp-block-kadence-rowlayout]:!p-0 [&_.wp-block-kadence-rowlayout]:!m-0
-                  [&_.kt-inside-inner-col]:!p-0 [&_.kt-inside-inner-col]:!m-0
+                  [&_h3]:!text-2xl md:[&_h3]:!text-3xl [&_h3]:!font-bold [&_h3]:!tracking-tight [&_h3]:!mb-8 [&_h3]:!mt-24
+                  [&_h3_*]:!text-inherit
                   
-                  /* Force H2 override for WP classes */
-                  [&_h2]:text-3xl md:[&_h2]:text-5xl [&_h2]:font-bold [&_h2]:tracking-tighter [&_h2]:uppercase [&_h2]:leading-[1.1] [&_h2]:mt-32 first:[&_h2]:mt-0
-                  [&_h3]:mt-24
+                  prose-p:text-lg md:prose-p:text-xl prose-p:leading-relaxed prose-p:text-zinc-600 dark:prose-p:text-zinc-400 prose-p:font-light prose-p:mb-12
                   
                   /* Native WP Column Design (Minimal) */
-                  [&_.wp-block-columns]:flex [&_.wp-block-columns]:flex-col md:[&_.wp-block-columns]:flex-row [&_.wp-block-columns]:gap-12 md:[&_.wp-block-columns]:gap-16 [&_.wp-block-columns]:my-24
+                  [&_.wp-block-columns]:flex [&_.wp-block-columns]:flex-col md:[&_.wp-block-columns]:flex-row [&_.wp-block-columns]:gap-6 md:[&_.wp-block-columns]:gap-8 [&_.wp-block-columns]:my-24
                   [&_.wp-block-column]:flex-1 [&_.wp-block-column]:min-w-0
                   
-                  /* Paragraph Typography */
-                  [&_p]:text-lg md:[&_p]:text-xl [&_p]:leading-relaxed [&_p]:text-zinc-600 dark:[&_p]:text-zinc-400 [&_p]:font-light [&_p]:mb-12
-                  
-                  /* List Normalization (Key Features, etc.) */
+                  /* List Normalization */
                   [&_ul]:list-disc [&_ul]:pl-6 md:[&_ul]:pl-8 [&_ul]:mb-16 [&_ul]:mt-8 [&_ul]:space-y-4
                   [&_ol]:list-decimal [&_ol]:pl-6 md:[&_ol]:pl-8 [&_ol]:mb-16 [&_ol]:mt-8 [&_ol]:space-y-4
-                  [&_li]:text-lg md:[&_li]:text-xl [&_li]:leading-relaxed [&_li]:text-zinc-600 dark:[&_li]:text-zinc-400 [&_li]:font-light [&_li]:m-0
-                  [&_li_p]:m-0 [&_li_p]:inline
+                  [&_li]:text-lg md:[&_li]:text-xl [&_li]:leading-relaxed [&_li]:text-zinc-600 dark:[&_li]:text-zinc-400 [&_li]:font-light
                   
-                  /* Section Spacing & Transitions */
-                  [&_h2+p]:mt-8
-                  [&_h3+p]:mt-6
-                  [&_p+h2]:mt-32
-                  
-                  /* Image handling within content */
+                  /* Image handling */
                   [&_figure]:my-24
-                  [&_figure_img]:border [&_figure_img]:border-zinc-100 dark:[&_figure_img]:border-zinc-900`} 
+                  [&_img]:border [&_img]:border-zinc-100 dark:[&_img]:border-zinc-900
+                  
+                  /* SVG & Icon Sizing Fix */
+                  [&_svg]:w-[50px] [&_svg]:h-auto
+                  [&_img[src*=".svg"]]:w-[50px] [&_img[src*=".svg"]]:h-auto
+                  
+                  /* KPI / Stat Column Styling - Enhanced for Large Percentages */
+                  [&_.wp-block-column:has(svg)]:!flex [&_.wp-block-column:has(svg)]:!flex-row [&_.wp-block-column:has(svg)]:!items-center [&_.wp-block-column:has(svg)]:!justify-center [&_.wp-block-column:has(svg)]:!gap-4
+                  [&_.wp-block-column:has(svg)]:!p-8 [&_.wp-block-column:has(svg)]:!bg-zinc-50 dark:[&_.wp-block-column:has(svg)]:!bg-zinc-900/50
+                  [&_.wp-block-column:has(svg)]:!border [&_.wp-block-column:has(svg)]:!border-zinc-100 dark:[&_.wp-block-column:has(svg)]:!border-zinc-800
+                  [&_.wp-block-column:has(svg)]:!rounded-sm
+                  [&_.wp-block-column:has(svg)_*]:!m-0
+                  
+                  /* Style both H2 and H3 as the large percentage within a card */
+                  [&_.wp-block-column:has(svg)_h2]:!text-4xl md:[&_.wp-block-column:has(svg)_h2]:!text-6xl [&_.wp-block-column:has(svg)_h2]:!font-bold [&_.wp-block-column:has(svg)_h2]:!tracking-tighter [&_.wp-block-column:has(svg)_h2]:!text-accent-blue
+                  [&_.wp-block-column:has(svg)_h2_*]:!text-inherit [&_.wp-block-column:has(svg)_h2_*]:!font-size-inherit
+                  
+                  [&_.wp-block-column:has(svg)_h3]:!text-4xl md:[&_.wp-block-column:has(svg)_h3]:!text-6xl [&_.wp-block-column:has(svg)_h3]:!font-bold [&_.wp-block-column:has(svg)_h3]:!tracking-tighter [&_.wp-block-column:has(svg)_h3]:!text-accent-blue
+                  [&_.wp-block-column:has(svg)_h3_*]:!text-inherit [&_.wp-block-column:has(svg)_h3_*]:!font-size-inherit
+                  
+                  [&_.wp-block-column:has(svg)_p]:!text-[10px] md:[&_.wp-block-column:has(svg)_p]:!text-xs [&_.wp-block-column:has(svg)_p]:!uppercase [&_.wp-block-column:has(svg)_p]:!tracking-[0.2em] [&_.wp-block-column:has(svg)_p]:!text-zinc-500 dark:[&_.wp-block-column:has(svg)_p]:!text-zinc-400 [&_.wp-block-column:has(svg)_p]:!font-mono
+                  [&_.wp-block-column:has(svg)_p_*]:!text-inherit [&_.wp-block-column:has(svg)_p_*]:!font-size-inherit`} 
                 dangerouslySetInnerHTML={{ __html: post.content || '' }}
               />
             </div>

@@ -12,9 +12,10 @@ export default function PortfolioPage() {
       {/* Header Section */}
       <section className="px-6 lg:px-12 pt-32 pb-24 border-b border-zinc-100 dark:border-zinc-900">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-12">
+          <h1 className="text-6xl md:text-8xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-8 uppercase">
             Portfolio
           </h1>
+          <div className="h-px w-24 bg-accent-blue mb-12"></div>
           
           <div className="max-w-3xl">
             <p className="text-2xl md:text-3xl text-zinc-900 dark:text-zinc-50 font-light leading-tight mb-8">

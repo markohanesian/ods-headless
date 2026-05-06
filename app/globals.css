@@ -2,6 +2,7 @@
 
 @theme {
   --color-brand: #fcaf3b;
+  --color-accent-blue: #304ffe;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);

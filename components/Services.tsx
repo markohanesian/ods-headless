@@ -48,17 +48,17 @@ const Services = () => {
           <h2 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4 uppercase">
             Our Services
           </h2>
-          <div className="h-px w-full bg-zinc-200 dark:bg-zinc-800"></div>
+          <div className="h-px w-full bg-accent-blue/30 dark:bg-accent-blue/20"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {SERVICES.map((service) => (
             <div key={service.id} className="group">
               <div className="text-zinc-900 dark:text-zinc-50 mb-6 flex items-center gap-4">
-                <div className="p-2 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg">
+                <div className="p-2 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg group-hover:border-brand/50 transition-colors">
                   {service.icon}
                 </div>
-                <span className="h-px w-8 bg-zinc-200 dark:bg-zinc-800"></span>
+                <span className="h-px w-8 bg-accent-blue/30 dark:bg-accent-blue/20"></span>
               </div>
               <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 mb-6 tracking-tight">
                 {service.title}
