@@ -1,4 +1,4 @@
-export const WP_URL = process.env.WP_URL || "https://ohanesiandigitalsolutions.com/graphql";
+export const WP_URL = process.env.WP_URL || "https://wp.ohanesiandigitalsolutions.com/graphql";
 
 export interface PortfolioItem {
   title: string;
