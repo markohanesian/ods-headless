@@ -29,15 +29,36 @@ export interface PortfolioItem {
 }
 
 /**
- * Extracts specific links from WordPress content HTML based on descriptive titles or text.
+ * Fixes WordPress media URLs by pointing them to the new wp. subdomain.
  */
-function extractLinksFromContent(content: string = ''): { projectUrl?: string; githubUrl?: string } {
-  if (!content) return {};
+function fixMediaUrls(url: string = ''): string {
+  if (!url) return '';
+  // Replace the old main domain with the new wp subdomain for images/media
+  return url.replace('https://ohanesiandigitalsolutions.com/wp-content/', 'https://wp.ohanesiandigitalsolutions.com/wp-content/');
+}
+
+/**
+ * Processes content HTML to fix image URLs and extract metadata links.
+ */
+function processContent(content: string = ''): { 
+  fixedContent: string; 
+  projectUrl?: string; 
+  githubUrl?: string 
+} {
+  if (!content) return { fixedContent: '' };
   
-  const result: { projectUrl?: string; githubUrl?: string } = {};
+  // 1. Fix Image URLs in the content
+  const fixedContent = content.replace(
+    /src="https:\/\/ohanesiandigitalsolutions\.com\/wp-content\//g, 
+    'src="https://wp.ohanesiandigitalsolutions.com/wp-content/'
+  ).replace(
+    /href="https:\/\/ohanesiandigitalsolutions\.com\/wp-content\//g, 
+    'href="https://wp.ohanesiandigitalsolutions.com/wp-content/'
+  );
+
+  const result: { fixedContent: string; projectUrl?: string; githubUrl?: string } = { fixedContent };
   
-  // Use regex to find all <a> tags and their inner text
-  // This version specifically targets the user's requested text format
+  // 2. Extract specific links (Deployment/Github)
   const linkRegex = /<a\s+(?:[^>]*?\s+)?href=(["'])(.*?)\1[^>]*?>(.*?)<\/a>/gi;
   let match;
   
@@ -52,16 +73,15 @@ function extractLinksFromContent(content: string = ''): { projectUrl?: string; g
     }
   }
   
-  // Broad fallback for existing/legacy posts if specific text isn't found
+  // Fallback for links
   if (!result.projectUrl || !result.githubUrl) {
-    linkRegex.lastIndex = 0; // reset regex
+    linkRegex.lastIndex = 0;
     while ((match = linkRegex.exec(content)) !== null) {
       const href = match[2];
       const text = match[3].toLowerCase();
-      
       if (!result.githubUrl && (text.includes('github') || text.includes('repository'))) {
         result.githubUrl = href;
-      } else if (!result.projectUrl && (text.includes('deployment') || text.includes('live site') || text.includes('visit site'))) {
+      } else if (!result.projectUrl && (text.includes('deployment') || text.includes('live site'))) {
         result.projectUrl = href;
       }
     }
@@ -152,6 +172,12 @@ export async function getPortfolioItems(category?: string, first: number = 20, e
 
     return {
       ...node,
+      featuredImage: node.featuredImage ? {
+        node: {
+          ...node.featuredImage.node,
+          sourceUrl: fixMediaUrls(node.featuredImage.node.sourceUrl)
+        }
+      } : undefined,
       excerpt: cleanExcerpt ? cleanExcerpt.substring(0, 160) + (cleanExcerpt.length > 160 ? '...' : '') : ''
     };
   });
@@ -188,6 +214,12 @@ export async function getBlogPosts(): Promise<PortfolioItem[]> {
   
   return nodes.map(node => ({
     ...node,
+    featuredImage: node.featuredImage ? {
+      node: {
+        ...node.featuredImage.node,
+        sourceUrl: fixMediaUrls(node.featuredImage.node.sourceUrl)
+      }
+    } : undefined,
     excerpt: node.excerpt?.replace(/<[^>]*>?/gm, '').substring(0, 160) + '...'
   }));
 }
@@ -225,10 +257,16 @@ export async function getPostBySlug(slug: string): Promise<PortfolioItem | null>
   const data = await wpFetch<{ post: PortfolioItem }>(query, { id: slug });
   const post = data?.post || null;
   
-  if (post && post.content) {
-    const extracted = extractLinksFromContent(post.content);
-    post.projectUrl = extracted.projectUrl;
-    post.githubUrl = extracted.githubUrl;
+  if (post) {
+    if (post.featuredImage) {
+      post.featuredImage.node.sourceUrl = fixMediaUrls(post.featuredImage.node.sourceUrl);
+    }
+    if (post.content) {
+      const processed = processContent(post.content);
+      post.content = processed.fixedContent;
+      post.projectUrl = processed.projectUrl;
+      post.githubUrl = processed.githubUrl;
+    }
   }
   
   return post;
@@ -262,7 +300,19 @@ export async function getAboutPageData() {
   }
 
   const data = await wpFetch<{ page: AboutPageData }>(query);
-  return data?.page;
+  const page = data?.page;
+  
+  if (page) {
+    if (page.featuredImage) {
+      page.featuredImage.node.sourceUrl = fixMediaUrls(page.featuredImage.node.sourceUrl);
+    }
+    if (page.content) {
+      const processed = processContent(page.content);
+      page.content = processed.fixedContent;
+    }
+  }
+  
+  return page;
 }
 
 export async function getPageByUri(uri: string) {
@@ -293,5 +343,17 @@ export async function getPageByUri(uri: string) {
   }
 
   const data = await wpFetch<{ page: PageData }>(query, { id: uri });
-  return data?.page;
+  const page = data?.page;
+
+  if (page) {
+    if (page.featuredImage) {
+      page.featuredImage.node.sourceUrl = fixMediaUrls(page.featuredImage.node.sourceUrl);
+    }
+    if (page.content) {
+      const processed = processContent(page.content);
+      page.content = processed.fixedContent;
+    }
+  }
+  
+  return page;
 }
