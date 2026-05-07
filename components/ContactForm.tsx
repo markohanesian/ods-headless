@@ -61,52 +61,54 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div>
-        <label className="block text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-2">Full Name</label>
+    <form onSubmit={handleSubmit} className="space-y-8 md:space-y-10">
+      <div className="space-y-2">
+        <label className="block text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400">Full Name</label>
         <input 
           type="text" 
           name="name"
           required
           value={formData.name}
           onChange={handleChange}
-          className="w-full bg-transparent border-b border-zinc-300 dark:border-zinc-700 py-2 focus:outline-none focus:border-zinc-900 dark:focus:border-zinc-50 transition-colors"
+          className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-brand transition-colors rounded-none appearance-none"
           placeholder="John Doe"
         />
       </div>
-      <div>
-        <label className="block text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-2">Email Address</label>
+      <div className="space-y-2">
+        <label className="block text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400">Email Address</label>
         <input 
           type="email" 
           name="email"
           required
           value={formData.email}
           onChange={handleChange}
-          className="w-full bg-transparent border-b border-zinc-300 dark:border-zinc-700 py-2 focus:outline-none focus:border-zinc-900 dark:focus:border-zinc-50 transition-colors"
+          className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-brand transition-colors rounded-none appearance-none"
           placeholder="john@example.com"
         />
       </div>
-      <div>
-        <label className="block text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-2">Project Brief</label>
+      <div className="space-y-2">
+        <label className="block text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400">Project Brief</label>
         <textarea 
           name="message"
           required
           value={formData.message}
           onChange={handleChange}
           rows={4}
-          className="w-full bg-transparent border-b border-zinc-300 dark:border-zinc-700 py-2 focus:outline-none focus:border-zinc-900 dark:focus:border-zinc-50 transition-colors resize-none"
-          placeholder="Tell us about your project..."
+          className="w-full bg-transparent border-b border-zinc-200 dark:border-zinc-800 py-3 text-lg focus:outline-none focus:border-brand transition-colors resize-none rounded-none appearance-none"
+          placeholder="Tell us about your project requirements..."
         />
       </div>
       {status === "error" && (
-        <p className="text-xs text-red-500 font-mono">An error occurred. Please try again or email us directly.</p>
+        <div className="p-4 bg-red-500/10 border border-red-500/20">
+          <p className="text-xs text-red-500 font-mono">Transmission error. Please check your connection and try again.</p>
+        </div>
       )}
       <button 
         type="submit"
         disabled={status === "submitting"}
-        className="w-full py-4 bg-brand text-zinc-900 font-bold uppercase tracking-widest text-xs hover:bg-[#e69b2d] transition-colors disabled:opacity-50"
+        className="w-full py-6 bg-brand text-zinc-900 font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-[#e69b2d] transition-all disabled:opacity-50 shadow-xl"
       >
-        {status === "submitting" ? "Sending..." : "Get in Touch"}
+        {status === "submitting" ? "Processing..." : "Send Transmission"}
       </button>
     </form>
   );
