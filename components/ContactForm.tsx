@@ -4,6 +4,7 @@ import React, { useState } from "react";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState<string>("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -13,6 +14,7 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("submitting");
+    setErrorMessage("");
 
     try {
       const response = await fetch("/api/contact", {
@@ -23,15 +25,19 @@ export default function ContactForm() {
         body: JSON.stringify(formData),
       });
 
+      const data = await response.json();
+
       if (response.ok) {
         setStatus("success");
         setFormData({ name: "", email: "", message: "" });
       } else {
         setStatus("error");
+        setErrorMessage(data.error || "Transmission failed.");
       }
     } catch (error) {
       console.error("Submission error:", error);
       setStatus("error");
+      setErrorMessage("Network error. Please try again.");
     }
   };
 
@@ -100,7 +106,7 @@ export default function ContactForm() {
       </div>
       {status === "error" && (
         <div className="p-4 bg-red-500/10 border border-red-500/20">
-          <p className="text-xs text-red-500 font-mono">Transmission error. Please check your connection and try again.</p>
+          <p className="text-xs text-red-500 font-mono">{errorMessage}</p>
         </div>
       )}
       <button 
