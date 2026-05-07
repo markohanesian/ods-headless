@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import CaseStudyGrid from "@/components/CaseStudyGrid";
