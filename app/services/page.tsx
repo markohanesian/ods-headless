@@ -46,7 +46,7 @@ export default function ServicesPage() {
           <div className="h-px w-24 bg-accent-blue mb-12"></div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
-            <p className="text-2xl md:text-3xl text-zinc-900 dark:text-zinc-50 leading-tight">
+            <p className="lead-text text-zinc-900 dark:text-zinc-50">
               Whether you’re starting a new business, expanding your brand, or looking to 
               establish a digital presence, Ohanesian Digital Solutions can get you there.
             </p>

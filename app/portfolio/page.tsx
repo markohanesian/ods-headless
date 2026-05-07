@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import CaseStudyGrid from "@/components/CaseStudyGrid";
 
 export const metadata = {
@@ -18,7 +19,7 @@ export default function PortfolioPage() {
           <div className="h-px w-24 bg-accent-blue mb-12"></div>
           
           <div className="max-w-3xl">
-            <p className="text-2xl md:text-3xl text-zinc-900 dark:text-zinc-50 leading-tight mb-8">
+            <p className="lead-text text-zinc-900 dark:text-zinc-50 mb-8">
               A curated inventory of high-performance digital platforms and engineering-led 
               web solutions designed for measurable business growth.
             </p>

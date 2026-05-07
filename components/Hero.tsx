@@ -13,12 +13,12 @@ const Hero = () => {
           Digital Solutions Agency
         </div>
         
-        <h1 className="mb-8 text-zinc-900 dark:text-zinc-50">
+        <h1 className="text-6xl md:text-9xl mb-8 text-zinc-900 dark:text-zinc-50">
           Elevate Your <br />
           <span className="text-accent-blue">Digital Presence.</span>
         </h1>
         
-        <p className="text-zinc-600 dark:text-zinc-300 max-w-3xl mb-12">
+        <p className="lead-text text-zinc-600 dark:text-zinc-300 max-w-3xl mb-12">
           At Ohanesian Digital Solutions, we don’t just build. We strategize, design, and develop 
           professional websites and compelling brand identities, empowering businesses to lead 
           in a competitive landscape.
