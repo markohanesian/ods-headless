@@ -32,7 +32,7 @@ export default function ContactForm() {
         setFormData({ name: "", email: "", message: "" });
       } else {
         setStatus("error");
-        setErrorMessage(data.error || "Transmission failed.");
+        setErrorMessage(data.error || "Message not sent.");
       }
     } catch (error) {
       console.error("Submission error:", error);
@@ -54,7 +54,7 @@ export default function ContactForm() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">Transmission Received</h3>
+        <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">Message Received</h3>
         <p className="text-zinc-500 dark:text-zinc-300">Our team will review your project brief and respond shortly.</p>
         <button 
           onClick={() => setStatus("idle")}
@@ -114,7 +114,7 @@ export default function ContactForm() {
         disabled={status === "submitting"}
         className="w-full py-6 bg-brand text-zinc-900 font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-[#e69b2d] transition-all disabled:opacity-50 shadow-xl"
       >
-        {status === "submitting" ? "Processing..." : "Send Transmission"}
+        {status === "submitting" ? "Processing..." : "Send Message"}
       </button>
     </form>
   );
