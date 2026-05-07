@@ -54,7 +54,10 @@ function processContent(content: string = ''): {
     // Swap data-src to src for lazy-loaded images so they load natively
     .replace(/<img([^>]*?)\s+src="data:image\/gif;base64,R0lGODlhAQABAIAAAAAAAP\/\/\/yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"([^>]*?)\s+data-src="([^"]+)"/gi, '<img$1 src="$3"$2')
     // Remove lazyload classes to prevent potential JS conflicts
-    .replace(/\s+class="([^"]*?)lazyload([^"]*?)"/gi, ' class="$1$2"');
+    .replace(/\s+class="([^"]*?)lazyload([^"]*?)"/gi, ' class="$1$2"')
+    // Strip out WPForms redundant containers (using a broad match for common form patterns)
+    .replace(/<div[^>]*?class="[^"]*?wpforms-container[^"]*?"[^>]*?>[\s\S]*?<\/div>\s*<\/div>/gi, '') // Try to catch the parent column too
+    .replace(/<div[^>]*?class="[^"]*?wpforms-container[^"]*?"[^>]*?>[\s\S]*?<\/div>/gi, '');
 
   const result: { fixedContent: string; projectUrl?: string; githubUrl?: string } = { fixedContent: processed };
   
