@@ -58,7 +58,7 @@ export default function ContactForm() {
         <p className="text-zinc-500 dark:text-zinc-300">Our team will review your project brief and respond shortly.</p>
         <button 
           onClick={() => setStatus("idle")}
-          className="mt-8 text-[10px] font-mono uppercase tracking-widest text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors"
+          className="mt-8 label-mono hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors"
         >
           Send another message
         </button>
@@ -69,7 +69,7 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-8 md:space-y-10">
       <div className="space-y-2">
-        <label className="block text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400">Full Name</label>
+        <label className="block label-mono">Full Name</label>
         <input 
           type="text" 
           name="name"
@@ -81,7 +81,7 @@ export default function ContactForm() {
         />
       </div>
       <div className="space-y-2">
-        <label className="block text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400">Email Address</label>
+        <label className="block label-mono">Email Address</label>
         <input 
           type="email" 
           name="email"
@@ -93,7 +93,7 @@ export default function ContactForm() {
         />
       </div>
       <div className="space-y-2">
-        <label className="block text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400">Project Brief</label>
+        <label className="block label-mono">Project Brief</label>
         <textarea 
           name="message"
           required
@@ -112,7 +112,7 @@ export default function ContactForm() {
       <button 
         type="submit"
         disabled={status === "submitting"}
-        className="w-full py-6 bg-brand text-zinc-900 font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-[#e69b2d] transition-all disabled:opacity-50 shadow-xl"
+        className="w-full btn-primary !bg-brand !text-zinc-900 hover:!bg-[#e69b2d] disabled:opacity-50 shadow-xl"
       >
         {status === "submitting" ? "Processing..." : "SEND"}
       </button>

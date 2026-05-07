@@ -22,21 +22,20 @@ export default async function BlogSinglePage({ params }: { params: Promise<{ slu
       <section className="px-6 lg:px-12 pt-32 pb-24 border-b border-zinc-100 dark:border-zinc-900">
         <div className="max-w-4xl mx-auto">
           <div className="mb-8 flex items-center gap-4">
-             <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-400">
+             <span className="label-mono">
                Insights // {mainCategory}
              </span>
              <div className="h-px w-12 bg-brand opacity-50"></div>
-             <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-400">
-               {post.date ? new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'April 2026'}
+             <span className="label-mono">
+               {post.date ? new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'April 2026'}        
              </span>
           </div>
-          
-          <h1 className="text-4xl md:text-7xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-12 leading-[0.95] md:leading-[0.9]">
+
+          <h1 className="text-zinc-900 dark:text-zinc-50 mb-12">        
             {post.title}
           </h1>
         </div>
       </section>
-
       {/* Featured Image */}
       {post.featuredImage && (
         <section className="px-6 lg:px-12 -mt-12 mb-24">

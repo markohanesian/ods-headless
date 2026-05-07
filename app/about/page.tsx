@@ -12,7 +12,7 @@ export default async function AboutPage() {
       {/* Header Section */}
       <section className="px-6 lg:px-12 pt-32 pb-24 border-b border-zinc-100 dark:border-zinc-900">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-6xl md:text-8xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-8 uppercase">
+          <h1 className="text-zinc-900 dark:text-zinc-50 mb-8 uppercase">
             About
           </h1>
           <div className="h-px w-24 bg-accent-blue mb-12"></div>
@@ -29,7 +29,7 @@ export default async function AboutPage() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
               ) : (
-                <div className="absolute inset-0 flex items-center justify-center text-[10px] font-mono text-zinc-400 uppercase tracking-widest text-center p-8">
+                <div className="absolute inset-0 flex items-center justify-center label-mono text-center p-8">
                   Proprietor Image Archive // [ Mark Sarkis Ohanesian ]
                 </div>
               )}
@@ -37,17 +37,17 @@ export default async function AboutPage() {
                 <p className="text-sm font-bold text-zinc-900 dark:text-zinc-50 leading-tight">
                   Mark Sarkis Ohanesian
                 </p>
-                <p className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest mt-1">
+                <p className="label-mono mt-1 text-zinc-500">
                   Founder & Principal Architect
                 </p>
               </div>
             </div>
 
             <div>
-              <h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-8">
+              <h2 className="text-zinc-900 dark:text-zinc-50 mb-8 tracking-tight">
                 Our Story: Built for Business Growth
               </h2>
-              <div className="space-y-6 text-lg text-zinc-500 dark:text-zinc-300 leading-relaxed font-light">
+              <div className="space-y-6 text-zinc-500 dark:text-zinc-300">
                 <p>
                   We don’t just build websites; we design and engineer digital platforms designed 
                   for measurable results. At Ohanesian Digital Solutions, our entire process is 
@@ -72,22 +72,22 @@ export default async function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
             <div className="p-12 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800">
               <div className="text-5xl font-bold text-zinc-900 dark:text-zinc-50 mb-4 tracking-tighter">20+</div>
-              <h3 className="text-sm font-mono uppercase tracking-widest text-zinc-400 mb-6">Years Collective Experience</h3>
-              <p className="text-sm text-zinc-500 dark:text-zinc-300 leading-relaxed">
+              <h3 className="label-mono mb-6">Years Collective Experience</h3>
+              <p className="text-sm text-zinc-500 dark:text-zinc-300">
                 We apply decades of insights to build resilient, conversion-focused platforms.
               </p>
             </div>
             <div className="p-12 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800">
               <div className="text-5xl font-bold text-zinc-900 dark:text-zinc-50 mb-4 tracking-tighter">100%</div>
-              <h3 className="text-sm font-mono uppercase tracking-widest text-zinc-400 mb-6">Commitment to Accessibility</h3>
-              <p className="text-sm text-zinc-500 dark:text-zinc-300 leading-relaxed">
+              <h3 className="label-mono mb-6">Commitment to Accessibility</h3>
+              <p className="text-sm text-zinc-500 dark:text-zinc-300">
                 Every project prioritizes WCAG standards for an inclusive, high-quality user experience.
               </p>
             </div>
             <div className="p-12 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800">
               <div className="text-5xl font-bold text-zinc-900 dark:text-zinc-50 mb-4 tracking-tighter">1st</div>
-              <h3 className="text-sm font-mono uppercase tracking-widest text-zinc-400 mb-6">Strategy-First Approach</h3>
-              <p className="text-sm text-zinc-500 dark:text-zinc-300 leading-relaxed">
+              <h3 className="label-mono mb-6">Strategy-First Approach</h3>
+              <p className="text-sm text-zinc-500 dark:text-zinc-300">
                 We start with your business goals, not just the code, ensuring maximum ROI from day one.
               </p>
             </div>
@@ -98,15 +98,15 @@ export default async function AboutPage() {
       {/* CTA Section */}
       <section className="px-6 lg:px-12 py-32 text-center">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-8 leading-tight text-zinc-900 dark:text-zinc-50">
+          <h2 className="mb-8 text-zinc-900 dark:text-zinc-50">
             Ready for Success?
           </h2>
-          <p className="text-xl text-zinc-500 dark:text-zinc-300 mb-12 font-light">
+          <p className="text-zinc-500 dark:text-zinc-300 mb-12">
             We’re committed to your business’s success – send us a message to set up a quick strategic consultation.
           </p>
           <Link 
             href="/contact"
-            className="inline-block px-12 py-5 bg-zinc-900 dark:bg-zinc-50 text-zinc-50 dark:text-zinc-900 font-bold uppercase tracking-widest text-[10px] hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-all"
+            className="btn-primary inline-block"
           >
             Message Us
           </Link>

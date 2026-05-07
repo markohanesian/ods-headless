@@ -27,14 +27,14 @@ const Products = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4">
+            <h2 className="mb-4 uppercase">
               Proprietary Tools
             </h2>
             <p className="text-zinc-600 dark:text-zinc-300">
               We build custom digital instruments designed to bridge the gap between complex backend systems and performant frontend experiences.
             </p>
           </div>
-          <div className="text-sm font-mono text-zinc-400">
+          <div className="label-mono">
             [ TOOLS_INDEX_01 ]
           </div>
         </div>
@@ -45,29 +45,29 @@ const Products = () => {
               <div className="flex justify-between items-start mb-6">
                 <div>
                   <div className="flex items-center gap-3 mb-2">
-                    <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">{tool.name}</h3>
-                    <span className="px-2 py-0.5 text-[10px] font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700">
+                    <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 tracking-tight">{tool.name}</h3>
+                    <span className="px-2 py-0.5 label-mono !text-zinc-500 bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">
                       {tool.version}
                     </span>
                   </div>
-                  <p className="text-sm text-zinc-500 font-medium uppercase tracking-wider">{tool.type}</p>
+                  <p className="label-mono !text-zinc-500">{tool.type}</p>
                 </div>
                 <div className="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" title={tool.status}></div>
               </div>
 
-              <p className="text-zinc-600 dark:text-zinc-300 mb-8 leading-relaxed h-20 overflow-hidden">
+              <p className="text-zinc-600 dark:text-zinc-300 mb-8 !text-sm h-20 overflow-hidden">
                 {tool.description}
               </p>
 
               <div className="flex flex-wrap gap-2 mb-8">
                 {tool.tech.map((t) => (
-                  <span key={t} className="text-[10px] font-mono px-2 py-1 bg-zinc-50 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-300 border border-zinc-100 dark:border-zinc-800">
+                  <span key={t} className="label-mono px-2 py-1 bg-zinc-50 dark:bg-zinc-900 !text-zinc-600 dark:!text-zinc-300 border border-zinc-100 dark:border-zinc-800">
                     {t}
                   </span>
                 ))}
               </div>
 
-              <a href={tool.link} className="inline-flex items-center text-sm font-bold uppercase tracking-widest text-zinc-900 dark:text-zinc-50 group-hover:gap-2 transition-all">
+              <a href={tool.link} className="inline-flex items-center label-mono !text-zinc-900 dark:!text-zinc-50 font-bold group-hover:gap-2 transition-all">
                 Access Tool 
                 <span className="opacity-0 group-hover:opacity-100 transition-opacity"> →</span>
               </a>

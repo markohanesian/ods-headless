@@ -45,7 +45,7 @@ export default function Home() {
           </p>
           <a 
             href="/contact"
-            className="inline-block px-12 py-5 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 font-bold uppercase tracking-widest text-xs hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-all"
+            className="btn-primary inline-block"
           >
             Send Us a Message
           </a>

@@ -9,7 +9,7 @@ export default async function ContactPage() {
     <section className="px-6 lg:px-12 pt-32 pb-24 bg-white dark:bg-zinc-950 min-h-screen">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 md:mb-16">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-8 max-w-4xl">
+          <h1 className="text-zinc-900 dark:text-zinc-50 mb-8 max-w-4xl uppercase">
             Get in touch.
           </h1>
           <div className="h-px w-full bg-zinc-200 dark:bg-zinc-800"></div>
@@ -35,7 +35,7 @@ export default async function ContactPage() {
                   dangerouslySetInnerHTML={{ __html: pageData.content }}
                 />
               ) : (
-                <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-md">
+                <p className="text-zinc-600 dark:text-zinc-300 max-w-md">
                   Ready to architect your next digital solution? Get in touch to discuss your technical requirements.
                 </p>
               )}

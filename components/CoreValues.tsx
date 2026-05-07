@@ -23,7 +23,7 @@ const CoreValues = () => {
     <section className="px-6 lg:px-12 py-24 bg-zinc-50 dark:bg-zinc-900/20 border-t border-zinc-100 dark:border-zinc-800">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
-          <h2 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4 uppercase">
+          <h2 className="mb-4 uppercase">
             Our Core Values
           </h2>
           <div className="h-px w-full bg-zinc-200 dark:bg-zinc-800"></div>
@@ -33,15 +33,15 @@ const CoreValues = () => {
           {VALUES.map((value) => (
             <div key={value.id} className="flex gap-8 group">
               <div className="flex-shrink-0">
-                <div className="text-4xl md:text-5xl font-bold text-zinc-200 dark:text-zinc-800 group-hover:text-brand transition-colors duration-500 font-mono">
+                <div className="text-4xl md:text-5xl font-bold text-zinc-200 dark:text-zinc-800 group-hover:text-brand transition-colors duration-500 font-mono tracking-tighter">
                   {value.id}
                 </div>
               </div>
               <div className="space-y-4">
-                <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 tracking-tight">
+                <h3 className="!text-xl font-bold text-zinc-900 dark:text-zinc-50 tracking-tight">
                   {value.title}
                 </h3>
-                <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed text-sm font-light">
+                <p className="text-zinc-600 dark:text-zinc-300 !text-sm">
                   {value.description}
                 </p>
               </div>

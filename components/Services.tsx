@@ -45,7 +45,7 @@ const Services = () => {
     <section className="px-6 lg:px-12 py-16 md:py-24 bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 md:mb-16">
-          <h2 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4 uppercase">
+          <h2 className="mb-4 uppercase">
             Our Services
           </h2>
           <div className="h-px w-full bg-accent-blue/30 dark:bg-accent-blue/20"></div>
@@ -60,10 +60,10 @@ const Services = () => {
                 </div>
                 <span className="h-px w-8 bg-accent-blue/30 dark:bg-accent-blue/20"></span>
               </div>
-              <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 mb-6 tracking-tight">
+              <h3 className="!text-2xl font-bold text-zinc-900 dark:text-zinc-50 mb-6 tracking-tight">
                 {service.title}
               </h3>
-              <p className="text-zinc-500 dark:text-zinc-300 leading-relaxed font-light">
+              <p className="text-zinc-500 dark:text-zinc-300">
                 {service.description}
               </p>
             </div>

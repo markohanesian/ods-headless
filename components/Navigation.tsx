@@ -65,7 +65,7 @@ const Navigation = () => {
             <Link 
               key={item.name} 
               href={item.href}
-              className="text-xs font-mono uppercase tracking-widest text-zinc-500 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-50 transition-colors"
+              className="label-mono transition-colors hover:text-zinc-900 dark:hover:text-zinc-50"
             >
               {item.name}
             </Link>
@@ -102,7 +102,7 @@ const Navigation = () => {
           
           <Link 
             href="/contact"
-            className="hidden md:block px-5 py-2 text-[10px] font-mono uppercase tracking-widest bg-brand text-zinc-900 hover:bg-zinc-50 hover:text-zinc-900 transition-colors font-bold"
+            className="hidden md:block px-5 py-2 label-mono !text-zinc-900 bg-brand hover:bg-zinc-50 hover:text-zinc-900 transition-colors font-bold"
           >
             Connect
           </Link>

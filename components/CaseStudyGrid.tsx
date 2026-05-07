@@ -41,12 +41,12 @@ const CaseStudyGrid = async ({
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
             <div className="max-w-2xl">
               {title && (
-                <h2 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4 uppercase">
+                <h2 className="mb-4 uppercase">
                   {title}
                 </h2>
               )}
               {subtitle && (
-                <p className="text-zinc-600 dark:text-zinc-300 mb-6 leading-relaxed">
+                <p className="text-zinc-600 dark:text-zinc-300 mb-6">
                   {subtitle}
                 </p>
               )}
@@ -54,7 +54,7 @@ const CaseStudyGrid = async ({
             {showViewAll && (
               <Link 
                 href="/portfolio" 
-                className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors mb-6 border-b border-zinc-200 dark:border-zinc-800 pb-1"
+                className="label-mono transition-colors mb-6 border-b border-zinc-200 dark:border-zinc-800 pb-1 hover:text-zinc-900 dark:hover:text-zinc-50"
               >
                 {viewAllLabel} →
               </Link>
@@ -79,7 +79,7 @@ const CaseStudyGrid = async ({
                 {/* Lab Variant: High-Tech Header */}
                 {isLab && (
                   <div className="flex justify-between items-start mb-6">
-                    <div className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest bg-zinc-50 dark:bg-zinc-900 px-2 py-1 border border-zinc-100 dark:border-zinc-800">
+                    <div className="label-mono bg-zinc-50 dark:bg-zinc-900 px-2 py-1 border border-zinc-100 dark:border-zinc-800">
                       [ PROPRIETARY_SOFTWARE ]
                     </div>
                     <div className="h-2 w-2 rounded-full bg-brand shadow-[0_0_8px_rgba(252,175,59,0.5)]"></div>
@@ -98,7 +98,7 @@ const CaseStudyGrid = async ({
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     ) : (
-                      <div className="absolute inset-0 flex items-center justify-center font-mono text-[10px] text-zinc-400 uppercase tracking-widest">
+                      <div className="absolute inset-0 flex items-center justify-center label-mono">
                         No Image Found
                       </div>
                     )}
@@ -107,16 +107,16 @@ const CaseStudyGrid = async ({
 
                 {/* Content */}
                 <div className={`${!isLab ? 'p-8' : ''} flex flex-col flex-grow`}>
-                  <h3 className={`font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4 group-hover:translate-x-1 transition-transform ${isLab ? 'text-2xl' : 'text-xl'}`}>
+                  <h3 className={`font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4 group-hover:translate-x-1 transition-transform ${isLab ? '!text-2xl' : '!text-xl'}`}>
                     {project.title}
                   </h3>
                   
-                  <p className="text-sm text-zinc-500 dark:text-zinc-300 mb-8 leading-relaxed line-clamp-3 prose prose-sm dark:prose-invert max-w-none font-light">
+                  <p className="!text-sm text-zinc-500 dark:text-zinc-300 mb-8 line-clamp-3 max-w-none">
                     {project.excerpt}
                   </p>
 
                   <div className="mt-auto flex items-center justify-between">
-                    <div className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">
+                    <div className="label-mono">
                       GO
                     </div>
                     <span className="text-zinc-400 translate-x-0 group-hover:translate-x-2 transition-transform">→</span>

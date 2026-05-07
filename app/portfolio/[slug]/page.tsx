@@ -24,30 +24,30 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       <section className="px-6 lg:px-12 pt-24 md:pt-32 pb-12 md:pb-24 border-b border-zinc-100 dark:border-zinc-900">
         <div className="max-w-7xl mx-auto">
           <div className="mb-8 flex items-center gap-4">
-             <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-400">
+             <span className="label-mono">
                Archive // {mainCategory}
              </span>
              <div className={`h-px w-12 ${accentColor} opacity-50`}></div>
           </div>
-          <h1 className="text-4xl md:text-8xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-12 md:mb-16 leading-[0.95] md:leading-[0.9]">
+          <h1 className="text-zinc-900 dark:text-zinc-50 mb-12 md:mb-16 uppercase">
             {post.title}
           </h1>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 border-t border-zinc-100 dark:border-zinc-900 pt-12">
             <div>
-              <h3 className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-4">Platform & Ecosystem</h3>
+              <h3 className="label-mono mb-4 !font-normal">Platform & Ecosystem</h3>
               <p className="font-bold text-lg">
                 {specificCategories.map(c => c.name).join(" / ") || "Digital Architecture"}
               </p>
             </div>
             <div>
-              <h3 className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-4">Deliverables</h3>
+              <h3 className="label-mono mb-4 !font-normal">Deliverables</h3>
               <p className="font-bold text-lg text-zinc-600 dark:text-zinc-300">
                 {post.tags?.nodes?.length ? post.tags.nodes.map(t => t.name).join(" / ") : "Strategy / Engineering"}
               </p>
             </div>
             <div>
-              <h3 className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-4">Deploy</h3>
+              <h3 className="label-mono mb-4 !font-normal">Deploy</h3>
               <p className="font-bold text-lg text-zinc-600 dark:text-zinc-300">
                 {post.projectUrl ? (
                   <a href={post.projectUrl} target="_blank" rel="noopener noreferrer" className="hover:text-brand transition-colors">
@@ -57,7 +57,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
               </p>
             </div>
             <div>
-              <h3 className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-4">Github</h3>
+              <h3 className="label-mono mb-4 !font-normal">Github</h3>
               <p className="font-bold text-lg text-zinc-600 dark:text-zinc-300">
                 {post.githubUrl ? (
                   <a href={post.githubUrl} target="_blank" rel="noopener noreferrer" className="hover:text-brand transition-colors">
