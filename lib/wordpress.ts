@@ -171,6 +171,8 @@ export async function getPortfolioItems(category?: string, first: number = 20, e
       .replace(/&ldquo;/g, '"')
       .replace(/&rdquo;/g, '"')
       .replace(/&hellip;/g, '...')
+      .replace(/^About\s+.*?\s+is\s+/i, '') // Strip "About [Project] is " prefix
+      .replace(/^About\s+/i, '') // Strip "About " prefix
       .trim();
 
     return {

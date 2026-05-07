@@ -29,18 +29,22 @@ const CoreValues = () => {
           <div className="h-px w-full bg-zinc-200 dark:bg-zinc-800"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
           {VALUES.map((value) => (
-            <div key={value.id} className="relative">
-              <div className="text-[6rem] font-bold text-zinc-100 dark:text-zinc-900/50 absolute -top-12 -left-4 select-none -z-10">
-                {value.id}
+            <div key={value.id} className="flex gap-8 group">
+              <div className="flex-shrink-0">
+                <div className="text-4xl md:text-5xl font-bold text-zinc-200 dark:text-zinc-800 group-hover:text-brand transition-colors duration-500 font-mono">
+                  {value.id}
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 mb-4 tracking-tight relative z-10">
-                {value.title}
-              </h3>
-              <p className="text-zinc-500 dark:text-zinc-300 leading-relaxed text-sm font-light">
-                {value.description}
-              </p>
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 tracking-tight">
+                  {value.title}
+                </h3>
+                <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed text-sm font-light">
+                  {value.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

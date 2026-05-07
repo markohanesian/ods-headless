@@ -114,8 +114,9 @@ export default function ContactForm() {
         disabled={status === "submitting"}
         className="w-full py-6 bg-brand text-zinc-900 font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-[#e69b2d] transition-all disabled:opacity-50 shadow-xl"
       >
-        {status === "submitting" ? "Processing..." : "Send Message"}
+        {status === "submitting" ? "Processing..." : "SEND"}
       </button>
+
     </form>
   );
 }

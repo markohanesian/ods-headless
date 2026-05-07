@@ -19,7 +19,9 @@ export default async function ContactPage() {
           <div className="order-2 lg:order-1">
             {pageData?.content ? (
               <div 
-                className="text-lg md:text-xl text-zinc-600 dark:text-zinc-300 mb-12 max-w-md prose prose-zinc dark:prose-invert font-light leading-relaxed"
+                className="text-lg md:text-xl text-zinc-600 dark:text-zinc-300 mb-12 max-w-md prose prose-zinc dark:prose-invert font-light leading-relaxed
+                  [&_h2]:text-[10px] [&_h2]:font-mono [&_h2]:uppercase [&_h2]:tracking-[0.2em] [&_h2]:text-zinc-400 [&_h2]:mb-4 [&_h2]:mt-12 first:[&_h2]:mt-0
+                  [&_p]:text-lg [&_p]:md:text-xl [&_p]:font-bold [&_p]:text-zinc-900 [&_p]:dark:text-zinc-50 [&_p]:mb-0"
                 dangerouslySetInnerHTML={{ __html: pageData.content }}
               />
             ) : (
@@ -27,23 +29,6 @@ export default async function ContactPage() {
                 Ready to architect your next digital solution? Get in touch to discuss your technical requirements.
               </p>
             )}
-            
-            <div className="space-y-12">
-              <div>
-                <h3 className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-4 flex items-center gap-4">
-                  Email Correspondence <div className="h-px flex-1 bg-zinc-100 dark:bg-zinc-900 lg:hidden"></div>
-                </h3>
-                <a href="mailto:hello@ohanesiandigitalsolutions.com" className="text-lg md:text-xl font-bold hover:text-brand transition-colors break-all">
-                  hello@ohanesiandigitalsolutions.com
-                </a>
-              </div>
-              <div>
-                <h3 className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-4 flex items-center gap-4">
-                  Location HQ <div className="h-px flex-1 bg-zinc-100 dark:bg-zinc-900 lg:hidden"></div>
-                </h3>
-                <p className="text-lg md:text-xl font-bold">Remote // Global</p>
-              </div>
-            </div>
           </div>
 
           <div className="order-1 lg:order-2">

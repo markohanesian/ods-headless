@@ -117,7 +117,7 @@ const CaseStudyGrid = async ({
 
                   <div className="mt-auto flex items-center justify-between">
                     <div className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">
-                      {project.categories?.nodes?.filter(c => c.slug !== 'work')[0]?.name || 'Project'}
+                      GO
                     </div>
                     <span className="text-zinc-400 translate-x-0 group-hover:translate-x-2 transition-transform">→</span>
                   </div>

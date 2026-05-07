@@ -121,14 +121,14 @@ const Navigation = () => {
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 bg-white dark:bg-zinc-950 z-40 transition-transform duration-500 md:hidden ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="flex flex-col items-center justify-center h-full gap-8">
+      <div className={`fixed top-0 left-0 w-full h-[100dvh] bg-white dark:bg-zinc-950 z-40 transition-transform duration-500 md:hidden ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="flex flex-col items-center justify-center h-full gap-8 px-6 text-center">
           {navItems.map((item) => (
             <Link 
               key={item.name} 
               href={item.href}
               onClick={() => setMobileMenuOpen(false)}
-              className={`text-2xl font-bold tracking-tighter transition-colors ${
+              className={`text-3xl font-bold tracking-tighter transition-colors ${
                 item.name === 'Connect' 
                   ? 'text-brand underline underline-offset-8' 
                   : 'text-zinc-900 dark:text-zinc-50'
