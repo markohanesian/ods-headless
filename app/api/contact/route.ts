@@ -22,8 +22,8 @@ export async function POST(request: Request) {
     console.log(`Attempting to send email from ${name} (${email})`);
 
     const { data, error } = await resend.emails.send({
-      from: 'ODS Contact <onboarding@resend.dev>',
-      to: ['mso872@gmail.com'],
+      from: 'ODS Contact <contact@ohanesiandigitalsolutions.com>',
+      to: ['hello@ohanesiandigitalsolutions.com'],
       subject: `New Project Inquiry: ${name}`,
       replyTo: email,
       html: `
