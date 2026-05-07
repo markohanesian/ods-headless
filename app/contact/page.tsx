@@ -20,15 +20,18 @@ export default async function ContactPage() {
             <div className="space-y-12">
               {pageData?.content ? (
                 <div 
-                  className="max-w-md text-zinc-600 dark:text-zinc-300
-                    /* WP Header/Label Style */
-                    [&_h2]:text-[10px] [&_h2]:font-mono [&_h2]:uppercase [&_h2]:tracking-[0.3em] [&_h2]:text-zinc-400 [&_h2]:mb-4 [&_h2]:mt-12 first:[&_h2]:mt-0 [&_h2]:font-bold
+                  className={`max-w-none text-zinc-900 dark:text-zinc-50
+                    /* Global Reset for internal consistency */
+                    [&_*]:!m-0 [&_*]:!p-0
                     
-                    /* Body Paragraph Style (Match site-wide) */
-                    [&_p]:text-lg [&_p]:md:text-xl [&_p]:font-light [&_p]:leading-relaxed [&_p]:mb-8 last:[&_p]:mb-0
+                    /* Typography Overrides - Labels (matching metadata grid) */
+                    [&_h2]:!text-[10px] [&_h2]:!font-mono [&_h2]:!uppercase [&_h2]:!tracking-[0.3em] [&_h2]:!text-zinc-400 [&_h2]:!mt-16 first:[&_h2]:!mt-0 [&_h2]:!mb-4 [&_h2]:!block
                     
-                    /* Special case for labels (e.g. Email/Location) - make text bold if it follows a heading */
-                    [&_h2+p]:font-bold [&_h2+p]:text-zinc-900 [&_h2+p]:dark:text-zinc-50 [&_h2+p]:mt-0"
+                    /* Typography Overrides - Body Text (matching portfolio body) */
+                    [&_p]:!text-lg md:[&_p]:!text-xl [&_p]:!leading-relaxed [&_p]:!text-zinc-600 dark:[&_p]:!text-zinc-300 [&_p]:!font-light [&_p]:!mb-10 [&_p]:!block
+                    
+                    /* Typography Overrides - Values (bolding text that follows labels) */
+                    [&_h2+p]:!font-bold [&_h2+p]:!text-zinc-900 dark:[&_h2+p]:!text-zinc-50 [&_h2+p]:!mt-0 [&_h2+p]:!mb-10`}
                   dangerouslySetInnerHTML={{ __html: pageData.content }}
                 />
               ) : (
