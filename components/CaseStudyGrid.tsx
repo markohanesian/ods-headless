@@ -94,7 +94,7 @@ const CaseStudyGrid = async ({
                         src={project.featuredImage.node.sourceUrl}
                         alt={project.featuredImage.node.altText || project.title}
                         fill
-                        className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                        className="object-cover md:grayscale md:group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     ) : (
