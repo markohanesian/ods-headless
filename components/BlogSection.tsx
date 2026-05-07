@@ -18,10 +18,10 @@ const BlogSection = async () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4 uppercase">
+            <h2 className="text-4xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-4 uppercase">
               Insights
             </h2>
-            <p className="text-zinc-500 dark:text-zinc-300 font-mono text-sm uppercase tracking-widest">
+            <p className="text-zinc-500 dark:text-zinc-300 font-mono text-xs uppercase tracking-[0.3em]">
               Articles, Blogs, and Observations on the Modern Web
             </p>
           </div>
@@ -35,20 +35,20 @@ const BlogSection = async () => {
               className="group border-b border-zinc-200 dark:border-zinc-800 pb-12 hover:border-zinc-900 dark:hover:border-zinc-50 transition-colors"
             >
               <div className="flex flex-col gap-6">
-                <div className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest flex items-center gap-4">
-                  <span>[{post.categories?.nodes[0]?.name || "Uncategorized"}]</span>
+                <div className="text-[10px] font-mono text-zinc-400 uppercase tracking-[0.3em] flex items-center gap-4">
+                  <span>{post.categories?.nodes[0]?.name || "Uncategorized"}</span>
                   <span className="h-px w-8 bg-zinc-200 dark:bg-zinc-800"></span>
                 </div>
                 
-                <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 group-hover:underline underline-offset-8 decoration-1 transition-all">
+                <h3 className="text-2xl md:text-3xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 group-hover:underline underline-offset-8 decoration-brand decoration-2 transition-all">
                   {post.title}
                 </h3>
                 
-                <p className="text-zinc-500 dark:text-zinc-300 leading-relaxed line-clamp-2 max-w-xl">
+                <p className="text-zinc-500 dark:text-zinc-300 leading-relaxed line-clamp-2 max-w-xl font-light">
                   {post.excerpt}
                 </p>
 
-                <div className="flex items-center gap-2 text-[10px] font-mono text-zinc-400 uppercase tracking-widest">
+                <div className="flex items-center gap-2 text-[10px] font-mono text-zinc-400 uppercase tracking-[0.3em]">
                   Read Analysis <span className="translate-x-0 group-hover:translate-x-2 transition-transform">→</span>
                 </div>
               </div>
