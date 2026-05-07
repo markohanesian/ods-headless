@@ -21,7 +21,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   return (
     <article className="bg-white dark:bg-zinc-950 min-h-screen">
       {/* Header Section */}
-      <section className="px-6 lg:px-12 pt-32 pb-24 border-b border-zinc-100 dark:border-zinc-900">
+      <section className="px-6 lg:px-12 pt-24 md:pt-32 pb-12 md:pb-24 border-b border-zinc-100 dark:border-zinc-900">
         <div className="max-w-7xl mx-auto">
           <div className="mb-8 flex items-center gap-4">
              <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-400">
@@ -29,11 +29,11 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
              </span>
              <div className={`h-px w-12 ${accentColor} opacity-50`}></div>
           </div>
-          <h1 className="text-5xl md:text-8xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-16 leading-[0.95] md:leading-[0.9]">
+          <h1 className="text-4xl md:text-8xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-12 md:mb-16 leading-[0.95] md:leading-[0.9]">
             {post.title}
           </h1>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-t border-zinc-100 dark:border-zinc-900 pt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 border-t border-zinc-100 dark:border-zinc-900 pt-12">
             <div>
               <h3 className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 mb-4">Platform & Ecosystem</h3>
               <p className="font-bold text-lg">

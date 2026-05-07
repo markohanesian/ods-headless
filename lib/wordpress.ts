@@ -47,14 +47,16 @@ function processContent(content: string = ''): {
 } {
   if (!content) return { fixedContent: '' };
   
-  // 1. Aggressively fix Image/Media URLs in the content (handles src, data-src, srcset, href, etc.)
-  // We replace the domain name globally as long as it's followed by /wp-content/
-  const fixedContent = content.replace(
-    /https?:\/\/ohanesiandigitalsolutions\.com\/wp-content\//g, 
-    'https://wp.ohanesiandigitalsolutions.com/wp-content/'
-  );
+  // 1. Aggressively fix Image/Media URLs and handle lazy-loading
+  let processed = content
+    // Replace domain first (handles src, data-src, etc.)
+    .replace(/https?:\/\/ohanesiandigitalsolutions\.com\/wp-content\//g, 'https://wp.ohanesiandigitalsolutions.com/wp-content/')
+    // Swap data-src to src for lazy-loaded images so they load natively
+    .replace(/<img([^>]*?)\s+src="data:image\/gif;base64,R0lGODlhAQABAIAAAAAAAP\/\/\/yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"([^>]*?)\s+data-src="([^"]+)"/gi, '<img$1 src="$3"$2')
+    // Remove lazyload classes to prevent potential JS conflicts
+    .replace(/\s+class="([^"]*?)lazyload([^"]*?)"/gi, ' class="$1$2"');
 
-  const result: { fixedContent: string; projectUrl?: string; githubUrl?: string } = { fixedContent };
+  const result: { fixedContent: string; projectUrl?: string; githubUrl?: string } = { fixedContent: processed };
   
   // 2. Extract specific links (Deployment/Github)
   const linkRegex = /<a\s+(?:[^>]*?\s+)?href=(["'])(.*?)\1[^>]*?>(.*?)<\/a>/gi;

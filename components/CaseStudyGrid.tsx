@@ -35,10 +35,10 @@ const CaseStudyGrid = async ({
   if (projects.length === 0) return null;
 
   return (
-    <section className={`px-6 lg:px-12 py-24 ${variant === 'lab' ? 'bg-zinc-50 dark:bg-zinc-900/50' : 'bg-white dark:bg-zinc-950'}`}>
+    <section className={`px-6 lg:px-12 py-16 md:py-24 ${variant === 'lab' ? 'bg-zinc-50 dark:bg-zinc-900/50' : 'bg-white dark:bg-zinc-950'}`}>
       <div className="max-w-7xl mx-auto">
         {(title || subtitle) && (
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
             <div className="max-w-2xl">
               {title && (
                 <h2 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4 uppercase">

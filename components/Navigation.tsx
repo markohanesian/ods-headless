@@ -7,6 +7,7 @@ const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -32,6 +33,13 @@ const Navigation = () => {
     document.documentElement.classList.toggle('dark', newTheme === 'dark');
   };
 
+  const navItems = [
+    { name: 'Services', href: '/services' },
+    { name: 'Portfolio', href: '/portfolio' },
+    { name: 'About', href: '/about' },
+    { name: 'Connect', href: '/contact' }
+  ];
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
@@ -40,7 +48,7 @@ const Navigation = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex flex-col">
+        <Link href="/" className="flex flex-col z-50" onClick={() => setMobileMenuOpen(false)}>
           <span className="text-xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 leading-none">
             ODS
           </span>
@@ -51,11 +59,7 @@ const Navigation = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-10">
-          {[
-            { name: 'Services', href: '/services' },
-            { name: 'Portfolio', href: '/portfolio' },
-            { name: 'About', href: '/about' }
-          ].map((item) => (
+          {navItems.filter(i => i.name !== 'Connect').map((item) => (
             <Link 
               key={item.name} 
               href={item.href}
@@ -67,11 +71,11 @@ const Navigation = () => {
         </div>
 
         {/* Actions */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-4 md:gap-6">
           <button 
             onClick={toggleTheme}
             aria-label="Toggle Dark Mode"
-            className="p-2 text-zinc-500 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-50 transition-colors focus:outline-none min-w-[32px] min-h-[32px] flex items-center justify-center"
+            className="p-2 text-zinc-500 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-50 transition-colors focus:outline-none min-w-[32px] min-h-[32px] flex items-center justify-center z-50"
           >
             {!mounted ? (
               <div className="w-4 h-4" /> // Empty placeholder during hydration
@@ -96,10 +100,43 @@ const Navigation = () => {
           
           <Link 
             href="/contact"
-            className="hidden sm:block px-5 py-2 text-[10px] font-mono uppercase tracking-widest bg-brand text-zinc-900 hover:bg-zinc-50 hover:text-zinc-900 transition-colors font-bold"
+            className="hidden md:block px-5 py-2 text-[10px] font-mono uppercase tracking-widest bg-brand text-zinc-900 hover:bg-zinc-50 hover:text-zinc-900 transition-colors font-bold"
           >
             Connect
           </Link>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 text-zinc-900 dark:text-zinc-50 z-50 focus:outline-none"
+            aria-label="Toggle Menu"
+          >
+            <div className="w-6 h-5 relative flex flex-col justify-between">
+              <span className={`w-full h-0.5 bg-current transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+              <span className={`w-full h-0.5 bg-current transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`} />
+              <span className={`w-full h-0.5 bg-current transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+            </div>
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`fixed inset-0 bg-white dark:bg-zinc-950 z-40 transition-transform duration-500 md:hidden ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className="flex flex-col items-center justify-center h-full gap-8">
+          {navItems.map((item) => (
+            <Link 
+              key={item.name} 
+              href={item.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className={`text-2xl font-bold tracking-tighter transition-colors ${
+                item.name === 'Connect' 
+                  ? 'text-brand underline underline-offset-8' 
+                  : 'text-zinc-900 dark:text-zinc-50'
+              }`}
+            >
+              {item.name}
+            </Link>
+          ))}
         </div>
       </div>
     </nav>
