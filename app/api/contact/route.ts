@@ -23,7 +23,7 @@ export async function POST(request: Request) {
 
     const { data, error } = await resend.emails.send({
       from: 'ODS Contact <onboarding@resend.dev>',
-      to: ['hello@ohanesiandigitalsolutions.com'],
+      to: ['mso872@gmail.com'],
       subject: `New Project Inquiry: ${name}`,
       replyTo: email,
       html: `
