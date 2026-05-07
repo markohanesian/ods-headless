@@ -2,8 +2,10 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Navigation = () => {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
@@ -123,20 +125,23 @@ const Navigation = () => {
       {/* Mobile Menu Overlay */}
       <div className={`fixed top-0 left-0 w-full h-[100dvh] bg-white dark:bg-zinc-950 z-40 transition-transform duration-500 md:hidden ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex flex-col items-center justify-center h-full gap-8 px-6 text-center">
-          {navItems.map((item) => (
-            <Link 
-              key={item.name} 
-              href={item.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className={`text-3xl font-bold tracking-tighter transition-colors ${
-                item.name === 'Connect' 
-                  ? 'text-brand underline underline-offset-8' 
-                  : 'text-zinc-900 dark:text-zinc-50'
-              }`}
-            >
-              {item.name}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link 
+                key={item.name} 
+                href={item.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`text-3xl font-bold tracking-tighter transition-colors ${
+                  isActive 
+                    ? 'text-brand underline underline-offset-8' 
+                    : 'text-zinc-900 dark:text-zinc-50 hover:text-brand'
+                }`}
+              >
+                {item.name}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </nav>
