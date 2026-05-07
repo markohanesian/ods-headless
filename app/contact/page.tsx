@@ -15,14 +15,20 @@ export default async function ContactPage() {
           <div className="h-px w-full bg-zinc-200 dark:bg-zinc-800"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           <div className="order-2 lg:order-1">
-            <div className="space-y-16">
+            <div className="space-y-12">
               {pageData?.content ? (
                 <div 
-                  className="max-w-md
-                    [&_h2]:text-[10px] [&_h2]:font-mono [&_h2]:uppercase [&_h2]:tracking-[0.3em] [&_h2]:text-zinc-400 [&_h2]:mb-4 [&_h2]:mt-12 first:[&_h2]:mt-0
-                    [&_p]:text-lg [&_p]:md:text-xl [&_p]:font-light [&_p]:text-zinc-600 [&_p]:dark:text-zinc-300 [&_p]:leading-relaxed [&_p]:mb-10 last:[&_p]:mb-0"
+                  className="max-w-md text-zinc-600 dark:text-zinc-300
+                    /* WP Header/Label Style */
+                    [&_h2]:text-[10px] [&_h2]:font-mono [&_h2]:uppercase [&_h2]:tracking-[0.3em] [&_h2]:text-zinc-400 [&_h2]:mb-4 [&_h2]:mt-12 first:[&_h2]:mt-0 [&_h2]:font-bold
+                    
+                    /* Body Paragraph Style (Match site-wide) */
+                    [&_p]:text-lg [&_p]:md:text-xl [&_p]:font-light [&_p]:leading-relaxed [&_p]:mb-8 last:[&_p]:mb-0
+                    
+                    /* Special case for labels (e.g. Email/Location) - make text bold if it follows a heading */
+                    [&_h2+p]:font-bold [&_h2+p]:text-zinc-900 [&_h2+p]:dark:text-zinc-50 [&_h2+p]:mt-0"
                   dangerouslySetInnerHTML={{ __html: pageData.content }}
                 />
               ) : (
