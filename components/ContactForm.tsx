@@ -112,7 +112,7 @@ export default function ContactForm() {
       <button 
         type="submit"
         disabled={status === "submitting"}
-        className="w-full btn-primary !bg-brand !text-zinc-900 hover:!bg-[#e69b2d] disabled:opacity-50 shadow-xl"
+        className="w-full btn-brand disabled:opacity-50"
       >
         {status === "submitting" ? "Processing..." : "SEND"}
       </button>

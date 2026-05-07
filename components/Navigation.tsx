@@ -102,7 +102,7 @@ const Navigation = () => {
           
           <Link 
             href="/contact"
-            className="hidden md:block px-5 py-2 label-mono !text-zinc-900 bg-brand hover:bg-zinc-50 hover:text-zinc-900 transition-colors font-bold"
+            className="hidden md:block btn-brand !px-6 !py-2.5"
           >
             Connect
           </Link>

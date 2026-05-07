@@ -59,7 +59,7 @@ export default function PortfolioPage() {
           </p>
           <Link 
             href="/contact"
-            className="btn-primary inline-block"
+            className="btn-brand"
           >
             Schedule a Consultation
           </Link>

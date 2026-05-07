@@ -106,7 +106,7 @@ export default async function AboutPage() {
           </p>
           <Link 
             href="/contact"
-            className="btn-primary inline-block"
+            className="btn-brand"
           >
             Message Us
           </Link>

@@ -119,7 +119,7 @@ export default function ServicesPage() {
           </p>
           <Link 
             href="/contact"
-            className="btn-primary inline-block"
+            className="btn-brand"
           >
             Schedule a Consultation
           </Link>

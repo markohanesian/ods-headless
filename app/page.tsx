@@ -35,7 +35,7 @@ export default function Home() {
       <BlogSection />
       
       {/* Final CTA Section */}
-      <section className="px-6 lg:px-12 py-32 bg-zinc-900 dark:bg-white text-zinc-50 dark:text-zinc-900 text-center">
+      <section className="px-6 lg:px-12 py-32 bg-zinc-900 dark:bg-zinc-100 text-zinc-50 dark:text-zinc-900 text-center transition-colors duration-300">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-8 leading-[1.1]">
             Let’s Build Your Next Digital Success.
@@ -43,12 +43,12 @@ export default function Home() {
           <p className="text-xl text-zinc-300 dark:text-zinc-600 mb-12">
             Have a vision for your business? We’re ready to listen and build a digital solution that brings your ideas to life.
           </p>
-          <a 
+          <Link 
             href="/contact"
-            className="btn-primary inline-block"
+            className="btn-brand"
           >
             Send Us a Message
-          </a>
+          </Link>
         </div>
       </section>
     </>
