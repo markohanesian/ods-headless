@@ -33,8 +33,8 @@ export interface PortfolioItem {
  */
 function fixMediaUrls(url: string = ''): string {
   if (!url) return '';
-  // Replace the old main domain with the new wp subdomain for images/media
-  return url.replace('https://ohanesiandigitalsolutions.com/wp-content/', 'https://wp.ohanesiandigitalsolutions.com/wp-content/');
+  // Replace both http and https versions of the old main domain with the new wp subdomain
+  return url.replace(/https?:\/\/ohanesiandigitalsolutions\.com\/wp-content\//g, 'https://wp.ohanesiandigitalsolutions.com/wp-content/');
 }
 
 /**
@@ -47,13 +47,11 @@ function processContent(content: string = ''): {
 } {
   if (!content) return { fixedContent: '' };
   
-  // 1. Fix Image URLs in the content
+  // 1. Aggressively fix Image/Media URLs in the content (handles src, data-src, srcset, href, etc.)
+  // We replace the domain name globally as long as it's followed by /wp-content/
   const fixedContent = content.replace(
-    /src="https:\/\/ohanesiandigitalsolutions\.com\/wp-content\//g, 
-    'src="https://wp.ohanesiandigitalsolutions.com/wp-content/'
-  ).replace(
-    /href="https:\/\/ohanesiandigitalsolutions\.com\/wp-content\//g, 
-    'href="https://wp.ohanesiandigitalsolutions.com/wp-content/'
+    /https?:\/\/ohanesiandigitalsolutions\.com\/wp-content\//g, 
+    'https://wp.ohanesiandigitalsolutions.com/wp-content/'
   );
 
   const result: { fixedContent: string; projectUrl?: string; githubUrl?: string } = { fixedContent };
