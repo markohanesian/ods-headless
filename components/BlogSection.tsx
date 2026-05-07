@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
-import { getBlogPosts } from '@/lib/wordpress';
+import { getBlogPosts, PortfolioItem } from '@/lib/wordpress';
 
 const BlogSection = async () => {
-  let posts = [];
+  let posts: PortfolioItem[] = [];
   
   try {
     posts = await getBlogPosts();

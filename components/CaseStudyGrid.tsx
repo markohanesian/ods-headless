@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { getPortfolioItems } from '@/lib/wordpress';
+import { getPortfolioItems, PortfolioItem } from '@/lib/wordpress';
 
 interface CaseStudyGridProps {
   title?: string;
@@ -24,7 +24,7 @@ const CaseStudyGrid = async ({
   showViewAll = false,
   viewAllLabel = "View Full Inventory"
 }: CaseStudyGridProps) => {
-  let projects = [];
+  let projects: PortfolioItem[] = [];
   
   try {
     projects = await getPortfolioItems(category, limit, excludeCategory);
@@ -63,8 +63,8 @@ const CaseStudyGrid = async ({
         )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => {
-            const isLab = variant === 'lab' || project.categories?.nodes?.some(c => c.slug === 'custom-apps');
+          {projects.map((project: PortfolioItem) => {
+            const isLab = variant === 'lab' || project.categories?.nodes?.some((c: { slug: string }) => c.slug === 'custom-apps');
             
             return (
               <Link 
