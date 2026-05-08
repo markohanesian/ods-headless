@@ -7,8 +7,8 @@ const VALUES = [
     id: "01"
   },
   {
-    title: "Strategic Timelines",
-    description: "In the dynamic digital landscape, timing is paramount. We adhere to rigorous project timelines, ensuring timely delivery that aligns with your business objectives and maintains your market momentum.",
+    title: "Quality above all",
+    description: "In a landscape of fleeting trends, we prioritize enduring quality. Our meticulous attention to detail and dedication to excellence ensure that every solution we deliver provides lasting value and solves a problem.",
     id: "02"
   },
   {

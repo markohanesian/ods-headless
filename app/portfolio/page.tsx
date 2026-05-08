@@ -20,12 +20,7 @@ export default function PortfolioPage() {
           
           <div className="max-w-3xl">
             <p className="lead-text text-zinc-900 dark:text-zinc-50 mb-8">
-              A curated inventory of high-performance digital platforms and engineering-led 
-              web solutions designed for measurable business growth.
-            </p>
-            <p className="text-zinc-500 dark:text-zinc-300">
-              Every project represents a strategic partnership focused on solving complex 
-              technical challenges while delivering an exceptional user experience.
+              A highlight of our most impactful projects that have measurable use and create business growth.
             </p>
           </div>
         </div>
@@ -55,7 +50,7 @@ export default function PortfolioPage() {
             Have a project in mind?
           </h2>
           <p className="mb-12 text-zinc-500 dark:text-zinc-300">
-            We specialize in architecting custom digital solutions for businesses with unique requirements.
+            How can we help innovate for you today? 
           </p>
           <Link 
             href="/contact"
