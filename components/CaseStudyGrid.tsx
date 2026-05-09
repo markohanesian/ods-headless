@@ -66,6 +66,21 @@ const CaseStudyGrid = async ({
           {projects.map((project: PortfolioItem) => {
             const isLab = variant === 'lab' || project.categories?.nodes?.some((c: { slug: string }) => c.slug === 'custom-apps');
             
+            // Extract Status and App Type from tags
+            const tags = project.tags?.nodes || [];
+            
+            const statusTag = tags.find(t => 
+              ['alpha', 'beta', 'development', 'in progress', 'shipped', 'production', 'live'].includes(t.slug)
+            );
+            
+            const appTypeTag = tags.find(t => 
+              ['shopify-plugin', 'mobile-app', 'chrome-extension', 'web-app', 'developer-tool'].includes(t.slug)
+            );
+
+            const isProduction = statusTag && ['shipped', 'production', 'live'].includes(statusTag.slug);
+            const statusLabel = statusTag ? statusTag.name : 'Development';
+            const appTypeLabel = appTypeTag ? appTypeTag.name : 'PROPRIETARY_SOFTWARE';
+
             return (
               <Link 
                 key={project.slug} 
@@ -79,10 +94,17 @@ const CaseStudyGrid = async ({
                 {/* Lab Variant: High-Tech Header */}
                 {isLab && (
                   <div className="flex justify-between items-start mb-6">
-                    <div className="label-mono bg-zinc-50 dark:bg-zinc-900 px-2 py-1 border border-zinc-100 dark:border-zinc-800">
-                      [ PROPRIETARY_SOFTWARE ]
+                    <div className="label-mono bg-zinc-50 dark:bg-zinc-900 px-2 py-1 border border-zinc-100 dark:border-zinc-800 uppercase">
+                      [ {appTypeLabel} ]
                     </div>
-                    <div className="h-2 w-2 rounded-full bg-brand shadow-[0_0_8px_rgba(252,175,59,0.5)]"></div>
+                    <div 
+                      className={`h-2.5 w-2.5 rounded-full transition-all duration-500 ${
+                        isProduction 
+                          ? 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]' 
+                          : 'bg-brand shadow-[0_0_8px_rgba(252,175,59,0.5)]'
+                      }`}
+                      title={`Status: ${statusLabel}`}
+                    ></div>
                   </div>
                 )}
 

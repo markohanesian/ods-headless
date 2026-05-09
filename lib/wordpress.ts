@@ -141,6 +141,12 @@ export async function getPortfolioItems(category?: string, first: number = 20, e
               slug
             }
           }
+          tags {
+            nodes {
+              name
+              slug
+            }
+          }
         }
       }
     }
