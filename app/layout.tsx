@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Ohanesian Digital Solutions | Digital Solutions Agency",
   description: "Minimalist, high-performance, and business-driven digital solutions with engineering expertise.",
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
