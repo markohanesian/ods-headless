@@ -15,8 +15,7 @@ export default function Image() {
     (
       <div
         style={{
-          fontSize: 128,
-          background: 'black',
+          background: '#09090b', // zinc-950
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -24,6 +23,7 @@ export default function Image() {
           justifyContent: 'center',
           color: 'white',
           flexDirection: 'column',
+          fontFamily: 'sans-serif',
         }}
       >
         <div
@@ -31,17 +31,34 @@ export default function Image() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            border: '8px solid white',
+            background: 'black',
             borderRadius: '100%',
-            width: 240,
-            height: 240,
+            width: 320,
+            height: 320,
             marginBottom: 40,
+            fontSize: 220,
+            fontWeight: 900,
+            lineHeight: 1,
           }}
         >
           O
         </div>
-        <div style={{ fontSize: 48, letterSpacing: '-0.05em', fontWeight: 'bold' }}>
-          OHANESIAN DIGITAL SOLUTIONS
+        <div style={{ 
+          fontSize: 60, 
+          letterSpacing: '-0.05em', 
+          fontWeight: 900,
+          textTransform: 'uppercase'
+        }}>
+          Ohanesian
+        </div>
+        <div style={{ 
+          fontSize: 24, 
+          letterSpacing: '0.4em', 
+          color: '#71717a', // zinc-400
+          marginTop: 10,
+          textTransform: 'uppercase'
+        }}>
+          Digital Solutions
         </div>
       </div>
     ),

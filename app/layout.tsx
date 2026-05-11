@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   description: "Minimalist, high-performance, and business-driven digital solutions with engineering expertise.",
   icons: {
     icon: '/favicon.svg',
+    apple: '/favicon.svg',
   },
 };
 
