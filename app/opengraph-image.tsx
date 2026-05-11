@@ -33,11 +33,11 @@ export default function Image() {
             justifyContent: 'center',
             background: 'black',
             borderRadius: '100%',
-            width: 320,
-            height: 320,
+            width: 300,
+            height: 300,
             marginBottom: 40,
-            fontSize: 220,
-            fontWeight: 900,
+            fontSize: 200,
+            fontWeight: 700,
             lineHeight: 1,
           }}
         >
@@ -46,7 +46,7 @@ export default function Image() {
         <div style={{ 
           fontSize: 60, 
           letterSpacing: '-0.05em', 
-          fontWeight: 900,
+          fontWeight: 700,
           textTransform: 'uppercase'
         }}>
           Ohanesian
