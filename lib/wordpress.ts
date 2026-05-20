@@ -100,7 +100,7 @@ export async function wpFetch<T>(query: string, variables = {}): Promise<T> {
       headers: {
         "Content-Type": "application/json",
       },
-      next: { revalidate: 3600 }, // Cache for 1 hour
+      next: { revalidate: 600 }, // Cache for 10 minutes
       body: JSON.stringify({
         query,
         variables,

@@ -70,14 +70,14 @@ const CaseStudyGrid = async ({
             const tags = project.tags?.nodes || [];
             
             const statusTag = tags.find(t => 
-              ['alpha', 'beta', 'development', 'in progress', 'shipped', 'production', 'live'].includes(t.slug)
+              ['alpha', 'beta', 'development', 'in progress', 'live'].includes(t.slug)
             );
             
             const appTypeTag = tags.find(t => 
               ['shopify-plugin', 'mobile-app', 'chrome-extension', 'web-app', 'developer-tool'].includes(t.slug)
             );
 
-            const isProduction = statusTag && ['shipped', 'production', 'live'].includes(statusTag.slug);
+            const isLive = statusTag?.slug === 'live';
             const statusLabel = statusTag ? statusTag.name : 'Development';
             const appTypeLabel = appTypeTag ? appTypeTag.name : 'PROPRIETARY_SOFTWARE';
 
@@ -99,7 +99,7 @@ const CaseStudyGrid = async ({
                     </div>
                     <div 
                       className={`h-2.5 w-2.5 rounded-full transition-all duration-500 ${
-                        isProduction 
+                        isLive 
                           ? 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]' 
                           : 'bg-brand shadow-[0_0_8px_rgba(252,175,59,0.5)]'
                       }`}
