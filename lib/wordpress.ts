@@ -258,31 +258,46 @@ export async function getTeamMembers(): Promise<PortfolioItem[]> {
     let jobTitle = "";
     let bioHtml = "";
 
-    // 1. Primary Strategy: Split the content area
     if (node.content) {
-      // Split by first closing paragraph tag or line break
-      const splitRegex = /(<\/p>|<br\s*\/?>)/i;
-      const parts = node.content.split(splitRegex);
+      // Split by common block/break tags
+      const splitRegex = /(<\/p>|<br\s*\/?>|<\/h[1-6]>)/i;
+      const allParts = node.content.split(splitRegex);
       
-      if (parts.length > 1) {
-        // First part is the Job Title
-        jobTitle = parts[0].replace(/<[^>]*>?/gm, '').trim();
-        // The rest is the Bio
-        bioHtml = parts.slice(2).join('').trim();
+      // Find the first part that actually contains readable text
+      let firstTextIndex = -1;
+      for (let i = 0; i < allParts.length; i++) {
+        const textSnippet = allParts[i].replace(/<[^>]*>?/gm, '').replace(/&nbsp;/g, ' ').trim();
+        if (textSnippet.length > 0) {
+          firstTextIndex = i;
+          jobTitle = textSnippet;
+          break;
+        }
+      }
+
+      if (firstTextIndex !== -1) {
+        // Bio is everything following that first text part and its separator
+        // We skip the text part (i) and the separator (i+1)
+        bioHtml = allParts.slice(firstTextIndex + 1).join('').trim();
         
-        // If bio doesn't start with a tag, wrap it in a paragraph
+        // Clean up the Bio: 
+        // 1. Remove leading separator tags that were part of the split
+        bioHtml = bioHtml.replace(/^(<\/p>|<br\s*\/?>|<\/h[1-6]>)/i, '');
+        
+        // 2. Remove leading/trailing empty tags, breaks, and &nbsp;
+        bioHtml = bioHtml
+          .replace(/^(<br\s*\/?>|<\/?p[^>]*>|&nbsp;|\s)+/gi, '')
+          .replace(/(<br\s*\/?>|<\/?p[^>]*>|&nbsp;|\s)+$/gi, '');
+          
+        // 3. Special fix for the "stray period" issue (often a placeholder for empty lines)
+        bioHtml = bioHtml.replace(/<br\s*\/?>\s*\.$/i, '');
+
         if (bioHtml && !bioHtml.startsWith('<')) {
           bioHtml = `<p>${bioHtml}</p>`;
         }
-      } else {
-        // Only one piece of text found in content
-        jobTitle = node.content.replace(/<[^>]*>?/gm, '').trim();
-        bioHtml = "";
       }
     }
 
-    // 2. Secondary Strategy: If we still don't have a job title but we have an excerpt
-    // (This handles cases where someone might have used the dedicated Excerpt field and NO content)
+    // Secondary Strategy: Only use excerpt if content split completely failed
     if (!jobTitle && node.excerpt) {
       jobTitle = node.excerpt.replace(/<[^>]*>?/gm, '').trim();
     }
