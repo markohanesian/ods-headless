@@ -258,41 +258,44 @@ export async function getTeamMembers(): Promise<PortfolioItem[]> {
     let jobTitle = "";
     let bioHtml = "";
 
+    // 1. Primary Strategy: Split the content area
     if (node.content) {
-      // 1. Try to split by the first <br> or </p>
+      // Split by first closing paragraph tag or line break
       const splitRegex = /(<\/p>|<br\s*\/?>)/i;
       const parts = node.content.split(splitRegex);
       
       if (parts.length > 1) {
         // First part is the Job Title
         jobTitle = parts[0].replace(/<[^>]*>?/gm, '').trim();
-        // The rest is the Bio (reconstructing the HTML)
+        // The rest is the Bio
         bioHtml = parts.slice(2).join('').trim();
         
-        // Ensure the bio is wrapped in a paragraph if it's just loose text now
+        // If bio doesn't start with a tag, wrap it in a paragraph
         if (bioHtml && !bioHtml.startsWith('<')) {
           bioHtml = `<p>${bioHtml}</p>`;
         }
       } else {
-        // Fallback for single paragraph
+        // Only one piece of text found in content
         jobTitle = node.content.replace(/<[^>]*>?/gm, '').trim();
+        bioHtml = "";
       }
     }
 
-    // Secondary Fallback: If we have a dedicated Excerpt, use it
-    if (node.excerpt && node.excerpt.length > 5) {
+    // 2. Secondary Strategy: If we still don't have a job title but we have an excerpt
+    // (This handles cases where someone might have used the dedicated Excerpt field and NO content)
+    if (!jobTitle && node.excerpt) {
       jobTitle = node.excerpt.replace(/<[^>]*>?/gm, '').trim();
-      bioHtml = node.content || "";
     }
 
-    // Final clean up of entities
+    // Final clean up of entities in job title
     jobTitle = jobTitle
       .replace(/&amp;/g, '&')
       .replace(/&nbsp;/g, ' ')
       .replace(/&rsquo;/g, "'")
       .replace(/&lsquo;/g, "'")
       .replace(/&ndash;/g, '-')
-      .replace(/&mdash;/g, '—');
+      .replace(/&mdash;/g, '—')
+      .replace(/&quot;/g, '"');
 
     return {
       ...node,
