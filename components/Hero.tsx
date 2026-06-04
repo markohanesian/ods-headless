@@ -19,9 +19,9 @@ const Hero = () => {
         </h1>
         
         <p className="lead-text text-zinc-600 dark:text-zinc-300 max-w-3xl mb-12">
-          At Ohanesian Digital Solutions, we don’t just build. We strategize, design, and develop 
-          professional websites and compelling brand identities, empowering businesses to lead 
-          in a competitive landscape.
+          At Ohanesian Digital Solutions, we go beyond standard builds. We strategize, design, 
+          and develop high-performance websites and custom applications, delivering intuitive 
+          digital experiences that empower businesses to lead in a competitive landscape.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4">

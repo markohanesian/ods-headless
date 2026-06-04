@@ -20,20 +20,19 @@ export default async function AboutPage() {
           
           <div className="max-w-4xl">
             <h2 className="text-zinc-900 dark:text-zinc-50 mb-8 tracking-tight">
-              Our Story: Built for Business Growth
+              Our Mission: Quality First.
             </h2>
-            <div className="space-y-6 text-zinc-500 dark:text-zinc-300">
+            <div className="space-y-8 text-zinc-500 dark:text-zinc-300">
               <p className="text-xl md:text-2xl font-light leading-relaxed">
-                We don’t just build websites; we design and engineer digital platforms designed 
-                for measurable results. At Ohanesian Digital Solutions, our entire process is 
-                centered on strategy-first consultation to ensure every feature delivers value 
-                to your bottom line.
+                We value quality for the end user above all, utilizing strategy and technology 
+                to build intuitive digital experiences. Our focus is on engineering solutions 
+                that feel natural, perform flawlessly, and solve real-world business challenges.
               </p>
-              <p>
-                Drawing on over 20 years of combined experience in the field, our team delivers clean, 
-                high-performing solutions built on rigorous UX principles and accessibility standards. 
-                A successful website is one that drives conversions, not just clicks—that is the 
-                singular focus that guides our work.
+              <p className="text-xl md:text-2xl font-light leading-relaxed">
+                Having worked across diverse sectors—from industrial services to custom digital 
+                instrumentation—we apply a unique skillset to every project. We combine deep 
+                technical expertise with firsthand entrepreneurship experience to ensure our 
+                work isn&apos;t just functional, but strategically aligned with your growth.
               </p>
             </div>
           </div>
@@ -64,58 +63,6 @@ export default async function AboutPage() {
               <p className="text-sm text-zinc-500 dark:text-zinc-300">
                 We start with your business goals, not just the code, ensuring maximum ROI from day one.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Founder Section */}
-      <section className="px-6 lg:px-12 py-24 border-t border-zinc-100 dark:border-zinc-900">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="relative aspect-[4/5] bg-zinc-100 dark:bg-zinc-900 overflow-hidden border border-zinc-200 dark:border-zinc-800 w-full md:max-w-[533px] md:mx-auto lg:mx-0">
-              {featuredImage ? (
-                <Image 
-                  src={featuredImage.sourceUrl}
-                  alt={featuredImage.altText || "Mark Sarkis Ohanesian"}
-                  fill
-                  className="object-cover"
-                  priority
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              ) : (
-                <div className="absolute inset-0 flex items-center justify-center label-mono text-center p-8">
-                  Proprietor Image Archive // [ Mark Sarkis Ohanesian ]
-                </div>
-              )}
-              <div className="absolute bottom-6 left-6 bg-white dark:bg-zinc-950 p-4 border border-zinc-200 dark:border-zinc-800">
-                <p className="text-sm font-bold text-zinc-900 dark:text-zinc-50 leading-tight">
-                  Mark Sarkis Ohanesian
-                </p>
-                <p className="label-mono mt-1 text-zinc-500">
-                  Founder & Principal Architect
-                </p>
-              </div>
-            </div>
-
-            <div className="max-w-2xl">
-              <h3 className="label-mono text-accent-blue mb-8">Proprietor Statement</h3>
-              <h2 className="text-zinc-900 dark:text-zinc-50 mb-8 tracking-tight !text-4xl md:!text-5xl">
-                Engineering Value through Strategic Clarity.
-              </h2>
-              <div className="space-y-6 text-zinc-500 dark:text-zinc-300">
-                <p>
-                  My approach is rooted in the belief that technical complexity should never 
-                  compromise business utility. By bridging the gap between high-level engineering 
-                  and lean strategy, I ensure our clients don’t just get a website—they get 
-                  a high-performance digital asset that works for them 24/7.
-                </p>
-                <p>
-                  Every line of code we write and every interface we design is evaluated against 
-                  a single metric: does it drive the business forward? That commitment to 
-                  measurable ROI is what sets our architectural approach apart.
-                </p>
-              </div>
             </div>
           </div>
         </div>
