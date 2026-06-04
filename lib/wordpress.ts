@@ -258,12 +258,29 @@ export async function getTeamMembers(): Promise<PortfolioItem[]> {
   const data = await wpFetch<{ posts: { nodes: PortfolioItem[] } }>(query);
   const nodes = data?.posts?.nodes || [];
   
-  return nodes.map(node => ({
-    ...node,
-    // We use Excerpt for Job Title, and Content for the Bio
-    excerpt: node.excerpt?.replace(/<[^>]*>?/gm, '').trim() || '',
-    content: node.content?.replace(/<[^>]*>?/gm, '').trim() || ''
-  }));
+  return nodes.map(node => {
+    // Helper to clean and decode simple entities
+    const clean = (text: string = '') => text
+      .replace(/<[^>]*>?/gm, '')
+      .replace(/&amp;/g, '&')
+      .replace(/&nbsp;/g, ' ')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/&rsquo;/g, "'")
+      .replace(/&lsquo;/g, "'")
+      .replace(/&ldquo;/g, '"')
+      .replace(/&rdquo;/g, '"')
+      .replace(/&hellip;/g, '...')
+      .trim();
+
+    return {
+      ...node,
+      excerpt: clean(node.excerpt),
+      content: clean(node.content)
+    };
+  });
 }
 
 export async function getPostBySlug(slug: string): Promise<PortfolioItem | null> {

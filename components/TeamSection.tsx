@@ -29,15 +29,15 @@ const TeamSection = async () => {
                 <h3 className="!text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
                   {member.title}
                 </h3>
-                <div className="h-px flex-grow bg-zinc-100 dark:bg-zinc-900"></div>
+                <div className="flex-grow border-t border-zinc-100 dark:border-zinc-900"></div>
               </div>
               
               <div className="label-mono text-accent-blue mb-6">
-                {member.excerpt}
+                {member.excerpt || "Strategic Partner"}
               </div>
               
               <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">
-                {member.content}
+                {member.content || "Expertise in digital architecture and strategic execution."}
               </p>
             </div>
           ))}
