@@ -29,7 +29,8 @@ export default function PortfolioPage() {
       {/* Dynamic Grid Section - Client Inventory */} 
       <CaseStudyGrid 
         title="CLIENT WORK" 
-        subtitle="Full technical breakdowns of architectural implementations for our global client base."            category="work"
+        subtitle="A look into how we solve real business challenges—from custom quote tools and job application workflows to full-scale platform management and brand strategy."
+        category="work"
         excludeCategory="custom-apps"
         limit={50}
       />

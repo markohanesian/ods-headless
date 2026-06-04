@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { getAboutPageData } from "@/lib/wordpress";
+import TeamSection from "@/components/TeamSection";
 
 export default async function AboutPage() {
   const aboutData = await getAboutPageData();
@@ -94,6 +95,9 @@ export default async function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Team Section */}
+      <TeamSection />
 
       {/* CTA Section */}
       <section className="px-6 lg:px-12 py-32 text-center">

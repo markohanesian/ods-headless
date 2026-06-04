@@ -235,6 +235,37 @@ export async function getBlogPosts(): Promise<PortfolioItem[]> {
   }));
 }
 
+export async function getTeamMembers(): Promise<PortfolioItem[]> {
+  const query = `
+    query GetTeamMembers {
+      posts(where: { categoryName: "team" }, first: 20) {
+        nodes {
+          title
+          slug
+          excerpt
+          content
+          featuredImage {
+            node {
+              sourceUrl
+              altText
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const data = await wpFetch<{ posts: { nodes: PortfolioItem[] } }>(query);
+  const nodes = data?.posts?.nodes || [];
+  
+  return nodes.map(node => ({
+    ...node,
+    // We use Excerpt for Job Title, and Content for the Bio
+    excerpt: node.excerpt?.replace(/<[^>]*>?/gm, '').trim() || '',
+    content: node.content?.replace(/<[^>]*>?/gm, '').trim() || ''
+  }));
+}
+
 export async function getPostBySlug(slug: string): Promise<PortfolioItem | null> {
   const query = `
     query GetPostBySlug($id: ID!) {

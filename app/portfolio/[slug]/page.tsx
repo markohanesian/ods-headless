@@ -46,26 +46,26 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                 {post.tags?.nodes?.length ? post.tags.nodes.map(t => t.name).join(" / ") : "Strategy / Engineering"}
               </p>
             </div>
-            <div>
-              <h3 className="label-mono mb-4 !font-normal">Deploy</h3>
-              <p className="font-bold text-lg text-zinc-600 dark:text-zinc-300">
-                {post.projectUrl ? (
+            {post.projectUrl && (
+              <div>
+                <h3 className="label-mono mb-4 !font-normal">Deploy</h3>
+                <p className="font-bold text-lg text-zinc-600 dark:text-zinc-300">
                   <a href={post.projectUrl} target="_blank" rel="noopener noreferrer" className="hover:text-brand transition-colors">
                     Live Site →
                   </a>
-                ) : "Internal Only"}
-              </p>
-            </div>
-            <div>
-              <h3 className="label-mono mb-4 !font-normal">Github</h3>
-              <p className="font-bold text-lg text-zinc-600 dark:text-zinc-300">
-                {post.githubUrl ? (
+                </p>
+              </div>
+            )}
+            {post.githubUrl && (
+              <div>
+                <h3 className="label-mono mb-4 !font-normal">Github</h3>
+                <p className="font-bold text-lg text-zinc-600 dark:text-zinc-300">
                   <a href={post.githubUrl} target="_blank" rel="noopener noreferrer" className="hover:text-brand transition-colors">
                     Repository →
                   </a>
-                ) : "Private"}
-              </p>
-            </div>
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </section>
