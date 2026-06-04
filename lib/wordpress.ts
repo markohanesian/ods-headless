@@ -244,12 +244,6 @@ export async function getTeamMembers(): Promise<PortfolioItem[]> {
           slug
           excerpt
           content
-          featuredImage {
-            node {
-              sourceUrl
-              altText
-            }
-          }
         }
       }
     }
@@ -259,41 +253,42 @@ export async function getTeamMembers(): Promise<PortfolioItem[]> {
   const nodes = data?.posts?.nodes || [];
   
   return nodes.map(node => {
-    // 1. Clean the title (Name)
     const name = node.title.replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').trim();
-
-    // 2. Parse the Job Title
-    // Priority: Excerpt Field -> First <p> or <h> in Content -> Empty
-    let jobTitle = node.excerpt?.replace(/<[^>]*>?/gm, '').trim() || '';
     
-    if (!jobTitle && node.content) {
-      // Simple regex to grab the first line or first paragraph's text
-      const firstLineMatch = node.content.match(/<(p|h1|h2|h3|h4|h5|h6)[^>]*>(.*?)<\/\1>/i);
-      if (firstLineMatch) {
-        jobTitle = firstLineMatch[2].replace(/<[^>]*>?/gm, '').trim();
-      }
+    // 1. Split content into paragraphs
+    // WordPress wraps each line/paragraph in <p> tags
+    const paragraphs = node.content?.match(/<p[^>]*>[\s\S]*?<\/p>/gi) || [];
+    
+    let jobTitle = "";
+    let bioHtml = "";
+
+    if (paragraphs.length > 0) {
+      // Use the first paragraph as the Job Title
+      jobTitle = paragraphs[0].replace(/<[^>]*>?/gm, '').trim();
+      // Use everything else as the Bio
+      bioHtml = paragraphs.slice(1).join('');
     }
 
-    // 3. Parse the Bio
-    // If we took the first line for the title, we should ideally skip it in the bio
-    let bio = node.content || '';
-    if (!node.excerpt && bio.includes(jobTitle)) {
-        // Remove the job title line from the bio content if it was used as the title
-        bio = bio.replace(/<(p|h1|h2|h3|h4|h5|h6)[^>]*>.*?jobTitle.*?<\/\1>/i, '');
+    // Fallback: If for some reason there's only one paragraph, or we have an excerpt
+    if (node.excerpt && node.excerpt.length > 5) {
+      jobTitle = node.excerpt.replace(/<[^>]*>?/gm, '').trim();
+      bioHtml = node.content || "";
     }
 
-    // Final cleanup of HTML entities for the Job Title
+    // Clean up entities in job title
     jobTitle = jobTitle
       .replace(/&amp;/g, '&')
       .replace(/&nbsp;/g, ' ')
       .replace(/&rsquo;/g, "'")
-      .replace(/&lsquo;/g, "'");
+      .replace(/&lsquo;/g, "'")
+      .replace(/&ndash;/g, '-')
+      .replace(/&mdash;/g, '—');
 
     return {
       ...node,
       title: name,
       excerpt: jobTitle,
-      content: bio // We'll render this with dangerouslySetInnerHTML for semantic support
+      content: bioHtml
     };
   });
 }
