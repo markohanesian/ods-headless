@@ -238,7 +238,7 @@ export async function getBlogPosts(): Promise<PortfolioItem[]> {
 export async function getTeamMembers(): Promise<PortfolioItem[]> {
   const query = `
     query GetTeamMembers {
-      posts(where: { categoryName: "team", orderby: { field: DATE, order: DESC } }, first: 20) {
+      posts(where: { categoryName: "team", orderby: { field: DATE, order: ASC } }, first: 20) {
         nodes {
           title
           slug
