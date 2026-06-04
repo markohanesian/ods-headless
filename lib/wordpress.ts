@@ -259,26 +259,41 @@ export async function getTeamMembers(): Promise<PortfolioItem[]> {
   const nodes = data?.posts?.nodes || [];
   
   return nodes.map(node => {
-    // Helper to clean and decode simple entities
-    const clean = (text: string = '') => text
-      .replace(/<[^>]*>?/gm, '')
+    // 1. Clean the title (Name)
+    const name = node.title.replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').trim();
+
+    // 2. Parse the Job Title
+    // Priority: Excerpt Field -> First <p> or <h> in Content -> Empty
+    let jobTitle = node.excerpt?.replace(/<[^>]*>?/gm, '').trim() || '';
+    
+    if (!jobTitle && node.content) {
+      // Simple regex to grab the first line or first paragraph's text
+      const firstLineMatch = node.content.match(/<(p|h1|h2|h3|h4|h5|h6)[^>]*>(.*?)<\/\1>/i);
+      if (firstLineMatch) {
+        jobTitle = firstLineMatch[2].replace(/<[^>]*>?/gm, '').trim();
+      }
+    }
+
+    // 3. Parse the Bio
+    // If we took the first line for the title, we should ideally skip it in the bio
+    let bio = node.content || '';
+    if (!node.excerpt && bio.includes(jobTitle)) {
+        // Remove the job title line from the bio content if it was used as the title
+        bio = bio.replace(/<(p|h1|h2|h3|h4|h5|h6)[^>]*>.*?jobTitle.*?<\/\1>/i, '');
+    }
+
+    // Final cleanup of HTML entities for the Job Title
+    jobTitle = jobTitle
       .replace(/&amp;/g, '&')
       .replace(/&nbsp;/g, ' ')
-      .replace(/&lt;/g, '<')
-      .replace(/&gt;/g, '>')
-      .replace(/&quot;/g, '"')
-      .replace(/&#39;/g, "'")
       .replace(/&rsquo;/g, "'")
-      .replace(/&lsquo;/g, "'")
-      .replace(/&ldquo;/g, '"')
-      .replace(/&rdquo;/g, '"')
-      .replace(/&hellip;/g, '...')
-      .trim();
+      .replace(/&lsquo;/g, "'");
 
     return {
       ...node,
-      excerpt: clean(node.excerpt),
-      content: clean(node.content)
+      title: name,
+      excerpt: jobTitle,
+      content: bio // We'll render this with dangerouslySetInnerHTML for semantic support
     };
   });
 }

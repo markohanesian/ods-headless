@@ -36,9 +36,12 @@ const TeamSection = async () => {
                 {member.excerpt || "Strategic Partner"}
               </div>
               
-              <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">
-                {member.content || "Expertise in digital architecture and strategic execution."}
-              </p>
+              <div 
+                className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-light prose-sm dark:prose-invert 
+                  /* Override prose defaults to match our minimal style */
+                  [&_p]:mb-4 [&_p:last-child]:mb-0 [&_ul]:list-disc [&_ul]:pl-4 [&_li]:mb-2"
+                dangerouslySetInnerHTML={{ __html: member.content || "Expertise in digital architecture and strategic execution." }}
+              />
             </div>
           ))}
         </div>
