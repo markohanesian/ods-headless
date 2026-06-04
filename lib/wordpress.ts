@@ -255,27 +255,37 @@ export async function getTeamMembers(): Promise<PortfolioItem[]> {
   return nodes.map(node => {
     const name = node.title.replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').trim();
     
-    // 1. Split content into paragraphs
-    // WordPress wraps each line/paragraph in <p> tags
-    const paragraphs = node.content?.match(/<p[^>]*>[\s\S]*?<\/p>/gi) || [];
-    
     let jobTitle = "";
     let bioHtml = "";
 
-    if (paragraphs.length > 0) {
-      // Use the first paragraph as the Job Title
-      jobTitle = paragraphs[0].replace(/<[^>]*>?/gm, '').trim();
-      // Use everything else as the Bio
-      bioHtml = paragraphs.slice(1).join('');
+    if (node.content) {
+      // 1. Try to split by the first <br> or </p>
+      const splitRegex = /(<\/p>|<br\s*\/?>)/i;
+      const parts = node.content.split(splitRegex);
+      
+      if (parts.length > 1) {
+        // First part is the Job Title
+        jobTitle = parts[0].replace(/<[^>]*>?/gm, '').trim();
+        // The rest is the Bio (reconstructing the HTML)
+        bioHtml = parts.slice(2).join('').trim();
+        
+        // Ensure the bio is wrapped in a paragraph if it's just loose text now
+        if (bioHtml && !bioHtml.startsWith('<')) {
+          bioHtml = `<p>${bioHtml}</p>`;
+        }
+      } else {
+        // Fallback for single paragraph
+        jobTitle = node.content.replace(/<[^>]*>?/gm, '').trim();
+      }
     }
 
-    // Fallback: If for some reason there's only one paragraph, or we have an excerpt
+    // Secondary Fallback: If we have a dedicated Excerpt, use it
     if (node.excerpt && node.excerpt.length > 5) {
       jobTitle = node.excerpt.replace(/<[^>]*>?/gm, '').trim();
       bioHtml = node.content || "";
     }
 
-    // Clean up entities in job title
+    // Final clean up of entities
     jobTitle = jobTitle
       .replace(/&amp;/g, '&')
       .replace(/&nbsp;/g, ' ')
