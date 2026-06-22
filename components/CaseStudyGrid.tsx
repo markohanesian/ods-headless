@@ -70,7 +70,7 @@ const CaseStudyGrid = async ({
             const tags = project.tags?.nodes || [];
             
             const statusTag = tags.find(t => 
-              ['alpha', 'beta', 'development', 'in progress', 'live'].includes(t.slug)
+              ['alpha', 'beta', 'development', 'in-progress', 'in progress', 'live'].includes(t.slug)
             );
             
             const appTypeTag = tags.find(t => 
