@@ -1,93 +1,102 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { getAboutPageData } from "@/lib/wordpress";
 import TeamSection from "@/components/TeamSection";
 
-export default async function AboutPage() {
-  const aboutData = await getAboutPageData();
-  const featuredImage = aboutData?.featuredImage?.node;
+const CORE_STANDARDS = [
+  {
+    title: "Proven Technical Mastery",
+    description: "We engineer resilient digital platforms designed to handle growth without crashing, slowing down, or breaking under load.",
+    badge: "STANDARD 01"
+  },
+  {
+    title: "Inclusive Digital Design",
+    description: "We build fully accessible platforms that deliver a seamless experience for every potential client on every device.",
+    badge: "STANDARD 02"
+  },
+  {
+    title: "Strategy-First Architecture",
+    description: "We pinpoint your exact operational bottlenecks before writing code, ensuring every feature directly drives business ROI.",
+    badge: "STANDARD 03"
+  }
+];
 
+export default function AboutPage() {
   return (
     <div className="bg-white dark:bg-zinc-950 min-h-screen">
-      {/* Header Section */}
-      <section className="px-6 lg:px-12 pt-32 pb-24 border-b border-zinc-100 dark:border-zinc-900">
+      {/* Section 1: Header */}
+      <section className="px-6 lg:px-12 pt-36 pb-24 border-b border-zinc-100 dark:border-zinc-900">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-zinc-900 dark:text-zinc-50 mb-8 uppercase">
-            About
+          <div className="label-mono text-accent-blue mb-4">
+            ABOUT OHANESIAN DIGITAL SOLUTIONS
+          </div>
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-8 max-w-5xl leading-[1.08]">
+            Your Partner in Engineering Practical Business Growth
           </h1>
           <div className="h-px w-24 bg-accent-blue mb-12"></div>
           
           <div className="max-w-4xl">
-            <h2 className="text-zinc-900 dark:text-zinc-50 mb-8 tracking-tight">
-              Our Mission: Quality First.
-            </h2>
-            <div className="space-y-8 text-zinc-500 dark:text-zinc-300">
-              <p className="text-xl md:text-2xl font-light leading-relaxed">
-                We value quality for the end user above all, utilizing strategy and technology 
-                to build intuitive digital experiences. Our focus is on engineering solutions 
-                that feel natural, perform flawlessly, and solve real-world business challenges.
-              </p>
-              <p className="text-xl md:text-2xl font-light leading-relaxed">
-                Having worked across diverse sectors—from industrial services to custom digital 
-                instrumentation—we apply a unique skillset to every project. We combine deep 
-                technical expertise with firsthand entrepreneurship experience to ensure our 
-                work isn&apos;t just functional, but strategically aligned with your growth.
-              </p>
-            </div>
+            <p className="text-xl sm:text-2xl font-light leading-relaxed text-zinc-700 dark:text-zinc-200">
+              You shouldn&apos;t have to waste time wrestling with fragile website templates or tracking down lost leads. At Ohanesian Digital Solutions (ODS), we combine senior software engineering with strategic business insight to build automated, accessible web systems. We handle the technical heavy lifting so you can focus on scaling your business and serving your clients.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Metrics Section */}
+      {/* Section 2: Core Standards */}
       <section className="px-6 lg:px-12 py-24 bg-zinc-50 dark:bg-zinc-900/30">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
-            <div className="p-12 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800">
-              <div className="text-5xl font-bold text-zinc-900 dark:text-zinc-50 mb-4 tracking-tighter">20+</div>
-              <h3 className="label-mono mb-6">Years Collective Experience</h3>
-              <p className="text-sm text-zinc-500 dark:text-zinc-300">
-                We apply decades of insights to build resilient, conversion-focused platforms.
-              </p>
+          <div className="mb-16">
+            <div className="label-mono text-accent-blue mb-2">
+              SECTION 02 // CORE STANDARDS
             </div>
-            <div className="p-12 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800">
-              <div className="text-5xl font-bold text-zinc-900 dark:text-zinc-50 mb-4 tracking-tighter">100%</div>
-              <h3 className="label-mono mb-6">Commitment to Accessibility</h3>
-              <p className="text-sm text-zinc-500 dark:text-zinc-300">
-                Every project prioritizes WCAG standards for an inclusive, high-quality user experience.
-              </p>
-            </div>
-            <div className="p-12 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800">
-              <div className="text-5xl font-bold text-zinc-900 dark:text-zinc-50 mb-4 tracking-tighter">1st</div>
-              <h3 className="label-mono mb-6">Strategy-First Approach</h3>
-              <p className="text-sm text-zinc-500 dark:text-zinc-300">
-                We start with your business goals, not just the code, ensuring maximum ROI from day one.
-              </p>
-            </div>
+            <h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
+              Engineering Principles That Drive Value
+            </h2>
+            <div className="h-px w-full bg-zinc-200 dark:bg-zinc-800 mt-6"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {CORE_STANDARDS.map((standard) => (
+              <div 
+                key={standard.title}
+                className="p-8 sm:p-10 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl shadow-sm hover:border-accent-blue/40 transition-colors"
+              >
+                <div className="font-mono text-xs font-bold text-accent-blue tracking-wider mb-4">
+                  {standard.badge}
+                </div>
+                <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 mb-4 tracking-tight">
+                  {standard.title}
+                </h3>
+                <p className="text-zinc-600 dark:text-zinc-300 text-sm sm:text-base leading-relaxed font-light">
+                  {standard.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Section 3: Meet the Team */}
       <TeamSection />
 
       {/* CTA Section */}
-      <section className="px-6 lg:px-12 py-32 text-center">
+      <section className="px-6 lg:px-12 py-32 bg-zinc-900 dark:bg-zinc-100 text-zinc-50 dark:text-zinc-900 text-center transition-colors duration-300">
         <div className="max-w-3xl mx-auto">
-          <h2 className="mb-8 text-zinc-900 dark:text-zinc-50">
-            Ready for Success?
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tighter mb-8 leading-[1.15]">
+            Ready to Build Your Digital Engine?
           </h2>
-          <p className="text-zinc-500 dark:text-zinc-300 mb-12">
-            We’re committed to your business’s success – send us a message to set up a quick strategic consultation.
+          <p className="text-lg sm:text-xl text-zinc-300 dark:text-zinc-600 mb-12 leading-relaxed font-light">
+            We are committed to your business&apos;s long-term success. Contact us today to map out your custom digital strategy.
           </p>
           <Link 
             href="/contact"
-            className="btn-brand"
+            className="btn-brand px-8 py-4 text-base font-bold shadow-lg"
           >
-            Message Us
+            Schedule Your Consultation
           </Link>
         </div>
       </section>
     </div>
   );
 }
+

@@ -1,57 +1,37 @@
-import Link from "next/link";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
+import ArchitectureComparison from "@/components/ArchitectureComparison";
+import CoreCapabilities from "@/components/CoreCapabilities";
+import LeadIntakeTeaser from "@/components/LeadIntakeTeaser";
 import CaseStudyGrid from "@/components/CaseStudyGrid";
-import CoreValues from "@/components/CoreValues";
 import BlogSection from "@/components/BlogSection";
 
 export default function Home() {
   return (
     <>
+      {/* Section 1: Hero */}
       <Hero />
-      <Services />
       
-      {/* Section 1: Web Development & Design */}
+      {/* Section 2: Why Custom Web Architecture Beats Standard Builders */}
+      <ArchitectureComparison />
+
+      {/* Section 3: Core Capabilities */}
+      <CoreCapabilities />
+
+      {/* Showcase / Portfolio Section */}
       <CaseStudyGrid 
-        title="Web Development & Design" 
+        title="Web Systems & Engineering Portfolio" 
         subtitle="A curated selection of high-performance digital platforms and engineering-led web solutions designed for measurable business growth."
         category="web-development"
         limit={3}
         showViewAll={true}
-        viewAllLabel="See All"
+        viewAllLabel="View Portfolio"
       />
 
-      {/* Section 2: Custom Apps & Development */}
-      <CaseStudyGrid 
-        title="Custom Apps & Development" 
-        subtitle="Custom digital instruments designed to bridge the gap between complex backend systems and performant frontend experiences."
-        category="custom-apps"
-        limit={3}
-        variant="lab"
-        showViewAll={true}
-        viewAllLabel="See All"
-      />
-
-      <CoreValues />
       <BlogSection />
       
-      {/* Final CTA Section */}
-      <section className="px-6 lg:px-12 py-32 bg-zinc-900 dark:bg-zinc-100 text-zinc-50 dark:text-zinc-900 text-center transition-colors duration-300">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-8 leading-[1.1]">
-            Let’s Build Your Next Digital Success.
-          </h2>
-          <p className="text-xl text-zinc-300 dark:text-zinc-600 mb-12">
-            Have a vision for your business? We’re ready to listen and build a digital solution that brings your ideas to life.
-          </p>
-          <Link 
-            href="/contact"
-            className="btn-brand"
-          >
-            Send Us a Message
-          </Link>
-        </div>
-      </section>
+      {/* Section 4: Lead Intake Teaser & Call to Action */}
+      <LeadIntakeTeaser />
     </>
   );
 }
+

@@ -16,9 +16,15 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Brand Tone & Copywriting Guidelines
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+All page copy and content across Ohanesian Digital Solutions (ODS) should follow these core copywriting standards:
+
+- **Voice & Tone**: ROI-driven, authoritative, problem-solving, and clear. Speak directly to business owners who want to eliminate paperwork, capture qualified leads, and automate operational friction.
+- **Hero & Headline Hook**: Lead with high-impact outcomes (e.g. *"Turn Your Website into Your Hardest-Working Sales Rep"*).
+- **Comparative Positioning**: Clearly contrast standard off-the-shelf builders (Wix / WordPress / templates) against custom web engineering built for strategy and speed.
+- **Service Details**: Detail specific, actionable deliverables ("What You Get") rather than generic summaries.
+- **CTAs**: Use compelling, specific calls-to-action such as *"Get Your Free Site Audit"*, *"Start Your Free 2-Minute Assessment"*, and *"Claim Your Free Strategy Call"*.
 
 ## Learn More
 
@@ -29,8 +35,3 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

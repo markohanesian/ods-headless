@@ -1,47 +1,60 @@
 import React from 'react';
-import { getTeamMembers, PortfolioItem } from '@/lib/wordpress';
 
-const TeamSection = async () => {
-  let members: PortfolioItem[] = [];
-  
-  try {
-    members = await getTeamMembers();
-  } catch (error) {
-    console.error("Failed to load team members:", error);
-  }
+interface TeamMember {
+  name: string;
+  role: string;
+  bio: string;
+}
 
-  if (members.length === 0) return null;
+const STATIC_TEAM: TeamMember[] = [
+  {
+    name: "Mark Sarkis Ohanesian",
+    role: "Founder & Lead Architect",
+    bio: "Mark leads technical strategy and custom web engineering, turning operational friction into streamlined digital engines that save business owners time and money.",
+  },
+  {
+    name: "Astghik Stella Ohanesian",
+    role: "Creative Direction & Media",
+    bio: "Stella directs brand aesthetics, video assets, and digital strategy, ensuring your custom system presents a commanding visual presence.",
+  },
+  {
+    name: "Christopher Ohanesian",
+    role: "Visual Design",
+    bio: "Chris leverages deep user-experience expertise to craft intuitive layouts and clean interfaces that turn visitors into loyal customers.",
+  },
+];
 
+const TeamSection = () => {
   return (
     <section className="px-6 lg:px-12 py-24 bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-16">
-          <h2 className="uppercase mb-4">Our Team</h2>
-          <p className="text-zinc-500 dark:text-zinc-300 label-mono">
-            Strategic Minds & Creative Architects
-          </p>
+        <div className="mb-16 max-w-3xl">
+          <div className="label-mono text-accent-blue mb-4">
+            SECTION 03 // LEADERSHIP & ARCHITECTURE
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-4">
+            The Experts Behind Your Digital Systems
+          </h2>
+          <div className="h-px w-full bg-zinc-200 dark:bg-zinc-800 mt-6"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16">
-          {members.map((member) => (
-            <div key={member.slug} className="flex flex-col">
-              <div className="mb-6 flex items-center gap-4">
-                <h3 className="!text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-                  {member.title}
-                </h3>
-                <div className="flex-grow border-t border-zinc-100 dark:border-zinc-900"></div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+          {STATIC_TEAM.map((member) => (
+            <div 
+              key={member.name} 
+              className="flex flex-col p-8 border border-zinc-200 dark:border-zinc-800 rounded-xl bg-zinc-50/50 dark:bg-zinc-900/20 hover:border-accent-blue/40 transition-colors"
+            >
+              <h3 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-2">
+                {member.name}
+              </h3>
+              
+              <div className="label-mono text-accent-blue text-xs uppercase tracking-wider mb-6">
+                {member.role}
               </div>
               
-              <div className="label-mono text-accent-blue mb-6">
-                {member.excerpt || "Strategic Partner"}
-              </div>
-              
-              <div 
-                className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-light prose-sm dark:prose-invert 
-                  /* Override prose defaults to match our minimal style */
-                  [&_p]:mb-4 [&_p:last-child]:mb-0 [&_ul]:list-disc [&_ul]:pl-4 [&_li]:mb-2"
-                dangerouslySetInnerHTML={{ __html: member.content || "Expertise in digital architecture and strategic execution." }}
-              />
+              <p className="text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed font-light">
+                {member.bio}
+              </p>
             </div>
           ))}
         </div>
@@ -51,3 +64,4 @@ const TeamSection = async () => {
 };
 
 export default TeamSection;
+

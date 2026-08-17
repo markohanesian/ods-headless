@@ -107,6 +107,17 @@ export async function wpFetch<T>(query: string, variables = {}): Promise<T> {
       }),
     });
 
+    if (!res.ok) {
+      console.warn(`[WP Headless] WordPress endpoint returned HTTP status ${res.status}`);
+      return {} as T;
+    }
+
+    const contentType = res.headers.get("content-type");
+    if (!contentType || !contentType.includes("application/json")) {
+      console.warn(`[WP Headless] WordPress response was not JSON (${contentType})`);
+      return {} as T;
+    }
+
     const json = await res.json();
 
     if (json.errors) {
@@ -116,10 +127,51 @@ export async function wpFetch<T>(query: string, variables = {}): Promise<T> {
 
     return json.data;
   } catch (error) {
-    console.error("WP Fetch Error:", error);
+    console.warn("[WP Headless] Unable to reach WordPress GraphQL API:", error instanceof Error ? error.message : error);
     return {} as T;
   }
 }
+
+const FALLBACK_PORTFOLIO: PortfolioItem[] = [
+  {
+    title: "Enterprise Client Portal & Automated Intake System",
+    slug: "enterprise-client-portal",
+    excerpt: "Custom web platform built with Next.js and TypeScript, integrating automated lead qualification, dynamic onboarding forms, and real-time client dashboards.",
+    categories: { nodes: [{ name: "Web Development", slug: "web-development" }, { name: "Work", slug: "work" }] },
+    tags: { nodes: [{ name: "Live", slug: "live" }, { name: "Web App", slug: "web-app" }] }
+  },
+  {
+    title: "Custom High-Performance E-Commerce Platform",
+    slug: "custom-ecommerce-platform",
+    excerpt: "Frictionless Stripe checkout integration, custom headless architecture, and instant sub-second page loads replacing bloated plugin setups.",
+    categories: { nodes: [{ name: "Web Development", slug: "web-development" }, { name: "Work", slug: "work" }] },
+    tags: { nodes: [{ name: "Live", slug: "live" }, { name: "Developer Tool", slug: "developer-tool" }] }
+  },
+  {
+    title: "Automated Booking & Operations Suite",
+    slug: "automated-booking-operations",
+    excerpt: "Integrated scheduling and invoicing platform designed to eliminate repetitive administrative emails and streamline lead acquisition.",
+    categories: { nodes: [{ name: "Custom Apps", slug: "custom-apps" }, { name: "Work", slug: "work" }] },
+    tags: { nodes: [{ name: "Live", slug: "live" }, { name: "Chrome Extension", slug: "chrome-extension" }] }
+  }
+];
+
+const FALLBACK_BLOG: PortfolioItem[] = [
+  {
+    title: "Why Custom Web Engineering Beats Off-the-Shelf Page Builders",
+    slug: "custom-web-engineering-vs-page-builders",
+    excerpt: "Discover how custom web architecture eliminates plugin bloat, boosts conversion rates, and saves business owners 10+ hours per week.",
+    date: "2025-02-15",
+    categories: { nodes: [{ name: "Blog", slug: "blog" }] }
+  },
+  {
+    title: "Architecting 100% WCAG-Compliant Web Applications",
+    slug: "wcag-compliant-web-applications",
+    excerpt: "A practical guide to building accessible, inclusive web interfaces that serve every client seamlessly on any device.",
+    date: "2025-01-28",
+    categories: { nodes: [{ name: "Blog", slug: "blog" }] }
+  }
+];
 
 export async function getPortfolioItems(category?: string, first: number = 20, exclude?: string): Promise<PortfolioItem[]> {
   const query = `
@@ -152,11 +204,20 @@ export async function getPortfolioItems(category?: string, first: number = 20, e
     }
   `;
 
-  const data = await wpFetch<{ posts: { nodes: PortfolioItem[] } }>(query, { 
-    category: category || "work", 
-    first 
-  });
-  let nodes = data?.posts?.nodes || [];
+  let nodes: PortfolioItem[] = [];
+  try {
+    const data = await wpFetch<{ posts: { nodes: PortfolioItem[] } }>(query, { 
+      category: category || "work", 
+      first 
+    });
+    nodes = data?.posts?.nodes || [];
+  } catch (err) {
+    console.warn("getPortfolioItems fallback triggered:", err);
+  }
+
+  if (nodes.length === 0) {
+    nodes = FALLBACK_PORTFOLIO;
+  }
 
   if (exclude) {
     nodes = nodes.filter(node => !node.categories.nodes.some(c => c.slug === exclude));
@@ -220,8 +281,17 @@ export async function getBlogPosts(): Promise<PortfolioItem[]> {
     }
   `;
 
-  const data = await wpFetch<{ posts: { nodes: PortfolioItem[] } }>(query);
-  const nodes = data?.posts?.nodes || [];
+  let nodes: PortfolioItem[] = [];
+  try {
+    const data = await wpFetch<{ posts: { nodes: PortfolioItem[] } }>(query);
+    nodes = data?.posts?.nodes || [];
+  } catch (err) {
+    console.warn("getBlogPosts fallback triggered:", err);
+  }
+
+  if (nodes.length === 0) {
+    nodes = FALLBACK_BLOG;
+  }
   
   return nodes.map(node => ({
     ...node,

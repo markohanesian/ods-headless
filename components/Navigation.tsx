@@ -39,7 +39,7 @@ const Navigation = () => {
     { name: 'Services', href: '/services' },
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'About', href: '/about' },
-    { name: 'Connect', href: '/contact' }
+    { name: 'Contact', href: '/contact' }
   ];
 
   return (
@@ -61,7 +61,7 @@ const Navigation = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-10">
-          {navItems.filter(i => i.name !== 'Connect').map((item) => (
+          {navItems.filter(i => i.name !== 'Contact').map((item) => (
             <Link 
               key={item.name} 
               href={item.href}
@@ -104,7 +104,7 @@ const Navigation = () => {
             href="/contact"
             className="hidden md:block btn-brand !px-6 !py-2.5"
           >
-            Connect
+            Contact
           </Link>
 
           {/* Mobile Menu Button */}
