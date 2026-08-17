@@ -51,7 +51,7 @@ body {
 
 @layer components {
   .label-mono {
-    @apply text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-400;
+    @apply text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-600 dark:text-zinc-400;
   }
   .btn-brand {
     @apply px-8 py-5 bg-brand text-zinc-900 font-bold uppercase tracking-[0.3em] text-[10px] hover:bg-zinc-900 dark:hover:bg-zinc-50 hover:text-zinc-50 dark:hover:text-zinc-900 transition-all duration-300 text-center shadow-lg inline-block font-mono;

@@ -54,7 +54,7 @@ const Navigation = () => {
           <span className="text-xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 leading-none">
             ODS
           </span>
-          <span className="text-[9px] font-mono tracking-[0.3em] text-zinc-300 dark:text-zinc-100 font-bold uppercase leading-none mt-2">
+          <span className="text-[9px] font-mono tracking-[0.3em] text-zinc-600 dark:text-zinc-300 font-bold uppercase leading-none mt-2">
             OHANESIAN DIGITAL SOLUTIONS
           </span>
         </Link>

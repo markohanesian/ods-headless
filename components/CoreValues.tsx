@@ -33,7 +33,7 @@ const CoreValues = () => {
           {VALUES.map((value) => (
             <div key={value.id} className="flex gap-8 group">
               <div className="flex-shrink-0">
-                <div className="text-4xl md:text-5xl font-bold text-zinc-200 dark:text-zinc-800 group-hover:text-brand transition-colors duration-500 font-mono tracking-tighter">
+                <div className="text-4xl md:text-5xl font-bold text-zinc-500 dark:text-zinc-500 group-hover:text-brand transition-colors duration-500 font-mono tracking-tighter">
                   {value.id}
                 </div>
               </div>
