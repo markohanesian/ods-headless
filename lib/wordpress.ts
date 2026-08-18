@@ -138,6 +138,12 @@ const FALLBACK_PORTFOLIO: PortfolioItem[] = [
     slug: "the-pomegranate-boutique",
     excerpt: "Custom e-commerce web platform and digital storefront built with headless architecture, delivering sub-second page loads and a seamless mobile checkout experience.",
     content: "<p>The Pomegranate Boutique is a custom e-commerce digital storefront engineered for speed, mobile responsiveness, and effortless product discovery. Replacing slow legacy plugins with a modern headless setup, the site delivers sub-second page loads, accessible navigation, and direct payment processing.</p>",
+    featuredImage: {
+      node: {
+        sourceUrl: "https://wp.ohanesiandigitalsolutions.com/wp-content/uploads/2025/08/tpb_homepage.png",
+        altText: "Homepage for The Pomegranate Boutique"
+      }
+    },
     categories: { nodes: [{ name: "Web Development", slug: "web-development" }, { name: "Work", slug: "work" }] },
     tags: { nodes: [{ name: "Live", slug: "live" }, { name: "Web App", slug: "web-app" }] }
   },
@@ -146,7 +152,41 @@ const FALLBACK_PORTFOLIO: PortfolioItem[] = [
     slug: "diversified-land-management",
     excerpt: "High-performance digital platform with integrated client lead intake, automated project estimate calculators, and streamlined customer communication.",
     content: "<p>Diversified Land Management is a comprehensive digital platform designed for high-conversion lead generation and operational workflow automation. Built with strategy-first architecture, it features custom intake forms, instant estimate calculators, and direct backend lead routing.</p>",
+    featuredImage: {
+      node: {
+        sourceUrl: "https://wp.ohanesiandigitalsolutions.com/wp-content/uploads/2025/10/dlm-case-study-image-e1777951361171.png",
+        altText: "Diversified Land Management Case Study"
+      }
+    },
     categories: { nodes: [{ name: "Web Development", slug: "web-development" }, { name: "Work", slug: "work" }] },
+    tags: { nodes: [{ name: "Live", slug: "live" }, { name: "Web App", slug: "web-app" }] }
+  },
+  {
+    title: "Four Seasons Ag. Services",
+    slug: "four-seasons-ag-services",
+    excerpt: "Agricultural services platform featuring clear navigation, custom service offerings, and high-performance mobile responsiveness.",
+    content: "<p>Four Seasons Ag. Services is a modern digital platform engineered for agricultural operational visibility and client service engagement.</p>",
+    featuredImage: {
+      node: {
+        sourceUrl: "https://wp.ohanesiandigitalsolutions.com/wp-content/uploads/2026/06/screencapture-fourseasons-ag-2026-06-04-05_21_20.png",
+        altText: "Four Seasons Ag Services Platform"
+      }
+    },
+    categories: { nodes: [{ name: "Web Development", slug: "web-development" }, { name: "Work", slug: "work" }] },
+    tags: { nodes: [{ name: "Live", slug: "live" }] }
+  },
+  {
+    title: "Smart Reports",
+    slug: "smart-reports",
+    excerpt: "Automated business reporting and analytics suite that unifies client data, sales metrics, and operational workflows into real-time interactive dashboards.",
+    content: "<p>Smart Reports is an automated business intelligence application that consolidates raw operational data, client analytics, and revenue metrics into clear, actionable visual dashboards, saving business owners hours of manual spreadsheet compilation every week.</p>",
+    featuredImage: {
+      node: {
+        sourceUrl: "https://wp.ohanesiandigitalsolutions.com/wp-content/uploads/2026/06/ODS-Smart-Reports-Share-Image.png",
+        altText: "ODS Smart Reports Share Image"
+      }
+    },
+    categories: { nodes: [{ name: "Custom Apps", slug: "custom-apps" }, { name: "Work", slug: "work" }] },
     tags: { nodes: [{ name: "Live", slug: "live" }, { name: "Web App", slug: "web-app" }] }
   },
   {
@@ -154,23 +194,27 @@ const FALLBACK_PORTFOLIO: PortfolioItem[] = [
     slug: "baggy",
     excerpt: "Performance-first Chrome extension and developer utility for inspecting, debugging, and optimizing headless CMS data layers in real-time.",
     content: "<p>Baggy is a proprietary Chrome extension built for digital architects and developers to inspect, validate, and optimize GraphQL data structures and headless CMS responses in real-time without context switching.</p>",
+    featuredImage: {
+      node: {
+        sourceUrl: "https://wp.ohanesiandigitalsolutions.com/wp-content/uploads/2026/04/Baggy-WP-Share-Post-Image-ODS.png",
+        altText: "Baggy Chrome Extension"
+      }
+    },
     categories: { nodes: [{ name: "Custom Apps", slug: "custom-apps" }, { name: "Work", slug: "work" }] },
     tags: { nodes: [{ name: "Live", slug: "live" }, { name: "Chrome Extension", slug: "chrome-extension" }] }
   },
   {
-    title: "Smart Reports",
-    slug: "smart-reports",
-    excerpt: "Automated business reporting and analytics suite that unifies client data, sales metrics, and operational workflows into real-time interactive dashboards.",
-    content: "<p>Smart Reports is an automated business intelligence application that consolidates raw operational data, client analytics, and revenue metrics into clear, actionable visual dashboards, saving business owners hours of manual spreadsheet compilation every week.</p>",
+    title: "AI COPY",
+    slug: "ai-copy",
+    excerpt: "AI-powered copywriting assistant and content generation tool optimized for high-converting sales copy and web messaging.",
+    content: "<p>AI COPY is a specialized application designed for rapid, ROI-focused web copy generation and marketing asset optimization.</p>",
+    featuredImage: {
+      node: {
+        sourceUrl: "https://wp.ohanesiandigitalsolutions.com/wp-content/uploads/2026/04/AI-Copy-WP-Post-Share-Image-ODS.png",
+        altText: "AI Copy Application"
+      }
+    },
     categories: { nodes: [{ name: "Custom Apps", slug: "custom-apps" }, { name: "Work", slug: "work" }] },
-    tags: { nodes: [{ name: "Live", slug: "live" }, { name: "Web App", slug: "web-app" }] }
-  },
-  {
-    title: "Enterprise Client Portal & Automated Intake",
-    slug: "enterprise-client-portal",
-    excerpt: "Custom web platform built with Next.js and TypeScript, integrating automated lead qualification, dynamic onboarding forms, and real-time client dashboards.",
-    content: "<p>An end-to-end client portal engineering solution designed to eliminate paperwork and manual admin work through smart multi-step intake forms, automated document collection, and real-time project tracking dashboards.</p>",
-    categories: { nodes: [{ name: "Web Development", slug: "web-development" }, { name: "Work", slug: "work" }] },
     tags: { nodes: [{ name: "Live", slug: "live" }, { name: "Web App", slug: "web-app" }] }
   }
 ];
@@ -193,13 +237,15 @@ const FALLBACK_BLOG: PortfolioItem[] = [
 ];
 
 export async function getPortfolioItems(category?: string, first: number = 20, exclude?: string): Promise<PortfolioItem[]> {
+  // Fetch all posts from WordPress (without restrictively filtering by categoryName in GraphQL)
   const query = `
-    query GetPortfolioPosts($category: String, $first: Int) {
-      posts(where: { categoryName: $category }, first: $first) {
+    query GetPortfolioPosts($first: Int) {
+      posts(first: $first, where: { orderby: { field: DATE, order: DESC } }) {
         nodes {
           title
           slug
           excerpt
+          content
           featuredImage {
             node {
               sourceUrl
@@ -225,15 +271,18 @@ export async function getPortfolioItems(category?: string, first: number = 20, e
 
   let nodes: PortfolioItem[] = [];
   try {
-    const data = await wpFetch<{ posts: { nodes: PortfolioItem[] } }>(query, { 
-      category: category || "work", 
-      first 
-    });
+    const data = await wpFetch<{ posts: { nodes: PortfolioItem[] } }>(query, { first: 50 });
     nodes = data?.posts?.nodes || [];
   } catch (err) {
     console.warn("getPortfolioItems fallback triggered:", err);
   }
 
+  // Filter out blog and team posts
+  nodes = nodes.filter(node => 
+    !node.categories?.nodes?.some(c => c.slug === "blog" || c.slug === "team")
+  );
+
+  // Merge fallbacks for missing items
   if (nodes.length === 0) {
     nodes = FALLBACK_PORTFOLIO;
   } else {
@@ -242,10 +291,21 @@ export async function getPortfolioItems(category?: string, first: number = 20, e
     nodes = [...nodes, ...missingFallbacks];
   }
 
-  if (category && category !== "all" && category !== "work") {
-    nodes = nodes.filter(node => 
-      node.categories?.nodes?.some(c => c.slug === category)
-    );
+  // Filter by category
+  if (category && category !== "all") {
+    if (category === "work" || category === "web-development") {
+      nodes = nodes.filter(node => 
+        node.categories?.nodes?.some(c => c.slug === "web-development" || c.slug === "web-strategy" || c.slug === "work")
+      );
+    } else if (category === "custom-apps") {
+      nodes = nodes.filter(node => 
+        node.categories?.nodes?.some(c => c.slug === "custom-apps")
+      );
+    } else {
+      nodes = nodes.filter(node => 
+        node.categories?.nodes?.some(c => c.slug === category)
+      );
+    }
   }
 
   if (exclude) {

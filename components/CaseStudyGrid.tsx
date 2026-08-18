@@ -91,44 +91,40 @@ const CaseStudyGrid = async ({
                     : 'bg-white dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/50'
                   }`}
               >
-                {/* Lab Variant: High-Tech Header */}
-                {isLab && (
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="label-mono bg-zinc-50 dark:bg-zinc-900 px-2 py-1 border border-zinc-100 dark:border-zinc-800 uppercase">
-                      [ {appTypeLabel} ]
+                {/* Image Container for All Project Cards */}
+                <div className="aspect-[16/10] relative overflow-hidden bg-zinc-100 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
+                  {project.featuredImage ? (
+                    <Image 
+                      src={project.featuredImage.node.sourceUrl}
+                      alt={project.featuredImage.node.altText || project.title}
+                      fill
+                      className="object-cover md:grayscale md:group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center label-mono">
+                      No Image Found
                     </div>
-                    <div 
-                      className={`h-2.5 w-2.5 rounded-full transition-all duration-500 ${
-                        isLive 
-                          ? 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]' 
-                          : 'bg-brand shadow-[0_0_8px_rgba(252,175,59,0.5)]'
-                      }`}
-                      title={`Status: ${statusLabel}`}
-                    ></div>
-                  </div>
-                )}
-
-                {/* Standard Variant: Image Container */}
-                {!isLab && (
-                  <div className="aspect-[16/10] relative overflow-hidden bg-zinc-100 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
-                    {project.featuredImage ? (
-                      <Image 
-                        src={project.featuredImage.node.sourceUrl}
-                        alt={project.featuredImage.node.altText || project.title}
-                        fill
-                        className="object-cover md:grayscale md:group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                    ) : (
-                      <div className="absolute inset-0 flex items-center justify-center label-mono">
-                        No Image Found
+                  )}
+                  {isLab && (
+                    <div className="absolute top-4 left-4 right-4 flex justify-between items-start pointer-events-none">
+                      <div className="label-mono bg-zinc-900/80 backdrop-blur text-white px-2.5 py-1 border border-zinc-700 uppercase text-[10px]">
+                        [ {appTypeLabel} ]
                       </div>
-                    )}
-                  </div>
-                )}
+                      <div 
+                        className={`h-2.5 w-2.5 rounded-full transition-all duration-500 ${
+                          isLive 
+                            ? 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]' 
+                            : 'bg-brand shadow-[0_0_8px_rgba(252,175,59,0.5)]'
+                        }`}
+                        title={`Status: ${statusLabel}`}
+                      ></div>
+                    </div>
+                  )}
+                </div>
 
                 {/* Content */}
-                <div className={`${!isLab ? 'p-8' : ''} flex flex-col flex-grow`}>
+                <div className="p-8 flex flex-col flex-grow">
                   <h3 className={`font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4 group-hover:translate-x-1 transition-transform ${isLab ? '!text-2xl' : '!text-xl'}`}>
                     {project.title}
                   </h3>
