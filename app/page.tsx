@@ -19,9 +19,9 @@ export default function Home() {
 
       {/* Showcase / Portfolio Section */}
       <CaseStudyGrid 
-        title="Web Systems & Engineering Portfolio" 
+        title="our work" 
         subtitle="A curated selection of high-performance digital platforms and engineering-led web solutions designed for measurable business growth."
-        category="web-development"
+        category="work"
         limit={3}
         showViewAll={true}
         viewAllLabel="View Portfolio"
