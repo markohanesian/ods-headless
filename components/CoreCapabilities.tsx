@@ -3,8 +3,8 @@ import React from "react";
 const CAPABILITIES = [
   {
     id: "01",
-    title: "Lightning-Fast Websites & Portals",
-    description: "Deliver frictionless digital experiences on every device. Your clients get instant page loads and clear navigation, while you gain a reliable platform built on modern software architecture.",
+    title: "Performance",
+    description: "Frictionless digital experiences on every device with top form and function. Websites with instant page loads and clear navigation, while you gain a reliable platform built on cutting-edge software architecture.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
@@ -13,8 +13,8 @@ const CAPABILITIES = [
   },
   {
     id: "02",
-    title: "Automated Lead Intake & Workflows",
-    description: "Reclaim hours spent on repetitive emails and phone tag. Our custom intake workflows automatically screen incoming leads, gather necessary files, and route details directly into your operational tools.",
+    title: "Automation",
+    description: "Reclaim hours spent on busy work and scattered communication. We excel at understanding your unique business operations and building solutions that help you run your business.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
@@ -24,8 +24,8 @@ const CAPABILITIES = [
   },
   {
     id: "03",
-    title: "Integrated E-Commerce & Operations",
-    description: "Simplify invoicing, manage subscriptions, and schedule bookings. Unify your essential sales tools into a seamless, single-platform workflow.",
+    title: "Integration",
+    description: "Simplify your workflows with digital connectivity. Unify your essential tools into seamless workflows..",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
         <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
@@ -41,11 +41,8 @@ const CoreCapabilities = () => {
     <section className="px-6 lg:px-12 py-24 bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
-          <div className="label-mono text-accent-blue mb-4">
-            SECTION 03 // CORE CAPABILITIES
-          </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-6">
-            Engineered to Eliminate Your Daily Operational Friction
+            Solving Problems, Enhancing Operations
           </h2>
           <div className="h-px w-full bg-zinc-200 dark:bg-zinc-800"></div>
         </div>

@@ -21,6 +21,7 @@ When writing or modifying website copy across Ohanesian Digital Solutions (ODS) 
 
 3. **Page Copy Standards**:
    - Maintain clear H1/H2 hierarchy on every page.
-   - Action-oriented CTAs ("Get Your Free Site Audit", "Start Your Free 2-Minute Assessment", "Claim Your Free Strategy Call").
-   - Detailed "What You Get" breakdowns for all service tiers.
+   - Action-oriented CTAs ("Free Site Audit", "Start questionnaire", "Schedule a Consultation", "Book a Call").
+   - Detailed "What We Deliver" breakdowns for all service tiers.
+   - **No Structural Section Labels in UI**: Do NOT render copy draft section labels (e.g., "Section 1", "Home Section 2", "Service 1", "Option 02") as literal display text on the site. Those labels are structural markers for draft organization only.
 

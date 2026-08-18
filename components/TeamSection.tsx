@@ -10,17 +10,17 @@ const STATIC_TEAM: TeamMember[] = [
   {
     name: "Mark Sarkis Ohanesian",
     role: "Founder & Lead Architect",
-    bio: "Mark leads technical strategy and custom web engineering, turning operational friction into streamlined digital engines that save business owners time and money.",
+    bio: "Mark leads technical strategy and web application development at ODS. With senior-level experience engineering websites and apps for both private and government, he transforms complex business requirements into fast, durable digital assets.",
   },
   {
     name: "Astghik Stella Ohanesian",
     role: "Creative Direction & Media",
-    bio: "Stella directs brand aesthetics, video assets, and digital strategy, ensuring your custom system presents a commanding visual presence.",
+    bio: "Stella brings years of entrepreneurship to her creative direction across visual brand assets, video production, and media strategy, ensuring our technical builds match a clean visual brand.",
   },
   {
     name: "Christopher Ohanesian",
     role: "Visual Design",
-    bio: "Chris leverages deep user-experience expertise to craft intuitive layouts and clean interfaces that turn visitors into loyal customers.",
+    bio: "Chris brings years of experience from high-performance digital environments to craft intuitive user interfaces, clear layouts, and memorable brand identities.",
   },
 ];
 
@@ -29,11 +29,8 @@ const TeamSection = () => {
     <section className="px-6 lg:px-12 py-24 bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16 max-w-3xl">
-          <div className="label-mono text-accent-blue mb-4">
-            SECTION 03 // LEADERSHIP & ARCHITECTURE
-          </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-4">
-            The Experts Behind Your Digital Systems
+            Strategic Minds & Creative Builders
           </h2>
           <div className="h-px w-full bg-zinc-200 dark:bg-zinc-800 mt-6"></div>
         </div>

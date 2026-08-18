@@ -5,10 +5,9 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const BUILD_OPTIONS = [
-  "A brand new custom business website",
-  "An automated client intake or booking system",
-  "An e-commerce shop or event management hub",
-  "A custom web application or business tool",
+  "A website or custom application",
+  "An automation or workflow system",
+  "An upgrade to your current digital footprint or operations",
 ];
 
 const TIMELINE_OPTIONS = [
@@ -352,7 +351,7 @@ ${formData.headache || "N/A"}
 
           <div className="space-y-2">
             <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100">
-              What is the biggest operational headache holding your business back right now?
+              What is the single biggest headache in your current business workflow?
             </label>
             <textarea
               rows={4}
@@ -376,7 +375,7 @@ ${formData.headache || "N/A"}
               disabled={status === "submitting"}
               className="btn-brand px-8 py-4 text-base font-bold shadow-lg disabled:opacity-50"
             >
-              {status === "submitting" ? "Processing..." : "Claim Your Free Strategy Call"}
+              {status === "submitting" ? "Processing..." : "Book a Call"}
             </button>
           </div>
         </form>

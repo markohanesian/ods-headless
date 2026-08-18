@@ -21,17 +21,14 @@ const COMPARISONS = [
 
 const ArchitectureComparison = () => {
   return (
-    <section id="why-custom" className="px-6 lg:px-12 py-24 bg-zinc-50 dark:bg-zinc-900/30 border-t border-zinc-100 dark:border-zinc-900 scroll-mt-20">
+    <section id="what-makes-us-different" className="px-6 lg:px-12 py-24 bg-zinc-50 dark:bg-zinc-900/30 border-t border-zinc-100 dark:border-zinc-900 scroll-mt-20">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl mb-16">
-          <div className="label-mono text-accent-blue mb-4">
-            SECTION 02 // ARCHITECTURAL ADVANTAGE
-          </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-6">
             Is Your Current Website Holding Your Business Back?
           </h2>
           <p className="text-zinc-600 dark:text-zinc-300 text-lg leading-relaxed font-light">
-            Off-the-shelf site builders force you to settle for fragile plugins, frustrating delays, and tedious manual workarounds. Here is how custom web engineering compares:
+            DIY site builders force you to settle for fragile plugins, frustrating delays, and tedious manual workarounds. Here is how custom web engineering compares:
           </p>
         </div>
 
@@ -41,13 +38,13 @@ const ArchitectureComparison = () => {
             <div className="p-6 md:p-8 flex items-center gap-3">
               <span className="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
               <h3 className="text-sm font-mono uppercase tracking-wider font-bold text-zinc-700 dark:text-zinc-300">
-                What You Get Elsewhere <span className="text-zinc-400 font-normal">(Wix / WordPress / Templates)</span>
+                What You Get Elsewhere <span className="text-zinc-500 font-normal">(Outdated Templates)</span>
               </h3>
             </div>
             <div className="p-6 md:p-8 flex items-center gap-3 bg-accent-blue/5 dark:bg-accent-blue/10">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
               <h3 className="text-sm font-mono uppercase tracking-wider font-bold text-zinc-900 dark:text-zinc-50">
-                What You Get with ODS <span className="text-accent-blue font-normal">(Custom Built for Strategy & Performance)</span>
+                What You Get with ODS <span className="text-accent-blue font-normal">(Custom Built for technicality and strategy)</span>
               </h3>
             </div>
           </div>
