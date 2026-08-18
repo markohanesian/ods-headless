@@ -3,22 +3,18 @@ import Link from 'next/link';
 
 const Hero = () => {
   return (
-    <section className="relative flex flex-col items-start justify-center min-h-[85vh] px-6 lg:px-12 pt-36 pb-24 bg-white dark:bg-zinc-950 overflow-hidden">
+    <section className="relative flex flex-col items-start justify-center min-h-[85vh] px-6 lg:px-12 pt-16 md:pt-24 pb-24 bg-white dark:bg-zinc-950 overflow-hidden">
       {/* Background architectural grid effect */}
       <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" 
            style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
       
       <div className="max-w-5xl z-10">
-        <div className="inline-block px-3 py-1 mb-6 label-mono border border-zinc-200 dark:border-zinc-800 text-accent-blue">
-          CUSTOM WEBSITES // WEB APPS // BUSINESS AUTOMATIONS
-        </div>
-        
-        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter mb-8 text-zinc-900 dark:text-zinc-50 leading-[1.05]">
-          Turn Your Website into Your <span className="text-brand dark:text-accent-blue">Hardest-Working Sales Rep.</span>
+        <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[8rem] font-bold tracking-tighter mb-8 text-zinc-900 dark:text-zinc-50 leading-[1.05]">
+          Tech that works as <span className="text-brand dark:text-accent-blue">hard as you do.</span>
         </h1>
         
         <p className="lead-text text-zinc-600 dark:text-zinc-300 max-w-3xl mb-12 text-lg sm:text-xl leading-relaxed font-light">
-          ODS builds custom web systems that save you time and get clients.
+          ODS builds custom websites, apps, and strategic systems that save time and increase revenue.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4">

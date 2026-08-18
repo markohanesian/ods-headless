@@ -26,16 +26,18 @@ export default function ServicesPage() {
   return (
     <div className="bg-white dark:bg-zinc-950 min-h-screen">
       {/* Header Section */}
-      <section className="px-6 lg:px-12 pt-36 pb-20 border-b border-zinc-100 dark:border-zinc-900">
+      <section className="px-6 lg:px-12 pt-32 pb-24 border-b border-zinc-100 dark:border-zinc-900">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-8 max-w-5xl leading-[1.08]">
-            Digital Tools Built for Powerful Growth
+          <h1 className="text-zinc-900 dark:text-zinc-50 mb-8 uppercase">
+            Services
           </h1>
-          <div className="h-px w-24 bg-accent-blue mb-8"></div>
+          <div className="h-px w-24 bg-accent-blue mb-12"></div>
           
-          <p className="text-xl sm:text-2xl text-zinc-600 dark:text-zinc-300 max-w-4xl font-light leading-relaxed">
-            We don&apos;t just build pages that look good. We build digital tools that handle your daily operations and enhance your business.
-          </p>
+          <div className="max-w-4xl">
+            <p className="lead-text text-zinc-700 dark:text-zinc-300 text-lg sm:text-xl font-light">
+              We don't just build pages that look good. We build digital tools that handle your daily operations and enhance your business.
+            </p>
+          </div>
         </div>
       </section>
 

@@ -34,6 +34,20 @@ const CaseStudyGrid = async ({
 
   if (projects.length === 0) return null;
 
+  // Sort projects: "the-pomegranate-boutique" first, then websites, then custom apps.
+  projects.sort((a, b) => {
+    if (a.slug === 'the-pomegranate-boutique') return -1;
+    if (b.slug === 'the-pomegranate-boutique') return 1;
+    
+    const aIsApp = a.categories?.nodes?.some((c: { slug: string }) => c.slug === 'custom-apps');
+    const bIsApp = b.categories?.nodes?.some((c: { slug: string }) => c.slug === 'custom-apps');
+    
+    if (aIsApp && !bIsApp) return 1;
+    if (!aIsApp && bIsApp) return -1;
+    
+    return 0;
+  });
+
   return (
     <section className={`px-6 lg:px-12 py-16 md:py-24 ${variant === 'lab' ? 'bg-zinc-50 dark:bg-zinc-900/50' : 'bg-white dark:bg-zinc-950'}`}>
       <div className="max-w-7xl mx-auto">
@@ -51,14 +65,22 @@ const CaseStudyGrid = async ({
                 </p>
               )}
             </div>
-            {showViewAll && (
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6">
+              {showViewAll && (
+                <Link 
+                  href="/portfolio" 
+                  className="inline-flex items-center justify-center px-5 py-2.5 text-xs sm:text-sm font-bold tracking-wider uppercase bg-brand dark:bg-accent-blue text-zinc-950 dark:text-white rounded hover:opacity-90 transition-opacity"
+                >
+                  {viewAllLabel}
+                </Link>
+              )}
               <Link 
-                href="/portfolio" 
-                className="label-mono transition-colors mb-6 border-b border-zinc-200 dark:border-zinc-800 pb-1 hover:text-zinc-900 dark:hover:text-zinc-50"
+                href="/contact" 
+                className="inline-flex items-center justify-center px-5 py-2.5 text-xs sm:text-sm font-bold tracking-wider uppercase border border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 rounded hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
               >
-                {viewAllLabel} →
+                Start a Project
               </Link>
-            )}
+            </div>
           </div>
         )}
 

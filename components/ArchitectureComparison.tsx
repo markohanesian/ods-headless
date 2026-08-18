@@ -34,17 +34,17 @@ const ArchitectureComparison = () => {
 
         <div className="overflow-hidden border border-zinc-200 dark:border-zinc-800 rounded-xl bg-white dark:bg-zinc-950 shadow-sm">
           {/* Header row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 bg-zinc-100/80 dark:bg-zinc-900/80 border-b border-zinc-200 dark:border-zinc-800 divide-y md:divide-y-0 md:divide-x divide-zinc-200 dark:divide-zinc-800">
-            <div className="p-6 md:p-8 flex items-center gap-3">
-              <span className="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
-              <h3 className="text-sm font-mono uppercase tracking-wider font-bold text-zinc-700 dark:text-zinc-300">
-                What You Get Elsewhere <span className="text-zinc-500 font-normal">(Outdated Templates)</span>
+          <div className="grid grid-cols-2 bg-zinc-100/80 dark:bg-zinc-900/80 border-b border-zinc-200 dark:border-zinc-800 divide-x divide-zinc-200 dark:divide-zinc-800">
+            <div className="p-4 sm:p-6 md:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
+              <span className="hidden sm:inline-block w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+              <h3 className="text-xs sm:text-sm font-mono uppercase tracking-wider font-bold text-zinc-700 dark:text-zinc-300">
+                What You Get Elsewhere <span className="text-zinc-500 font-normal block sm:inline mt-1 sm:mt-0">(Outdated Templates)</span>
               </h3>
             </div>
-            <div className="p-6 md:p-8 flex items-center gap-3 bg-accent-blue/5 dark:bg-accent-blue/10">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-              <h3 className="text-sm font-mono uppercase tracking-wider font-bold text-zinc-900 dark:text-zinc-50">
-                What You Get with ODS <span className="text-accent-blue font-normal">(Custom Built for technicality and strategy)</span>
+            <div className="p-4 sm:p-6 md:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 bg-accent-blue/5 dark:bg-accent-blue/10">
+              <span className="hidden sm:inline-block w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+              <h3 className="text-xs sm:text-sm font-mono uppercase tracking-wider font-bold text-zinc-900 dark:text-zinc-50">
+                What You Get with ODS <span className="text-accent-blue font-normal block sm:inline mt-1 sm:mt-0">(Custom Built)</span>
               </h3>
             </div>
           </div>
@@ -54,24 +54,24 @@ const ArchitectureComparison = () => {
             {COMPARISONS.map((item, index) => (
               <div 
                 key={index}
-                className="grid grid-cols-1 md:grid-cols-2 group hover:bg-zinc-50/50 dark:hover:bg-zinc-900/20 transition-colors"
+                className="grid grid-cols-2 group hover:bg-zinc-50/50 dark:hover:bg-zinc-900/20 transition-colors"
               >
                 {/* Elsewhere Column */}
-                <div className="p-6 md:p-8 flex items-start gap-4 border-b md:border-b-0 md:border-r border-zinc-100 dark:border-zinc-900">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 dark:bg-red-950/50 text-red-600 dark:text-red-400 flex items-center justify-center text-xs font-bold mt-0.5">
+                <div className="p-4 sm:p-6 md:p-8 flex flex-col sm:flex-row items-start gap-3 border-r border-zinc-100 dark:border-zinc-900">
+                  <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-red-100 dark:bg-red-950/50 text-red-600 dark:text-red-400 flex items-center justify-center text-[10px] sm:text-xs font-bold mt-0.5">
                     ✕
                   </div>
-                  <p className="text-zinc-600 dark:text-zinc-400 text-base leading-relaxed">
+                  <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base leading-snug sm:leading-relaxed">
                     {item.elsewhere}
                   </p>
                 </div>
 
                 {/* ODS Column */}
-                <div className="p-6 md:p-8 flex items-start gap-4 bg-accent-blue/[0.02] dark:bg-accent-blue/[0.03]">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs font-bold mt-0.5">
+                <div className="p-4 sm:p-6 md:p-8 flex flex-col sm:flex-row items-start gap-3 bg-accent-blue/[0.02] dark:bg-accent-blue/[0.03]">
+                  <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-[10px] sm:text-xs font-bold mt-0.5">
                     ✓
                   </div>
-                  <p className="text-zinc-900 dark:text-zinc-100 font-medium text-base leading-relaxed">
+                  <p className="text-zinc-900 dark:text-zinc-100 font-medium text-sm sm:text-base leading-snug sm:leading-relaxed">
                     {item.ods}
                   </p>
                 </div>

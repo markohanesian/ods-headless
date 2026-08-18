@@ -6,16 +6,19 @@ export default function ContactPage() {
   return (
     <div className="bg-white dark:bg-zinc-950 min-h-screen">
       {/* Primary Contact Section */}
-      <section className="px-6 lg:px-12 pt-36 pb-20 border-b border-zinc-100 dark:border-zinc-900 bg-zinc-50/50 dark:bg-zinc-950">
+      <section className="px-6 lg:px-12 pt-32 pb-24 border-b border-zinc-100 dark:border-zinc-900 bg-zinc-50/50 dark:bg-zinc-950">
         <div className="max-w-4xl mx-auto space-y-12">
           <div>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-8 leading-[1.08]">
-              Let&apos;s Build Your Next Digital Advantage.
+            <h1 className="text-zinc-900 dark:text-zinc-50 mb-8 uppercase">
+              Contact
             </h1>
-            <div className="h-px w-24 bg-accent-blue mb-8"></div>
+            <div className="h-px w-24 bg-accent-blue mb-12"></div>
             
-            <p className="text-xl sm:text-2xl text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
-              Tell us a little about your business. We&apos;ll run a free site audit and map out a roadmap to fast business growth.
+            <p className="lead-text text-zinc-900 dark:text-zinc-50 mb-4 font-bold text-xl sm:text-2xl">
+              Let's Build Your Next Digital Advantage.
+            </p>
+            <p className="lead-text text-zinc-700 dark:text-zinc-300 text-lg sm:text-xl font-light">
+              Tell us a little about your business. We'll run a free site audit and map out a roadmap to fast business growth.
             </p>
           </div>
 
