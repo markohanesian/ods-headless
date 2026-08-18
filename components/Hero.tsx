@@ -23,7 +23,7 @@ const Hero = () => {
         
         <div className="flex flex-col sm:flex-row gap-4">
           <Link 
-            href="/contact?mode=intake" 
+            href="/contact#intake-audit" 
             className="btn-brand text-center"
           >
             Get Your Free Site Audit
