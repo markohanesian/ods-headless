@@ -134,25 +134,44 @@ export async function wpFetch<T>(query: string, variables = {}): Promise<T> {
 
 const FALLBACK_PORTFOLIO: PortfolioItem[] = [
   {
-    title: "Enterprise Client Portal & Automated Intake System",
-    slug: "enterprise-client-portal",
-    excerpt: "Custom web platform built with Next.js and TypeScript, integrating automated lead qualification, dynamic onboarding forms, and real-time client dashboards.",
+    title: "The Pomegranate Boutique",
+    slug: "the-pomegranate-boutique",
+    excerpt: "Custom e-commerce web platform and digital storefront built with headless architecture, delivering sub-second page loads and a seamless mobile checkout experience.",
+    content: "<p>The Pomegranate Boutique is a custom e-commerce digital storefront engineered for speed, mobile responsiveness, and effortless product discovery. Replacing slow legacy plugins with a modern headless setup, the site delivers sub-second page loads, accessible navigation, and direct payment processing.</p>",
     categories: { nodes: [{ name: "Web Development", slug: "web-development" }, { name: "Work", slug: "work" }] },
     tags: { nodes: [{ name: "Live", slug: "live" }, { name: "Web App", slug: "web-app" }] }
   },
   {
-    title: "Custom High-Performance E-Commerce Platform",
-    slug: "custom-ecommerce-platform",
-    excerpt: "Frictionless Stripe checkout integration, custom headless architecture, and instant sub-second page loads replacing bloated plugin setups.",
+    title: "Diversified Land Management",
+    slug: "diversified-land-management",
+    excerpt: "High-performance digital platform with integrated client lead intake, automated project estimate calculators, and streamlined customer communication.",
+    content: "<p>Diversified Land Management is a comprehensive digital platform designed for high-conversion lead generation and operational workflow automation. Built with strategy-first architecture, it features custom intake forms, instant estimate calculators, and direct backend lead routing.</p>",
     categories: { nodes: [{ name: "Web Development", slug: "web-development" }, { name: "Work", slug: "work" }] },
-    tags: { nodes: [{ name: "Live", slug: "live" }, { name: "Developer Tool", slug: "developer-tool" }] }
+    tags: { nodes: [{ name: "Live", slug: "live" }, { name: "Web App", slug: "web-app" }] }
   },
   {
-    title: "Automated Booking & Operations Suite",
-    slug: "automated-booking-operations",
-    excerpt: "Integrated scheduling and invoicing platform designed to eliminate repetitive administrative emails and streamline lead acquisition.",
+    title: "Baggy",
+    slug: "baggy",
+    excerpt: "Performance-first Chrome extension and developer utility for inspecting, debugging, and optimizing headless CMS data layers in real-time.",
+    content: "<p>Baggy is a proprietary Chrome extension built for digital architects and developers to inspect, validate, and optimize GraphQL data structures and headless CMS responses in real-time without context switching.</p>",
     categories: { nodes: [{ name: "Custom Apps", slug: "custom-apps" }, { name: "Work", slug: "work" }] },
     tags: { nodes: [{ name: "Live", slug: "live" }, { name: "Chrome Extension", slug: "chrome-extension" }] }
+  },
+  {
+    title: "Smart Reports",
+    slug: "smart-reports",
+    excerpt: "Automated business reporting and analytics suite that unifies client data, sales metrics, and operational workflows into real-time interactive dashboards.",
+    content: "<p>Smart Reports is an automated business intelligence application that consolidates raw operational data, client analytics, and revenue metrics into clear, actionable visual dashboards, saving business owners hours of manual spreadsheet compilation every week.</p>",
+    categories: { nodes: [{ name: "Custom Apps", slug: "custom-apps" }, { name: "Work", slug: "work" }] },
+    tags: { nodes: [{ name: "Live", slug: "live" }, { name: "Web App", slug: "web-app" }] }
+  },
+  {
+    title: "Enterprise Client Portal & Automated Intake",
+    slug: "enterprise-client-portal",
+    excerpt: "Custom web platform built with Next.js and TypeScript, integrating automated lead qualification, dynamic onboarding forms, and real-time client dashboards.",
+    content: "<p>An end-to-end client portal engineering solution designed to eliminate paperwork and manual admin work through smart multi-step intake forms, automated document collection, and real-time project tracking dashboards.</p>",
+    categories: { nodes: [{ name: "Web Development", slug: "web-development" }, { name: "Work", slug: "work" }] },
+    tags: { nodes: [{ name: "Live", slug: "live" }, { name: "Web App", slug: "web-app" }] }
   }
 ];
 
@@ -217,14 +236,25 @@ export async function getPortfolioItems(category?: string, first: number = 20, e
 
   if (nodes.length === 0) {
     nodes = FALLBACK_PORTFOLIO;
+  } else {
+    const existingSlugs = new Set(nodes.map(n => n.slug));
+    const missingFallbacks = FALLBACK_PORTFOLIO.filter(f => !existingSlugs.has(f.slug));
+    nodes = [...nodes, ...missingFallbacks];
+  }
+
+  if (category && category !== "all" && category !== "work") {
+    nodes = nodes.filter(node => 
+      node.categories?.nodes?.some(c => c.slug === category)
+    );
   }
 
   if (exclude) {
-    nodes = nodes.filter(node => !node.categories.nodes.some(c => c.slug === exclude));
+    nodes = nodes.filter(node => 
+      !node.categories?.nodes?.some(c => c.slug === exclude)
+    );
   }
 
-  return nodes.map(node => {
-    // Basic HTML tag removal and entity decoding
+  return nodes.slice(0, first).map(node => {
     const cleanExcerpt = node.excerpt
       ?.replace(/<[^>]*>?/gm, '')
       .replace(/&amp;/g, '&')
@@ -238,8 +268,8 @@ export async function getPortfolioItems(category?: string, first: number = 20, e
       .replace(/&ldquo;/g, '"')
       .replace(/&rdquo;/g, '"')
       .replace(/&hellip;/g, '...')
-      .replace(/^About\s+.*?\s+is\s+/i, '') // Strip "About [Project] is " prefix
-      .replace(/^About\s+/i, '') // Strip "About " prefix
+      .replace(/^About\s+.*?\s+is\s+/i, '')
+      .replace(/^About\s+/i, '')
       .trim();
 
     return {
@@ -330,11 +360,9 @@ export async function getTeamMembers(): Promise<PortfolioItem[]> {
     let bioHtml = "";
 
     if (node.content) {
-      // Split by common block/break tags
       const splitRegex = /(<\/p>|<br\s*\/?>|<\/h[1-6]>)/i;
       const allParts = node.content.split(splitRegex);
       
-      // Find the first part that actually contains readable text
       let firstTextIndex = -1;
       for (let i = 0; i < allParts.length; i++) {
         const textSnippet = allParts[i].replace(/<[^>]*>?/gm, '').replace(/&nbsp;/g, ' ').trim();
@@ -346,20 +374,14 @@ export async function getTeamMembers(): Promise<PortfolioItem[]> {
       }
 
       if (firstTextIndex !== -1) {
-        // Bio is everything following that first text part and its separator
-        // We skip the text part (i) and the separator (i+1)
         bioHtml = allParts.slice(firstTextIndex + 1).join('').trim();
         
-        // Clean up the Bio: 
-        // 1. Remove leading separator tags that were part of the split
         bioHtml = bioHtml.replace(/^(<\/p>|<br\s*\/?>|<\/h[1-6]>)/i, '');
         
-        // 2. Remove leading/trailing empty tags, breaks, and &nbsp;
         bioHtml = bioHtml
           .replace(/^(<br\s*\/?>|<\/?p[^>]*>|&nbsp;|\s)+/gi, '')
           .replace(/(<br\s*\/?>|<\/?p[^>]*>|&nbsp;|\s)+$/gi, '');
           
-        // 3. Special fix for the "stray period" issue (often a placeholder for empty lines)
         bioHtml = bioHtml.replace(/<br\s*\/?>\s*\.$/i, '');
 
         if (bioHtml && !bioHtml.startsWith('<')) {
@@ -368,12 +390,10 @@ export async function getTeamMembers(): Promise<PortfolioItem[]> {
       }
     }
 
-    // Secondary Strategy: Only use excerpt if content split completely failed
     if (!jobTitle && node.excerpt) {
       jobTitle = node.excerpt.replace(/<[^>]*>?/gm, '').trim();
     }
 
-    // Final clean up of entities in job title
     jobTitle = jobTitle
       .replace(/&amp;/g, '&')
       .replace(/&nbsp;/g, ' ')
@@ -422,9 +442,18 @@ export async function getPostBySlug(slug: string): Promise<PortfolioItem | null>
     }
   `;
 
-  const data = await wpFetch<{ post: PortfolioItem }>(query, { id: slug });
-  const post = data?.post || null;
+  let post: PortfolioItem | null = null;
+  try {
+    const data = await wpFetch<{ post: PortfolioItem }>(query, { id: slug });
+    post = data?.post || null;
+  } catch (err) {
+    console.warn("getPostBySlug fallback check:", err);
+  }
   
+  if (!post) {
+    post = FALLBACK_PORTFOLIO.find(p => p.slug === slug) || null;
+  }
+
   if (post) {
     if (post.featuredImage) {
       post.featuredImage.node.sourceUrl = fixMediaUrls(post.featuredImage.node.sourceUrl);
