@@ -16,7 +16,7 @@ const LeadIntakeTeaser = () => {
         </p>
         <div className="flex justify-center">
           <Link 
-            href="/contact"
+            href="/contact?mode=intake"
             className="btn-brand text-center px-8 py-4 text-base font-bold shadow-lg hover:shadow-xl transition-all"
           >
             Start Your Free 2-Minute Assessment
