@@ -59,7 +59,7 @@ export default function ServicesPage() {
                 </p>
 
                 <div className="mt-auto pt-6 border-t border-zinc-200 dark:border-zinc-800">
-                  <div className="label-mono text-[10px] text-accent-blue uppercase tracking-widest mb-3">
+                  <div className="label-mono text-sm text-accent-blue uppercase tracking-widest mb-3">
                     WHAT WE DELIVER
                   </div>
                   <p className="text-sm text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">

@@ -47,7 +47,7 @@ export default function StrategyAuditSection() {
             <div className="flex justify-end mb-4">
               <button
                 onClick={() => setIsOpen(false)}
-                className="text-xs font-mono text-zinc-400 hover:text-white flex items-center gap-1.5 py-1 px-3 border border-zinc-800 rounded-lg hover:border-zinc-600 transition-colors"
+                className="text-sm font-mono text-zinc-400 hover:text-white flex items-center gap-1.5 py-1 px-3 border border-zinc-800 rounded-lg hover:border-zinc-600 transition-colors"
               >
                 <span>Hide Assessment Questionnaire</span>
                 <span>✕</span>

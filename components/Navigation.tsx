@@ -38,6 +38,7 @@ const Navigation = () => {
   const navItems = [
     { name: 'Services', href: '/services' },
     { name: 'Portfolio', href: '/portfolio' },
+    { name: 'Engine', href: '/engine' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' }
   ];
@@ -51,25 +52,32 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex flex-col z-50" onClick={() => setMobileMenuOpen(false)}>
-          <span className="text-xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 leading-none">
+          <span className="text-3xl md:text-4xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 leading-none">
             ODS
           </span>
-          <span className="text-[9px] font-mono tracking-[0.3em] text-zinc-600 dark:text-zinc-300 font-bold uppercase leading-none mt-2">
+          <span className="text-xs sm:text-sm font-mono tracking-[0.3em] text-zinc-600 dark:text-zinc-300 font-bold uppercase leading-none mt-2">
             OHANESIAN DIGITAL SOLUTIONS
           </span>
         </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-10">
-          {navItems.filter(i => i.name !== 'Contact').map((item) => (
-            <Link 
-              key={item.name} 
-              href={item.href}
-              className="label-mono transition-colors hover:text-zinc-900 dark:hover:text-zinc-50"
-            >
-              {item.name}
-            </Link>
-          ))}
+          {navItems.filter(i => i.name !== 'Contact').map((item) => {
+            const isActive = pathname === item.href || (pathname.startsWith(item.href) && item.href !== '/');
+            return (
+              <Link 
+                key={item.name} 
+                href={item.href}
+                className={`label-mono transition-all duration-300 hover:text-zinc-900 dark:hover:text-zinc-50 ${
+                  isActive 
+                    ? 'text-zinc-900 dark:text-zinc-50 font-bold border-b-2 border-accent-blue pb-1' 
+                    : ''
+                }`}
+              >
+                {item.name}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Actions */}

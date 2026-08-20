@@ -106,7 +106,7 @@ export default function ContactForm() {
       </div>
       {status === "error" && (
         <div className="p-4 bg-red-500/10 border border-red-500/20">
-          <p className="text-xs text-red-500 font-mono">{errorMessage}</p>
+          <p className="text-sm text-red-500 font-mono">{errorMessage}</p>
         </div>
       )}
       <button 

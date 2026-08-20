@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import ArchitectureComparison from "@/components/ArchitectureComparison";
 import CoreCapabilities from "@/components/CoreCapabilities";
+import EngineTeaser from "@/components/EngineTeaser";
 import LeadIntakeTeaser from "@/components/LeadIntakeTeaser";
 import CaseStudyGrid from "@/components/CaseStudyGrid";
 import BlogSection from "@/components/BlogSection";
@@ -16,6 +17,9 @@ export default function Home() {
 
       {/* Section 3: Core Capabilities */}
       <CoreCapabilities />
+
+      {/* Section 3.5: Proprietary Engine Teaser */}
+      <EngineTeaser />
 
       {/* Showcase / Portfolio Section */}
       <CaseStudyGrid 

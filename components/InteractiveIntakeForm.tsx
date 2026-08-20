@@ -155,7 +155,7 @@ ${formData.headache || "N/A"}
           Thank you, <span className="font-semibold text-zinc-900 dark:text-zinc-50">{formData.name}</span>. Our lead architect will review your project setup for <span className="font-semibold text-zinc-900 dark:text-zinc-50">{formData.company}</span> and reach out within 24 hours to schedule your strategy call.
         </p>
 
-        <div className="p-4 bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-xs font-mono text-zinc-500 dark:text-zinc-400 max-w-sm mx-auto flex items-center justify-center gap-2">
+        <div className="p-4 bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-sm font-mono text-zinc-500 dark:text-zinc-400 max-w-sm mx-auto flex items-center justify-center gap-2">
           <span className="w-2 h-2 rounded-full bg-accent-blue animate-ping"></span>
           Redirecting to home in <span className="font-bold text-accent-blue">{countdown}s</span>...
         </div>
@@ -180,7 +180,7 @@ ${formData.headache || "N/A"}
                 headache: "",
               });
             }}
-            className="text-xs font-mono text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 underline underline-offset-4 py-2"
+            className="text-sm font-mono text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 underline underline-offset-4 py-2"
           >
             Submit Another Assessment
           </button>
@@ -194,7 +194,7 @@ ${formData.headache || "N/A"}
     <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-6 sm:p-10 rounded-2xl shadow-xl">
       {/* Progress Bar & Indicators */}
       <div className="mb-8">
-        <div className="flex items-center justify-between text-xs font-mono mb-3">
+        <div className="flex items-center justify-between text-sm font-mono mb-3">
           <span className="text-accent-blue font-bold">
             STEP {step} OF 3
           </span>
@@ -290,7 +290,7 @@ ${formData.headache || "N/A"}
                   >
                     <div className="flex items-center gap-3">
                       <div
-                        className={`w-5 h-5 rounded flex items-center justify-center border text-xs ${
+                        className={`w-5 h-5 rounded flex items-center justify-center border text-sm ${
                           isSelected
                             ? "bg-accent-blue border-accent-blue text-white"
                             : "border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900"
@@ -336,7 +336,7 @@ ${formData.headache || "N/A"}
                     key={timeOpt}
                     type="button"
                     onClick={() => setFormData({ ...formData, timeline: timeOpt })}
-                    className={`py-3 px-3 rounded-lg text-xs sm:text-sm font-medium border text-center transition-all ${
+                    className={`py-3 px-3 rounded-lg text-sm sm:text-sm font-medium border text-center transition-all ${
                       isSelected
                         ? "bg-brand dark:bg-accent-blue text-white border-brand dark:border-accent-blue font-bold shadow"
                         : "bg-zinc-50 dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300 hover:border-zinc-400"

@@ -69,14 +69,14 @@ const CaseStudyGrid = async ({
               {showViewAll && (
                 <Link 
                   href="/portfolio" 
-                  className="inline-flex items-center justify-center px-5 py-2.5 text-xs sm:text-sm font-bold tracking-wider uppercase bg-brand dark:bg-accent-blue text-zinc-950 dark:text-white rounded hover:opacity-90 transition-opacity"
+                  className="inline-flex items-center justify-center px-5 py-2.5 text-sm sm:text-sm font-bold tracking-wider uppercase bg-brand dark:bg-accent-blue text-zinc-950 dark:text-white rounded hover:opacity-90 transition-opacity"
                 >
                   {viewAllLabel}
                 </Link>
               )}
               <Link 
                 href="/contact" 
-                className="inline-flex items-center justify-center px-5 py-2.5 text-xs sm:text-sm font-bold tracking-wider uppercase border border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 rounded hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
+                className="inline-flex items-center justify-center px-5 py-2.5 text-sm sm:text-sm font-bold tracking-wider uppercase border border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 rounded hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
               >
                 Start a Project
               </Link>
@@ -130,7 +130,7 @@ const CaseStudyGrid = async ({
                   )}
                   {isLab && (
                     <div className="absolute top-4 left-4 right-4 flex justify-between items-start pointer-events-none">
-                      <div className="label-mono bg-zinc-900/80 backdrop-blur text-white px-2.5 py-1 border border-zinc-700 uppercase text-[10px]">
+                      <div className="label-mono bg-zinc-900/80 backdrop-blur text-white px-2.5 py-1 border border-zinc-700 uppercase text-sm">
                         [ {appTypeLabel} ]
                       </div>
                       <div 

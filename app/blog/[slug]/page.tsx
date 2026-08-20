@@ -97,10 +97,10 @@ export default async function BlogSinglePage({ params }: { params: Promise<{ slu
           />
           
           <div className="mt-24 pt-12 border-t border-zinc-100 dark:border-zinc-900">
-            <h4 className="text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-400 mb-8">Related Categories</h4>
+            <h4 className="text-sm font-mono uppercase tracking-[0.3em] text-zinc-400 mb-8">Related Categories</h4>
             <div className="flex flex-wrap gap-2">
               {post.categories.nodes.map(cat => (
-                <span key={cat.slug} className="px-4 py-2 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-[10px] font-mono uppercase tracking-widest">
+                <span key={cat.slug} className="px-4 py-2 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-sm font-mono uppercase tracking-widest">
                   {cat.name}
                 </span>
               ))}
@@ -112,10 +112,10 @@ export default async function BlogSinglePage({ params }: { params: Promise<{ slu
       {/* Footer Navigation */}
       <section className="px-6 lg:px-12 py-12 border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/10">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <Link href="/" className="text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">
+          <Link href="/" className="text-sm font-mono uppercase tracking-[0.3em] text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">
             ← Back to Insights
           </Link>
-          <Link href="/contact" className="text-[10px] font-mono uppercase tracking-[0.3em] text-zinc-900 dark:text-zinc-50 font-bold hover:underline underline-offset-8 decoration-brand decoration-2">
+          <Link href="/contact" className="text-sm font-mono uppercase tracking-[0.3em] text-zinc-900 dark:text-zinc-50 font-bold hover:underline underline-offset-8 decoration-brand decoration-2">
             Start a Conversation
           </Link>
         </div>

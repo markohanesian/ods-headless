@@ -133,7 +133,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                   [&_.wp-block-column:has(svg)_h2]:!text-5xl md:[&_.wp-block-column:has(svg)_h2]:!text-6xl [&_.wp-block-column:has(svg)_h2]:!font-bold [&_.wp-block-column:has(svg)_h2]:!tracking-tighter [&_.wp-block-column:has(svg)_h2]:!text-accent-blue [&_.wp-block-column:has(svg)_h2]:!m-0
                   [&_.wp-block-column:has(svg)_h3]:!text-5xl md:[&_.wp-block-column:has(svg)_h3]:!text-6xl [&_.wp-block-column:has(svg)_h3]:!font-bold [&_.wp-block-column:has(svg)_h3]:!tracking-tighter [&_.wp-block-column:has(svg)_h3]:!text-accent-blue [&_.wp-block-column:has(svg)_h3]:!m-0
                   
-                  [&_.wp-block-column:has(svg)_p]:!text-[10px] md:[&_.wp-block-column:has(svg)_p]:!text-xs [&_.wp-block-column:has(svg)_p]:!uppercase [&_.wp-block-column:has(svg)_p]:!tracking-[0.2em] [&_.wp-block-column:has(svg)_p]:!text-zinc-500 dark:[&_.wp-block-column:has(svg)_p]:!text-zinc-300 [&_.wp-block-column:has(svg)_p]:!font-mono [&_.wp-block-column:has(svg)_p]:!m-0`} 
+                  [&_.wp-block-column:has(svg)_p]:!text-sm md:[&_.wp-block-column:has(svg)_p]:!text-sm [&_.wp-block-column:has(svg)_p]:!uppercase [&_.wp-block-column:has(svg)_p]:!tracking-[0.2em] [&_.wp-block-column:has(svg)_p]:!text-zinc-500 dark:[&_.wp-block-column:has(svg)_p]:!text-zinc-300 [&_.wp-block-column:has(svg)_p]:!font-mono [&_.wp-block-column:has(svg)_p]:!m-0`} 
                 dangerouslySetInnerHTML={{ __html: post.content || '' }}
               />
             </div>
@@ -148,12 +148,12 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
                 </div>
                 
                 <div>
-                  <h4 className="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400 mb-8 flex items-center gap-4">
+                  <h4 className="text-sm font-mono uppercase tracking-[0.2em] text-zinc-400 mb-8 flex items-center gap-4">
                     Core Project Areas <div className="h-px w-full bg-zinc-100 dark:bg-zinc-900"></div>
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {post.categories.nodes.map(cat => (
-                      <span key={cat.slug} className="px-4 py-2 border border-zinc-200 dark:border-zinc-800 text-[10px] font-mono uppercase tracking-wider bg-white dark:bg-zinc-950">
+                      <span key={cat.slug} className="px-4 py-2 border border-zinc-200 dark:border-zinc-800 text-sm font-mono uppercase tracking-wider bg-white dark:bg-zinc-950">
                         {cat.name}
                       </span>
                     ))}
@@ -162,7 +162,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
 
                 <Link 
                   href="/contact"
-                  className="inline-block w-full text-center py-6 bg-brand text-zinc-900 font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-[#e69b2d] transition-all shadow-xl"
+                  className="inline-block w-full text-center py-6 bg-brand text-zinc-900 font-bold uppercase tracking-[0.2em] text-sm hover:bg-[#e69b2d] transition-all shadow-xl"
                 >
                   Start Similar Project
                 </Link>
@@ -175,7 +175,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       {/* Navigation Footer */}
       <section className="px-6 lg:px-12 py-12 border-t border-zinc-200 dark:border-zinc-800">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <Link href="/portfolio" className="text-[10px] font-mono uppercase tracking-widest text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">
+          <Link href="/portfolio" className="text-sm font-mono uppercase tracking-widest text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors">
             ← Return to Portfolio
           </Link>
         </div>

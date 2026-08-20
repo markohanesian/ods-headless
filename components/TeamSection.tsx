@@ -45,7 +45,7 @@ const TeamSection = () => {
                 {member.name}
               </h3>
               
-              <div className="label-mono text-accent-blue text-xs uppercase tracking-wider mb-6">
+              <div className="label-mono text-accent-blue text-sm uppercase tracking-wider mb-6">
                 {member.role}
               </div>
               
