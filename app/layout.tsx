@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +37,18 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://wp.ohanesiandigitalsolutions.com" />
         <link rel="dns-prefetch" href="https://wp.ohanesiandigitalsolutions.com" />
+        <Script 
+          strategy="afterInteractive" 
+          src="https://www.googletagmanager.com/gtag/js?id=G-Y90ELBWDRH" 
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Y90ELBWDRH');
+          `}
+        </Script>
       </head>
       <body className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 flex flex-col">
         {children}
