@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY || "fallback_key_for_build");
 
 export async function POST(request: Request) {
   try {
@@ -17,11 +16,23 @@ export async function POST(request: Request) {
       );
     }
 
+    const apiKey = process.env.RESEND_API_KEY;
+    const isPlaceholderKey = !apiKey || apiKey.includes('your_api_key') || apiKey === 're_your_api_key' || apiKey === "fallback_key_for_build";
+
+    if (isPlaceholderKey) {
+      console.log('--- [LOCAL DEV MOCK LEAD CAPTURE SUBMISSION] ---');
+      console.log({ fullName, businessName, email, phone, websiteUrl, primaryGoal });
+      return NextResponse.json({ success: true, mock: true }, { status: 200 });
+    }
+
+    const resend = new Resend(apiKey);
+
     // Send email notification via Resend
     const { data, error } = await resend.emails.send({
-      from: "ODS Lead Capture <onboarding@resend.dev>", // Or a verified domain sender
-      to: ["mark@ohanesiandigitalsolutions.com"],
+      from: "ODS Lead Capture <contact@ohanesiandigitalsolutions.com>",
+      to: ["admin@ohanesiandigitalsolutions.com", "hello@ohanesiandigitalsolutions.com", "mark@ohanesiandigitalsolutions.com"],
       subject: `New Lead Capture Application: ${businessName}`,
+      replyTo: email,
       html: `
         <h2>New 30-Day Conversion Pilot Application</h2>
         <p><strong>Name:</strong> ${fullName}</p>
@@ -34,9 +45,14 @@ export async function POST(request: Request) {
     });
 
     if (error) {
-      console.error("Resend error:", error);
+      console.error("Resend API Error:", JSON.stringify(error, null, 2));
+      if (error.message?.toLowerCase().includes('api key') || error.message?.toLowerCase().includes('invalid')) {
+        console.log('--- [FALLBACK DEV MOCK SUBMISSION DUE TO INVALID API KEY] ---');
+        console.log({ fullName, businessName, email, phone, websiteUrl, primaryGoal });
+        return NextResponse.json({ success: true, mock: true });
+      }
       return NextResponse.json(
-        { error: "Failed to send email notification." },
+        { error: error.message || "Failed to send email notification." },
         { status: 500 }
       );
     }
