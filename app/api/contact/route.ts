@@ -30,7 +30,7 @@ export async function POST(request: Request) {
       : '<p>Not specified</p>';
 
     const { data, error } = await resend.emails.send({
-      from: 'ODS Contact <contact@ohanesiandigitalsolutions.com>',
+      from: 'ODS Contact <mark@ohanesiandigitalsolutions.com>',
       to: ['admin@ohanesiandigitalsolutions.com', 'hello@ohanesiandigitalsolutions.com'],
       subject: `New ODS Strategy Intake: ${company || name}`,
       replyTo: email,

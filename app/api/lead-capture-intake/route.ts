@@ -29,7 +29,7 @@ export async function POST(request: Request) {
 
     // Send email notification via Resend
     const { data, error } = await resend.emails.send({
-      from: "ODS Lead Capture <contact@ohanesiandigitalsolutions.com>",
+      from: "ODS Lead Capture <mark@ohanesiandigitalsolutions.com>",
       to: ["admin@ohanesiandigitalsolutions.com", "hello@ohanesiandigitalsolutions.com", "mark@ohanesiandigitalsolutions.com"],
       subject: `New Lead Capture Application: ${businessName}`,
       replyTo: email,
