@@ -69,8 +69,15 @@ export async function POST(request: Request) {
           <p>We will follow up within 1 business day with your sprint timeline and tracking architecture details.</p>
           <br/>
           <p>Best regards,</p>
-          <p><strong>Mark Ohanesian</strong><br/>
-          Founder, Ohanesian Digital Solutions</p>
+          <p style="margin-bottom: 4px;"><strong>Mark Sarkis Ohanesian</strong><br/>
+          Founder & Lead Architect</p>
+          <p style="margin-top: 0;"><a href="mailto:mark@ohanesiandigitalsolutions.com" style="color: #304ffe; text-decoration: none;">mark@ohanesiandigitalsolutions.com</a></p>
+          
+          <hr style="border: none; border-top: 1px solid #e4e4e7; margin: 32px 0 16px 0;" />
+          <div style="font-size: 12px; color: #71717a; text-align: center;">
+            <p>Ohanesian Digital Solutions</p>
+            <p><a href="https://www.ohanesiandigitalsolutions.com" style="color: #71717a; text-decoration: underline;">www.ohanesiandigitalsolutions.com</a></p>
+          </div>
         </div>
       `,
     });
