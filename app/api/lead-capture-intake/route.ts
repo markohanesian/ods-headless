@@ -57,6 +57,30 @@ export async function POST(request: Request) {
       );
     }
 
+    // Send auto-responder to the prospect
+    const { error: autoResponderError } = await resend.emails.send({
+      from: "Mark Ohanesian <mark@ohanesiandigitalsolutions.com>",
+      to: [email],
+      subject: `Application Received: ODS 30-Day Conversion Pilot`,
+      html: `
+        <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #171717;">
+          <h2>We've received your application, ${fullName.split(' ')[0]}.</h2>
+          <p>Thank you for applying for the 30-Day Conversion Pilot. My team and I are reviewing your business profile for <strong>${businessName}</strong>.</p>
+          <p>We will follow up within 1 business day with your sprint timeline and tracking architecture details.</p>
+          <br/>
+          <p>Best regards,</p>
+          <p><strong>Mark Ohanesian</strong><br/>
+          Founder, Ohanesian Digital Solutions</p>
+        </div>
+      `,
+    });
+
+    if (autoResponderError) {
+      console.error("Auto-responder API Error:", JSON.stringify(autoResponderError, null, 2));
+      // We don't fail the whole request if the auto-responder fails, 
+      // since the internal notification already succeeded.
+    }
+
     return NextResponse.json({ success: true }, { status: 200 });
 
   } catch (error) {
