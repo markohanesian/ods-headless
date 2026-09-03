@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CheckCircle2, ArrowRight } from "lucide-react";
+import Script from "next/script";
 
 export const metadata = {
   title: "Thank You | Ohanesian Digital Solutions",
@@ -9,6 +10,9 @@ export const metadata = {
 export default function ThankYouPage() {
   return (
     <div className="min-h-screen flex items-center justify-center p-6 bg-zinc-50 dark:bg-zinc-950">
+      <Script id="google-ads-conversion" strategy="afterInteractive">
+        {`gtag('event', 'conversion', {'send_to': 'AW-18337571182/FsHwCJTVkOwcEO7ChKhE'});`}
+      </Script>
       <div className="max-w-xl w-full text-center space-y-8 p-12 bg-white dark:bg-zinc-900 rounded-3xl shadow-sm border border-zinc-200 dark:border-zinc-800">
         <div className="flex justify-center">
           <div className="rounded-full bg-emerald-100 dark:bg-emerald-900/30 p-4">

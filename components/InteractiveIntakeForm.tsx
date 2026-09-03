@@ -127,6 +127,11 @@ ${formData.headache || "N/A"}
       if (response.ok) {
         setCountdown(6);
         setStatus("success");
+        if (typeof window !== "undefined" && (window as any).gtag) {
+          (window as any).gtag('event', 'conversion', {
+            send_to: 'AW-18337571182/FsHwCJTVkOwcEO7ChKhE'
+          });
+        }
       } else {
         setStatus("error");
         setErrorMessage(data.error || "Submission failed. Please try again.");

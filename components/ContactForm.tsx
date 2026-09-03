@@ -30,6 +30,11 @@ export default function ContactForm() {
       if (response.ok) {
         setStatus("success");
         setFormData({ name: "", email: "", message: "" });
+        if (typeof window !== "undefined" && (window as any).gtag) {
+          (window as any).gtag('event', 'conversion', {
+            send_to: 'AW-18337571182/FsHwCJTVkOwcEO7ChKhE'
+          });
+        }
       } else {
         setStatus("error");
         setErrorMessage(data.error || "Message not sent.");
