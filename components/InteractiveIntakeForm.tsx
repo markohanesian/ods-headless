@@ -208,9 +208,10 @@ ${formData.selectedHeadaches.length > 0 ? formData.selectedHeadaches.map((s) => 
                 name: "",
                 email: "",
                 company: "",
+                websiteUrl: "",
                 selectedServices: [],
                 timeline: "Next 30–60 Days",
-                headache: "",
+                selectedHeadaches: [],
               });
             }}
             className="text-sm font-mono text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 underline underline-offset-4 py-2"
