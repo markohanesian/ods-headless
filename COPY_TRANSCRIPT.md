@@ -4,7 +4,6 @@
 - **Logo**: ODS (OHANESIAN DIGITAL SOLUTIONS)
 - **Links**: Work, Services, For Agencies, About, Contact
 - **Desktop CTA**: Contact
-- **Mobile Menu CTA**: Free Site Audit
 
 ---
 

@@ -143,16 +143,7 @@ const Navigation = () => {
               </Link>
             );
           })}
-          
-          <div className="w-full max-w-sm mt-8">
-            <Link 
-              href="/contact" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="btn-brand w-full flex justify-center py-4 shadow-xl text-sm tracking-widest font-bold"
-            >
-              Free Site Audit
-            </Link>
-          </div>
+
         </div>
       </div>
     </nav>
