@@ -10,7 +10,7 @@
 ## Homepage
 
 ### Section 1: Hero
-- **Eyebrow Badge**: CUSTOM WEBSITES // CAMPAIGN LANDING PAGES // WORKFLOW APPS
+- **Eyebrow Badge**: CUSTOM WEBSITES • CAMPAIGN LANDING PAGES • WORKFLOW APPS
 - **Headline (H1)**: Tech that works as hard as you do.
 - **Subtitle/Paragraph**: We build websites and dedicated landing pages that convert to sales—with built-in analytics, functional design, and zero plugin bloat.
 - **Primary CTA**: Free Site Audit (Triggers intake modal)
@@ -123,8 +123,7 @@
 ## Partnerships Page (/partnerships)
 
 ### Section 1: Hero
-- **Eyebrow Badge**: WHITE-LABEL TECHNICAL PARTNERSHIPS // FOR PPC & CREATIVE AGENCIES
-- **Headline (H1)**: Let us handle your dev pipeline. You keep your clients winning.
+- **Headline (H1)**: For Agencies
 - **Subtitle/Paragraph**: Eliminate your development bottleneck. We engineer sub-second Next.js campaign landing pages and custom web platforms under your brand—shipped in 5 business days, tracking-verified, with strict NDA protection.
 - **Primary CTA**: Request Agency Partnership Specs (Smooth scrolls directly to #agency-intake)
 - **Secondary CTA**: View Engineering Standards (Scrolls to #standards)
@@ -196,15 +195,17 @@
 
 ## Services Page (/services)
 
-### Services Breakdown
-- **Headline (H2)**: Our services
-- *(Details on custom digital engineering services...)*
+### Section 1: Header
+- **Headline (H1)**: Services
+- **Subtitle/Paragraph**: We don't just build pages that look good. We build digital tools that handle your daily operations and enhance your business.
 
-### Proprietary Tools
-- **Headline (H2)**: Proprietary tools
-- **Paragraph**: We build custom digital instruments designed to bridge the gap between complex backend systems and performant frontend experiences.
+### Section 2: Service Tiers
+- **Service 1**: Dedicated Lead Capture Pages (High-converting, sub-second single-page builds deployed specifically for paid ad campaigns.)
+- **Service 2**: Websites and Applications (A digital foundation tailored to your exact business workflow, or an upgrade to your current site.)
+- **Service 3**: Design and Strategy (Clear, modern visuals that make your business look authoritative and professional from day one.)
+- **Service 4**: Systems and Automation (Connect your website directly to your daily tools, payment processors, and scheduling apps.)
 
-### Strategy Audit Section
-- **Headline (H2)**: Start your strategy audit
-- **Paragraph**: The first step to a high-converting digital platform is a deep-dive analysis. Let's uncover your operational bottlenecks and map out a precise development plan.
-- **CTA**: Free Site Audit
+### Section 3: The Webmaster Care Plan
+- **Headline (H2)**: The Webmaster Care Plan
+- **Paragraph**: We manage your site hosting, security, updates, and everything your website needs to run smoothly 24/7.
+- **CTA**: Schedule a Consultation
