@@ -3,7 +3,7 @@ import Link from "next/link";
 import CaseStudyGrid from "@/components/CaseStudyGrid";
 
 export const metadata = {
-  title: "Portfolio | Ohanesian Digital Solutions",
+  title: "Work | Ohanesian Digital Solutions",
   description: "A curated inventory of high-performance digital platforms and engineering-led web solutions.",
 };
 
@@ -14,7 +14,7 @@ export default function PortfolioPage() {
       <section className="px-6 lg:px-12 pt-32 pb-24 border-b border-zinc-100 dark:border-zinc-900">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-zinc-900 dark:text-zinc-50 mb-8 uppercase">
-            Portfolio
+            Work
           </h1>
           <div className="h-px w-24 bg-accent-blue mb-12"></div>
           
@@ -28,8 +28,8 @@ export default function PortfolioPage() {
 
       {/* Dynamic Grid Section - Client Inventory */} 
       <CaseStudyGrid 
-        title="CLIENT WORK" 
-        subtitle="A look into how we solve real business challenges—from custom quote tools and job application workflows to full-scale platform management and brand strategy."
+        title="Featured Projects" 
+        subtitle="Custom websites, Shopify E-commerce optimization, and more."
         category="work"
         excludeCategory="custom-apps"
         limit={50}

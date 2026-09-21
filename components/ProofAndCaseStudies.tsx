@@ -40,10 +40,10 @@ const ProofAndCaseStudies = () => {
           </div>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6">
             <Link 
-              href="/portfolio" 
+              href="/work" 
               className="inline-flex items-center justify-center px-5 py-2.5 text-sm sm:text-sm font-bold tracking-wider uppercase bg-brand dark:bg-accent-blue text-zinc-950 dark:text-white rounded hover:opacity-90 transition-opacity"
             >
-              View Portfolio
+              View Work
             </Link>
             <Link 
               href="/contact" 
@@ -58,7 +58,7 @@ const ProofAndCaseStudies = () => {
           {CASE_STUDIES.map((project) => (
             <Link 
               key={project.slug} 
-              href={`/portfolio/${project.slug}`}
+              href={`/work/${project.slug}`}
               className={`group relative flex flex-col overflow-hidden border transition-all duration-300 ${
                 project.isLab 
                   ? 'bg-white dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 p-8' 

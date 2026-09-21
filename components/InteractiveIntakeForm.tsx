@@ -197,8 +197,8 @@ ${formData.selectedHeadaches.length > 0 ? formData.selectedHeadaches.map((s) => 
           <Link href="/" className="btn-brand w-full sm:w-auto text-center px-6 py-3">
             Return to Home Now
           </Link>
-          <Link href="/portfolio" className="btn-secondary w-full sm:w-auto text-center px-6 py-3">
-            View Our Portfolio
+          <Link href="/work" className="btn-secondary w-full sm:w-auto text-center px-6 py-3">
+            View Our Work
           </Link>
           <button
             onClick={() => {

@@ -65,7 +65,7 @@
 - **CTA**: Inquire About White-Label
 
 ### Section 6: Proof & Real Metrics (Case Studies)
-- **Headline (H2)**: Proof & Measurable Outcomes
+- **Headline (H2)**: Featured Projects
 - **Paragraph**: Real engineering solutions built for measurable growth.
 - **Case Study 1: The Pomegranate Boutique**
   - *Metric*: 3x–5x Online Sales Growth

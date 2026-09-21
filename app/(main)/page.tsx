@@ -27,12 +27,13 @@ export default function Home() {
 
       {/* Showcase / Portfolio Section */}
       <CaseStudyGrid 
-        title="Proof & Measurable Outcomes" 
+        title="Featured Projects" 
         subtitle="Real engineering solutions built for measurable growth."
         category="work"
+        excludeCategory="custom-apps"
         limit={3}
         showViewAll={true}
-        viewAllLabel="View Portfolio"
+        viewAllLabel="View Work"
       />
 
       <BlogSection />
