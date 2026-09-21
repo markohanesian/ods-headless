@@ -36,9 +36,9 @@ const Navigation = () => {
   };
 
   const navItems = [
+    { name: 'Work', href: '/portfolio' },
     { name: 'Services', href: '/services' },
-    { name: 'Portfolio', href: '/portfolio' },
-    { name: 'Engine', href: '/engine' },
+    { name: 'For Agencies', href: '/partnerships' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' }
   ];
@@ -62,7 +62,7 @@ const Navigation = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-10">
-          {navItems.filter(i => i.name !== 'Contact').map((item) => {
+          {navItems.map((item) => {
             const isActive = pathname === item.href || (pathname.startsWith(item.href) && item.href !== '/');
             return (
               <Link 
@@ -108,13 +108,6 @@ const Navigation = () => {
             )}
           </button>
           
-          <Link 
-            href="/contact"
-            className="hidden md:block btn-brand !px-6 !py-2.5"
-          >
-            Contact
-          </Link>
-
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -132,7 +125,7 @@ const Navigation = () => {
 
       {/* Mobile Menu Overlay */}
       <div className={`fixed top-0 left-0 w-full h-[100dvh] bg-white dark:bg-zinc-950 z-40 transition-transform duration-500 md:hidden ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="flex flex-col items-center justify-center h-full gap-8 px-6 text-center">
+        <div className="flex flex-col items-center justify-center h-full gap-8 px-6 text-center pt-20 pb-24 overflow-y-auto">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
@@ -150,6 +143,16 @@ const Navigation = () => {
               </Link>
             );
           })}
+          
+          <div className="w-full max-w-sm mt-8">
+            <Link 
+              href="/contact" 
+              onClick={() => setMobileMenuOpen(false)}
+              className="btn-brand w-full flex justify-center py-4 shadow-xl text-sm tracking-widest font-bold"
+            >
+              Free Site Audit
+            </Link>
+          </div>
         </div>
       </div>
     </nav>

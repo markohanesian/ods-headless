@@ -5,15 +5,23 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const BUILD_OPTIONS = [
-  "A website or custom application",
-  "An automation or workflow system",
-  "An upgrade to your current digital footprint or operations",
+  "Turn Ad Clicks into Leads",
+  "Build / Redesign Full Website",
+  "Agency White-Label Dev Support",
+  "Custom App / Operational Automation",
 ];
 
 const TIMELINE_OPTIONS = [
   "ASAP",
   "Next 30–60 Days",
   "Flexible",
+];
+
+const HEADACHE_OPTIONS = [
+  "Site is slow / outdated",
+  "Traffic isn't converting",
+  "Forms break / messy inbox",
+  "Wasting hours on manual admin",
 ];
 
 export default function InteractiveIntakeForm() {
@@ -27,9 +35,10 @@ export default function InteractiveIntakeForm() {
     name: "",
     email: "",
     company: "",
+    websiteUrl: "",
     selectedServices: [] as string[],
     timeline: "Next 30–60 Days",
-    headache: "",
+    selectedHeadaches: [] as string[],
   });
 
   // Auto-redirect timer effect on success
@@ -65,6 +74,23 @@ export default function InteractiveIntakeForm() {
     });
   };
 
+  const handleHeadacheToggle = (option: string) => {
+    setFormData((prev) => {
+      const exists = prev.selectedHeadaches.includes(option);
+      if (exists) {
+        return {
+          ...prev,
+          selectedHeadaches: prev.selectedHeadaches.filter((s) => s !== option),
+        };
+      } else {
+        return {
+          ...prev,
+          selectedHeadaches: [...prev.selectedHeadaches, option],
+        };
+      }
+    });
+  };
+
   const handleNextStep = (e: React.FormEvent) => {
     e.preventDefault();
     if (step === 1) {
@@ -95,14 +121,15 @@ export default function InteractiveIntakeForm() {
 
     const formattedMessage = `
 COMPANY/PROJECT: ${formData.company}
+WEBSITE URL: ${formData.websiteUrl || "N/A"}
 
-WHAT THEY WANT TO BUILD:
+WHAT THEY WANT TO SOLVE:
 ${formData.selectedServices.map((s) => `- ${s}`).join("\n")}
 
 TIMELINE: ${formData.timeline}
 
-BIGGEST OPERATIONAL HEADACHE:
-${formData.headache || "N/A"}
+PRIMARY HEADACHE:
+${formData.selectedHeadaches.length > 0 ? formData.selectedHeadaches.map((s) => `- ${s}`).join("\n") : "N/A"}
     `.trim();
 
     try {
@@ -116,9 +143,10 @@ ${formData.headache || "N/A"}
           email: formData.email,
           message: formattedMessage,
           company: formData.company,
+          websiteUrl: formData.websiteUrl,
           services: formData.selectedServices,
           timeline: formData.timeline,
-          headache: formData.headache,
+          headaches: formData.selectedHeadaches,
         }),
       });
 
@@ -197,6 +225,9 @@ ${formData.headache || "N/A"}
 
   return (
     <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-6 sm:p-10 rounded-2xl shadow-xl">
+      <div className="mb-6 pb-6 border-b border-zinc-100 dark:border-zinc-800">
+        <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">Technical Site & Conversion Audit</h2>
+      </div>
       {/* Progress Bar & Indicators */}
       <div className="mb-8">
         <div className="flex items-center justify-between text-sm font-mono mb-3">
@@ -205,8 +236,8 @@ ${formData.headache || "N/A"}
           </span>
           <span className="text-zinc-400 dark:text-zinc-500">
             {step === 1 && "Your Business Basics"}
-            {step === 2 && "What Are You Looking to Build?"}
-            {step === 3 && "Timeline & Goals"}
+            {step === 2 && "What are you looking to solve?"}
+            {step === 3 && "Project Details"}
           </span>
         </div>
         <div className="w-full h-1.5 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden">
@@ -251,23 +282,38 @@ ${formData.headache || "N/A"}
             </div>
           </div>
 
-          <div className="space-y-2">
-            <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100">
-              What is the name of your company or project? *
-            </label>
-            <input
-              type="text"
-              required
-              placeholder="Company or Project Name (e.g., Cyberdyne Systems)"
-              value={formData.company}
-              onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-              className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-3 text-zinc-900 dark:text-zinc-50 focus:outline-none focus:border-accent-blue transition-colors"
-            />
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100">
+                Company Name *
+              </label>
+              <input
+                type="text"
+                required
+                placeholder="e.g., Cyberdyne Systems"
+                value={formData.company}
+                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-3 text-zinc-900 dark:text-zinc-50 focus:outline-none focus:border-accent-blue transition-colors"
+              />
+            </div>
+            
+            <div className="space-y-2">
+              <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100">
+                Current Website URL <span className="font-normal text-zinc-500">(Optional: Leave blank if launching brand new)</span>
+              </label>
+              <input
+                type="url"
+                placeholder="https://cyberdyne.com"
+                value={formData.websiteUrl}
+                onChange={(e) => setFormData({ ...formData, websiteUrl: e.target.value })}
+                className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-3 text-zinc-900 dark:text-zinc-50 focus:outline-none focus:border-accent-blue transition-colors"
+              />
+            </div>
           </div>
 
           <div className="pt-4 flex justify-end">
             <button type="submit" className="btn-brand px-8 py-3">
-              Continue to Step 2 →
+              Continue to Goals →
             </button>
           </div>
         </form>
@@ -278,7 +324,7 @@ ${formData.headache || "N/A"}
         <form onSubmit={handleNextStep} className="space-y-6">
           <div className="space-y-3">
             <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100 mb-2">
-              What are you looking to build? (Select all that apply) *
+              What are you looking to solve? (Select all that apply) *
             </label>
             <div className="space-y-3">
               {BUILD_OPTIONS.map((option) => {
@@ -320,7 +366,7 @@ ${formData.headache || "N/A"}
               ← Back
             </button>
             <button type="submit" className="btn-brand px-8 py-3">
-              Continue to Step 3 →
+              Continue to Details →
             </button>
           </div>
         </form>
@@ -354,17 +400,39 @@ ${formData.headache || "N/A"}
             </div>
           </div>
 
-          <div className="space-y-2">
-            <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100">
-              What is the single biggest headache in your current business workflow?
+          <div className="space-y-3">
+            <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+              Primary bottleneck or current headache? *
             </label>
-            <textarea
-              rows={4}
-              placeholder="e.g., We waste 15 hours a week manually emailing clients, gathering PDFs, and chasing down payments..."
-              value={formData.headache}
-              onChange={(e) => setFormData({ ...formData, headache: e.target.value })}
-              className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg p-4 text-zinc-900 dark:text-zinc-50 focus:outline-none focus:border-accent-blue transition-colors resize-none"
-            />
+            <div className="space-y-3">
+              {HEADACHE_OPTIONS.map((option) => {
+                const isSelected = formData.selectedHeadaches.includes(option);
+                return (
+                  <div
+                    key={option}
+                    onClick={() => handleHeadacheToggle(option)}
+                    className={`p-4 rounded-xl border cursor-pointer transition-all flex items-center justify-between ${
+                      isSelected
+                        ? "bg-accent-blue/10 border-accent-blue text-zinc-900 dark:text-zinc-50"
+                        : "bg-zinc-50 dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-300 hover:border-zinc-400"
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <div
+                        className={`w-5 h-5 rounded flex items-center justify-center border text-sm ${
+                          isSelected
+                            ? "bg-accent-blue border-accent-blue text-white"
+                            : "border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900"
+                        }`}
+                      >
+                        {isSelected && "✓"}
+                      </div>
+                      <span className="font-medium text-sm sm:text-base">{option}</span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
           <div className="pt-4 flex items-center justify-between">
@@ -380,7 +448,7 @@ ${formData.headache || "N/A"}
               disabled={status === "submitting"}
               className="btn-brand px-8 py-4 text-base font-bold shadow-lg disabled:opacity-50"
             >
-              {status === "submitting" ? "Processing..." : "Book a Call"}
+              {status === "submitting" ? "Processing..." : "Submit Audit Request"}
             </button>
           </div>
         </form>

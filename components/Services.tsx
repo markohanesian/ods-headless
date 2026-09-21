@@ -46,7 +46,7 @@ const Services = () => {
       <div className="max-w-7xl mx-auto">
         <div className="mb-12 md:mb-16">
           <h2 className="mb-4 uppercase">
-            Our Services
+            Our services
           </h2>
           <div className="h-px w-full bg-accent-blue/30 dark:bg-accent-blue/20"></div>
         </div>

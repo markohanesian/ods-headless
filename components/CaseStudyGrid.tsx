@@ -49,7 +49,7 @@ const CaseStudyGrid = async ({
   });
 
   return (
-    <section className={`px-6 lg:px-12 py-16 md:py-24 ${variant === 'lab' ? 'bg-zinc-50 dark:bg-zinc-900/50' : 'bg-white dark:bg-zinc-950'}`}>
+    <section id="case-studies" className={`px-6 lg:px-12 py-16 md:py-24 ${variant === 'lab' ? 'bg-zinc-50 dark:bg-zinc-900/50' : 'bg-white dark:bg-zinc-950'}`}>
       <div className="max-w-7xl mx-auto">
         {(title || subtitle) && (
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
@@ -103,6 +103,24 @@ const CaseStudyGrid = async ({
             const statusLabel = statusTag ? statusTag.name : 'Development';
             const appTypeLabel = appTypeTag ? appTypeTag.name : 'PROPRIETARY_SOFTWARE';
 
+            let customDescription = project.excerpt;
+            let customTag1 = null;
+            let customTag2 = null;
+
+            if (project.slug === 'the-pomegranate-boutique') {
+              customDescription = "Shopify theme migration, custom variant preview code, optimized customer signup, and streamlined checkout flow.";
+              customTag1 = "E-COMMERCE";
+              customTag2 = "SHOPIFY";
+            } else if (project.slug === 'four-seasons-ag-services') {
+              customDescription = "Full custom platform replacing 100% manual phone quotes with automated digital estimates and a hiring intake engine, saving hours of weekly admin overhead.";
+              customTag1 = "WEB APP";
+              customTag2 = "AUTOMATION";
+            } else if (project.slug === 'diversified-land-management') {
+              customDescription = "Clean, modern corporate web platform delivering consistent year-over-year organic traffic growth and direct digital contact where none existed before.";
+              customTag1 = "CORPORATE WEB";
+              customTag2 = "SEO";
+            }
+
             return (
               <Link 
                 key={project.slug} 
@@ -147,13 +165,30 @@ const CaseStudyGrid = async ({
 
                 {/* Content */}
                 <div className="p-8 flex flex-col flex-grow">
+                  {project.slug === 'the-pomegranate-boutique' && (
+                    <div className="text-brand dark:text-accent-blue font-bold mb-2">3x–5x Online Sales Growth</div>
+                  )}
+                  {project.slug === 'four-seasons-ag-services' && (
+                    <div className="text-brand dark:text-accent-blue font-bold mb-2">Automated Lead & Quote Pipeline</div>
+                  )}
+                  {project.slug === 'diversified-land-management' && (
+                    <div className="text-brand dark:text-accent-blue font-bold mb-2">Zero-to-One Corporate Footprint</div>
+                  )}
+                  
                   <h3 className={`font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4 group-hover:translate-x-1 transition-transform ${isLab ? '!text-2xl' : '!text-xl'}`}>
                     {project.title}
                   </h3>
                   
-                  <p className="!text-sm text-zinc-500 dark:text-zinc-300 mb-8 line-clamp-3 max-w-none">
-                    {project.excerpt}
+                  <p className="!text-sm text-zinc-500 dark:text-zinc-300 mb-6 line-clamp-3 max-w-none">
+                    {customDescription}
                   </p>
+
+                  {(customTag1 || customTag2) && (
+                    <div className="flex gap-2 mb-8">
+                      {customTag1 && <span className="label-mono !text-xs px-2 py-1 bg-zinc-100 dark:bg-zinc-900">{`[ ${customTag1} ]`}</span>}
+                      {customTag2 && <span className="label-mono !text-xs px-2 py-1 bg-zinc-100 dark:bg-zinc-900">{`[ ${customTag2} ]`}</span>}
+                    </div>
+                  )}
 
                   <div className="mt-auto flex items-center justify-between">
                     <div className="label-mono">

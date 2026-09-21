@@ -20,7 +20,7 @@ export default function StrategyAuditSection() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center space-y-6 mb-12">
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tighter text-white">
-            Free Site Audit & Strategy Questionnaire
+            Start your strategy audit
           </h2>
           
           <p className="text-zinc-400 text-lg sm:text-xl font-light max-w-2xl mx-auto leading-relaxed">

@@ -19,7 +19,7 @@ const BlogSection = async () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
             <h2 className="mb-4 uppercase">
-              Insights
+              Latest engineering insights
             </h2>
             <p className="text-zinc-500 dark:text-zinc-300 label-mono">
               Articles, Blogs, and Observations on the Modern Web

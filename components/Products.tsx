@@ -28,7 +28,7 @@ const Products = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
             <h2 className="mb-4 uppercase">
-              Proprietary Tools
+              Proprietary tools
             </h2>
             <p className="text-zinc-600 dark:text-zinc-300">
               We build custom digital instruments designed to bridge the gap between complex backend systems and performant frontend experiences.

@@ -12,7 +12,7 @@ const EngineTeaser = () => {
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter mb-6">
             Powered by the <br className="hidden md:block" />
-            <span className="text-brand">ODS Core Engine.</span>
+            <span className="text-brand">ODS core engine.</span>
           </h2>
           <p className="text-zinc-400 text-lg leading-relaxed max-w-xl mb-8 font-light">
             Behind every high-performance site we build is our custom engineering baseline. We've eliminated the bloat of traditional site builders to deliver instant load times, bulletproof security, and automated workflows out of the box.

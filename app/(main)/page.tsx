@@ -1,10 +1,11 @@
 import Hero from "@/components/Hero";
 import ArchitectureComparison from "@/components/ArchitectureComparison";
-import CoreCapabilities from "@/components/CoreCapabilities";
-import EngineTeaser from "@/components/EngineTeaser";
+import ProductizedOffers from "@/components/ProductizedOffers";
+import PerformanceMandate from "@/components/PerformanceMandate";
 import LeadIntakeTeaser from "@/components/LeadIntakeTeaser";
 import CaseStudyGrid from "@/components/CaseStudyGrid";
 import BlogSection from "@/components/BlogSection";
+import WhiteLabelBanner from "@/components/WhiteLabelBanner";
 
 export default function Home() {
   return (
@@ -15,16 +16,19 @@ export default function Home() {
       {/* Section 2: Why Custom Web Architecture Beats Standard Builders */}
       <ArchitectureComparison />
 
-      {/* Section 3: Core Capabilities */}
-      <CoreCapabilities />
+      {/* Section 3: Productized Offers */}
+      <ProductizedOffers />
 
-      {/* Section 3.5: Proprietary Engine Teaser */}
-      <EngineTeaser />
+      {/* Section 4: Performance Mandate */}
+      <PerformanceMandate />
+      
+      {/* Section 4: White-Label Agency Partnership Banner */}
+      <WhiteLabelBanner />
 
       {/* Showcase / Portfolio Section */}
       <CaseStudyGrid 
-        title="our work" 
-        subtitle="A curated selection of high-performance digital platforms and engineering-led web solutions designed for measurable business growth."
+        title="Proof & Measurable Outcomes" 
+        subtitle="Real engineering solutions built for measurable growth."
         category="work"
         limit={3}
         showViewAll={true}

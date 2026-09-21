@@ -24,7 +24,7 @@ const CoreValues = () => {
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
           <h2 className="mb-4 uppercase">
-            Our Core Values
+            Core principles
           </h2>
           <div className="h-px w-full bg-zinc-200 dark:bg-zinc-800"></div>
         </div>

@@ -48,3 +48,6 @@
   - Relies on local mock fallbacks for Resend if API keys are missing.
   - WordPress media URLs require custom Regex rewriting to map to the `wp.` subdomain in production.
   - Form validation utilizes native HTML attributes; migrating to Zod + React Hook Form could improve UX and schema strictness on advanced intake flows.
+
+## 6. Copywriting & Content Management
+- **Copy Transcript Sync:** The project root contains a file named `COPY_TRANSCRIPT.md`. This file serves as a plain-text version of the site's layout and copy for copywriting review. **Whenever you make copy or structural changes to the website's pages or components, you MUST also update `COPY_TRANSCRIPT.md` to reflect those changes.**

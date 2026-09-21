@@ -30,7 +30,7 @@ const TeamSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="mb-16 max-w-3xl">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-4">
-            Strategic Minds & Creative Builders
+            The architects behind the code
           </h2>
           <div className="h-px w-full bg-zinc-200 dark:bg-zinc-800 mt-6"></div>
         </div>

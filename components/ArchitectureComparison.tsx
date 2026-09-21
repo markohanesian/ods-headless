@@ -2,20 +2,20 @@ import React from "react";
 
 const COMPARISONS = [
   {
-    elsewhere: "Slow load times that cause customers to leave before reading your message.",
-    ods: "Instant loading on mobile and desktop, keeping visitors focused and engaged.",
+    elsewhere: "3+ second load delays that cause 50%+ of paid mobile traffic to bounce.",
+    ods: "Sub-second load speeds on edge infrastructure that retain every visitor.",
   },
   {
-    elsewhere: "Plugin conflicts and security updates that break your forms when you need them most.",
-    ods: "Zero bloated plugins, custom-coded for reliable performance and safety.",
+    elsewhere: "Fragile plugins and third-party updates that break forms when you need them most.",
+    ods: "Zero bloated plugins, custom-coded for reliable uptime and security.",
   },
   {
-    elsewhere: "Basic contact forms that dump messy emails into your inbox for you to sort by hand.",
-    ods: "Smart intake systems that qualify leads, collect payments, and book calls automatically.",
+    elsewhere: "Basic contact forms that dump disorganized submissions into crowded inboxes.",
+    ods: "Automated intake pipelines that qualify leads and dispatch quotes instantly.",
   },
   {
-    elsewhere: "Confusing menus and broken layouts that fail basic accessibility checks.",
-    ods: "100% accessible designs that work smoothly for every customer on every screen.",
+    elsewhere: "Cluttered, non-compliant menus that fail accessibility standards and frustrate mobile users.",
+    ods: "100% WCAG-accessible, responsive layouts built to convert across every screen size.",
   },
 ];
 
@@ -25,10 +25,10 @@ const ArchitectureComparison = () => {
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-6">
-            Is Your Current Website Holding Your Business Back?
+            Is your current website costing you business?
           </h2>
           <p className="text-zinc-600 dark:text-zinc-300 text-lg leading-relaxed font-light">
-            DIY site builders force you to settle for fragile plugins, frustrating delays, and tedious manual workarounds. Here is how custom web engineering compares:
+            Fragile website templates and bloated plugins waste ad spend and create more work. Here's how we compare:
           </p>
         </div>
 
@@ -38,13 +38,13 @@ const ArchitectureComparison = () => {
             <div className="p-4 sm:p-6 md:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
               <span className="hidden sm:inline-block w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
               <h3 className="text-sm sm:text-sm font-mono uppercase tracking-wider font-bold text-zinc-700 dark:text-zinc-300">
-                What You Get Elsewhere <span className="text-zinc-500 font-normal block sm:inline mt-1 sm:mt-0">(Outdated Templates)</span>
+                Outdated Templates
               </h3>
             </div>
             <div className="p-4 sm:p-6 md:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 bg-accent-blue/5 dark:bg-accent-blue/10">
               <span className="hidden sm:inline-block w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
               <h3 className="text-sm sm:text-sm font-mono uppercase tracking-wider font-bold text-zinc-900 dark:text-zinc-50">
-                What You Get with ODS <span className="text-accent-blue font-normal block sm:inline mt-1 sm:mt-0">(Custom Built)</span>
+                Custom ODS Engineering <span className="text-accent-blue font-normal block sm:inline mt-1 sm:mt-0">(High Performance)</span>
               </h3>
             </div>
           </div>
