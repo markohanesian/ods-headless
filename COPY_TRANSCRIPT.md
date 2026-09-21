@@ -31,17 +31,23 @@
 ### Section 3: Productized Offers (The 3 Doors)
 - **Headline (H2)**: Built by engineers, made for business profit
 - **Sub-Headline**: Clear deliverables with zero scope confusion. Pick the engine your business needs:
-- **Offer 1**: The Conversion Landing Page
-  - *Tag*: SHIPS IN 5 DAYS • 30-DAY PERFORMANCE PILOT
-  - *Description*: Engineered specifically for high-intent paid campaigns. Single-focus direct-response UX, sub-second edge speeds, GA4 event tracking, and automated lead routing to CRM or email. Measure cost-per-lead directly during a 30-day live tracking window.
+- **Offer 1**: The Ad Campaign Landing Page
+  - *Tag*: BUILT IN 1 WEEK • 30-DAY PERFORMANCE TRACKING
+  - *Technical Sub-Headline*: Custom Next.js single-page build deployed on edge infrastructure with sub-second (<1s) load speeds, GA4 conversion tracking, and automated lead routing.
+  - *Plain-English Value*: A dedicated page engineered to turn paid Google and Meta clicks into phone calls, quote requests, and paying clients. No bloated menus or distractions. We launch in one week, then track your cost-per-lead live on a private Looker Studio dashboard for 30 days before discussing any ongoing retainers.
+  - *What You Get*: Mobile-first Next.js build with <1s load speeds on edge hosting, Pixel-perfect GA4 and ad conversion tracking (calls and form fills), Instant lead routing directly to your email, Google Sheets, or CRM, 30-day live Looker Studio dashboard to monitor real conversion metrics, 100% full ownership of your code and domain
   - *CTA*: Claim Your 30-Day Pilot
 - **Offer 2**: The Custom Business Hub
-  - *Tag*: FULL WEBSITE BUILD
-  - *Description*: Scalable multi-page architecture with custom-coded intake tools, online quote workflows, and 100% WCAG accessibility compliance. Built to eliminate manual phone calls and admin overhead.
+  - *Tag*: FULL WEBSITE BUILD OR COMPLETE REDESIGN
+  - *Technical Sub-Headline*: Multi-page web platform custom-coded for sub-second speeds, 100% WCAG AA accessibility compliance, and automated online quote/booking intake.
+  - *Plain-English Value*: A full, high-performance website engineered to make your business look authoritative and run smoothly. We replace fragile, slow site builders with clean code that ranks on Google, eliminates hours of manual phone intake, and makes updating content effortless.
+  - *What You Get*: Clean visual design and structured navigation tailored to your brand, Automated quote requests, booking calendars, or custom intake pipelines, Sub-second load speeds with 100% WCAG AA accessibility standards, Simple, bloat-free content management with zero fragile plugins
   - *CTA*: Plan Your Website Build
 - **Offer 3**: Custom Applications & Automation
-  - *Tag*: OPERATIONAL EXTENSIONS
-  - *Description*: Tailored Shopify extensions, quote calculators, and automated backend systems designed to eliminate repetitive administrative work.
+  - *Tag*: TAILORED SOFTWARE & OPERATIONAL EXTENSIONS
+  - *Technical Sub-Headline*: Custom Shopify extensions, interactive pricing estimators, and automated API workflows built to cut repetitive administrative work.
+  - *Plain-English Value*: Custom software built to solve specific operational bottlenecks. Whether you need an instant quote calculator for customers, custom Shopify product variant previews, or direct integrations between your web forms and internal tools, we build code that saves you time.
+  - *What You Get*: Custom Shopify apps, checkout widgets, and product variant tools, Digital quote estimators and dynamic client intake workflows, Webhook pipelines connecting website leads directly to your tools, Edge-hosted internal apps and custom tools
   - *CTA*: Discuss Custom Development
 
 ### Section 4: Performance Mandate
