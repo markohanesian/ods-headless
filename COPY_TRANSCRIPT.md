@@ -160,3 +160,46 @@
 - **Headline (H3)**: Ready to scale your agency's web production?
 - **Sub-Headline**: Lock in dedicated development capacity for your upcoming ad campaigns.
 - **CTA**: Request Agency Partnership Specs (Scrolls to #agency-intake)
+
+---
+
+## About Page (/about)
+
+### Header Section
+- **Title (H1)**: About
+- **Tagline**: Quality first, built for value.
+- **Paragraph**: At Ohanesian Digital Solutions (ODS), we believe software should simplify your life, not create more admin work. By pairing our expertise with hands-on business insight, we build tailored directly to your goals so you can focus on running your business, not struggling with technology.
+
+### Core Standards Section
+- **Headline (H2)**: Core Standards
+- **Standard 1**: Decades of Technical Experience (We apply deep engineering, design, and real-world strategy to make sure your platform never slows down or breaks under pressure.)
+- **Standard 2**: 100% Commitment to Accessibility (We build for people, making sure your site works intuitively for every person while meeting strict legal guidelines.)
+- **Standard 3**: Strategy-First Architecture (We figure out your business goals and operational bottlenecks before we write a single line of code.)
+
+### Team Section
+- **Headline (H2)**: The architects behind the code
+- **Member 1**: Mark Sarkis Ohanesian - Founder & Lead Architect
+- **Member 2**: Astghik Stella Ohanesian - Creative Direction & Media
+- **Member 3**: Christopher Ohanesian - Visual Design
+
+### CTA Section
+- **Headline**: Ready to Build Your Digital Advantage?
+- **Paragraph**: We are committed to your business's long-term success. Contact us today to map out your custom digital strategy.
+- **CTA**: Work With Us
+
+---
+
+## Services Page (/services)
+
+### Services Breakdown
+- **Headline (H2)**: Our services
+- *(Details on custom digital engineering services...)*
+
+### Proprietary Tools
+- **Headline (H2)**: Proprietary tools
+- **Paragraph**: We build custom digital instruments designed to bridge the gap between complex backend systems and performant frontend experiences.
+
+### Strategy Audit Section
+- **Headline (H2)**: Start your strategy audit
+- **Paragraph**: The first step to a high-converting digital platform is a deep-dive analysis. Let's uncover your operational bottlenecks and map out a precise development plan.
+- **CTA**: Free Site Audit
