@@ -23,7 +23,7 @@ export default async function BlogSinglePage({ params }: { params: Promise<{ slu
         <div className="max-w-4xl mx-auto">
           <div className="mb-8 flex items-center gap-4">
              <span className="label-mono">
-               Insights // {mainCategory}
+               Insights • {mainCategory}
              </span>
              <div className="h-px w-12 bg-brand opacity-50"></div>
              <span className="label-mono">

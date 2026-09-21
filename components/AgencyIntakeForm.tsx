@@ -106,7 +106,7 @@ IMMEDIATE DEV NEED: ${formData.devNeed}
             <input
               type="text"
               required
-              placeholder="e.g., Sterling Cooper Media"
+              placeholder="Agency Name"
               value={formData.agencyName}
               onChange={(e) => setFormData({ ...formData, agencyName: e.target.value })}
               className="w-full bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-3 text-zinc-900 dark:text-zinc-50 focus:outline-none focus:border-brand transition-colors"
@@ -119,7 +119,7 @@ IMMEDIATE DEV NEED: ${formData.devNeed}
             <input
               type="email"
               required
-              placeholder="hello@agency.com"
+              placeholder="email@agency.com"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               className="w-full bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-3 text-zinc-900 dark:text-zinc-50 focus:outline-none focus:border-brand transition-colors"

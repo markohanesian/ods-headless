@@ -25,7 +25,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         <div className="max-w-7xl mx-auto">
           <div className="mb-8 flex items-center gap-4">
              <span className="label-mono">
-               Archive // {mainCategory}
+               Archive • {mainCategory}
              </span>
              <div className={`h-px w-12 ${accentColor} opacity-50`}></div>
           </div>

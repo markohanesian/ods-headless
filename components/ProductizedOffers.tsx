@@ -16,7 +16,7 @@ const OFFERS = [
       "100% full ownership of your code and domain"
     ],
     cta: "Claim Your 30-Day Pilot",
-    href: "/contact",
+    href: "/lead-capture",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>

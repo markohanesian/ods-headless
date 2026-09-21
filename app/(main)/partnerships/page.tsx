@@ -5,58 +5,46 @@ import AgencyIntakeForm from "@/components/AgencyIntakeForm";
 export default function PartnershipsPage() {
   return (
     <>
-      {/* 1. HERO SECTION */}
-      <section className="relative flex flex-col items-center text-center justify-center min-h-[80vh] px-6 lg:px-12 pt-24 pb-24 bg-white dark:bg-zinc-950 overflow-hidden">
-        {/* Background architectural grid effect */}
-        <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" 
-             style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
-        
-        <div className="max-w-5xl z-10 flex flex-col items-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-800 mb-8 sm:mb-12">
-            <span className="w-2 h-2 rounded-full bg-accent-blue animate-pulse"></span>
-            <span className="text-xs sm:text-sm font-mono font-medium tracking-wide text-zinc-600 dark:text-zinc-300 uppercase">
-              WHITE-LABEL TECHNICAL PARTNERSHIPS // FOR PPC & CREATIVE AGENCIES
-            </span>
-          </div>
-          
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter mb-8 text-zinc-900 dark:text-zinc-50 leading-[1.05]">
-            Let us handle your dev pipeline. <br className="hidden md:block" />
-            <span className="text-accent-blue">You keep your clients winning.</span>
+      {/* 1. HEADER SECTION */}
+      <section className="px-6 lg:px-12 pt-32 pb-24 border-b border-zinc-100 dark:border-zinc-900 bg-white dark:bg-zinc-950">
+        <div className="max-w-7xl mx-auto">
+          <h1 className="text-zinc-900 dark:text-zinc-50 mb-8 uppercase">
+            For Agencies
           </h1>
+          <div className="h-px w-24 bg-accent-blue mb-12"></div>
           
-          <p className="lead-text text-zinc-600 dark:text-zinc-300 max-w-3xl mb-12 text-lg sm:text-xl leading-relaxed font-light">
-            Eliminate your development bottleneck. We engineer sub-second Next.js campaign landing pages and custom web platforms under your brand—shipped in 5 business days, tracking-verified, with strict NDA protection.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center mb-16">
-            <a 
-              href="#agency-intake" 
-              className="btn-brand text-center px-8"
-            >
-              Request Agency Partnership Specs
-            </a>
-            <a 
-              href="#standards" 
-              className="btn-secondary text-center px-8"
-            >
-              View Engineering Standards
-            </a>
-          </div>
-
-          {/* Proof Pills */}
-          <div className="flex flex-wrap justify-center gap-3">
-            <span className="px-3 py-1 text-xs font-mono bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800 rounded">
-              [ 5 Business-Day Delivery ]
-            </span>
-            <span className="px-3 py-1 text-xs font-mono bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800 rounded">
-              [ 100% Core Web Vitals ]
-            </span>
-            <span className="px-3 py-1 text-xs font-mono bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800 rounded">
-              [ GA4 & Pixel Verified ]
-            </span>
-            <span className="px-3 py-1 text-xs font-mono bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800 rounded">
-              [ Strict Non-Poaching NDA ]
-            </span>
+          <div className="max-w-3xl">
+            <p className="lead-text text-zinc-900 dark:text-zinc-50 mb-12">
+              Eliminate your development bottleneck. We engineer sub-second Next.js campaign landing pages and custom web platforms under your brand—shipped in 5 business days, tracking-verified, with strict NDA protection.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+              <a 
+                href="#agency-intake" 
+                className="btn-brand text-center px-8"
+              >
+                Request Agency Partnership Specs
+              </a>
+              <a 
+                href="#standards" 
+                className="btn-secondary text-center px-8"
+              >
+                View Engineering Standards
+              </a>
+            </div>
+            <div className="flex flex-wrap gap-3 mt-12">
+              <span className="px-3 py-1 text-xs font-mono bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800 rounded">
+                [ 5 Business-Day Delivery ]
+              </span>
+              <span className="px-3 py-1 text-xs font-mono bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800 rounded">
+                [ 100% Core Web Vitals ]
+              </span>
+              <span className="px-3 py-1 text-xs font-mono bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800 rounded">
+                [ GA4 & Pixel Verified ]
+              </span>
+              <span className="px-3 py-1 text-xs font-mono bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800 rounded">
+                [ Strict Non-Poaching NDA ]
+              </span>
+            </div>
           </div>
         </div>
       </section>

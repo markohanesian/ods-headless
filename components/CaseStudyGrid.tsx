@@ -65,22 +65,6 @@ const CaseStudyGrid = async ({
                 </p>
               )}
             </div>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6">
-              {showViewAll && (
-                <Link 
-                  href="/work" 
-                  className="inline-flex items-center justify-center px-5 py-2.5 text-sm sm:text-sm font-bold tracking-wider uppercase bg-brand dark:bg-accent-blue text-zinc-950 dark:text-white rounded hover:opacity-90 transition-opacity"
-                >
-                  {viewAllLabel}
-                </Link>
-              )}
-              <Link 
-                href="/contact" 
-                className="inline-flex items-center justify-center px-5 py-2.5 text-sm sm:text-sm font-bold tracking-wider uppercase border border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 rounded hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
-              >
-                Start a Project
-              </Link>
-            </div>
           </div>
         )}
 
@@ -149,7 +133,7 @@ const CaseStudyGrid = async ({
                   {isLab && (
                     <div className="absolute top-4 left-4 right-4 flex justify-between items-start pointer-events-none">
                       <div className="label-mono bg-zinc-900/80 backdrop-blur text-white px-2.5 py-1 border border-zinc-700 uppercase text-sm">
-                        [ {appTypeLabel} ]
+                        {appTypeLabel}
                       </div>
                       <div 
                         className={`h-2.5 w-2.5 rounded-full transition-all duration-500 ${
@@ -183,12 +167,7 @@ const CaseStudyGrid = async ({
                     {customDescription}
                   </p>
 
-                  {(customTag1 || customTag2) && (
-                    <div className="flex gap-2 mb-8">
-                      {customTag1 && <span className="label-mono !text-xs px-2 py-1 bg-zinc-100 dark:bg-zinc-900">{`[ ${customTag1} ]`}</span>}
-                      {customTag2 && <span className="label-mono !text-xs px-2 py-1 bg-zinc-100 dark:bg-zinc-900">{`[ ${customTag2} ]`}</span>}
-                    </div>
-                  )}
+
 
                   <div className="mt-auto flex items-center justify-between">
                     <div className="label-mono">
@@ -200,6 +179,23 @@ const CaseStudyGrid = async ({
               </Link>
             );
           })}
+        </div>
+
+        <div className="mt-16 flex flex-col sm:flex-row justify-center gap-4">
+          {showViewAll && (
+            <Link 
+              href="/work" 
+              className="inline-flex items-center justify-center px-8 py-4 text-base font-bold tracking-wider uppercase bg-brand dark:bg-accent-blue text-zinc-950 dark:text-white rounded hover:opacity-90 transition-opacity"
+            >
+              {viewAllLabel}
+            </Link>
+          )}
+          <Link 
+            href="/contact" 
+            className="inline-flex items-center justify-center px-8 py-4 text-base font-bold tracking-wider uppercase border border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 rounded hover:bg-zinc-100 dark:hover:bg-zinc-900 transition-colors"
+          >
+            Start a Project
+          </Link>
         </div>
       </div>
     </section>

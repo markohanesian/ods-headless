@@ -4,18 +4,25 @@ import Link from "next/link";
 const SERVICE_TIERS = [
   {
     id: "01",
-    title: "Websites and Applications",
-    summary: "A digital foundation tailored to your exact business workflow, or an upgrade to your current site.",
-    whatWeDeliver: "Top page speed rankings, beautiful layouts on all devices, accessibility compliance, and custom tools .",
+    title: "Dedicated Lead Capture Pages",
+    summary: "High-converting, sub-second single-page builds deployed specifically for paid ad campaigns.",
+    whatWeDeliver: "Mobile-first layouts, zero navigation distractions, live Looker Studio conversion dashboards, and automated lead routing.",
+    href: "/lead-capture"
   },
   {
     id: "02",
+    title: "Websites and Applications",
+    summary: "A digital foundation tailored to your exact business workflow, or an upgrade to your current site.",
+    whatWeDeliver: "Top page speed rankings, beautiful layouts on all devices, accessibility compliance, and custom tools.",
+  },
+  {
+    id: "03",
     title: "Design and Strategy",
     summary: "Clear, modern visuals that make your business look authoritative and professional from day one.",
     whatWeDeliver: "Custom color palettes, typography rules that fit your brand, responsive design components, and clear layout standards.",
   },
   {
-    id: "03",
+    id: "04",
     title: "Systems and Automation",
     summary: "Connect your website directly to your daily tools, payment processors, and scheduling apps.",
     whatWeDeliver: "Easy payment checkouts, custom lead intake forms, automated client onboarding emails, and integrated event hubs.",
@@ -44,30 +51,46 @@ export default function ServicesPage() {
       {/* Service Tiers Section */}
       <section className="px-6 lg:px-12 py-24">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {SERVICE_TIERS.map((service) => (
-              <div 
-                key={service.id} 
-                className="flex flex-col p-8 sm:p-10 border border-zinc-200 dark:border-zinc-800 rounded-2xl bg-zinc-50/50 dark:bg-zinc-900/30 hover:border-accent-blue/50 transition-all duration-300 group"
-              >
-                <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 mb-4 tracking-tight">
-                  {service.title}
-                </h2>
-                
-                <p className="text-zinc-700 dark:text-zinc-200 font-medium mb-8 leading-relaxed">
-                  {service.summary}
-                </p>
-
-                <div className="mt-auto pt-6 border-t border-zinc-200 dark:border-zinc-800">
-                  <div className="label-mono text-sm text-accent-blue uppercase tracking-widest mb-3">
-                    WHAT WE DELIVER
-                  </div>
-                  <p className="text-sm text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
-                    {service.whatWeDeliver}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {SERVICE_TIERS.map((service) => {
+              const CardContent = (
+                <>
+                  <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 mb-4 tracking-tight">
+                    {service.title}
+                  </h2>
+                  
+                  <p className="text-zinc-700 dark:text-zinc-200 font-medium mb-8 leading-relaxed">
+                    {service.summary}
                   </p>
+
+                  <div className="mt-auto pt-6 border-t border-zinc-200 dark:border-zinc-800">
+                    <div className="label-mono text-sm text-accent-blue uppercase tracking-widest mb-3">
+                      WHAT WE DELIVER
+                    </div>
+                    <p className="text-sm text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
+                      {service.whatWeDeliver}
+                    </p>
+                  </div>
+                </>
+              );
+
+              return service.href ? (
+                <Link 
+                  key={service.id} 
+                  href={service.href}
+                  className="flex flex-col p-8 sm:p-10 border border-zinc-200 dark:border-zinc-800 rounded-2xl bg-zinc-50/50 dark:bg-zinc-900/30 hover:border-accent-blue/50 transition-all duration-300 group cursor-pointer"
+                >
+                  {CardContent}
+                </Link>
+              ) : (
+                <div 
+                  key={service.id} 
+                  className="flex flex-col p-8 sm:p-10 border border-zinc-200 dark:border-zinc-800 rounded-2xl bg-zinc-50/50 dark:bg-zinc-900/30 hover:border-accent-blue/50 transition-all duration-300 group"
+                >
+                  {CardContent}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

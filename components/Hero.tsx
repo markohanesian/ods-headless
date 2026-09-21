@@ -12,7 +12,7 @@ const Hero = () => {
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-800 mb-8 sm:mb-12">
           <span className="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
           <span className="text-xs sm:text-sm font-mono font-medium tracking-wide text-zinc-600 dark:text-zinc-300">
-            CUSTOM WEBSITES // CAMPAIGN LANDING PAGES // WORKFLOW APPS
+            CUSTOM WEBSITES • CAMPAIGN LANDING PAGES • WORKFLOW APPS
           </span>
         </div>
         <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[8rem] font-bold tracking-tighter mb-8 text-zinc-900 dark:text-zinc-50 leading-[1.05]">

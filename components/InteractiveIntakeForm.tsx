@@ -267,7 +267,7 @@ ${formData.selectedHeadaches.length > 0 ? formData.selectedHeadaches.map((s) => 
               <input
                 type="text"
                 required
-                placeholder="Full Name (e.g., Sarah Connor)"
+                placeholder="Full Name"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-3 text-zinc-900 dark:text-zinc-50 focus:outline-none focus:border-accent-blue transition-colors"
@@ -275,7 +275,7 @@ ${formData.selectedHeadaches.length > 0 ? formData.selectedHeadaches.map((s) => 
               <input
                 type="email"
                 required
-                placeholder="Business Email (e.g., sarah@company.com)"
+                placeholder="Business Email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-3 text-zinc-900 dark:text-zinc-50 focus:outline-none focus:border-accent-blue transition-colors"
@@ -291,7 +291,7 @@ ${formData.selectedHeadaches.length > 0 ? formData.selectedHeadaches.map((s) => 
               <input
                 type="text"
                 required
-                placeholder="e.g., Cyberdyne Systems"
+                placeholder="Company Name"
                 value={formData.company}
                 onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                 className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-3 text-zinc-900 dark:text-zinc-50 focus:outline-none focus:border-accent-blue transition-colors"
@@ -304,7 +304,7 @@ ${formData.selectedHeadaches.length > 0 ? formData.selectedHeadaches.map((s) => 
               </label>
               <input
                 type="url"
-                placeholder="https://cyberdyne.com"
+                placeholder="https://yourwebsite.com"
                 value={formData.websiteUrl}
                 onChange={(e) => setFormData({ ...formData, websiteUrl: e.target.value })}
                 className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-3 text-zinc-900 dark:text-zinc-50 focus:outline-none focus:border-accent-blue transition-colors"

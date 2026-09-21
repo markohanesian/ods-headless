@@ -21,7 +21,7 @@ export default function MainLayout({
             </p>
           </div>
           <div className="label-mono">
-            © 2026 OHANESIAN DIGITAL SOLUTIONS // ALL_RIGHTS_RESERVED
+            © 2026 OHANESIAN DIGITAL SOLUTIONS. ALL RIGHTS RESERVED.
           </div>
         </div>
       </footer>
