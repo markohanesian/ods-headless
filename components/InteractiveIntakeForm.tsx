@@ -12,7 +12,7 @@ const BUILD_OPTIONS = [
 ];
 
 const TIMELINE_OPTIONS = [
-  "ASAP",
+  "ASAP (Within 1–2 Weeks)",
   "Next 30–60 Days",
   "Flexible",
 ];

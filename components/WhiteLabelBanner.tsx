@@ -14,7 +14,7 @@ const WhiteLabelBanner = () => {
             A reliable development partner for PPC/Ad, Branding, and Marketing agencies.
           </h2>
           <p className="text-zinc-400 text-lg leading-relaxed font-light mb-8 max-w-2xl">
-            Eliminate the development bottleneck so you can tackle bigger projects. We build lightning-fast, tracking-ready landing pages and web apps under your agency&apos;s brand in 5-days so you can focus on what you do best.
+            Eliminate the development bottleneck so you can tackle bigger projects. We build lightning-fast, tracking-ready landing pages and web apps under your agency&apos;s brand in 5 business days so you can focus on what you do best.
           </p>
           <Link 
             href="/partnerships" 

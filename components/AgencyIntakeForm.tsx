@@ -10,7 +10,7 @@ const AGENCY_FOCUS_OPTIONS = [
 ];
 
 const DEV_NEED_OPTIONS = [
-  "5-Day Campaign Landing Page",
+  "5 Business-Day Campaign Landing Page",
   "Custom Web App / Shopify",
   "Ongoing Overflow Dev Support",
 ];

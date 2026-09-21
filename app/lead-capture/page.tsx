@@ -11,7 +11,7 @@ export default function LeadCapturePage() {
         <div className="max-w-4xl mx-auto space-y-8 z-10">
           <div className="label-mono flex sm:justify-center items-start sm:items-center text-left sm:text-center max-sm:tracking-normal max-sm:text-xs max-sm:leading-snug">
             <span className="flex-shrink-0 h-2 w-2 bg-brand mr-3 mt-1 sm:mt-0"></span>
-            <span>5-Day Delivery + Full Tracking + Analytics Included</span>
+            <span>BUILT IN 1 WEEK • 30-DAY PERFORMANCE TRACKING</span>
           </div>
           <h1 className="text-5xl md:text-7xl lg:text-[6rem] font-bold tracking-[-0.05em] leading-[0.95] text-zinc-900 dark:text-zinc-50">
             Turn ad clicks into <span className="text-accent-blue">paying clients.</span>
@@ -73,7 +73,7 @@ export default function LeadCapturePage() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 md:flex justify-between items-end">
             <div className="max-w-2xl space-y-6">
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white">What We Launch in 5 Days</h2>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white">What We Launch in 1 Week</h2>
               <div className="h-px w-24 bg-brand"></div>
               <p className="lead-text text-zinc-400">
                 A complete, end-to-end conversion asset deployed to your domain, ready to receive live ad traffic.

@@ -61,7 +61,7 @@
 ### Section 5: White-Label Agency Partnership Banner
 - **Eyebrow Badge**: AGENCY PARTNERSHIPS
 - **Headline (H2)**: A dependable development partner for PPC and marketing agencies.
-- **Paragraph**: Eliminate the development bottleneck. We build lightning-fast, tracking-ready landing pages and web apps under your agency's brand. We protect your ROAS, stick strictly to 5-day delivery windows, and respect absolute NDA confidentiality.
+- **Paragraph**: Eliminate the development bottleneck. We build lightning-fast, tracking-ready landing pages and web apps under your agency's brand. We protect your ROAS, stick strictly to 5 business-day delivery windows, and respect absolute NDA confidentiality.
 - **CTA**: Inquire About White-Label
 
 ### Section 6: Proof & Real Metrics (Case Studies)
@@ -110,7 +110,7 @@
 
 ### Step 3
 - **Field 1**: When do you want to launch? *
-  - (Options: ASAP / Next 30–60 Days / Flexible)
+  - (Options: ASAP (Within 1-2 Weeks) / Next 30-60 Days / Flexible)
 - **Field 2**: Primary bottleneck or current headache? * (Multi-select tap chips)
   - [ ] Site is slow / outdated
   - [ ] Traffic isn't converting
@@ -128,7 +128,7 @@
 - **Subtitle/Paragraph**: Eliminate your development bottleneck. We engineer sub-second Next.js campaign landing pages and custom web platforms under your brand—shipped in 5 business days, tracking-verified, with strict NDA protection.
 - **Primary CTA**: Request Agency Partnership Specs (Smooth scrolls directly to #agency-intake)
 - **Secondary CTA**: View Engineering Standards (Scrolls to #standards)
-- **Proof Pills**: [ 5-Day Delivery Window ] [ 100% Core Web Vitals ] [ GA4 & Pixel Verified ] [ Strict Non-Poaching NDA ]
+- **Proof Pills**: [ 5 Business-Day Delivery ] [ 100% Core Web Vitals ] [ GA4 & Pixel Verified ] [ Strict Non-Poaching NDA ]
 
 ### Section 2: Interactive Connection UI (#agency-intake)
 - **Eyebrow**: DIRECT AGENCY CHANNEL
@@ -137,7 +137,7 @@
 - **Field 1**: Agency Name *
 - **Field 2**: Partner / Lead Email *
 - **Field 3**: Agency Core Focus * (Chips: Paid Media / PPC, SEO / Organic Growth, Full-Service / Creative, Branding & UI Design)
-- **Field 4**: Immediate Dev Need * (Chips: 5-Day Campaign Landing Page, Custom Web App / Shopify, Ongoing Overflow Dev Support)
+- **Field 4**: Immediate Dev Need * (Chips: 5 Business-Day Campaign Landing Page, Custom Web App / Shopify, Ongoing Overflow Dev Support)
 - **CTA**: Get White-Label Spec Sheet & Rates
 - **Trust Copy**: ⚡ We respond within 1 business day. We work under your brand and strictly observe client-non-poach agreements.
 
@@ -152,7 +152,7 @@
 - **Step 1**: The Brief (Send us your Figma/wireframe or let our team handle direct-response UI architecture.)
 - **Step 2**: The Build (We code the solution cleanly in Next.js/Tailwind with zero plugin bloat.)
 - **Step 3**: Tracking & QA (Pixel-perfect GA4 events, custom forms, webhook endpoints, and WCAG accessibility compliance verified.)
-- **Step 4**: 5-Day Launch (We deploy to your client's subdomain or hand over clean repository code under your agency's name.)
+- **Step 4**: 5 Business-Day Launch (We deploy to your client's subdomain or hand over clean repository code under your agency's name.)
 
 ### Section 5: Proof & Architecture Standards (#standards)
 - **Headline (H2)**: Engineered to protect your agency's reputation.

@@ -46,7 +46,7 @@ export default function PartnershipsPage() {
           {/* Proof Pills */}
           <div className="flex flex-wrap justify-center gap-3">
             <span className="px-3 py-1 text-xs font-mono bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800 rounded">
-              [ 5-Day Delivery Window ]
+              [ 5 Business-Day Delivery ]
             </span>
             <span className="px-3 py-1 text-xs font-mono bg-zinc-100 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800 rounded">
               [ 100% Core Web Vitals ]
@@ -138,7 +138,7 @@ export default function PartnershipsPage() {
             </div>
             <div className="relative pl-6 border-l-2 border-brand">
               <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-brand flex items-center justify-center text-xs font-bold text-zinc-900">4</div>
-              <h3 className="text-lg font-bold mb-3 mt-1">5-Day Launch</h3>
+              <h3 className="text-lg font-bold mb-3 mt-1">5 Business-Day Launch</h3>
               <p className="text-zinc-600 dark:text-zinc-400 font-light text-sm">We deploy to your client's subdomain (e.g., offers.clientdomain.com) or hand over clean repository code under your agency's name.</p>
             </div>
           </div>
