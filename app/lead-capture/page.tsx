@@ -1,6 +1,5 @@
 import LeadCaptureForm from "@/components/LeadCaptureForm";
-import Link from "next/link";
-import { ArrowRight, CheckCircle2, Zap, LayoutTemplate, MousePointerClick, BarChart3, Mail, Globe } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 export default function LeadCapturePage() {
   return (
@@ -101,12 +100,12 @@ export default function LeadCapturePage() {
             <div>
               <div className="label-mono flex items-center mb-6">
                 <span className="flex-shrink-0 h-2 w-2 bg-brand mr-3"></span>
-                <span>TRANSPARENT RESULTS</span>
+                <span>DATA-DRIVEN RESULTS</span>
               </div>
               <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-8">See exactly how your ads are performing.</h2>
               <div className="h-px w-24 bg-accent-blue mb-8"></div>
               <p className="lead-text text-zinc-700 dark:text-zinc-300 mb-8">
-                Most web developers build a page and disappear. With every build, we include 30 days of live conversion tracking and performance reporting. You get a private, easy-to-read analytics dashboard that shows you exactly how many people visited, who submitted a form, and what each lead cost you.
+                We don&apos;t just build a page and disappear. With every build, we give you an easy-to-read analytics dashboard that shows:
               </p>
               
               <ul className="space-y-6">

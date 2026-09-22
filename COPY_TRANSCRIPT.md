@@ -236,9 +236,9 @@
   * 100% Full Ownership
 
 ### Section 4: The Secondary Benefit: 30 Days of Live Analytics
-- **Eyebrow**: TRANSPARENT RESULTS
+- **Eyebrow**: DATA-DRIVEN RESULTS
 - **Headline (H2)**: See exactly how your ads are performing.
-- **Paragraph**: Most web developers build a page and disappear. With every build, we include 30 days of live conversion tracking and performance reporting. You get a private, easy-to-read analytics dashboard that shows you exactly how many people visited, who submitted a form, and what each lead cost you.
+- **Paragraph**: We don't just build a page and disappear. With every build, we give you an easy-to-read analytics dashboard that shows:
 - **3 Value Checkmarks**: Real-time lead count and conversion rate tracking, Clear data showing which ads actually generate calls, 30 days of post-launch technical support included.
 
 ### Section 5: Embedded Intake Form (#intake-form)
