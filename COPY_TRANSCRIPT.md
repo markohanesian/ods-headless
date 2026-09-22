@@ -1,4 +1,4 @@
-# ODS Website Copy Transcript
+﻿# ODS Website Copy Transcript
 
 ## Global Navigation
 - **Logo**: ODS (OHANESIAN DIGITAL SOLUTIONS)
@@ -10,9 +10,9 @@
 ## Homepage
 
 ### Section 1: Hero
-- **Eyebrow Badge**: CUSTOM WEBSITES • CAMPAIGN LANDING PAGES • WORKFLOW APPS
+- **Eyebrow Badge**: CUSTOM WEBSITES â€¢ CAMPAIGN LANDING PAGES â€¢ WORKFLOW APPS
 - **Headline (H1)**: Tech that works as hard as you do.
-- **Subtitle/Paragraph**: We build websites and dedicated landing pages that convert to sales—with built-in analytics, functional design, and zero plugin bloat.
+- **Subtitle/Paragraph**: We build websites and dedicated landing pages that convert to salesâ€”with built-in analytics, functional design, and zero plugin bloat.
 - **Primary CTA**: Free Site Audit (Triggers intake modal)
 - **Secondary CTA**: See Our Results (Smooth-scrolls to #case-studies)
 
@@ -31,7 +31,7 @@
 - **Headline (H2)**: Built by engineers, made for business profit
 - **Sub-Headline**: Clear deliverables with zero scope confusion. Pick the engine your business needs:
 - **Offer 1**: The Ad Campaign Landing Page
-  - *Tag*: BUILT IN 1 WEEK • 30-DAY PERFORMANCE TRACKING
+  - *Tag*: BUILT IN 1 WEEK â€¢ 30-DAY PERFORMANCE TRACKING
   - *Technical Sub-Headline*: Custom Next.js single-page build deployed on edge infrastructure with sub-second (<1s) load speeds, GA4 conversion tracking, and automated lead routing.
   - *Plain-English Value*: A dedicated page engineered to turn paid Google and Meta clicks into phone calls, quote requests, and paying clients. No bloated menus or distractions. We launch in one week, then track your cost-per-lead live on a private Looker Studio dashboard for 30 days before discussing any ongoing retainers.
   - *What You Get*: Mobile-first Next.js build with <1s load speeds on edge hosting, Pixel-perfect GA4 and ad conversion tracking (calls and form fills), Instant lead routing directly to your email, Google Sheets, or CRM, 30-day live Looker Studio dashboard to monitor real conversion metrics, 100% full ownership of your code and domain
@@ -68,7 +68,7 @@
 - **Headline (H2)**: Featured Projects
 - **Paragraph**: Real engineering solutions built for measurable growth.
 - **Case Study 1: The Pomegranate Boutique**
-  - *Metric*: 3x–5x Online Sales Growth
+  - *Metric*: 3xâ€“5x Online Sales Growth
   - *Scope*: Shopify theme migration, custom variant preview code, optimized customer signup, and streamlined checkout flow.
   - *Tags*: [ E-COMMERCE ] [ SHOPIFY ]
 - **Case Study 2: Four Seasons Ag Services** 
@@ -98,7 +98,7 @@
 - **Field 1**: What is your name and business email? *
 - **Field 2**: Company Name *
 - **Field 3**: Current Website URL (Optional)
-- **CTA**: Continue to Goals →
+- **CTA**: Continue to Goals â†’
 
 ### Step 2
 - **Field**: What are you looking to solve? (Select all that apply) *
@@ -106,7 +106,7 @@
   - [ ] Build / Redesign Full Website
   - [ ] Agency White-Label Dev Support
   - [ ] Custom App / Operational Automation
-- **CTA**: Continue to Details →
+- **CTA**: Continue to Details â†’
 
 ### Step 3
 - **Field 1**: When do you want to launch? *
@@ -124,7 +124,7 @@
 
 ### Section 1: Hero
 - **Headline (H1)**: For Agencies
-- **Subtitle/Paragraph**: Eliminate your development bottleneck. We engineer sub-second Next.js campaign landing pages and custom web platforms under your brand—shipped in 5 business days, tracking-verified, with strict NDA protection.
+- **Subtitle/Paragraph**: Eliminate your development bottleneck. We engineer sub-second Next.js campaign landing pages and custom web platforms under your brandâ€”shipped in 5 business days, tracking-verified, with strict NDA protection.
 - **Primary CTA**: Request Agency Partnership Specs (Smooth scrolls directly to #agency-intake)
 - **Secondary CTA**: View Engineering Standards (Scrolls to #standards)
 - **Proof Pills**: [ 5 Business-Day Delivery ] [ 100% Core Web Vitals ] [ GA4 & Pixel Verified ] [ Strict Non-Poaching NDA ]
@@ -138,11 +138,11 @@
 - **Field 3**: Agency Core Focus * (Chips: Paid Media / PPC, SEO / Organic Growth, Full-Service / Creative, Branding & UI Design)
 - **Field 4**: Immediate Dev Need * (Chips: 5 Business-Day Campaign Landing Page, Custom Web App / Shopify, Ongoing Overflow Dev Support)
 - **CTA**: Get White-Label Spec Sheet & Rates
-- **Trust Copy**: ⚡ We respond within 1 business day. We work under your brand and strictly observe client-non-poach agreements.
+- **Trust Copy**: âš¡ We respond within 1 business day. We work under your brand and strictly observe client-non-poach agreements.
 
 ### Section 3: The Agency Pain Points
 - **Headline (H2)**: Why internal agency dev pipelines break down.
-- **Card 1**: Slow Dev Destroys Campaign Momentum (Waiting 3–4 weeks for an in-house or freelance developer burns client trust. We ship conversion-ready landing pages in 5 business days so your media campaigns launch on schedule.)
+- **Card 1**: Slow Dev Destroys Campaign Momentum (Waiting 3â€“4 weeks for an in-house or freelance developer burns client trust. We ship conversion-ready landing pages in 5 business days so your media campaigns launch on schedule.)
 - **Card 2**: Clunky Page Builders Ruin ROAS (Bloated Elementor and WordPress sites load slowly, causing paid mobile clicks to bounce before the pitch is seen. We deploy custom Next.js builds on edge infrastructure for sub-second speeds.)
 - **Card 3**: Broken Tracking & Data Leaks (A campaign is only as good as its attribution. We wire custom GA4 events, Meta/Google pixels, and automated CRM webhooks directly into the build so your reporting is pristine.)
 
@@ -158,7 +158,7 @@
 - **Point 1**: 01. Sub-Second Edge Delivery (Vercel / Edge-hosted code guaranteeing instant load times and lower cost-per-click across mobile and desktop devices.)
 - **Point 2**: 02. Looker Studio Readiness (Connecting seamlessly to Google Sheets, CRMs, or Looker dashboards for instant client reporting.)
 - **Point 3**: 03. E-Commerce & Custom Scope (Ability to build custom Shopify apps, quote estimators, or complex workflows when standard landing pages aren't enough.)
-- **Point 4**: 04. Real Track Record (Proven conversion engineering that scaled client online sales by 3x–5x (The Pomegranate) and replaced manual intake workflows with automated pipelines (Four Seasons Ag).)
+- **Point 4**: 04. Real Track Record (Proven conversion engineering that scaled client online sales by 3xâ€“5x (The Pomegranate) and replaced manual intake workflows with automated pipelines (Four Seasons Ag).)
 
 ### Section 6: Final Call to Action (Pre-Footer)
 - **Headline (H3)**: Ready to scale your agency's web production?
@@ -210,30 +210,41 @@
 - **Paragraph**: We manage your site hosting, security, updates, and everything your website needs to run smoothly 24/7.
 - **CTA**: Schedule a Consultation
 
+
 ## Lead Capture Landing Page (/lead-capture)
 
 ### Section 1: Hero
-- **Eyebrow Badge**: BUILT IN 1 WEEK � 30-DAY PERFORMANCE TRACKING
-- **Headline (H1)**: A high-converting landing page built in 1 week.
-- **Subtitle/Paragraph**: Turn your paid ad clicks into booked calls, quote requests, and revenue. Deployed on high-speed infrastructure with built-in conversion tracking and a live 30-day Looker Studio performance dashboard.
-- **Primary CTA**: Claim Your 30-Day Pilot (Scrolls to intake form)
+- **Eyebrow Badge**: BUILT IN 1 WEEK • 30 DAYS OF INCLUDED ANALYTICS
+- **Headline (H1)**: A high-converting landing page built to make your ads profitable.
+- **Subtitle**: Stop sending paid Google and social media traffic to slow, confusing websites. We build fast, focused landing pages that turn clicks into phone calls, quote requests, and real customers—shipped in one week.
+- **Primary CTA Button**: Get Started on Your Landing Page (Smooth-scrolls to #intake-form)
+- **Secondary Trust Pill/Anchor**: Includes 30 days of live lead tracking and performance reporting.
 
-### Section 2: What We Launch in 1 Week
-- **Headline (H2)**: What We Launch in 1 Week
-- **Paragraph**: A complete, end-to-end conversion asset deployed to your domain, ready to receive live ad traffic.
-- **Feature 1**: Sub-second load speeds - Loads instantly on mobile phones so ad clicks don't bounce.
-- **Feature 2**: Conversion-focused design - Single direct-action layout with no distracting navigation menus.
-- **Feature 3**: Verified tracking - Complete setup of Google Analytics and ad conversion tags to measure cost-per-lead accurately.
-- **Feature 4**: Automated lead routing - Customer inquiries dispatched immediately to your email, phone, or CRM.
-- **Feature 5**: 100% full ownership - Full ownership of your code and domain with zero recurring platform lock-in.
+### Section 2: Comparison / "Why It Works"
+- **Headline (H2)**: Why send ad traffic to a dedicated landing page?
+- **Comparison Grid**:
+  * Standard Website: Too many links, slow load times, confusing navigation, and visitors leave without taking action.
+  * ODS Landing Page: Direct headline, instant mobile speed, one clear call to action, and built-in tracking that proves ROI.
 
-### Section 3: The 30-Day Performance Window
-- **Headline (H2)**: The 30-Day Performance Window
-- **Paragraph**: We build and launch your custom landing page in 1 week. Then, we monitor real-world traffic on a private 30-day Looker Studio dashboard so you can verify your conversion rate and cost-per-lead before deciding whether to take on an ongoing maintenance retainer.
-- **Guarantee**: Guaranteed sub-second load speeds, flawless mobile usability, and verified lead delivery on day one.
+### Section 3: What You Get (Deliverables in 1 Week)
+- **Headline (H2)**: Everything you need to turn clicks into customers
+- **Subtitle**: We deliver a finished, turn-key campaign page in 7 business days with zero technical stress on your end.
+- **4 Feature Cards/Columns**:
+  * Built for Fast Action
+  * Loads Instantly on Mobile
+  * Instant Lead Notifications
+  * 100% Full Ownership
 
-### Section 4: Intake Form
-- **Headline**: Apply for the 30-Day Pilot
-- **Steps**: Multi-step (Name, Email, Company, URL, Primary Goal)
-- **Submit**: Claim Your 30-Day Pilot
+### Section 4: The Secondary Benefit: 30 Days of Live Analytics
+- **Eyebrow**: TRANSPARENT RESULTS
+- **Headline (H2)**: See exactly how your ads are performing.
+- **Paragraph**: Most web developers build a page and disappear. With every build, we include 30 days of live conversion tracking and performance reporting. You get a private, easy-to-read analytics dashboard that shows you exactly how many people visited, who submitted a form, and what each lead cost you.
+- **3 Value Checkmarks**: Real-time lead count and conversion rate tracking, Clear data showing which ads actually generate calls, 30 days of post-launch technical support included.
+
+### Section 5: Embedded Intake Form (#intake-form)
+- **Form Header**: Start Your Campaign Landing Page
+- **Form Subtitle**: Tell us about your offer and ad goals. We will review your project and get back to you within 1 business day.
+- **Fields**: Full Name, Work Email, Company Name or Current Website URL, Are you currently running ads? Target Launch Timeline
+- **Submit Button**: Request Your Landing Page Build
+- **Trust Caption**: ⚡ 1-week turnaround. 30 days of performance reporting included. No spam, ever.
 

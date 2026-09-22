@@ -4,10 +4,16 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-const GOAL_OPTIONS = [
-  "Convert Paid Ad Clicks",
-  "Launch a New Service",
-  "Agency White-Label",
+const ADS_OPTIONS = [
+  "Yes, Active Campaigns",
+  "Planning to Launch Soon",
+  "Not Running Ads Yet",
+];
+
+const TIMELINE_OPTIONS = [
+  "ASAP (Within 1–2 Weeks)",
+  "Next 30–60 Days",
+  "Flexible",
 ];
 
 export default function LeadCaptureForm() {
@@ -20,9 +26,9 @@ export default function LeadCaptureForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    company: "",
-    websiteUrl: "",
-    primaryGoal: "Convert Paid Ad Clicks",
+    companyOrUrl: "",
+    runningAds: "Yes, Active Campaigns",
+    timeline: "ASAP (Within 1–2 Weeks)",
   });
 
   // Auto-redirect timer effect on success
@@ -44,7 +50,7 @@ export default function LeadCaptureForm() {
   const handleNextStep = (e: React.FormEvent) => {
     e.preventDefault();
     if (step === 1) {
-      if (!formData.name.trim() || !formData.email.trim() || !formData.company.trim()) {
+      if (!formData.name.trim() || !formData.email.trim() || !formData.companyOrUrl.trim()) {
         setErrorMessage("Please complete all required fields before continuing.");
         return;
       }
@@ -95,11 +101,11 @@ export default function LeadCaptureForm() {
         </div>
         
         <h3 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-50">
-          Pilot Request Confirmed!
+          Request Confirmed!
         </h3>
         
         <p className="text-zinc-600 dark:text-zinc-300 max-w-md mx-auto leading-relaxed">
-          Thank you, <span className="font-semibold text-zinc-900 dark:text-zinc-50">{formData.name}</span>. We've received your request for <span className="font-semibold text-zinc-900 dark:text-zinc-50">{formData.company}</span> and will reach out shortly.
+          Thank you, <span className="font-semibold text-zinc-900 dark:text-zinc-50">{formData.name}</span>. We've received your landing page request and will get back to you within 1 business day.
         </p>
 
         <div className="p-4 bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-sm font-mono text-zinc-500 dark:text-zinc-400 max-w-sm mx-auto flex items-center justify-center gap-2">
@@ -113,7 +119,10 @@ export default function LeadCaptureForm() {
   return (
     <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-6 sm:p-10 rounded-2xl shadow-xl">
       <div className="mb-6 pb-6 border-b border-zinc-100 dark:border-zinc-800">
-        <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">Apply for the 30-Day Pilot</h2>
+        <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">Start Your Campaign Landing Page</h2>
+        <p className="text-zinc-600 dark:text-zinc-400 mt-2">
+          Tell us about your offer and ad goals. We will review your project and get back to you within 1 business day.
+        </p>
       </div>
       
       {/* Progress Bar & Indicators */}
@@ -123,8 +132,8 @@ export default function LeadCaptureForm() {
             STEP {step} OF 2
           </span>
           <span className="text-zinc-400 dark:text-zinc-500">
-            {step === 1 && "Your Business Basics"}
-            {step === 2 && "Primary Goal"}
+            {step === 1 && "Your Basic Info"}
+            {step === 2 && "Ad Goals & Timeline"}
           </span>
         </div>
         <div className="w-full h-1.5 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden">
@@ -147,55 +156,44 @@ export default function LeadCaptureForm() {
         <form onSubmit={handleNextStep} className="space-y-6">
           <div className="space-y-2">
             <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100">
-              What is your name and business email? *
+              Full Name *
             </label>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <input
-                type="text"
-                required
-                placeholder="Full Name"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-3 text-zinc-900 dark:text-zinc-50 focus:outline-none focus:border-accent-blue transition-colors"
-              />
-              <input
-                type="email"
-                required
-                placeholder="Business Email"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-3 text-zinc-900 dark:text-zinc-50 focus:outline-none focus:border-accent-blue transition-colors"
-              />
-            </div>
+            <input
+              type="text"
+              required
+              placeholder="Your Full Name"
+              value={formData.name}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-3 text-zinc-900 dark:text-zinc-50 focus:outline-none focus:border-accent-blue transition-colors"
+            />
           </div>
 
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100">
-                Company Name *
-              </label>
-              <input
-                type="text"
-                required
-                placeholder="Company Name"
-                value={formData.company}
-                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-3 text-zinc-900 dark:text-zinc-50 focus:outline-none focus:border-accent-blue transition-colors"
-              />
-            </div>
-            
-            <div className="space-y-2">
-              <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100">
-                Website URL <span className="font-normal text-zinc-500">(Optional)</span>
-              </label>
-              <input
-                type="url"
-                placeholder="https://yourwebsite.com"
-                value={formData.websiteUrl}
-                onChange={(e) => setFormData({ ...formData, websiteUrl: e.target.value })}
-                className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-3 text-zinc-900 dark:text-zinc-50 focus:outline-none focus:border-accent-blue transition-colors"
-              />
-            </div>
+          <div className="space-y-2">
+            <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100">
+              Work Email *
+            </label>
+            <input
+              type="email"
+              required
+              placeholder="Your Business Email"
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-3 text-zinc-900 dark:text-zinc-50 focus:outline-none focus:border-accent-blue transition-colors"
+            />
+          </div>
+
+          <div className="space-y-2">
+            <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100">
+              Company Name or Current Website URL *
+            </label>
+            <input
+              type="text"
+              required
+              placeholder="Company Name or Website URL"
+              value={formData.companyOrUrl}
+              onChange={(e) => setFormData({ ...formData, companyOrUrl: e.target.value })}
+              className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-3 text-zinc-900 dark:text-zinc-50 focus:outline-none focus:border-accent-blue transition-colors"
+            />
           </div>
 
           <div className="pt-4 flex justify-end">
@@ -211,15 +209,50 @@ export default function LeadCaptureForm() {
         <form onSubmit={handleSubmitFinal} className="space-y-6">
           <div className="space-y-3">
             <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100 mb-2">
-              Primary Goal *
+              Are you currently running ads? *
             </label>
             <div className="space-y-3">
-              {GOAL_OPTIONS.map((option) => {
-                const isSelected = formData.primaryGoal === option;
+              {ADS_OPTIONS.map((option) => {
+                const isSelected = formData.runningAds === option;
                 return (
                   <div
                     key={option}
-                    onClick={() => setFormData({ ...formData, primaryGoal: option })}
+                    onClick={() => setFormData({ ...formData, runningAds: option })}
+                    className={`p-4 rounded-xl border cursor-pointer transition-all flex items-center justify-between ${
+                      isSelected
+                        ? "bg-accent-blue/10 border-accent-blue text-zinc-900 dark:text-zinc-50"
+                        : "bg-zinc-50 dark:bg-zinc-950 border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-300 hover:border-zinc-400"
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <div
+                        className={`w-5 h-5 rounded-full flex items-center justify-center border text-sm ${
+                          isSelected
+                            ? "bg-accent-blue border-accent-blue"
+                            : "border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900"
+                        }`}
+                      >
+                        {isSelected && <div className="w-2 h-2 rounded-full bg-white"></div>}
+                      </div>
+                      <span className="font-medium text-sm sm:text-base">{option}</span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="space-y-3">
+            <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100 mb-2">
+              Target Launch Timeline *
+            </label>
+            <div className="space-y-3">
+              {TIMELINE_OPTIONS.map((option) => {
+                const isSelected = formData.timeline === option;
+                return (
+                  <div
+                    key={option}
+                    onClick={() => setFormData({ ...formData, timeline: option })}
                     className={`p-4 rounded-xl border cursor-pointer transition-all flex items-center justify-between ${
                       isSelected
                         ? "bg-accent-blue/10 border-accent-blue text-zinc-900 dark:text-zinc-50"
@@ -252,13 +285,21 @@ export default function LeadCaptureForm() {
             >
               ← Back
             </button>
-            <button
-              type="submit"
-              disabled={status === "submitting"}
-              className="btn-brand px-8 py-4 text-base font-bold shadow-lg disabled:opacity-50"
-            >
-              {status === "submitting" ? "Processing..." : "Claim Your 30-Day Pilot"}
-            </button>
+            <div className="flex flex-col items-end gap-2">
+              <button
+                type="submit"
+                disabled={status === "submitting"}
+                className="btn-brand px-8 py-4 text-base font-bold shadow-lg disabled:opacity-50 w-full sm:w-auto"
+              >
+                {status === "submitting" ? "Processing..." : "Request Your Landing Page Build"}
+              </button>
+            </div>
+          </div>
+          
+          <div className="mt-6 text-center">
+            <p className="text-xs text-zinc-500 font-mono">
+              ⚡ 1-week turnaround. 30 days of performance reporting included. No spam, ever.
+            </p>
           </div>
         </form>
       )}
