@@ -1,11 +1,11 @@
 import Hero from "@/components/Hero";
-import ArchitectureComparison from "@/components/ArchitectureComparison";
-import ProductizedOffers from "@/components/ProductizedOffers";
-import PerformanceMandate from "@/components/PerformanceMandate";
-import LeadIntakeTeaser from "@/components/LeadIntakeTeaser";
 import CaseStudyGrid from "@/components/CaseStudyGrid";
-import BlogSection from "@/components/BlogSection";
+import ProductizedOffers from "@/components/ProductizedOffers";
+import ArchitectureComparison from "@/components/ArchitectureComparison";
+import PerformanceMandate from "@/components/PerformanceMandate";
 import WhiteLabelBanner from "@/components/WhiteLabelBanner";
+import LeadIntakeTeaser from "@/components/LeadIntakeTeaser";
+import BlogSection from "@/components/BlogSection";
 
 export default function Home() {
   return (
@@ -13,22 +13,10 @@ export default function Home() {
       {/* Section 1: Hero */}
       <Hero />
       
-      {/* Section 2: Why Custom Web Architecture Beats Standard Builders */}
-      <ArchitectureComparison />
-
-      {/* Section 3: Productized Offers */}
-      <ProductizedOffers />
-
-      {/* Section 4: Performance Mandate */}
-      <PerformanceMandate />
-      
-      {/* Section 4: White-Label Agency Partnership Banner */}
-      <WhiteLabelBanner />
-
-      {/* Showcase / Portfolio Section */}
+      {/* Section 2: Proof & Real Metrics (Moved directly below Hero) */}
       <CaseStudyGrid 
         title="Featured Projects" 
-        subtitle="Real engineering solutions built for measurable growth."
+        subtitle="Websites and tools built for measurable business growth:"
         category="work"
         excludeCategory="custom-apps"
         limit={3}
@@ -36,9 +24,21 @@ export default function Home() {
         viewAllLabel="View Work"
       />
 
+      {/* Section 3: Productized Offers (The 3 Doors) */}
+      <ProductizedOffers />
+
+      {/* Section 4: The Problem & Comparison */}
+      <ArchitectureComparison />
+
+      {/* Section 5: Performance Mandate */}
+      <PerformanceMandate />
+      
+      {/* Section 6: White-Label Agency Partnership Banner */}
+      <WhiteLabelBanner />
+
       <BlogSection />
       
-      {/* Section 4: Lead Intake Teaser & Call to Action */}
+      {/* Section 7: Pre-Footer Final Call to Action */}
       <LeadIntakeTeaser />
     </>
   );

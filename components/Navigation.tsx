@@ -146,6 +146,16 @@ const Navigation = () => {
 
         </div>
       </div>
+
+      {/* Mobile Sticky CTA */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md border-t border-zinc-200 dark:border-zinc-800 z-40 shadow-lg">
+        <Link 
+          href="?audit=true" 
+          className="btn-brand w-full text-center py-3 flex items-center justify-center shadow-lg"
+        >
+          Free Site Audit
+        </Link>
+      </div>
     </nav>
   );
 };

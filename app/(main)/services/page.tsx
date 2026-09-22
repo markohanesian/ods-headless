@@ -5,15 +5,15 @@ const SERVICE_TIERS = [
   {
     id: "01",
     title: "Dedicated Lead Capture Pages",
-    summary: "High-converting, sub-second single-page builds deployed specifically for paid ad campaigns.",
-    whatWeDeliver: "Mobile-first layouts, zero navigation distractions, live Looker Studio conversion dashboards, and automated lead routing.",
+    summary: "High-converting, dedicated landing pages built specifically for paid ad campaigns.",
+    whatWeDeliver: "Fast mobile layouts, zero navigation distractions, live conversion dashboards, and automated lead routing directly to your email or CRM.",
     href: "/lead-capture"
   },
   {
     id: "02",
     title: "Websites and Applications",
     summary: "A digital foundation tailored to your exact business workflow, or an upgrade to your current site.",
-    whatWeDeliver: "Top page speed rankings, beautiful layouts on all devices, accessibility compliance, and custom tools.",
+    whatWeDeliver: "Instant load speeds, beautiful layouts on all devices, legally compliant design, and custom tools.",
   },
   {
     id: "03",

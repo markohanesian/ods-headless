@@ -1,4 +1,6 @@
-﻿# ODS Website Copy Transcript
+﻿
+$transcript = @"
+# ODS Website Copy Transcript
 
 ## Global Navigation
 - **Logo**: ODS (OHANESIAN DIGITAL SOLUTIONS)
@@ -104,3 +106,7 @@
 - **Fields**: Full Name, Work Email, Company Name or Current Website URL, Are you currently running ads? Target Launch Timeline
 - **Submit Button**: Request Your Landing Page Build
 - **Trust Microcopy**: ⚡ 1-week turnaround. 30 days of performance reporting included. No spam, ever.
+"@
+
+Set-Content -Path "COPY_TRANSCRIPT.md" -Value $transcript -Encoding UTF8
+

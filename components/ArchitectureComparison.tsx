@@ -2,20 +2,20 @@ import React from "react";
 
 const COMPARISONS = [
   {
-    elsewhere: "3+ second load delays that cause 50%+ of paid mobile traffic to bounce.",
-    ods: "Sub-second load speeds on edge infrastructure that retain every visitor.",
+    elsewhere: "Outdated templates take 3+ seconds to load, losing over half of mobile visitors before they see your pitch.",
+    ods: "ODS builds load in under 1 second on any device.",
   },
   {
-    elsewhere: "Fragile plugins and third-party updates that break forms when you need them most.",
-    ods: "Zero bloated plugins, custom-coded for reliable uptime and security.",
+    elsewhere: "DIY site builders rely on plugins that break during updates, quietly losing customer leads.",
+    ods: "ODS builds on clean custom code with zero plugin bloat and reliable uptime.",
   },
   {
-    elsewhere: "Basic contact forms that dump disorganized submissions into crowded inboxes.",
-    ods: "Automated intake pipelines that qualify leads and dispatch quotes instantly.",
+    elsewhere: "Form submissions get dumped into messy, crowded email inboxes.",
+    ods: "ODS sets up automated intake pipelines that notify you instantly and dispatch quotes.",
   },
   {
-    elsewhere: "Cluttered, non-compliant menus that fail accessibility standards and frustrate mobile users.",
-    ods: "100% WCAG-accessible, responsive layouts built to convert across every screen size.",
+    elsewhere: "Non-accessible menus frustrate phone users and cost you sales.",
+    ods: "ODS designs clean, responsive layouts built to work intuitively on every screen size.",
   },
 ];
 
@@ -28,7 +28,7 @@ const ArchitectureComparison = () => {
             Is your current website costing you business?
           </h2>
           <p className="text-zinc-600 dark:text-zinc-300 text-lg leading-relaxed font-light">
-            Fragile website templates and bloated plugins waste ad spend and create more work. Here's how we compare:
+            Fragile website templates and bloated plugins waste ad spend and create more work. Here is how custom engineering compares:
           </p>
         </div>
 

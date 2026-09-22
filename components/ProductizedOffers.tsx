@@ -4,19 +4,19 @@ import Link from "next/link";
 const OFFERS = [
   {
     id: "01",
-    tag: "BUILT IN 1 WEEK • 30-DAY PERFORMANCE TRACKING",
+    tag: "BUILT IN 1 WEEK • 30 DAYS OF INCLUDED ANALYTICS",
     title: "The Ad Campaign Landing Page",
-    technicalSubHeadline: "Custom Next.js single-page build deployed on edge infrastructure with sub-second (<1s) load speeds, GA4 conversion tracking, and automated lead routing.",
-    plainEnglishValue: "A dedicated page engineered to turn paid Google and Meta clicks into phone calls, quote requests, and paying clients. No bloated menus or distractions. We launch in one week, then track your cost-per-lead live on a private Looker Studio dashboard for 30 days before discussing any ongoing retainers.",
+    technicalSubHeadline: "A single, focused page built specifically to turn paid Google and social media ad clicks into calls, quotes, and paying customers.",
+    plainEnglishValue: "No confusing menus or distractions. Every word and button guides the visitor to take action. Shipped in one week, with 30 days of included performance tracking so you know exactly which ads are making you money.",
     whatYouGet: [
-      "Mobile-first Next.js build with <1s load speeds on edge hosting",
-      "Pixel-perfect GA4 and ad conversion tracking (calls and form fills)",
-      "Instant lead routing directly to your email, Google Sheets, or CRM",
-      "30-day live Looker Studio dashboard to monitor real conversion metrics",
-      "100% full ownership of your code and domain"
+      "Custom mobile-first design tailored to your core offer",
+      "Loads in under 1 second on phones so ad clicks don't bounce",
+      "Form submissions sent straight to your phone, email, or CRM",
+      "30 days of included conversion tracking and live analytics",
+      "100% full ownership of your website and code"
     ],
-    cta: "Claim Your 30-Day Pilot",
-    href: "/lead-capture",
+    cta: "Get Started on Your Landing Page",
+    href: "?audit=true&service=Ad+Campaign+Landing+Page",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
@@ -27,16 +27,16 @@ const OFFERS = [
     id: "02",
     tag: "FULL WEBSITE BUILD OR COMPLETE REDESIGN",
     title: "The Custom Business Hub",
-    technicalSubHeadline: "Multi-page web platform custom-coded for sub-second speeds, 100% WCAG AA accessibility compliance, and automated online quote/booking intake.",
-    plainEnglishValue: "A full, high-performance website engineered to make your business look authoritative and run smoothly. We replace fragile, slow site builders with clean code that ranks on Google, eliminates hours of manual phone intake, and makes updating content effortless.",
+    technicalSubHeadline: "A modern, multi-page website engineered to make your business look top-tier and automate client intake.",
+    plainEnglishValue: "We replace fragile, slow website templates with clean code that loads immediately, ranks well on Google, and eliminates hours of phone tag by automating quotes and bookings.",
     whatYouGet: [
-      "Clean visual design and structured navigation tailored to your brand",
-      "Automated quote requests, booking calendars, or custom intake pipelines",
-      "Sub-second load speeds with 100% WCAG AA accessibility standards",
-      "Simple, bloat-free content management with zero fragile plugins"
+      "Custom design and clear navigation built around your brand",
+      "Automated quote forms, booking calendars, or intake pipelines",
+      "Fast, reliable performance that never breaks during updates",
+      "Simple content updates without needing to touch code"
     ],
     cta: "Plan Your Website Build",
-    href: "/contact",
+    href: "?audit=true&service=Build+%2F+Redesign+Full+Website",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
         <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
@@ -47,18 +47,18 @@ const OFFERS = [
   },
   {
     id: "03",
-    tag: "TAILORED SOFTWARE & OPERATIONAL EXTENSIONS",
+    tag: "OPERATIONAL TOOLS & EXTENSIONS",
     title: "Custom Applications & Automation",
-    technicalSubHeadline: "Custom Shopify extensions, interactive pricing estimators, and automated API workflows built to cut repetitive administrative work.",
-    plainEnglishValue: "Custom software built to solve specific operational bottlenecks. Whether you need an instant quote calculator for customers, custom Shopify product variant previews, or direct integrations between your web forms and internal tools, we build code that saves you time.",
+    technicalSubHeadline: "Custom software tools that eliminate repetitive administrative work and connect your business systems.",
+    plainEnglishValue: "Software tailored to how your business actually runs. Whether you need an online price estimator, custom Shopify apps, or automated lead routing, we build tech that shortens your work week.",
     whatYouGet: [
-      "Custom Shopify apps, checkout widgets, and product variant tools",
-      "Digital quote estimators and dynamic client intake workflows",
-      "Webhook pipelines connecting website leads directly to your tools",
-      "Edge-hosted internal apps and custom tools"
+      "Custom Shopify apps, variant previews, and checkout extensions",
+      "Online quote calculators that give customers instant estimates",
+      "Automated pipelines that connect your web forms to spreadsheets or CRMs",
+      "Lightweight private web apps built for your team"
     ],
     cta: "Discuss Custom Development",
-    href: "/contact",
+    href: "?audit=true&service=Custom+App+%2F+Operational+Automation",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>

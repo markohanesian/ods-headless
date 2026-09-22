@@ -21,24 +21,24 @@ const PerformanceMandate = () => {
           <div className="flex gap-4 items-start">
             <div className="flex-shrink-0 w-8 h-8 rounded bg-brand/20 border border-brand/50 flex items-center justify-center text-brand font-bold">1</div>
             <div>
-              <h3 className="text-xl font-bold mb-2">Sub-Second Edge Infrastructure</h3>
-              <p className="text-zinc-400 font-light leading-relaxed">Instant mobile load speeds eliminate bounce rates and maximize paid campaign ROAS.</p>
+              <h3 className="text-xl font-bold mb-2">Instant Mobile Loading</h3>
+              <p className="text-zinc-400 font-light leading-relaxed">Fast speeds eliminate bounce rates and ensure every paid ad click reaches your pitch.</p>
             </div>
           </div>
           
           <div className="flex gap-4 items-start">
             <div className="flex-shrink-0 w-8 h-8 rounded bg-accent-blue/20 border border-accent-blue/50 flex items-center justify-center text-accent-blue font-bold">2</div>
             <div>
-              <h3 className="text-xl font-bold mb-2">100% WCAG Accessibility</h3>
-              <p className="text-zinc-400 font-light leading-relaxed">Inclusive, legally compliant digital architecture providing frictionless browsing on any screen.</p>
+              <h3 className="text-xl font-bold mb-2">Built for Every Screen</h3>
+              <p className="text-zinc-400 font-light leading-relaxed">Accessible, legally sound layouts providing frictionless browsing across phones, tablets, and desktops.</p>
             </div>
           </div>
           
           <div className="flex gap-4 items-start">
             <div className="flex-shrink-0 w-8 h-8 rounded bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center text-emerald-500 font-bold">3</div>
             <div>
-              <h3 className="text-xl font-bold mb-2">Automated Data Pipelines</h3>
-              <p className="text-zinc-400 font-light leading-relaxed">Form submissions and quote requests routed directly to your CRM/email with zero dropped inquiries.</p>
+              <h3 className="text-xl font-bold mb-2">Direct Lead Delivery</h3>
+              <p className="text-zinc-400 font-light leading-relaxed">Quote requests and form submissions routed straight to your phone or CRM with zero dropped inquiries.</p>
             </div>
           </div>
         </div>

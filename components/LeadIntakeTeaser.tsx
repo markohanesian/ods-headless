@@ -9,11 +9,11 @@ const LeadIntakeTeaser = () => {
           Ready for a website that pulls its weight?
         </h3>
         <p className="text-lg sm:text-xl text-zinc-300 dark:text-zinc-600 mb-12 max-w-2xl mx-auto leading-relaxed font-light">
-          Get an objective technical breakdown of your site's load speed, mobile conversion leaks, and tracking bottlenecks.
+          Get an objective breakdown of your site&apos;s speed, mobile responsiveness, and conversion leaks.
         </p>
         <div className="flex justify-center">
           <Link 
-            href="/contact"
+            href="?audit=true"
             className="btn-brand text-center px-8 py-4 text-base font-bold shadow-lg hover:shadow-xl transition-all"
           >
             Free Site Audit

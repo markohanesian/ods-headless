@@ -55,9 +55,15 @@ const CaseStudyGrid = async ({
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
             <div className="max-w-2xl">
               {title && (
-                <h2 className="mb-4 uppercase">
-                  {title}
-                </h2>
+                <>
+                  <div className="label-mono flex items-center mb-6">
+                    <span className="flex-shrink-0 h-2 w-2 bg-brand mr-3"></span>
+                    <span>PROVEN RESULTS</span>
+                  </div>
+                  <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-4 text-zinc-900 dark:text-zinc-50">
+                    {title}
+                  </h2>
+                </>
               )}
               {subtitle && (
                 <p className="text-zinc-600 dark:text-zinc-300 mb-6">
@@ -92,15 +98,15 @@ const CaseStudyGrid = async ({
             let customTag2 = null;
 
             if (project.slug === 'the-pomegranate-boutique') {
-              customDescription = "Shopify theme migration, custom variant preview code, optimized customer signup, and streamlined checkout flow.";
+              customDescription = "Redesigned the store layout, added product variant previews, and streamlined the checkout experience so visitors find what they want and buy.";
               customTag1 = "E-COMMERCE";
               customTag2 = "SHOPIFY";
             } else if (project.slug === 'four-seasons-ag-services') {
-              customDescription = "Full custom platform replacing 100% manual phone quotes with automated digital estimates and a hiring intake engine, saving hours of weekly admin overhead.";
+              customDescription = "Replaced 100% manual phone quotes with an automated online estimate form and job portal, saving hours of weekly phone calls.";
               customTag1 = "WEB APP";
               customTag2 = "AUTOMATION";
             } else if (project.slug === 'diversified-land-management') {
-              customDescription = "Clean, modern corporate web platform delivering consistent year-over-year organic traffic growth and direct digital contact where none existed before.";
+              customDescription = "Built an authoritative corporate website from scratch, giving an established brand steady organic search traffic and direct digital inquiries.";
               customTag1 = "CORPORATE WEB";
               customTag2 = "SEO";
             }
@@ -150,26 +156,27 @@ const CaseStudyGrid = async ({
                 {/* Content */}
                 <div className="p-8 flex flex-col flex-grow">
                   {project.slug === 'the-pomegranate-boutique' && (
-                    <div className="text-brand dark:text-accent-blue font-bold mb-2">3x–5x Online Sales Growth</div>
+                    <div className="text-brand dark:text-accent-blue font-bold mb-2 text-sm sm:text-base">3x–5x Increase in Online Sales</div>
                   )}
                   {project.slug === 'four-seasons-ag-services' && (
-                    <div className="text-brand dark:text-accent-blue font-bold mb-2">Automated Lead & Quote Pipeline</div>
+                    <div className="text-brand dark:text-accent-blue font-bold mb-2 text-sm sm:text-base">Automated Leads & Quoting</div>
                   )}
                   {project.slug === 'diversified-land-management' && (
-                    <div className="text-brand dark:text-accent-blue font-bold mb-2">Zero-to-One Corporate Footprint</div>
+                    <div className="text-brand dark:text-accent-blue font-bold mb-2 text-sm sm:text-base">Zero-to-One Web Presence</div>
                   )}
                   
                   <h3 className={`font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-4 group-hover:translate-x-1 transition-transform ${isLab ? '!text-2xl' : '!text-xl'}`}>
                     {project.title}
                   </h3>
                   
-                  <p className="!text-sm text-zinc-500 dark:text-zinc-300 mb-6 line-clamp-3 max-w-none">
+                  <p className="!text-sm text-zinc-500 dark:text-zinc-300 mb-6 line-clamp-3 max-w-none font-light">
                     {customDescription}
                   </p>
 
-
-
-                  <div className="mt-auto flex items-center justify-between">
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {customTag1 && <span className="label-mono text-xs px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded">{customTag1}</span>}
+                    {customTag2 && <span className="label-mono text-xs px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded">{customTag2}</span>}
+                  </div>                  <div className="mt-auto flex items-center justify-between">
                     <div className="label-mono">
                       GO
                     </div>

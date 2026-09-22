@@ -11,16 +11,16 @@ const WhiteLabelBanner = () => {
             <span className="text-xs font-mono tracking-wider uppercase text-zinc-300">AGENCY PARTNERSHIPS</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter mb-6">
-            A reliable development partner for PPC/Ad, Branding, and Marketing agencies.
+            A dependable development partner for PPC and marketing agencies.
           </h2>
           <p className="text-zinc-400 text-lg leading-relaxed font-light mb-8 max-w-2xl">
-            Eliminate the development bottleneck so you can tackle bigger projects. We build lightning-fast, tracking-ready landing pages and web apps under your agency&apos;s brand in 5 business days so you can focus on what you do best.
+            Eliminate the dev bottleneck. We build lightning-fast, tracking-ready landing pages and web apps under your agency&apos;s brand. We protect your ROAS, stick strictly to 5 business-day delivery windows, and respect absolute NDA confidentiality.
           </p>
           <Link 
             href="/partnerships" 
             className="btn-brand inline-flex items-center justify-center"
           >
-            Inquire about White-Label Partnerships
+            Inquire About White-Label
           </Link>
         </div>
       </div>

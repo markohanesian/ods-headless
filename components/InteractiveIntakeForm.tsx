@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const BUILD_OPTIONS = [
-  "Turn Ad Clicks into Leads",
+  "Ad Campaign Landing Page",
   "Build / Redesign Full Website",
   "Agency White-Label Dev Support",
   "Custom App / Operational Automation",
@@ -24,7 +24,11 @@ const HEADACHE_OPTIONS = [
   "Wasting hours on manual admin",
 ];
 
-export default function InteractiveIntakeForm() {
+interface InteractiveIntakeFormProps {
+  initialService?: string;
+}
+
+export default function InteractiveIntakeForm({ initialService }: InteractiveIntakeFormProps = {}) {
   const router = useRouter();
   const [step, setStep] = useState<number>(1);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -36,7 +40,7 @@ export default function InteractiveIntakeForm() {
     email: "",
     company: "",
     websiteUrl: "",
-    selectedServices: [] as string[],
+    selectedServices: initialService ? [initialService] : [] as string[],
     timeline: "Next 30–60 Days",
     selectedHeadaches: [] as string[],
   });
@@ -260,26 +264,29 @@ ${formData.selectedHeadaches.length > 0 ? formData.selectedHeadaches.map((s) => 
       {step === 1 && (
         <form onSubmit={handleNextStep} className="space-y-6">
           <div className="space-y-2">
-            <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100">
-              What is your name and business email? *
-            </label>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <input
-                type="text"
-                required
-                placeholder="Full Name"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-3 text-zinc-900 dark:text-zinc-50 focus:outline-none focus:border-accent-blue transition-colors"
-              />
-              <input
-                type="email"
-                required
-                placeholder="Business Email"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-3 text-zinc-900 dark:text-zinc-50 focus:outline-none focus:border-accent-blue transition-colors"
-              />
+              <div>
+                <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100 mb-1">Full Name *</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Full Name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-3 text-zinc-900 dark:text-zinc-50 focus:outline-none focus:border-accent-blue transition-colors"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100 mb-1">Business Email *</label>
+                <input
+                  type="email"
+                  required
+                  placeholder="Business Email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg px-4 py-3 text-zinc-900 dark:text-zinc-50 focus:outline-none focus:border-accent-blue transition-colors"
+                />
+              </div>
             </div>
           </div>
 
@@ -300,7 +307,7 @@ ${formData.selectedHeadaches.length > 0 ? formData.selectedHeadaches.map((s) => 
             
             <div className="space-y-2">
               <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100">
-                Current Website URL <span className="font-normal text-zinc-500">(Optional: Leave blank if launching brand new)</span>
+                Current Website URL <span className="font-normal text-zinc-500">(Optional: Leave blank if launching new)</span>
               </label>
               <input
                 type="url"

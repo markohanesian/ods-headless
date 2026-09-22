@@ -1,5 +1,5 @@
 import Navigation from '@/components/Navigation';
-
+import AuditModalWrapper from '@/components/AuditModalWrapper';
 
 export default function MainLayout({
   children,
@@ -9,6 +9,7 @@ export default function MainLayout({
   return (
     <div className="flex flex-col min-h-screen">
       <Navigation />
+      <AuditModalWrapper />
       <main className="flex-grow pt-20">
         {children}
       </main>
