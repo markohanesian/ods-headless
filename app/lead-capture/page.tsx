@@ -14,10 +14,10 @@ export default function LeadCapturePage() {
             <span>BUILT IN 1 WEEK • 30-DAY PERFORMANCE TRACKING</span>
           </div>
           <h1 className="text-5xl md:text-7xl lg:text-[6rem] font-bold tracking-[-0.05em] leading-[0.95] text-zinc-900 dark:text-zinc-50">
-            Turn ad clicks into <span className="text-accent-blue">paying clients.</span>
+            A high-converting landing page built in <span className="text-accent-blue">1 week.</span>
           </h1>
           <p className="lead-text text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto font-light">
-            Stop sending expensive paid traffic to a cluttered home page. We build dedicated, lightning-fast landing pages engineered for maximum conversions.
+            Turn your paid ad clicks into booked calls, quote requests, and revenue. Deployed on high-speed infrastructure with built-in conversion tracking and a live 30-day Looker Studio performance dashboard.
           </p>
           <div className="pt-8">
             <a 
@@ -83,11 +83,11 @@ export default function LeadCapturePage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Direct-Response Architecture", desc: "Expert copywriting and wireframe strategy designed to convert.", badge: "UI/UX" },
-              { title: "Sub-Second Next.js Build", desc: "Instant mobile and desktop page loads built on modern edge infrastructure.", badge: "CODE" },
-              { title: "GA4 Conversion Tracking", desc: "Precise Key Event tracking for form submits and phone calls.", badge: "DATA" },
-              { title: "Automated Lead Dispatch", desc: "Instant email routing via Resend + Google Sheets webhook integration.", badge: "API" },
-              { title: "Subdomain DNS Setup", desc: "Seamless deployment on your own branded subdomain (e.g., offer.yourdomain.com).", badge: "OPS" }
+              { title: "Sub-second load speeds", desc: "Loads instantly on mobile phones so ad clicks don't bounce.", badge: "CODE" },
+              { title: "Conversion-focused design", desc: "Single direct-action layout with no distracting navigation menus.", badge: "UI/UX" },
+              { title: "Verified tracking", desc: "Complete setup of Google Analytics and ad conversion tags to measure cost-per-lead accurately.", badge: "DATA" },
+              { title: "Automated lead routing", desc: "Customer inquiries dispatched immediately to your email, phone, or CRM.", badge: "API" },
+              { title: "100% full ownership", desc: "Full ownership of your code and domain with zero recurring platform lock-in.", badge: "OPS" }
             ].map((feature, i) => (
               <div key={i} className="p-8 bg-zinc-800/50 border border-zinc-700/50 hover:border-zinc-600 transition-colors flex flex-col gap-6 shadow-sm">
                 <div className="flex justify-between items-start mb-2">
@@ -110,26 +110,18 @@ export default function LeadCapturePage() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
           <div className="space-y-10 lg:sticky lg:top-24">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-8 uppercase">The 30-Day Pilot</h2>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-8 uppercase">The 30-Day Performance Window</h2>
               <div className="h-px w-24 bg-accent-blue mb-8"></div>
-              <p className="lead-text text-zinc-700 dark:text-zinc-300">
-                We deploy the complete tracking infrastructure and lead capture page so you can measure cost-per-lead directly on a live Looker Studio dashboard—before committing to a retainer.
+              <p className="lead-text text-zinc-700 dark:text-zinc-300 mb-8">
+                We build and launch your custom landing page in 1 week. Then, we monitor real-world traffic on a private 30-day Looker Studio dashboard so you can verify your conversion rate and cost-per-lead before deciding whether to take on an ongoing maintenance retainer.
               </p>
+              <div className="p-6 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-lg">
+                <p className="font-bold text-zinc-900 dark:text-zinc-50 flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-brand flex-shrink-0" />
+                  Guaranteed sub-second load speeds, flawless mobile usability, and verified lead delivery on day one.
+                </p>
+              </div>
             </div>
-            
-            <ul className="space-y-6">
-              {[
-                "Zero-risk performance measurement",
-                "Live Looker Studio dashboard access",
-                "Full ownership of the custom Next.js code",
-                "A/B testing capabilities"
-              ].map((item, i) => (
-                <li key={i} className="flex items-center gap-4 font-medium text-lg text-zinc-900 dark:text-zinc-100">
-                  <div className="flex-shrink-0 w-2 h-2 bg-brand"></div>
-                  {item}
-                </li>
-              ))}
-            </ul>
           </div>
           
           <div className="w-full">

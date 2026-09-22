@@ -209,3 +209,31 @@
 - **Headline (H2)**: The Webmaster Care Plan
 - **Paragraph**: We manage your site hosting, security, updates, and everything your website needs to run smoothly 24/7.
 - **CTA**: Schedule a Consultation
+
+## Lead Capture Landing Page (/lead-capture)
+
+### Section 1: Hero
+- **Eyebrow Badge**: BUILT IN 1 WEEK • 30-DAY PERFORMANCE TRACKING
+- **Headline (H1)**: A high-converting landing page built in 1 week.
+- **Subtitle/Paragraph**: Turn your paid ad clicks into booked calls, quote requests, and revenue. Deployed on high-speed infrastructure with built-in conversion tracking and a live 30-day Looker Studio performance dashboard.
+- **Primary CTA**: Claim Your 30-Day Pilot (Scrolls to intake form)
+
+### Section 2: What We Launch in 1 Week
+- **Headline (H2)**: What We Launch in 1 Week
+- **Paragraph**: A complete, end-to-end conversion asset deployed to your domain, ready to receive live ad traffic.
+- **Feature 1**: Sub-second load speeds - Loads instantly on mobile phones so ad clicks don't bounce.
+- **Feature 2**: Conversion-focused design - Single direct-action layout with no distracting navigation menus.
+- **Feature 3**: Verified tracking - Complete setup of Google Analytics and ad conversion tags to measure cost-per-lead accurately.
+- **Feature 4**: Automated lead routing - Customer inquiries dispatched immediately to your email, phone, or CRM.
+- **Feature 5**: 100% full ownership - Full ownership of your code and domain with zero recurring platform lock-in.
+
+### Section 3: The 30-Day Performance Window
+- **Headline (H2)**: The 30-Day Performance Window
+- **Paragraph**: We build and launch your custom landing page in 1 week. Then, we monitor real-world traffic on a private 30-day Looker Studio dashboard so you can verify your conversion rate and cost-per-lead before deciding whether to take on an ongoing maintenance retainer.
+- **Guarantee**: Guaranteed sub-second load speeds, flawless mobile usability, and verified lead delivery on day one.
+
+### Section 4: Intake Form
+- **Headline**: Apply for the 30-Day Pilot
+- **Steps**: Multi-step (Name, Email, Company, URL, Primary Goal)
+- **Submit**: Claim Your 30-Day Pilot
+
