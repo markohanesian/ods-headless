@@ -155,10 +155,11 @@ export default function LeadCaptureForm() {
       {step === 1 && (
         <form onSubmit={handleNextStep} className="space-y-6">
           <div className="space-y-2">
-            <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100">
+            <label htmlFor="fullName" className="block text-sm font-bold text-zinc-900 dark:text-zinc-100">
               Full Name *
             </label>
             <input
+              id="fullName"
               type="text"
               required
               placeholder="Your Full Name"
@@ -169,10 +170,11 @@ export default function LeadCaptureForm() {
           </div>
 
           <div className="space-y-2">
-            <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100">
+            <label htmlFor="workEmail" className="block text-sm font-bold text-zinc-900 dark:text-zinc-100">
               Work Email *
             </label>
             <input
+              id="workEmail"
               type="email"
               required
               placeholder="Your Business Email"
@@ -183,10 +185,11 @@ export default function LeadCaptureForm() {
           </div>
 
           <div className="space-y-2">
-            <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100">
+            <label htmlFor="companyOrUrl" className="block text-sm font-bold text-zinc-900 dark:text-zinc-100">
               Company Name or Current Website URL *
             </label>
             <input
+              id="companyOrUrl"
               type="text"
               required
               placeholder="Company Name or Website URL"

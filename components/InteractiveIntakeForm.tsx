@@ -266,8 +266,9 @@ ${formData.selectedHeadaches.length > 0 ? formData.selectedHeadaches.map((s) => 
           <div className="space-y-2">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100 mb-1">Full Name *</label>
+                <label htmlFor="auditFullName" className="block text-sm font-bold text-zinc-900 dark:text-zinc-100 mb-1">Full Name *</label>
                 <input
+                  id="auditFullName"
                   type="text"
                   required
                   placeholder="Full Name"
@@ -277,8 +278,9 @@ ${formData.selectedHeadaches.length > 0 ? formData.selectedHeadaches.map((s) => 
                 />
               </div>
               <div>
-                <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100 mb-1">Business Email *</label>
+                <label htmlFor="auditWorkEmail" className="block text-sm font-bold text-zinc-900 dark:text-zinc-100 mb-1">Business Email *</label>
                 <input
+                  id="auditWorkEmail"
                   type="email"
                   required
                   placeholder="Business Email"
@@ -292,10 +294,11 @@ ${formData.selectedHeadaches.length > 0 ? formData.selectedHeadaches.map((s) => 
 
           <div className="space-y-4">
             <div className="space-y-2">
-              <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100">
+              <label htmlFor="auditCompanyName" className="block text-sm font-bold text-zinc-900 dark:text-zinc-100">
                 Company Name *
               </label>
               <input
+                id="auditCompanyName"
                 type="text"
                 required
                 placeholder="Company Name"
@@ -306,10 +309,11 @@ ${formData.selectedHeadaches.length > 0 ? formData.selectedHeadaches.map((s) => 
             </div>
             
             <div className="space-y-2">
-              <label className="block text-sm font-bold text-zinc-900 dark:text-zinc-100">
+              <label htmlFor="auditWebsiteUrl" className="block text-sm font-bold text-zinc-900 dark:text-zinc-100">
                 Current Website URL <span className="font-normal text-zinc-500">(Optional: Leave blank if launching new)</span>
               </label>
               <input
+                id="auditWebsiteUrl"
                 type="url"
                 placeholder="https://yourwebsite.com"
                 value={formData.websiteUrl}
