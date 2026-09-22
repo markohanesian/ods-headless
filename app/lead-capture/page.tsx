@@ -36,27 +36,51 @@ export default function LeadCapturePage() {
       <section className="px-6 py-24 bg-zinc-50/50 dark:bg-zinc-900/20 lg:px-12 border-t border-zinc-100 dark:border-zinc-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter">Why send ad traffic to a dedicated landing page?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50">
+              Why send ad traffic to a dedicated landing page?
+            </h2>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="p-8 sm:p-12 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 space-y-6 shadow-sm opacity-75">
-              <div className="h-px w-12 bg-red-500 mb-8"></div>
-              <h3 className="text-2xl font-bold tracking-tight text-red-500">Standard Website</h3>
-              <p className="text-lg text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">
-                Too many links, slow load times, confusing navigation, and visitors leave without taking action.
-              </p>
-            </div>
-            
-            <div className="p-8 sm:p-12 bg-white dark:bg-zinc-900 border border-brand space-y-6 shadow-md relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-4">
-                <CheckCircle2 className="w-8 h-8 text-brand opacity-20" />
+          <div className="overflow-hidden border border-zinc-200 dark:border-zinc-800 rounded-xl bg-white dark:bg-zinc-950 shadow-sm">
+            {/* Header row */}
+            <div className="grid grid-cols-2 bg-zinc-100/80 dark:bg-zinc-900/80 border-b border-zinc-200 dark:border-zinc-800 divide-x divide-zinc-200 dark:divide-zinc-800">
+              <div className="p-4 sm:p-6 md:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
+                <span className="hidden sm:inline-block w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                <h3 className="text-sm sm:text-sm font-mono uppercase tracking-wider font-bold text-zinc-700 dark:text-zinc-300">
+                  Standard Website
+                </h3>
               </div>
-              <div className="h-px w-12 bg-brand mb-8"></div>
-              <h3 className="text-2xl font-bold tracking-tight">ODS Landing Page</h3>
-              <p className="text-lg text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">
-                Direct headline, instant mobile speed, one clear call to action, and built-in tracking that proves ROI.
-              </p>
+              <div className="p-4 sm:p-6 md:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 bg-accent-blue/5 dark:bg-accent-blue/10">
+                <span className="hidden sm:inline-block w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                <h3 className="text-sm sm:text-sm font-mono uppercase tracking-wider font-bold text-zinc-900 dark:text-zinc-50">
+                  ODS Landing Page <span className="text-accent-blue font-normal block sm:inline mt-1 sm:mt-0">(Built to Convert)</span>
+                </h3>
+              </div>
+            </div>
+
+            {/* Comparison items */}
+            <div className="divide-y divide-zinc-100 dark:divide-zinc-900">
+              <div className="grid grid-cols-2 group hover:bg-zinc-50/50 dark:hover:bg-zinc-900/20 transition-colors">
+                {/* Elsewhere Column */}
+                <div className="p-4 sm:p-6 md:p-8 flex flex-col sm:flex-row items-start gap-3 border-r border-zinc-100 dark:border-zinc-900">
+                  <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-red-100 dark:bg-red-950/50 text-red-600 dark:text-red-400 flex items-center justify-center text-sm sm:text-sm font-bold mt-0.5">
+                    ✕
+                  </div>
+                  <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base leading-snug sm:leading-relaxed">
+                    Too many links, slow load times, confusing navigation, and visitors leave without taking action.
+                  </p>
+                </div>
+
+                {/* ODS Column */}
+                <div className="p-4 sm:p-6 md:p-8 flex flex-col sm:flex-row items-start gap-3 bg-accent-blue/[0.02] dark:bg-accent-blue/[0.03]">
+                  <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-sm sm:text-sm font-bold mt-0.5">
+                    ✓
+                  </div>
+                  <p className="text-zinc-900 dark:text-zinc-100 font-medium text-sm sm:text-base leading-snug sm:leading-relaxed">
+                    Direct headline, instant mobile speed, one clear call to action, and built-in tracking that proves ROI.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
