@@ -214,37 +214,37 @@
 ## Lead Capture Landing Page (/lead-capture)
 
 ### Section 1: Hero
-- **Eyebrow Badge**: BUILT IN 1 WEEK • 30 DAYS OF INCLUDED ANALYTICS
-- **Headline (H1)**: A high-converting landing page built to make your ads profitable.
-- **Subtitle**: Stop sending paid Google and social media traffic to slow, confusing websites. We build fast, focused landing pages that turn clicks into phone calls, quote requests, and real customers—shipped in one week.
-- **Primary CTA Button**: Get Started on Your Landing Page (Smooth-scrolls to #intake-form)
-- **Secondary Trust Pill/Anchor**: Includes 30 days of live lead tracking and performance reporting.
+- **Eyebrow Badge**: CAMPAIGN LANDING PAGES • 1-WEEK DELIVERY
+- **Headline (H1)**: Turn ad clicks into paying clients.
+- **Sub-Headline**: Stop wasting ad spend, capture qualified leads, and grow your sales—with one dedicated page.
+- **Primary Action CTA**: Get Started on Your Landing Page (Smooth-scrolls to #lead-form)
+- **Secondary Trust Anchor**: Includes 30 days of live lead tracking and performance reporting.
 
-### Section 2: Comparison / "Why It Works"
-- **Headline (H2)**: Why send ad traffic to a dedicated landing page?
-- **Comparison Grid**:
-  * Standard Website: Too many links, slow load times, confusing navigation, and visitors leave without taking action.
-  * ODS Landing Page: Direct headline, instant mobile speed, one clear call to action, and built-in tracking that proves ROI.
-
-### Section 3: What You Get (Deliverables in 1 Week)
+### Section 2: What We Launch in 1 Week (Deliverables)
 - **Headline (H2)**: Everything you need to turn clicks into customers
-- **Subtitle**: We deliver a finished, turn-key campaign page in 7 business days with zero technical stress on your end.
+- **Sub-Headline**: We build and launch a turn-key campaign page in 1 week with zero technical headache on your end.
 - **4 Feature Cards/Columns**:
   * Built for Fast Action
   * Loads Instantly on Mobile
   * Instant Lead Notifications
   * 100% Full Ownership
 
-### Section 4: The Secondary Benefit: 30 Days of Live Analytics
-- **Eyebrow**: DATA-DRIVEN RESULTS
+### Section 3: Included Live Analytics
+- **Eyebrow**: TRANSPARENT RESULTS
 - **Headline (H2)**: See exactly how your ads are performing.
-- **Paragraph**: We don't just build a page and disappear. With every build, we give you an easy-to-read analytics dashboard that shows:
-- **3 Value Checkmarks**: Real-time lead count and conversion rate tracking, Clear data showing which ads actually generate calls, 30 days of post-launch technical support included.
+- **Paragraph**: Most web agencies build a page and walk away. With every build, we include 30 days of live performance tracking. You get a private, easy-to-read analytics dashboard that shows you exactly how many people visited, who submitted a form, and what each lead cost you.
+- **3 Value Checkmarks**: Real-time lead count and conversion rate tracking, Clear data showing which ad campaigns generate calls, 30 days of post-launch technical support included.
 
-### Section 5: Embedded Intake Form (#intake-form)
+### Section 4: Why Dedicated Pages Beat Websites
+- **Headline (H2)**: Why send ad traffic to a dedicated landing page?
+- **Comparison Grid**:
+  * Standard Website: Multi-link navigation menus, slow load times, confusing layouts, and high bounce rates that waste paid clicks.
+  * ODS Dedicated Page: Direct headline, instant mobile loading, one clear action, and built-in tracking that proves your return on ad spend.
+
+### Section 5: Embedded Intake Form (#lead-form)
 - **Form Header**: Start Your Campaign Landing Page
-- **Form Subtitle**: Tell us about your offer and ad goals. We will review your project and get back to you within 1 business day.
+- **Form Subtitle**: Tell us about your offer and ad goals. We'll review your project and get back to you within 1 business day.
 - **Fields**: Full Name, Work Email, Company Name or Current Website URL, Are you currently running ads? Target Launch Timeline
 - **Submit Button**: Request Your Landing Page Build
-- **Trust Caption**: ⚡ 1-week turnaround. 30 days of performance reporting included. No spam, ever.
+- **Trust Microcopy**: ⚡ 1-week turnaround. 30 days of performance reporting included. No spam, ever.
 

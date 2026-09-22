@@ -121,7 +121,7 @@ export default function LeadCaptureForm() {
       <div className="mb-6 pb-6 border-b border-zinc-100 dark:border-zinc-800">
         <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">Start Your Campaign Landing Page</h2>
         <p className="text-zinc-600 dark:text-zinc-400 mt-2">
-          Tell us about your offer and ad goals. We will review your project and get back to you within 1 business day.
+          Tell us about your offer and ad goals. We'll review your project and get back to you within 1 business day.
         </p>
       </div>
       
