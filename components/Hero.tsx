@@ -20,7 +20,7 @@ const Hero = () => {
         </h1>
         
         <p className="lead-text text-zinc-600 dark:text-zinc-300 max-w-3xl mb-12 text-lg sm:text-xl leading-relaxed font-light">
-          We build websites and dedicated landing pages that convert to sales—with built-in analytics, functional design, and zero plugin bloat.
+          We build websites, landing pages, and custom apps that convert to sales.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4">

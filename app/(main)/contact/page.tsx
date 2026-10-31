@@ -15,10 +15,10 @@ export default function ContactPage() {
             <div className="h-px w-24 bg-accent-blue mb-12"></div>
             
             <p className="lead-text text-zinc-900 dark:text-zinc-50 mb-4 font-bold text-xl sm:text-2xl">
-              Let's Build Your Next Digital Advantage.
+              Let&apos;s Build Your Next Digital Advantage.
             </p>
             <p className="lead-text text-zinc-700 dark:text-zinc-300 text-lg sm:text-xl font-light">
-              Tell us a little about your business. We'll run a free site audit and map out a roadmap to fast business growth.
+              Tell us a little about your business. We&apos;ll run a free site audit and map out a roadmap to fast business growth.
             </p>
           </div>
 

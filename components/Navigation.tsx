@@ -7,16 +7,20 @@ import { usePathname } from 'next/navigation';
 const Navigation = () => {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const [showStickyCta, setShowStickyCta] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setMounted(true);
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+      setShowStickyCta(window.scrollY > 550);
     };
+
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+    handleScroll();
 
     // Initialize theme
     const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
@@ -24,7 +28,7 @@ const Navigation = () => {
     setTheme(initialTheme);
     document.documentElement.classList.toggle('dark', initialTheme === 'dark');
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -43,88 +47,102 @@ const Navigation = () => {
     { name: 'Contact', href: '/contact' }
   ];
 
+  const stickyCtaVisible = showStickyCta && !mobileMenuOpen;
+
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled 
-        ? 'py-4 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800' 
-        : 'py-8 bg-transparent'
-    }`}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex flex-col z-50" onClick={() => setMobileMenuOpen(false)}>
-          <span className="text-3xl md:text-4xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 leading-none">
-            ODS
-          </span>
-          <span className="text-xs sm:text-sm font-mono tracking-[0.3em] text-zinc-600 dark:text-zinc-300 font-bold uppercase leading-none mt-2">
-            OHANESIAN DIGITAL SOLUTIONS
-          </span>
-        </Link>
+    <>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? 'py-4' : 'py-8'
+      } ${
+        scrolled && !mobileMenuOpen
+          ? 'bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800'
+          : 'bg-transparent'
+      }`}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex flex-col z-50" onClick={() => setMobileMenuOpen(false)}>
+            <span className="text-3xl md:text-4xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 leading-none">
+              ODS
+            </span>
+            <span className="text-xs sm:text-sm font-mono tracking-[0.3em] text-zinc-600 dark:text-zinc-300 font-bold uppercase leading-none mt-2">
+              OHANESIAN DIGITAL SOLUTIONS
+            </span>
+          </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-10">
-          {navItems.map((item) => {
-            const isActive = pathname === item.href || (pathname.startsWith(item.href) && item.href !== '/');
-            return (
-              <Link 
-                key={item.name} 
-                href={item.href}
-                className={`label-mono transition-all duration-300 hover:text-zinc-900 dark:hover:text-zinc-50 ${
-                  isActive 
-                    ? 'text-zinc-900 dark:text-zinc-50 font-bold border-b-2 border-accent-blue pb-1' 
-                    : ''
-                }`}
-              >
-                {item.name}
-              </Link>
-            );
-          })}
-        </div>
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center gap-10">
+            {navItems.map((item) => {
+              const isActive = pathname === item.href || (pathname.startsWith(item.href) && item.href !== '/');
+              return (
+                <Link 
+                  key={item.name} 
+                  href={item.href}
+                  className={`label-mono transition-all duration-300 hover:text-zinc-900 dark:hover:text-zinc-50 ${
+                    isActive 
+                      ? 'text-zinc-900 dark:text-zinc-50 font-bold border-b-2 border-accent-blue pb-1' 
+                      : ''
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
+          </div>
 
-        {/* Actions */}
-        <div className="flex items-center gap-4 md:gap-6">
-          <button 
-            onClick={toggleTheme}
-            aria-label="Toggle Dark Mode"
-            className="p-2 text-zinc-500 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-50 transition-colors focus:outline-none min-w-[32px] min-h-[32px] flex items-center justify-center z-50"
-          >
-            {!mounted ? (
-              <div className="w-4 h-4" /> // Empty placeholder during hydration
-            ) : theme === 'light' ? (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-              </svg>
-            ) : (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-              </svg>
-            )}
-          </button>
-          
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-zinc-900 dark:text-zinc-50 z-50 focus:outline-none"
-            aria-label="Toggle Menu"
-          >
-            <div className="w-6 h-5 relative flex flex-col justify-between">
-              <span className={`w-full h-0.5 bg-current transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-              <span className={`w-full h-0.5 bg-current transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`} />
-              <span className={`w-full h-0.5 bg-current transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
-            </div>
-          </button>
+          {/* Actions */}
+          <div className="flex items-center gap-4 md:gap-6">
+            <button 
+              onClick={toggleTheme}
+              aria-label="Toggle Dark Mode"
+              className="p-2 text-zinc-500 hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-50 transition-colors focus:outline-none min-w-[32px] min-h-[32px] flex items-center justify-center z-50"
+            >
+              {!mounted ? (
+                <div className="w-4 h-4" /> // Empty placeholder during hydration
+              ) : theme === 'light' ? (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+              ) : (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+              )}
+            </button>
+            
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 text-zinc-900 dark:text-zinc-50 z-50 focus:outline-none"
+              aria-label="Toggle Menu"
+              aria-expanded={mobileMenuOpen}
+            >
+              <div className="w-6 h-5 relative flex flex-col justify-between">
+                <span className={`w-full h-0.5 bg-current transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
+                <span className={`w-full h-0.5 bg-current transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`} />
+                <span className={`w-full h-0.5 bg-current transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+              </div>
+            </button>
+          </div>
         </div>
-      </div>
+      </nav>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed top-0 left-0 w-full h-[100dvh] bg-white dark:bg-zinc-950 z-40 transition-transform duration-500 md:hidden ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div
+        aria-hidden={!mobileMenuOpen}
+        className={`fixed top-0 left-0 w-full h-[100dvh] bg-white dark:bg-zinc-950 z-40 transition-all duration-500 md:hidden ${
+          mobileMenuOpen
+            ? 'translate-x-0 visible'
+            : 'translate-x-full invisible pointer-events-none'
+        }`}
+      >
         <div className="flex flex-col items-center justify-center h-full gap-8 px-6 text-center pt-20 pb-24 overflow-y-auto">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
@@ -133,6 +151,7 @@ const Navigation = () => {
                 key={item.name} 
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
+                tabIndex={mobileMenuOpen ? 0 : -1}
                 className={`text-3xl font-bold tracking-tighter transition-colors ${
                   isActive 
                     ? 'text-brand underline underline-offset-8' 
@@ -143,20 +162,28 @@ const Navigation = () => {
               </Link>
             );
           })}
-
         </div>
       </div>
 
       {/* Mobile Sticky CTA */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md border-t border-zinc-200 dark:border-zinc-800 z-40 shadow-lg">
+      <div
+        aria-hidden={!stickyCtaVisible}
+        className={`md:hidden fixed bottom-0 left-0 right-0 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md border-t border-zinc-200 dark:border-zinc-800 z-40 shadow-lg transition-all duration-300 ${
+          stickyCtaVisible
+            ? 'translate-y-0 opacity-100 visible'
+            : 'translate-y-full opacity-0 invisible pointer-events-none'
+        }`}
+      >
         <Link 
           href="?audit=true" 
+          scroll={false}
+          tabIndex={stickyCtaVisible ? 0 : -1}
           className="btn-brand w-full text-center py-3 flex items-center justify-center shadow-lg"
         >
           Free Site Audit
         </Link>
       </div>
-    </nav>
+    </>
   );
 };
 

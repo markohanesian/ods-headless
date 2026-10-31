@@ -1,11 +1,11 @@
-﻿# ODS Website Copy Transcript
+# ODS Website Copy Transcript
 
 ## Global Navigation
 - **Logo**: ODS (OHANESIAN DIGITAL SOLUTIONS)
 - **Links**: Work, Services, For Agencies, About, Contact
 - **Desktop CTA**: Contact (text link)
 - **Mobile Menu**: Work, Services, For Agencies, About, Contact
-- **Mobile Sticky CTA**: Free Site Audit (Triggers intake modal)
+- **Mobile Sticky CTA**: Free Site Audit (Bottom bar shown on scroll; triggers intake modal)
 
 ---
 
@@ -14,7 +14,7 @@
 ### Section 1: Hero
 - **Eyebrow Badge**: CUSTOM WEBSITES • CAMPAIGN LANDING PAGES • WORKFLOW APPS
 - **Headline (H1)**: Tech that works as hard as you do.
-- **Subtitle/Paragraph**: We build websites and dedicated landing pages that convert to sales—with built-in analytics, functional design, and zero plugin bloat.
+- **Subtitle/Paragraph**: We build websites, landing pages, and custom apps that convert to sales.
 - **Primary CTA**: Free Site Audit (Triggers intake modal)
 - **Secondary CTA**: See Our Results (Smooth-scrolls to #case-studies)
 
@@ -25,7 +25,7 @@
 - **Case Studies**: 3x-5x Increase in Online Sales (The Pomegranate Boutique), Automated Leads & Quoting (Four Seasons Ag Services), Zero-to-One Web Presence (Diversified Land Management)
 
 ### Section 3: Productized Offers
-- **Headline (H2)**: Built by engineers, made for business profit
+- **Headline (H2)**: Built for business success
 - **Sub-Headline**: Clear deliverables with zero scope confusion. Pick the engine your business needs:
 - **Card 1**: The Ad Campaign Landing Page (BUILT IN 1 WEEK • 30 DAYS OF INCLUDED ANALYTICS)
 - **Card 2**: The Custom Business Hub (FULL WEBSITE BUILD OR COMPLETE REDESIGN)

@@ -10,7 +10,8 @@ export default function StrategyAuditSection() {
     // Automatically expand if user navigated directly to #intake-audit or ?mode=intake
     if (typeof window !== "undefined") {
       if (window.location.hash === "#intake-audit" || window.location.search.includes("mode=intake")) {
-        setIsOpen(true);
+        const timeoutId = window.setTimeout(() => setIsOpen(true), 0);
+        return () => window.clearTimeout(timeoutId);
       }
     }
   }, []);

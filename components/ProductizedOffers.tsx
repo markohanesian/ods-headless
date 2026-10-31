@@ -74,7 +74,7 @@ const ProductizedOffers = () => {
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50 mb-6">
-            Built by engineers, made for business profit
+            Built for business success
           </h2>
           <p className="text-zinc-600 dark:text-zinc-300 text-lg leading-relaxed font-light mt-4 mb-6">
             Clear deliverables with zero scope confusion. Pick the engine your business needs:
